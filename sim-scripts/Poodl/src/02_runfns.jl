@@ -117,7 +117,7 @@ end
 this fn runs the main procedure iteratively while updating the df;
 
 """
-function runsim!(pop,df::DataFrame,p,σ,ρ,time)
+function runsim!(pop,df::DF.DataFrame,p,σ,ρ,time)
    for step in 1:time
         agents_update!(pop,p, σ, ρ)
         update_df!(pop,df,step)
@@ -311,7 +311,7 @@ end
 
 
 function mkdirs(filename)
-    !(filename in readdir(pwd())) ? mkdir(filename): println("dir $(filename) exists... no need to create one ")
+    !(filename in readdir(pwd())) ? mkdir(filename) : println("dir $(filename) exists... no need to create one ")
 end
 
 

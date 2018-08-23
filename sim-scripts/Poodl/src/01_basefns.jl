@@ -61,8 +61,8 @@ end
 Creates a list of parameters for posterior instantiation of Belief
 """
 function createbetaparams(popsize::Integer)
-    αs = linspace(1.1, 100, popsize) |> shuffle
-    βs = linspace(1.1, 100, popsize) |> shuffle
+    αs = range(1.1, stop = 100, length = popsize) |> RD.shuffle
+    βs = range(1.1, stop = 100, length = popsize) |> RD.shuffle
     betaparams = collect(zip(αs,βs))
     return(betaparams)
 end
