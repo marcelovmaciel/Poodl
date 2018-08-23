@@ -279,10 +279,10 @@ uuid = "626554b9-1ddb-594c-aa3c-2596fe9399a5"
 version = "0.4.1"
 
 [[Missings]]
-deps = ["Dates", "InteractiveUtils", "SparseArrays", "Test"]
-git-tree-sha1 = "196528fa1df03df435025f52f9c1ff8356f94738"
+deps = ["Compat"]
+git-tree-sha1 = "866fb034899be6055dcb6cb1a70fbda379bb0b55"
 uuid = "e1d29d7a-bbdc-5cf2-9ac0-f12de2c33e28"
-version = "0.3.0"
+version = "0.2.10"
 
 [[Mmap]]
 uuid = "a63ad114-7e13-5084-954f-fe012c677804"
@@ -313,9 +313,9 @@ version = "0.8.1"
 
 [[Optim]]
 deps = ["Calculus", "Compat", "DiffEqDiffTools", "ForwardDiff", "LineSearches", "LinearAlgebra", "NLSolversBase", "NaNMath", "Parameters", "Pkg", "PositiveFactorizations", "Printf", "Random", "SparseArrays", "StatsBase", "Test"]
-git-tree-sha1 = "4bf84a0d6f3e6dc472fc7a615503e84b510c74b5"
+git-tree-sha1 = "0ed8809e72d3b595930c8ade539838a99f94dc8b"
 uuid = "429524aa-4258-5aef-a3af-852621145aeb"
-version = "0.17.0"
+version = "0.16.0"
 
 [[PDMats]]
 deps = ["Arpack", "LinearAlgebra", "SparseArrays", "SuiteSparse", "Test"]

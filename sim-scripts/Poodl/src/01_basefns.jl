@@ -11,7 +11,6 @@ mutable struct Belief{T1 <: Real, T2 <: Integer}
     whichissue::T2
 end
 
-
 """
     mutable struct Agent_o{T1 <: Integer, T2 <: Vector, T3 <: Real,
                        T4 <: Vector, T5 <: Tuple} <: AbstractAgent
@@ -85,7 +84,7 @@ function create_idealpoint(ideology)
     for issue in ideology
         push!(opinions,issue.o)
     end
-    ideal_point = mean(opinions)
+    ideal_point = Stats.mean(opinions)
     return(ideal_point)
 end
 
