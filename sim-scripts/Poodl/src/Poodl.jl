@@ -8,7 +8,7 @@ const Dist = Distributions
 const DF = DataFrames
 const Param = Parameters
 const LG = LightGraphs
-
+const Meter = ProgressMeter
 
 
 # package code goes here

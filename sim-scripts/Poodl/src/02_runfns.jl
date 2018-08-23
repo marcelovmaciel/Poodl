@@ -1,7 +1,7 @@
 # Types needed for the simulation
 
 "Parameters for the simulation; makes the code cleaner"
-@with_kw struct DyDeoParam{R<:Real}
+Param.@with_kw struct DyDeoParam{R<:Real}
     n_issues::Int = 1
     size_nw::Int = 2
     p::R = 0.9
@@ -143,7 +143,7 @@ end
 
 "repetition of the sim for some parameters;"
 function one_run(pa::DyDeoParam)
-    @unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = pa
+    Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = pa
     pop = create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
     df = create_initdf(pop)
     runsim!(pop,df,p,σ,ρ,time)
@@ -156,7 +156,7 @@ this speeds up a lot the sim, but i can't keep track of the system state evoluti
 that is, I only save the end state
 """
 function simple_run(pa::DyDeoParam)
-    @unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = pa
+    Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = pa
     pop = create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
     runsim!(pop,p,σ,ρ,time)
     return(pop)
@@ -169,7 +169,7 @@ runs the simulation and keeps each iteration configuration (ideal points)
 
 """
 function simstatesvec(pa::DyDeoParam)
-    @unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = pa
+    Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = pa
     pop = create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
     statearray = createstatearray(pop, pa.time)
 
@@ -190,7 +190,7 @@ function statesmatrix(pa; time = pa.time, size_nw = pa.size_nw)
     a = Array{Float64}(time+1,size_nw)
     statesvec = simstatesvec(pa)
 
-   @showprogress 1 "Computing..." for (step,popstate) in enumerate(statesvec)
+   Meter.@showprogress 1 "Computing..." for (step,popstate) in enumerate(statesvec)
         for (agent_indx,agentstate) in enumerate(popstate)
             a[step,agent_indx] = agentstate
         end
@@ -207,7 +207,7 @@ Then it runs the sim for each parametization and pushs system measures to anothe
 """
 function sweep_sample(param_values; size_nw = 500, time = 250_000, agent_type = "mutating o")
     Y = []
-@showprogress 1 "Computing..." for i in 1:size(param_values)[1]
+Meter.@showprogress 1 "Computing..." for i in 1:size(param_values)[1]
     paramfromsaltelli = DyDeoParam(size_nw =  round(Int,param_values[i,1]),
                                     n_issues = round(Int,param_values[i,2]),
                                     p = param_values[i,3],
@@ -233,7 +233,7 @@ function getsample_initcond(param_values; time = 250_000, agent_type = "mutating
     param_values[:,2] = round.(Int,param_values[:,2])
     Y = Tuple{Float64,Int64}[]
 
-    @showprogress 1 "Computing..." for i in 1:size(param_values)[1]
+    Meter.@showprogress 1 "Computing..." for i in 1:size(param_values)[1]
         paramfromsaltelli = DyDeoParam(size_nw = convert(Int,param_values[i,1]),
                                        n_issues = convert(Int,param_values[i,2]),
                                        p = param_values[i,3],
@@ -242,7 +242,7 @@ function getsample_initcond(param_values; time = 250_000, agent_type = "mutating
                                        propintransigents = param_values[i,6],
                                        time = time,
                                        agent_type = agent_type)
-        @unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = paramfromsaltelli
+        Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = paramfromsaltelli
         pop = create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
         out = pop |> pullidealpoints |> outputfromsim
         push!(Y,out)
@@ -264,7 +264,7 @@ end
 
 function get_simpleinitcond(param)
     Y = Tuple{Float64,Int64}[]
-    @unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = param
+    Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = param
     pop = create_initialcond(agent_type, σ, n_issues,
                              size_nw,graphcreator, propintransigents,
                              intranpositions = intranpositions)
@@ -277,7 +277,7 @@ end
 
 function dist_initstds(param,repetition)
     stdsout = []
-@showprogress 1 "Extracting stds" for run in 1:repetition
+Meter.@showprogress 1 "Extracting stds" for run in 1:repetition
         singlestd = get_simpleinitcond(param)
         push!(stdsout, singlestd)
     end
@@ -302,7 +302,7 @@ function multiruns(sigmanissues::Tuple; repetitions = 100)
 
     repetitionsout = Array{Float64}[]
 
-@showprogress 1 "Multiruns"    for run in 1:repetitions
+Meter.@showprogress 1 "Multiruns"    for run in 1:repetitions
         singleout = simple_run(pa) |> pullidealpoints 
         push!(repetitionsout,singleout)
     end
