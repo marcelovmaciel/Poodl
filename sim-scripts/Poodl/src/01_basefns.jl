@@ -1,8 +1,9 @@
 #Structs for Agents and Beliefs --------------------
 
 abstract type  AbstractAgent end
-abstract type AbstractBelief end 
+abstract type AbstractBelief end
 
+abstract type AgentAttribute end
 
 "Concrete type for Agents' beliefs; comprised of opinion, uncertainty and an id (whichissue)"
 mutable struct Belief{T1 <: Real, T2 <: Integer}
@@ -37,6 +38,7 @@ mutable struct Agent_o{T1 <: Integer, T2 <: Vector, T3 <: Real,
 end
 
 
+
 "Concrete type for an Agent which changes both opinion and uncertainty"
 mutable struct Agent_oσ{T1 <: Integer,T2 <: Vector,T3 <: Real,
                         T4 <: Vector, T5 <: Tuple} <: AbstractAgent
@@ -60,9 +62,10 @@ end
 Creates a list of parameters for posterior instantiation of Belief
 """
 function createbetaparams(popsize::Integer)
+    popsize >= 1 || throw(DomainError(popsize, "argument must be at least 1"))
     αs = range(1.1, stop = 100, length = popsize) |> RD.shuffle
     βs = range(1.1, stop = 100, length = popsize) |> RD.shuffle
-    betaparams = collect(zip(αs,βs))
+    betaparams = zip(αs,βs) |> x -> [(α = i[1], β = i[2]) for i in x]
     return(betaparams)
 end
 
@@ -71,13 +74,11 @@ end
 
 Instantiates beliefs; note o is taken from a Beta while σ is global and an input
 """
-function create_belief(σ::Real, issue::Integer, paramtuple::Tuple)
-    o = rand(Dist.Beta(paramtuple[1],paramtuple[2]))
+function create_belief(σ::Real, issue::Integer, paramtuple::NamedTuple)
+    o = rand(Dist.Beta(paramtuple.α,paramtuple.β))
     belief = Belief(o, σ, issue)
     return(belief)
 end
-
-
 
 function create_idealpoint(ideology)
     opinions = []
@@ -267,7 +268,6 @@ end
  update_step for changing opinion but not belief
 
 """
-
 function update_o!(i::AbstractAgent, which_issue::Integer, posterior_o::AbstractFloat)
     i.ideo[which_issue].o = posterior_o
     newidealpoint = create_idealpoint(i.ideo)

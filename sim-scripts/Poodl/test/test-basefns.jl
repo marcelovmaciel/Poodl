@@ -21,6 +21,13 @@
     end
 end
 
+@testset "in which fns are tested" begin
+    @inferred pdl.createbetaparams(5)
+    @test length(pdl.createbetaparams(5)) == 5
+    @test_throws DomainError pdl.createbetaparams(0)
+
+end
+
 
 
 
