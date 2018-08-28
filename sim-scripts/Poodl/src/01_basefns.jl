@@ -1,5 +1,6 @@
 #Structs for Agents and Beliefs --------------------
 
+#Those abstract types are for later refactoring
 abstract type  AbstractAgent end
 abstract type AbstractBelief end
 
@@ -28,7 +29,7 @@ Fields:
 
 """
 mutable struct Agent_o{T1 <: Integer, T2 <: Vector, T3 <: Real,
-                       T4 <: Vector, T5 <: Tuple} <: AbstractAgent
+                       T4 <: Vector, T5 <: NamedTuple} <: AbstractAgent
     id::T1
     ideo::T2
     idealpoint::T3
@@ -41,7 +42,7 @@ end
 
 "Concrete type for an Agent which changes both opinion and uncertainty"
 mutable struct Agent_oσ{T1 <: Integer,T2 <: Vector,T3 <: Real,
-                        T4 <: Vector, T5 <: Tuple} <: AbstractAgent
+                        T4 <: Vector, T5 <: NamedTuple} <: AbstractAgent
     id::T1
     ideo::T2
     idealpoint::T3
@@ -102,28 +103,22 @@ end
 "calculatemeanopinion(ideology) = getpropertylist(ideology, :o) |> Stats.mean"
 calculatemeanopinion(ideology) = getpropertylist(ideology, :o) |> Stats.mean
 
-
-
 """
-    create_agent(agent_type,n_issues::Integer, id::Integer, σ::Real, paramtuple::Tuple)
-
-Instantiates  agents; something missing in terms of design
+    create_agent(agent_type, n_issues::Integer, id::Integer, σ::Real, paramtuple::Tuple)
+Instantiates  agents.
 """
-function create_agent(agent_type,n_issues::Integer, id::Integer, σ::Real, paramtuple::Tuple)
+function create_agent(agent_type::Type{Agent_o}, n_issues::Integer, id::Integer, σ::Real, paramtuple::NamedTuple)
+    ideology = [create_belief(σ, issue, paramtuple) for issue in 1:n_issues ]
+    idealpoint = calculatemeanopinion(ideology)
+    agent = Agent_o(id,ideology, idealpoint,[0], [0], paramtuple)
+end
+
+function create_agent(agent_type::Type{Agent_oσ}, n_issues::Integer, id::Integer, σ::Real, paramtuple::NamedTuple)
 
     ideology = [create_belief(σ, issue, paramtuple) for issue in 1:n_issues ]
     idealpoint = calculatemeanopinion(ideology)
-
-    if agent_type == "mutating o"
-        agent = Agent_o(id,ideology, idealpoint,[0], [0], paramtuple)
-    elseif agent_type == "mutating o and sigma"
-        agent = Agent_oσ(id,ideology, idealpoint,[0],[0], paramtuple)
-    else
-        println("specify agent type: mutating o or mutating o and sigma")
-    end
-    return(agent)
+    agent = Agent_oσ(id,ideology, idealpoint,[0], [0], paramtuple)
 end
-
 
 """
     createpop(agent_type, σ::Real,  n_issues::Integer, size::Integer)
