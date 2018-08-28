@@ -86,31 +86,21 @@ end
 
 #=
 this functions generalizes what i was previously doing with create_idealpoint.
-That is, with createidealpoint i summarize 
-
+That is, with createidealpoint i apply some measure to a list of attributes from the items of another list.
+The latter is what this fn does.
 =#
-function getitemsproperty(list::Vector, whichproperty::Symbol)
-    apropertylist = similar(list, typeof(getfield(list[1], whichproperty)))
+"This fn extracts a list of properties from another list.
+If we have a container of composite types with field :o it will return a list of the :os."
+function getpropertylist(list::Vector, whichproperty::Symbol)
+    apropertylist = similar(list, fieldtype(eltype(list), whichproperty))
     for (keys, values) in enumerate(list)
        apropertylist[keys] = getfield(values, whichproperty)
     end
     return(apropertylist)
 end
 
-#::Vector{Belief{Float64, Int64}}
-
-create_idealpoint(ideology) = getitemsproperty(ideology, :o) |> Stats.mean
-
-#create_idealpoint seems type unstable, investigate further
-#=function create_idealpoint(ideology)::Real
-    opinions = []
-    for issue in ideology
-        push!(opinions, issue.o)
-    end
-    ideal_point = Stats.mean(opinions)
-    return(ideal_point)
-end
-=#
+"calculatemeanopinion(ideology) = getpropertylist(ideology, :o) |> Stats.mean"
+calculatemeanopinion(ideology) = getpropertylist(ideology, :o) |> Stats.mean
 
 
 
@@ -122,7 +112,7 @@ Instantiates  agents; something missing in terms of design
 function create_agent(agent_type,n_issues::Integer, id::Integer, σ::Real, paramtuple::Tuple)
 
     ideology = [create_belief(σ, issue, paramtuple) for issue in 1:n_issues ]
-    idealpoint = create_idealpoint(ideology)
+    idealpoint = calculatemeanopinion(ideology)
 
     if agent_type == "mutating o"
         agent = Agent_o(id,ideology, idealpoint,[0], [0], paramtuple)
@@ -295,7 +285,7 @@ end
 """
 function update_o!(i::AbstractAgent, which_issue::Integer, posterior_o::AbstractFloat)
     i.ideo[which_issue].o = posterior_o
-    newidealpoint = create_idealpoint(i.ideo)
+    newidealpoint = calculatemeanopinion(i.ideo)
     i.idealpoint = newidealpoint
     nothing
 end
@@ -309,7 +299,7 @@ function update_oσ!(i::AbstractAgent,issue_belief::Integer,
         posterior_o::AbstractFloat, posterior_σ::AbstractFloat)
     i.ideo[issue_belief].o = posterior_o
     i.ideo[issue_belief].σ = posterior_σ
-    newidealpoint = create_idealpoint(i.ideo)
+    newidealpoint = calculatemeanopinion(i.ideo)
     i.idealpoint = newidealpoint
     nothing
 end
@@ -359,7 +349,7 @@ function ρ_update!(i::AbstractAgent, ρ::AbstractFloat)
         else
             i.ideo[whichissue].o += r
         end
-        newidealpoint = create_idealpoint(i.ideo)
+        newidealpoint = calculatemeanopinion(i.ideo)
         i.idealpoint = newidealpoint
     end
     nothing
