@@ -24,7 +24,7 @@ Fields:
  - idealpoint::Real
  - neighbors::Vector
  - certainissues::Vector
- - certainparams::Tuple
+ - certainparams::NamedTuple
 
 """
 mutable struct Agent_o{T1 <: Integer, T2 <: Vector, T3 <: Real,
@@ -62,32 +62,57 @@ end
 Creates a list of parameters for posterior instantiation of Belief
 """
 function createbetaparams(popsize::Integer)
-    popsize >= 1 || throw(DomainError(popsize, "argument must be at least 1"))
+    popsize >= 1 || throw(DomainError(popsize, "popsize must be at least 1"))
     αs = range(1.1, stop = 100, length = popsize) |> RD.shuffle
     βs = range(1.1, stop = 100, length = popsize) |> RD.shuffle
     betaparams = zip(αs,βs) |> x -> [(α = i[1], β = i[2]) for i in x]
     return(betaparams)
 end
 
+
+#maybe o should be generated outside this function, and then given as input to it 
 """
     create_belief(σ::Real, issue::Integer, paramtuple::Tuple)
 
 Instantiates beliefs; note o is taken from a Beta while σ is global and an input
 """
 function create_belief(σ::Real, issue::Integer, paramtuple::NamedTuple)
+    #maybe this should be inside the constructor ?? think about that...
+    (0 < σ <= 1) || throw(DomainError(σ, "σ must be between 0 and 1"))
     o = rand(Dist.Beta(paramtuple.α,paramtuple.β))
     belief = Belief(o, σ, issue)
     return(belief)
 end
 
-function create_idealpoint(ideology)
+#=
+this functions generalizes what i was previously doing with create_idealpoint.
+That is, with createidealpoint i summarize 
+
+=#
+function getitemsproperty(list::Vector, whichproperty::Symbol)
+    apropertylist = similar(list, typeof(getfield(list[1], whichproperty)))
+    for (keys, values) in enumerate(list)
+       apropertylist[keys] = getfield(values, whichproperty)
+    end
+    return(apropertylist)
+end
+
+#::Vector{Belief{Float64, Int64}}
+
+create_idealpoint(ideology) = getitemsproperty(ideology, :o) |> Stats.mean
+
+#create_idealpoint seems type unstable, investigate further
+#=function create_idealpoint(ideology)::Real
     opinions = []
     for issue in ideology
-        push!(opinions,issue.o)
+        push!(opinions, issue.o)
     end
     ideal_point = Stats.mean(opinions)
     return(ideal_point)
 end
+=#
+
+
 
 """
     create_agent(agent_type,n_issues::Integer, id::Integer, σ::Real, paramtuple::Tuple)
