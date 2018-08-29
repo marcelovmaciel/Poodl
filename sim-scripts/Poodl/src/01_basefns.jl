@@ -130,10 +130,12 @@ end
 Creates a  vector of agents of type Agent_o
 """
 function createpop(agent_type::Type{Agent_o},
-            σ::Real,  n_issues::Integer, size::Integer)::Vector{Agent_o}
+            σ::Real,  n_issues::Integer, size::Integer)
     betaparams = createbetaparams(size)
-    population = [create_agent(agent_type, n_issues,
-                               i,σ, betaparams[i]) for i in 1:size]
+    population = Array{Agent_o}(undef, size)
+    for i in 1:size
+        population[i] = create_agent(agent_type, n_issues, i,σ, betaparams[i])
+    end
     return(population)
 end
 
@@ -146,11 +148,15 @@ Creates a vector of agents of type Agent_oσ
 function createpop(agent_type::Type{Agent_oσ}, σ::Real,
             n_issues::Integer, size::Integer)::Vector{Agent_oσ}
     betaparams = createbetaparams(size)
-    population = [create_agent(agent_type, n_issues,
-                               i,σ, betaparams[i]) for i in 1:size]
+     population = Array{Agent_oσ}(undef, size)
+    for i in 1:size
+        population[i] = create_agent(agent_type, n_issues, i,σ, betaparams[i])
+    end
     return(population)
 end
 
+
+
 
 """
     createintransigents!(pop,propextremists::AbstractFloat)
