@@ -93,6 +93,8 @@ The latter is what this fn does.
 "This fn extracts a list of properties from another list.
 If we have a container of composite types with field :o it will return a list of the :os."
 function getpropertylist(list::Vector, whichproperty::Symbol)
+    ((fieldcount(eltype(list)) > 0) ||
+      throw(ArgumentError( "can't get a propertyfrom a type without fields ")))
     apropertylist = similar(list, fieldtype(eltype(list), whichproperty))
     for (keys, values) in enumerate(list)
        apropertylist[keys] = getfield(values, whichproperty)
@@ -102,6 +104,7 @@ end
 
 "calculatemeanopinion(ideology) = getpropertylist(ideology, :o) |> Stats.mean"
 calculatemeanopinion(ideology) = getpropertylist(ideology, :o) |> Stats.mean
+
 
 """
     create_agent(agent_type, n_issues::Integer, id::Integer, σ::Real, paramtuple::Tuple)
@@ -117,17 +120,34 @@ function create_agent(agent_type::Type{Agent_oσ}, n_issues::Integer, id::Intege
 
     ideology = [create_belief(σ, issue, paramtuple) for issue in 1:n_issues ]
     idealpoint = calculatemeanopinion(ideology)
-    agent = Agent_oσ(id,ideology, idealpoint,[0], [0], paramtuple)
+    agent = Agent_oσ(id,ideolo3gy, idealpoint,[0], [0], paramtuple)
 end
 
 """
-    createpop(agent_type, σ::Real,  n_issues::Integer, size::Integer)
+    createpop(agent_type::Type{Agent_o}, σ::Real,
+    n_issues::Integer, size::Integer)::Vector{Agent_o}
 
-Creates an array of agents
+Creates a  vector of agents of type Agent_o
 """
-function createpop(agent_type, σ::Real,  n_issues::Integer, size::Integer)
+function createpop(agent_type::Type{Agent_o},
+            σ::Real,  n_issues::Integer, size::Integer)::Vector{Agent_o}
     betaparams = createbetaparams(size)
-    population = [create_agent(agent_type, n_issues,i,σ, betaparams[i]) for i in 1:size]
+    population = [create_agent(agent_type, n_issues,
+                               i,σ, betaparams[i]) for i in 1:size]
+    return(population)
+end
+
+"
+    createpop(agent_type::Type{Agent_oσ}, σ::Real,
+     n_issues::Integer, size::Integer)::Vector{Agent_oσ}
+
+Creates a vector of agents of type Agent_oσ
+"
+function createpop(agent_type::Type{Agent_oσ}, σ::Real,
+            n_issues::Integer, size::Integer)::Vector{Agent_oσ}
+    betaparams = createbetaparams(size)
+    population = [create_agent(agent_type, n_issues,
+                               i,σ, betaparams[i]) for i in 1:size]
     return(population)
 end
 
@@ -142,7 +162,7 @@ function createintransigents!(pop,propintransigents::AbstractFloat; position = "
     nintransigents = round(Int, length(pop) * propintransigents)
     
     if position == "random"
-        whichintransigents = StatsBase.sample(1:length(pop),nintransigents,
+        whichintransigents = StatsBase.sample(1:length(pop), nintransigents,
                                 replace = false)
     elseif position == "extremes"
         # gives an error if nintransigents > len(extremistsid)
