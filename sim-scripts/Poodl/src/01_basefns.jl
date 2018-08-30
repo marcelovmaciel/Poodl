@@ -67,7 +67,6 @@ function createbetaparams(popsize::Integer)
     αs = range(1.1, stop = 100, length = popsize) |> RD.shuffle
     βs = range(1.1, stop = 100, length = popsize) |> RD.shuffle
     betaparams = zip(αs,βs) |> x -> [(α = i[1], β = i[2]) for i in x]
-    return(betaparams)
 end
 
 
@@ -82,7 +81,6 @@ function create_belief(σ::Real, issue::Integer, paramtuple::NamedTuple)
     (0 < σ <= 1) || throw(DomainError(σ, "σ must be between 0 and 1"))
     o = rand(Dist.Beta(paramtuple.α,paramtuple.β))
     belief = Belief(o, σ, issue)
-    return(belief)
 end
 
 #=
@@ -148,14 +146,12 @@ Creates a vector of agents of type Agent_oσ
 function createpop(agent_type::Type{Agent_oσ}, σ::Real,
             n_issues::Integer, size::Integer)::Vector{Agent_oσ}
     betaparams = createbetaparams(size)
-     population = Array{Agent_oσ}(undef, size)
+    population = Array{Agent_oσ}(undef, size)
     for i in 1:size
         population[i] = create_agent(agent_type, n_issues, i,σ, betaparams[i])
     end
     return(population)
 end
-
-
 
 
 """
