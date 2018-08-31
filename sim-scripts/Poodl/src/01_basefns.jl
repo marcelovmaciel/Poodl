@@ -63,9 +63,9 @@ end
 Creates a list of parameters for posterior instantiation of Belief
 """
 function createbetaparams(popsize::Integer)
-    popsize >= 1 || throw(DomainError(popsize, "popsize must be at least 1"))
-    αs = range(1.1, stop = 100, length = popsize) |> RD.shuffle
-    βs = range(1.1, stop = 100, length = popsize) |> RD.shuffle
+    popsize >= 2 || throw(DomainError(popsize, "popsize must be at least 2"))
+    αs = range(1.1,  length = popsize , stop = 100) |> RD.shuffle
+    βs = range(1.1, length = popsize , stop = 100) |> RD.shuffle
     betaparams = zip(αs,βs) |> x -> [(α = i[1], β = i[2]) for i in x]
 end
 
@@ -118,7 +118,7 @@ function create_agent(agent_type::Type{Agent_oσ}, n_issues::Integer, id::Intege
 
     ideology = [create_belief(σ, issue, paramtuple) for issue in 1:n_issues ]
     idealpoint = calculatemeanopinion(ideology)
-    agent = Agent_oσ(id,ideolo3gy, idealpoint,[0], [0], paramtuple)
+    agent = Agent_oσ(id,ideology, idealpoint,[0], [0], paramtuple)
 end
 
 """
@@ -152,17 +152,12 @@ function createpop(agent_type::Type{Agent_oσ}, σ::Real,
     end
     return(population)
 end
-
 
 """
-    createintransigents!(pop,propextremists::AbstractFloat)
-
-turn some agents into extremists; that is, given a number or proportion of extremists and issues it makes the σ of some issues and some agents into ≈ 0 (1e-20)
+    function pick_intranids(pop,propintransigents::AbstractFloat; position = "random")::Vector{Int}
 """
-function createintransigents!(pop,propintransigents::AbstractFloat; position = "random")
-    n_issues = length(pop[1].ideo)
+function pick_intranids(pop,propintransigents::AbstractFloat; position = "random")::Vector{Int}
     nintransigents = round(Int, length(pop) * propintransigents)
-    
     if position == "random"
         whichintransigents = StatsBase.sample(1:length(pop), nintransigents,
                                 replace = false)
@@ -172,25 +167,35 @@ function createintransigents!(pop,propintransigents::AbstractFloat; position = "
                             filter(x -> ( x.idealpoint < 0.2) || (x.idealpoint > 0.8),
                                    pop))
         if nintransigents > length(extremistsid)
-            error("there aren't enough agents on the extremes; try a lower prop_intran")
+            throw(ArgumentError("there aren't enough agents on the extremes; try a lower prop_intran"))
             else
             whichintransigents  = StatsBase.sample(extremistsid, nintransigents,
                                          replace = false)
         end
-
     elseif position == "center"
         centristsid = map( x -> x.id,
                             filter(x -> ( x.idealpoint > 0.25) && (x.idealpoint < 0.75),
                                    pop))
         if nintransigents > length(centristsid)
-            error("there aren't enough agents on the center; try a lower prop_intran")
+            throw(ArgumentError("there aren't enough agents on the center; try a lower prop_intran"))
         else
             whichintransigents = StatsBase.sample(centristsid,nintransigents,
                                         replace = false)
         end
     else
-        error("wrong argument position; correct: random,extremes,center")
-    end
+        throw(ArgumentError("wrong position; correct: random,extremes,center"))
+    end 
+    return(whichintransigents)
+end
+
+"""
+    turninto_intransigents!(pop,propextremists::AbstractFloat)
+
+turn some agents into extremists; that is, given a number or proportion of extremists and issues it makes the σ of some issues and some agents into ≈ 0 (1e-20)
+"""
+function turninto_intransigents!(pop,propintransigents::AbstractFloat; position = "random")
+    n_issues = length(pop[1].ideo)
+    whichintransigents = pick_intranids(pop, propintransigents::AbstractFloat; position = position)
 
     for i in whichintransigents
         whichissues = StatsBase.sample(1:n_issues, 1,
@@ -203,6 +208,23 @@ function createintransigents!(pop,propintransigents::AbstractFloat; position = "
     nothing
 end
 
+function turninto_intransigents(pop,propintransigents::AbstractFloat; position = "random")
+    n_issues = length(pop[1].ideo)
+    whichintransigents = pick_intranids(pop, propintransigents::AbstractFloat; position = position)
+    
+    likepop = copy(pop)
+    for i in whichintransigents
+        whichissues = StatsBase.sample(1:n_issues, 1,
+                             replace = false)
+        likepop[i].certainissues = whichissues
+        for issue in whichissues
+            likepop[i].ideo[issue].σ = 1e-20
+        end
+    end
+    return(likepop)
+end
+
+#those graph fns should probably be refactored ... 
 """
     creategraphfrompop(population, graphcreator)
 
@@ -211,23 +233,30 @@ Creates a graph; helper for add_neighbors!
 function creategraphfrompop(population, graphcreator)
     graphsize = length(population)
     nw = graphcreator(graphsize)
-    return(nw)
 end
-
 
 """
     add_neighbors!(population, nw)
 
 adds the neighbors from nw to pop;
 """
-function add_neighbors!(population, nw)
-    for i in population
-        i.neighbors = LG.neighbors(nw,i.id)
+function add_neighbors!(population::Array{Agent_o, 1}, graphcreator)
+    neighsids = creategraphfrompop(population,
+                                   graphcreator).fadjlist
+    for (key, value) in enumerate(neighsids)
+        population[key].neighbors = value
     end
     nothing
 end
 
-
+function add_neighbors!(population::Array{Agent_oσ, 1}, graphcreator)
+    neighsids = creategraphfrompop(population,
+                                   graphcreator).fadjlist
+    for (key, value) in enumerate(neighsids)
+        population[key].neighbors = value
+    end
+    nothing
+end
 
 #= Interaction functions
 =#
@@ -239,9 +268,7 @@ Chooses and returns a neighbor for i
 function getjtointeract(i::AbstractAgent,  population)
     whichj = rand(i.neighbors)
     j = population[whichj]
-    return(j)
 end
-
 
 """
     pick_issuebelief(i::AbstractAgent, j::AbstractAgent)

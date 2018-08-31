@@ -21,7 +21,8 @@
     end
 end
 
-@testset "in which fns were tested" begin
+@testset "in which basefns were tested" begin
+    pop1 = pdl.createpop(pdl.Agent_o, 0.1, 5, 25) 
     @test length(pdl.createbetaparams(5)) == 5
     @test_throws DomainError pdl.createbetaparams(0)
     @test_throws DomainError pdl.create_belief(2, 1 , (α = 1.1, β = 1.2))
@@ -31,5 +32,16 @@ end
     @inferred pdl.createpop(pdl.Agent_o, 0.1, 1, 5)
     @test eltype(pdl.createpop(pdl.Agent_o, 0.1, 1, 5)) == pdl.Agent_o
     @test_throws MethodError pdl.createpop(1, 0.1, 1, 5)
+    @test_throws ArgumentError pdl.pick_intranids(pop1, 0.6, position = "extremes")
+    @test_throws ArgumentError pdl.pick_intranids(pop1, 0.2, position = "foo")
+    @test_throws ArgumentError pdl.turninto_intransigents!(pop1, 0.2 , position = "foo")
+    @test_throws ArgumentError pdl.turninto_intransigents!(pop1, 0.6 , position = "extremes")
+    @inferred pdl.turninto_intransigents!(pop1, 0.2 , position = "extremes")
+    @inferred pdl.turninto_intransigents(pop1, 0.2 , position = "extremes")
+    @inferred pdl.pick_intranids(pop1, 0.2, position = "extremes")
+    @test (eltype(pdl.turninto_intransigents(pop1, 0.2 , position = "extremes")) ==
+           eltype(pop1) )
+    @test (length(pdl.turninto_intransigents(pop1, 0.2 , position = "extremes")) ==
+           length(pop1) )
 end
 
