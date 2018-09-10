@@ -43,5 +43,8 @@ end
            eltype(pop1) )
     @test (length(pdl.turninto_intransigents(pop1, 0.2 , position = "extremes")) ==
            length(pop1) )
+    @test (typeof( pdl.creategraphfrompop(pop1, pdl.LG.CompleteGraph)) <:
+           pdl.LG.AbstractGraph)
+    @test pdl.getjtointeract(pop1[1],pop1) |> typeof <: pdl.Agent_o #gotta change this; it shouold be == to a more inferred concrete type
 end
 

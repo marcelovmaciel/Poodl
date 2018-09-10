@@ -17,9 +17,10 @@ end
 @code_warntype  array3(5.0, 2)
 
 
+
 pdl.createbetaparams(5)
 
-testAgent = pdl.Agent_o(1, [], 0.5, [2,3,4], [1,2,3], (α =1.1, β = 1.4))
+testAgent = pdl.Agent_o(1, [], 0.5, [2,3,4], [1,2,3], (α =1.1, β = 1.4)) 
 
 ideology = [pdl.create_belief(0.1, 1, (α = 0.5, β = 0.6)) for issue in 1:5 ]
 
@@ -40,7 +41,8 @@ ag2 = pdl.create_agent(pdl.Agent_oσ, 1, 1, 0.1, (α = 1.1, β = 1.2))
 pop1 = pdl.createpop(pdl.Agent_o, 0.1, 5, 25) 
 
 
-@doc pdl.createpop
+typeof(pop1)
+
 
 @code_warntype pdl.pick_intranids(pop1, 0.3, position = "center")
 
@@ -52,5 +54,46 @@ pop1 = pdl.createpop(pdl.Agent_o, 0.1, 5, 25)
 
 nw1 =  pdl.creategraphfrompop(pop1, pdl.LG.CompleteGraph)
 
+
+@doc supertype
+
+(typeof(nw1) <:
+ pdl.LG.AbstractGraph)
+
+
+pdl.getjtointeract(pop1[1], )
+
+
+
+#this is important; it proves there is something wrong with my design; maybe have a population type??
 @code_warntype pdl.add_neighbors!(pop1, pdl.LG.CompleteGraph)
+
+
+@inferred getindex(pop1,1) 
+
+eltype(pop1) == typeof(getindex(pop1,1))
+eltype(pop1) >: typeof(getindex(pop1,1))
+
+pdl.add_neighbors!(pop1, pdl.LG.CompleteGraph)
+
+@code_warntype pdl.getjtointeract(pop1[1],pop1) #the same error happens here!!!!
+
+
+
+pdl.pick_issuebelief(pop1[1],  pdl.getjtointeract(pop1[1],pop1))
+
+pdl.pick_issuebelief(pop1[1],  pdl.getjtointeract(pop1[1],pop1)) |> typeof
+
+belieftuple = pdl.pick_issuebelief(pop1[1],  pdl.getjtointeract(pop1[1],pop1))
+
+
+@code_warntype belieftuple |> x -> pdl.calculate_pstar(x[2], x[3], 0.9)
+
+@code_warntype pdl.calculate_pstar(belieftuple[2], belieftuple[3], 0.9)
+
+
+
+
+
+
 

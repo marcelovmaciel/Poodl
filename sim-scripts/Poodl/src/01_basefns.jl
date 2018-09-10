@@ -39,7 +39,6 @@ mutable struct Agent_o{T1 <: Integer, T2 <: Vector, T3 <: Real,
 end
 
 
-
 "Concrete type for an Agent which changes both opinion and uncertainty"
 mutable struct Agent_oσ{T1 <: Integer,T2 <: Vector,T3 <: Real,
                         T4 <: Vector, T5 <: NamedTuple} <: AbstractAgent
@@ -240,16 +239,16 @@ end
 
 adds the neighbors from nw to pop;
 """
-function add_neighbors!(population::Array{Agent_o, 1}, graphcreator)
-    neighsids = creategraphfrompop(population,
-                                   graphcreator).fadjlist
-    for (key, value) in enumerate(neighsids)
-        population[key].neighbors = value
-    end
-    nothing
-end
+#function add_neighbors!(population::Array{Agent_o, 1}, graphcreator)
+ #   neighsids = creategraphfrompop(population,
+  #                                 graphcreator).fadjlist
+   # for (key, value) in enumerate(neighsids)
+    #    population[key].neighbors = value
+    #end
+    #nothing
+#end
 
-function add_neighbors!(population::Array{Agent_oσ, 1}, graphcreator)
+function add_neighbors!(population, graphcreator)
     neighsids = creategraphfrompop(population,
                                    graphcreator).fadjlist
     for (key, value) in enumerate(neighsids)
@@ -260,7 +259,7 @@ end
 
 #= Interaction functions
 =#
-
+
 """
     getjtointeract(i::AbstractAgent,  population)
 Chooses and returns a neighbor for i
@@ -320,7 +319,7 @@ function calc_pos_uncertainty(i_belief::Belief, j_belief::Belief, p::AbstractFlo
                                  ((i_belief.o - j_belief.o)/2)^2)
     return(posterior_uncertainty)
 end
-
+
 """
     update_o!(i::AbstractAgent, which_issue::Integer, posterior_o::AbstractFloat)
 
