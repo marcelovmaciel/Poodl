@@ -38,7 +38,10 @@ ag2 = pdl.create_agent(pdl.Agent_oσ, 1, 1, 0.1, (α = 1.1, β = 1.2))
 
 @code_warntype pdl.createpop(pdl.Agent_o, 0.1, 1, 2)
 
-pop1 = pdl.createpop(pdl.Agent_o, 0.1, 5, 25) 
+pop1 = pdl.createpop(pdl.Agent_o, 0.1, 5, 25)
+
+
+
 
 
 typeof(pop1)
@@ -68,6 +71,8 @@ pdl.getjtointeract(pop1[1], )
 #this is important; it proves there is something wrong with my design; maybe have a population type??
 @code_warntype pdl.add_neighbors!(pop1, pdl.LG.CompleteGraph)
 
+pdl.add_neighbors!(pop1, pdl.LG.CompleteGraph)
+
 
 @inferred getindex(pop1,1) 
 
@@ -89,11 +94,17 @@ belieftuple = pdl.pick_issuebelief(pop1[1],  pdl.getjtointeract(pop1[1],pop1))
 
 @code_warntype belieftuple |> x -> pdl.calculate_pstar(x[2], x[3], 0.9)
 
-@code_warntype pdl.calculate_pstar(belieftuple[2], belieftuple[3], 0.9)
 
+@code_warntype pdl.pick_issuebelief(pop1[1], pop1[2], 1)
 
+b1,b2 = pdl.pick_issuebelief(pop1[1], pop1[2], 1)
 
+@code_warntype pdl.calculate_pstar(b1, b1, 0.9)
 
+@code_warntype pdl.updateibelief!(pop1[1], pop1, 0.9)
 
+@inferred pdl.updateibelief!(pop1[1], pop1, 0.9)
+
+@code_warntype pdl.ρ_update!(pop1[1], 0.01)
 
 

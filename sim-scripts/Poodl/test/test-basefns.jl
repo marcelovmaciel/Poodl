@@ -45,6 +45,9 @@ end
            length(pop1) )
     @test (typeof( pdl.creategraphfrompop(pop1, pdl.LG.CompleteGraph)) <:
            pdl.LG.AbstractGraph)
+
+    pdl.add_neighbors!(pop1,pdl.LG.CompleteGraph)
     @test pdl.getjtointeract(pop1[1],pop1) |> typeof <: pdl.Agent_o #gotta change this; it shouold be == to a more inferred concrete type
+    @inferred pdl.pick_issuebelief(pop1[1], pop1[2], 1)
 end
 

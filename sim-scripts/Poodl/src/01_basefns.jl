@@ -239,6 +239,15 @@ end
 
 adds the neighbors from nw to pop;
 """
+function add_neighbors!(population, graphcreator)
+    neighsids = creategraphfrompop(population,
+                                   graphcreator).fadjlist
+    for (key, value) in enumerate(neighsids)
+        population[key].neighbors = value
+    end
+    nothing
+end
+
 #function add_neighbors!(population::Array{Agent_o, 1}, graphcreator)
  #   neighsids = creategraphfrompop(population,
   #                                 graphcreator).fadjlist
@@ -248,14 +257,6 @@ adds the neighbors from nw to pop;
     #nothing
 #end
 
-function add_neighbors!(population, graphcreator)
-    neighsids = creategraphfrompop(population,
-                                   graphcreator).fadjlist
-    for (key, value) in enumerate(neighsids)
-        population[key].neighbors = value
-    end
-    nothing
-end
 
 #= Interaction functions
 =#
@@ -276,11 +277,10 @@ Takes two agents and returns a tuple with:
  * which issue they discuss
  * i and j beliefs
 """
-function pick_issuebelief(i::AbstractAgent, j::AbstractAgent)
-    whichissue= rand(1:length(i.ideo))
+function pick_issuebelief(i::AbstractAgent, j::AbstractAgent, whichissue::Int)
     i_belief = i.ideo[whichissue]
     j_belief = j.ideo[whichissue]
-    return(whichissue, i_belief, j_belief)
+    return(i_belief, j_belief)::Tuple{Belief{Float64, Int64},Belief{Float64,Int64}}
 end
 
 """
@@ -355,20 +355,19 @@ Main update fn; has two methods depending on the agent type
 
 """
 function updateibelief!(i::Agent_o, population, p::AbstractFloat )
-    
+    whichissue= rand(1:length(i.ideo))
     j = getjtointeract(i,population)
-    whichissue,ibelief,jbelief = pick_issuebelief(i,j)
+    ibelief,jbelief = pick_issuebelief(i,j,whichissue)
     pos_o = calc_posterior_o(ibelief,jbelief, p)
     update_o!(i,whichissue,pos_o)
     nothing
 end
 
 
-
 function updateibelief!(i::Agent_oσ, population,p::AbstractFloat )
-    
+    whichissue= rand(1:length(i.ideo))
     j = getjtointeract(i, population)
-    whichissue,ibelief,jbelief = pick_issuebelief(i,j)
+   ibelief,jbelief = pick_issuebelief(i,j)
     pos_o = calc_posterior_o(ibelief,jbelief, p)
     pos_σ = calc_pos_uncertainty(ibelief, jbelief, p)
     update_oσ!(i, whichissue,pos_o, pos_σ)
