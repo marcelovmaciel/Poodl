@@ -2,9 +2,8 @@
 
 #Those abstract types are for later refactoring
 abstract type  AbstractAgent end
-abstract type AbstractBelief end
-
-abstract type AgentAttribute end
+#abstract type AbstractBelief end
+#abstract type AgentAttribute end
 
 "Concrete type for Agents' beliefs; comprised of opinion, uncertainty and an id (whichissue)"
 mutable struct Belief{T1 <: Real, T2 <: Integer}
@@ -12,6 +11,7 @@ mutable struct Belief{T1 <: Real, T2 <: Integer}
     σ::T1
     whichissue::T2
 end
+
 
 """
     mutable struct Agent_o{T1 <: Integer, T2 <: Vector, T3 <: Real,
@@ -39,9 +39,8 @@ mutable struct Agent_o{T1 <: Integer, T2 <: Vector, T3 <: Real,
 end
 
 
-"Concrete type for an Agent which changes both opinion and uncertainty"
-mutable struct Agent_oσ{T1 <: Integer,T2 <: Vector,T3 <: Real,
-                        T4 <: Vector, T5 <: NamedTuple} <: AbstractAgent
+mutable struct Agent_oσ{T1 <: Integer, T2 <: Vector, T3 <: Real,
+                       T4 <: Vector, T5 <: NamedTuple} <: AbstractAgent
     id::T1
     ideo::T2
     idealpoint::T3
@@ -50,11 +49,36 @@ mutable struct Agent_oσ{T1 <: Integer,T2 <: Vector,T3 <: Real,
     certainparams::T5
 end
 
+"Belief(σ::T1, whichissue::T2,
+         paramtuple::T3) where {T1 <: Real, T2 <: Integer, T3 <: NamedTuple}"
+function Belief(σ::T1, whichissue::T2,
+         paramtuple::T3) where {T1 <: Real, T2 <: Integer, T3 <: NamedTuple}
+    #maybe this should be inside the constructor ?? think about that...
+    (0 < σ <= 1) || throw(DomainError(σ, "σ must be between 0 and 1"))
+    o = rand(Dist.Beta(paramtuple.α,paramtuple.β))
+    return(Belief(o, σ, whichissue))
+end
 
-#= "Constructors" for Beliefs, Agents and Graphs
-- All I need for the initial condition
-=#
-
+"Agent_oσ(n_issues::Tint, id::Tint, σ::Treal,
+           paramtuple::TNT) where {Tint <: Integer, Treal <: Real, TNT <: NamedTuple}"
+function Agent_oσ(n_issues::Tint, id::Tint, σ::Treal,
+           paramtuple::TNT) where {Tint <: Integer, Treal <: Real, TNT <: NamedTuple}
+    ideology = [Belief(σ, issue, paramtuple) for issue in 1:n_issues ]
+    idealpoint = calculatemeanopinion(ideology)
+    return(Agent_oσ(id,ideology, idealpoint,[0], [0], paramtuple))
+end
+
+"Agent_o(n_issues::Tint, id::Tint, σ::Treal,
+           paramtuple::TNT) where {Tint <: Integer, Treal <: Real, TNT <: NamedTuple}"
+function Agent_o(n_issues::Tint, id::Tint, σ::Treal,
+           paramtuple::TNT) where {Tint <: Integer, Treal <: Real, TNT <: NamedTuple}
+    ideology = [Belief(σ, issue, paramtuple) for issue in 1:n_issues ]
+    idealpoint = calculatemeanopinion(ideology)
+    return(Agent_o(id,ideology, idealpoint,[0], [0], paramtuple))
+end
+
+
+
 
 """
      createbetaparams(popsize::Integer)
@@ -68,19 +92,6 @@ function createbetaparams(popsize::Integer)
     betaparams = zip(αs,βs) |> x -> [(α = i[1], β = i[2]) for i in x]
 end
 
-
-#maybe o should be generated outside this function, and then given as input to it 
-"""
-    create_belief(σ::Real, issue::Integer, paramtuple::Tuple)
-
-Instantiates beliefs; note o is taken from a Beta while σ is global and an input
-"""
-function create_belief(σ::Real, issue::Integer, paramtuple::NamedTuple)
-    #maybe this should be inside the constructor ?? think about that...
-    (0 < σ <= 1) || throw(DomainError(σ, "σ must be between 0 and 1"))
-    o = rand(Dist.Beta(paramtuple.α,paramtuple.β))
-    belief = Belief(o, σ, issue)
-end
 
 #=
 this functions generalizes what i was previously doing with create_idealpoint.
@@ -104,23 +115,6 @@ calculatemeanopinion(ideology) = getpropertylist(ideology, :o) |> Stats.mean
 
 
 """
-    create_agent(agent_type, n_issues::Integer, id::Integer, σ::Real, paramtuple::Tuple)
-Instantiates  agents.
-"""
-function create_agent(agent_type::Type{Agent_o}, n_issues::Integer, id::Integer, σ::Real, paramtuple::NamedTuple)
-    ideology = [create_belief(σ, issue, paramtuple) for issue in 1:n_issues ]
-    idealpoint = calculatemeanopinion(ideology)
-    agent = Agent_o(id,ideology, idealpoint,[0], [0], paramtuple)
-end
-
-function create_agent(agent_type::Type{Agent_oσ}, n_issues::Integer, id::Integer, σ::Real, paramtuple::NamedTuple)
-
-    ideology = [create_belief(σ, issue, paramtuple) for issue in 1:n_issues ]
-    idealpoint = calculatemeanopinion(ideology)
-    agent = Agent_oσ(id,ideology, idealpoint,[0], [0], paramtuple)
-end
-
-"""
     createpop(agent_type::Type{Agent_o}, σ::Real,
     n_issues::Integer, size::Integer)::Vector{Agent_o}
 
@@ -131,7 +125,7 @@ function createpop(agent_type::Type{Agent_o},
     betaparams = createbetaparams(size)
     population = Array{Agent_o}(undef, size)
     for i in 1:size
-        population[i] = create_agent(agent_type, n_issues, i,σ, betaparams[i])
+        population[i] = Agent_o(n_issues, i,σ, betaparams[i])
     end
     return(population)
 end
@@ -147,7 +141,7 @@ function createpop(agent_type::Type{Agent_oσ}, σ::Real,
     betaparams = createbetaparams(size)
     population = Array{Agent_oσ}(undef, size)
     for i in 1:size
-        population[i] = create_agent(agent_type, n_issues, i,σ, betaparams[i])
+        population[i] = Agent_oσ(n_issues, i,σ, betaparams[i])
     end
     return(population)
 end

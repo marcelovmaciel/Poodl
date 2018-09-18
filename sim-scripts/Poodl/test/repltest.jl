@@ -1,3 +1,7 @@
+using Pkg
+Pkg.activate(pwd())
+
+
 using Revise
 using Poodl
 const  pdl  = Poodl
@@ -33,15 +37,15 @@ pdl.Agent_o <: pdl.AbstractAgent
 pdl.getpropertylist(ideology, :o)
 pdl.create_agent(pdl.Agent_o, 1, 1, 0.1, (α = 1.1, β = 1.2))
 
+
+pdl.Agent_oσ( 1, 1, 0.1, (α = 1.1, β = 1.2))
+
 ag2 = pdl.create_agent(pdl.Agent_oσ, 1, 1, 0.1, (α = 1.1, β = 1.2))
 
 
 @code_warntype pdl.createpop(pdl.Agent_o, 0.1, 1, 2)
 
 pop1 = pdl.createpop(pdl.Agent_o, 0.1, 5, 25)
-
-
-
 
 
 typeof(pop1)

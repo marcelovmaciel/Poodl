@@ -25,10 +25,10 @@ end
     pop1 = pdl.createpop(pdl.Agent_o, 0.1, 5, 25) 
     @test length(pdl.createbetaparams(5)) == 5
     @test_throws DomainError pdl.createbetaparams(0)
-    @test_throws DomainError pdl.create_belief(2, 1 , (α = 1.1, β = 1.2))
+    @test_throws DomainError pdl.Belief(2, 1 , (α = 1.1, β = 1.2))
     @test_throws MethodError pdl.create_agent(2, 1, 1, 0.1, (α = 1.1, β = 1.2))
     @test_throws ArgumentError pdl.getpropertylist([1,2,3], :o)
-    @test typeof([pdl.create_belief(0.1, 1, (α = 0.5, β = 0.6)) for issue in 1:5 ]  |> pdl.calculatemeanopinion) == Float64
+    @test typeof([pdl.Belief(0.1, 1, (α = 0.5, β = 0.6)) for issue in 1:5 ]  |> pdl.calculatemeanopinion) == Float64
     @inferred pdl.createpop(pdl.Agent_o, 0.1, 1, 5)
     @test eltype(pdl.createpop(pdl.Agent_o, 0.1, 1, 5)) == pdl.Agent_o
     @test_throws MethodError pdl.createpop(1, 0.1, 1, 5)
@@ -49,5 +49,6 @@ end
     pdl.add_neighbors!(pop1,pdl.LG.CompleteGraph)
     @test pdl.getjtointeract(pop1[1],pop1) |> typeof <: pdl.Agent_o #gotta change this; it shouold be == to a more inferred concrete type
     @inferred pdl.pick_issuebelief(pop1[1], pop1[2], 1)
+    @inferred pdl.updateibelief!(pop1[1], pop1, 0.9)
 end
 
