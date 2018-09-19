@@ -68,8 +68,6 @@ nw1 =  pdl.creategraphfrompop(pop1, pdl.LG.CompleteGraph)
  pdl.LG.AbstractGraph)
 
 
-pdl.getjtointeract(pop1[1], )
-
 
 
 #this is important; it proves there is something wrong with my design; maybe have a population type??
@@ -77,8 +75,6 @@ pdl.getjtointeract(pop1[1], )
 
 pdl.add_neighbors!(pop1, pdl.LG.CompleteGraph)
 
-
-@inferred getindex(pop1,1) 
 
 eltype(pop1) == typeof(getindex(pop1,1))
 eltype(pop1) >: typeof(getindex(pop1,1))

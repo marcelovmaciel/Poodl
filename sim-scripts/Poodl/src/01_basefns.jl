@@ -120,28 +120,13 @@ calculatemeanopinion(ideology) = getpropertylist(ideology, :o) |> Stats.mean
 
 Creates a  vector of agents of type Agent_o
 """
-function createpop(agent_type::Type{Agent_o},
+function createpop(agent_type,
             σ::Real,  n_issues::Integer, size::Integer)
     betaparams = createbetaparams(size)
-    population = Array{Agent_o}(undef, size)
+    fooAgent =  agent_type(n_issues, 1,σ, betaparams[1])
+    population = Array{typeof(fooAgent)}(undef, size)
     for i in 1:size
-        population[i] = Agent_o(n_issues, i,σ, betaparams[i])
-    end
-    return(population)
-end
-
-"
-    createpop(agent_type::Type{Agent_oσ}, σ::Real,
-     n_issues::Integer, size::Integer)::Vector{Agent_oσ}
-
-Creates a vector of agents of type Agent_oσ
-"
-function createpop(agent_type::Type{Agent_oσ}, σ::Real,
-            n_issues::Integer, size::Integer)::Vector{Agent_oσ}
-    betaparams = createbetaparams(size)
-    population = Array{Agent_oσ}(undef, size)
-    for i in 1:size
-        population[i] = Agent_oσ(n_issues, i,σ, betaparams[i])
+        population[i] = agent_type(n_issues, i,σ, betaparams[i])
     end
     return(population)
 end
