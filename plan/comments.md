@@ -12,8 +12,7 @@
       cada parametrização e fazer um histograma normalizado delas);
     * Na figura 15 fazer um __scaling__ de n x tempo ;
     
-    
--Comentários André (reunião):
+- Comentários André (reunião):
     * Fazer um caso em que os agentes olham a média, isso significa que modificamos o p*;
     * O outro artigo envolve um σ constante e um p expandindo;
     * Em algum dos artigos calcular a média do desvio padrão dos oᵢ (não lembro qual, peço desculpas por não ter anotado...)
