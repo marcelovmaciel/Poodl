@@ -1,14 +1,14 @@
 # Types needed for the simulation
 
 "Parameters for the simulation; makes the code cleaner"
-Param.@with_kw struct DyDeoParam{R<:Real}
+Param.@with_kw struct PoodlParam{R<:Real}
     n_issues::Int = 1
     size_nw::Int = 2
     p::R = 0.9
     σ::R = 0.1
     time::Int = 2
     ρ::R = 0.01
-    agent_type::String = "mutating o"
+    agent_type = Agent_o
     graphcreator = LG.CompleteGraph
     propintransigents::R = 0.1
     intranpositions::String = "random"
@@ -27,12 +27,19 @@ this fn is a helper for all other fns used in the simulation
 function create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator,
                 propintransigents; intranpositions = "random")
     pop = createpop(agent_type, σ, n_issues, size_nw)
-    g = creategraphfrompop(pop,graphcreator)
-    add_neighbors!(pop,g)
-    createintransigents!(pop, propintransigents, position = intranpositions)
+    add_neighbors!(pop,graphcreator)
+    turninto_intransigents!(pop, propintransigents, position = intranpositions)
     return(pop)
 end
 
+"self-describing... it takes a population and returns an array of ideal points"
+function pullidealpoints(pop)
+    idealpoints = Float64[]
+    for agent in pop
+        push!(idealpoints,agent.idealpoint)
+    end
+    return(idealpoints)
+end
 
 
 """
@@ -64,7 +71,6 @@ function create_initdf(pop)
 end
 
 
-
 """
     update_df!(pop,df,time)
 
@@ -77,22 +83,14 @@ function update_df!(pop,df,time)
     nothing
 end
 
-"self-describing... it takes a population and returns an array of ideal points"
-function pullidealpoints(pop)
-    idealpoints = Float64[]
-    for agent in pop
-        push!(idealpoints,agent.idealpoint)
-    end
-    return(idealpoints)
-end
 
 """
     outputfromsim(endpoints::Array)
-fn to turn extracted information into system measures; pressuposes an array with some system state (set of agents attributes)
+fn to turn extracted information into system measures; pressuposes an array with some system state (set of agents attributes); like the one returned by pullidealpoints
 """
 function outputfromsim(endpoints::Array)
-    stdpoints = std(endpoints)
-    num_points = endpoints |> countmap |> length
+    stdpoints = Stats.std(endpoints)
+    num_points = endpoints |> StatsBase.countmap |> length
     return(stdpoints,num_points)
 end
 
@@ -142,7 +140,7 @@ end
 
 
 "repetition of the sim for some parameters;"
-function one_run(pa::DyDeoParam)
+function one_run(pa::PoodlParam)
     Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = pa
     pop = create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
     df = create_initdf(pop)
@@ -155,7 +153,7 @@ end
 this speeds up a lot the sim, but i can't keep track of the system state evolution;
 that is, I only save the end state
 """
-function simple_run(pa::DyDeoParam)
+function simple_run(pa::PoodlParam)
     Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = pa
     pop = create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
     runsim!(pop,p,σ,ρ,time)
@@ -164,11 +162,11 @@ end
 
 
 """
-    simstatesvec(pa::DyDeoParam)
+    simstatesvec(pa::PoodlParam)
 runs the simulation and keeps each iteration configuration (ideal points)
 
 """
-function simstatesvec(pa::DyDeoParam)
+function simstatesvec(pa::PoodlParam)
     Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = pa
     pop = create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
     statearray = createstatearray(pop, pa.time)
@@ -208,7 +206,7 @@ Then it runs the sim for each parametization and pushs system measures to anothe
 function sweep_sample(param_values; size_nw = 500, time = 250_000, agent_type = "mutating o")
     Y = []
 Meter.@showprogress 1 "Computing..." for i in 1:size(param_values)[1]
-    paramfromsaltelli = DyDeoParam(size_nw =  round(Int,param_values[i,1]),
+    paramfromsaltelli = PoodlParam(size_nw =  round(Int,param_values[i,1]),
                                     n_issues = round(Int,param_values[i,2]),
                                     p = param_values[i,3],
                                     σ = param_values[i,4],
@@ -234,7 +232,7 @@ function getsample_initcond(param_values; time = 250_000, agent_type = "mutating
     Y = Tuple{Float64,Int64}[]
 
     Meter.@showprogress 1 "Computing..." for i in 1:size(param_values)[1]
-        paramfromsaltelli = DyDeoParam(size_nw = convert(Int,param_values[i,1]),
+        paramfromsaltelli = PoodlParam(size_nw = convert(Int,param_values[i,1]),
                                        n_issues = convert(Int,param_values[i,2]),
                                        p = param_values[i,3],
                                        σ = param_values[i,4],
@@ -291,7 +289,7 @@ function multiruns(sigmanissues::Tuple; repetitions = 50)
     helper function to plot the box plots
 """
 function multiruns(sigmanissues::Tuple; repetitions = 100) 
-    pa = DyDeoParam(n_issues = sigmanissues[1],
+    pa = PoodlParam(n_issues = sigmanissues[1],
                        σ = sigmanissues[2],
                        size_nw = 500,
                        time = 1_000_000,

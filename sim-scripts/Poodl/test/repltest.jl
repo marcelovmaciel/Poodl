@@ -103,8 +103,50 @@ b1,b2 = pdl.pick_issuebelief(pop1[1], pop1[2], 1)
 
 @code_warntype pdl.updateibelief!(pop1[1], pop1, 0.9)
 
-@inferred pdl.updateibelief!(pop1[1], pop1, 0.9)
+
 
 @code_warntype pdl.ρ_update!(pop1[1], 0.01)
+
+eltype(pdl.createpop(pdl.Agent_o, 0.1, 1, 5))
+
+#-- test together ↓
+parasect  = pdl.PoodlParam()
+
+@doc pdl.create_initialcond
+
+parasect.graphcreator
+
+@code_warntype pdl.create_initialcond(parasect.agent_type,
+                                      parasect.σ,
+                                      parasect.n_issues,
+                                      parasect.size_nw,
+                                      parasect.graphcreator,
+                                      parasect.propintransigents)
+
+foopop = pdl.create_initialcond(parasect.agent_type,
+                       parasect.σ,
+                       parasect.n_issues,
+                       parasect.size_nw,
+                       parasect.graphcreator,
+                       parasect.propintransigents)
+@doc pdl.pullidealpoints
+
+@code_warntype pdl.pullidealpoints(foopop)
+
+@code_warntype pdl.createstatearray(foopop, 10)
+
+@code_warntype pdl.create_initdf(foopop)
+
+foodf = pdl.create_initdf(foopop)
+
+@code_warntype pdl.update_df!(foopop, foodf, 10)
+
+pdl.update_df!(foopop, foodf, 10)
+
+foodf
+
+foopop
+
+@code_warntype pdl.outputfromsim(pdl.pullidealpoints(foopop))
 
 
