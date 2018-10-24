@@ -8,7 +8,7 @@ Param.@with_kw struct PoodlParam{R<:Real}
     σ::R = 0.1
     time::Int = 2
     ρ::R = 0.01
-    agent_type = Agent_o
+    agent_type::UnionAll = Agent_o
     graphcreator = LG.CompleteGraph
     propintransigents::R = 0.1
     intranpositions::String = "random"
@@ -43,13 +43,23 @@ end
 
 
 """
+    outputfromsim(endpoints::Array)
+fn to turn extracted information into system measures; pressuposes an array with some system state (set of agents attributes); like the one returned by pullidealpoints
+"""
+function outputfromsim(endpoints::Array)
+    stdpoints = Stats.std(endpoints)
+    num_points = endpoints |> StatsBase.countmap |> length
+    return(stdpoints,num_points)
+end
+
+"""
     function createstatearray(pop,time)
 
 Creates an array with the agents' ideal points; it's an alternative to saving everything in a df
 
 """
 function createstatearray(pop,time)
-    statearray = Array{Array{Float64}}(time+1)'
+    statearray = Array{Array{Float64}}(undef,time+1)'
     statearray[1] = pullidealpoints(pop)
     return(statearray)
 end
@@ -80,19 +90,8 @@ function update_df!(pop,df,time)
     for agent in pop
         push!(df,[time  agent.id   agent.idealpoint ])
     end
-    nothing
 end
 
-
-"""
-    outputfromsim(endpoints::Array)
-fn to turn extracted information into system measures; pressuposes an array with some system state (set of agents attributes); like the one returned by pullidealpoints
-"""
-function outputfromsim(endpoints::Array)
-    stdpoints = Stats.std(endpoints)
-    num_points = endpoints |> StatsBase.countmap |> length
-    return(stdpoints,num_points)
-end
 
 
 #= Running Functions
@@ -120,7 +119,6 @@ function runsim!(pop,df::DF.DataFrame,p,σ,ρ,time)
         agents_update!(pop,p, σ, ρ)
         update_df!(pop,df,step)
     end 
-    nothing
 end
 
 """
@@ -133,7 +131,6 @@ function runsim!(pop,p,σ,ρ,time)
     for step in 1:time
         agents_update!(pop, p, σ, ρ)
     end
-    nothing
 end
 
 

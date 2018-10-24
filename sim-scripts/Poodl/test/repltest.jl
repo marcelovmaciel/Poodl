@@ -133,15 +133,18 @@ foopop = pdl.create_initialcond(parasect.agent_type,
 
 @code_warntype pdl.pullidealpoints(foopop)
 
-@code_warntype pdl.createstatearray(foopop, 10)
+@code_warntype pdl.createstatearray(foopop, parasect.time)
 
 @code_warntype pdl.create_initdf(foopop)
 
 foodf = pdl.create_initdf(foopop)
 
-@code_warntype pdl.update_df!(foopop, foodf, 10)
+@code_warntype pdl.update_df!(foopop, foodf, parasect.time)
 
-pdl.update_df!(foopop, foodf, 10)
+
+pdl.agents_update!(foopop, parasect.p, parasect.σ, parasect.ρ)
+
+pdl.update_df!(foopop, foodf, parasect.time)
 
 foodf
 
@@ -150,3 +153,23 @@ foopop
 @code_warntype pdl.outputfromsim(pdl.pullidealpoints(foopop))
 
 
+@code_warntype pdl.createstatearray(foopop, parasect.time)
+
+pdl.createstatearray(foopop,parasect.time)
+
+@code_warntype pdl.agents_update!(foopop, parasect.p, parasect.σ, parasect.ρ)
+
+
+@code_warntype pdl.runsim!(foopop,foodf,parasect.p, parasect.σ,
+                           parasect.ρ, parasect.time)
+
+
+@code_warntype pdl.one_run(parasect)
+
+pdl.Agent_o |> typeof
+
+typeof(pdl.LG.CompleteGraph) <: pdl.LG.SimpleGraphs.CompleteGraph
+
+@doc pdl.LG.SimpleGraphs.CompleteGraph
+
+typeof(typeof)
