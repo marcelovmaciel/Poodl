@@ -173,3 +173,17 @@ typeof(pdl.LG.CompleteGraph) <: pdl.LG.SimpleGraphs.CompleteGraph
 @doc pdl.LG.SimpleGraphs.CompleteGraph
 
 typeof(typeof)
+
+
+pdl.simple_run(parasect)
+
+pdl.simstatesvec(parasect)
+
+@code_warntype pdl.simstatesvec(parasect)
+
+@code_warntype pdl.statesmatrix(parasect)
+
+
+pdl.get_simpleinitcond(parasect)
+
+
