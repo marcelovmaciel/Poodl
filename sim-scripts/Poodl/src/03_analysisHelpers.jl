@@ -3,7 +3,19 @@
     sweep_sample(param_values; time = 250_000, agent_type = "mutating o")
 
 this fn pressuposes an array of param_values where each column is a param and each row is a parametization;
-Then it runs the sim for each parametization and pushs system measures to another array (the output array)
+Then it runs the sim for each parametization and pushs system measures to another array (the output array).
+
+Let's say we have a Dict such as :
+
+problem  = Dict("num_vars" => 5,
+             "names" => [ "n_issues", "p", "σ", "ρ", "p_intran"],
+             "bounds" => [[1, 10],
+                          [0.1, 0.99],
+                          [0.01, 0.5],
+                          [0.0, 0.1],
+                          [0.0, 0.3]])
+
+Then SAlib.sample.saltelli(problem, 5000) returns an 60_000x5 Array{Float64,2}. Those are the param_values that we use as input for this function; i should refactor this to use labelled arrays.
 """
 function sweep_sample(param_values; size_nw = 500, time = 250_000, agent_type = Agent_o)
     Y = []
