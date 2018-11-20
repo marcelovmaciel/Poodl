@@ -2,7 +2,7 @@ module Poodl
 
 import LightGraphs, MetaGraphs, Distributions, DataFrames
 import Parameters, ProgressMeter, JLD2, Random, Statistics, StatsBase
-using StatPlots
+using PyCall
 
 
 const Dist = Distributions

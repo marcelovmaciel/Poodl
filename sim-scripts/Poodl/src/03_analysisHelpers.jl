@@ -1,5 +1,32 @@
 
 """
+function boundsdict_toparamsdf(boundsdict;samplesize = 5_000)
+
+It receives a dictionary which will be used in saltelli.sample and returns a df
+with the params values
+
+The Dict ought to be of the kind:
+problem = Dict("num_vars" => 5,
+            "names" => [ "n_issues", "p", "σ", "ρ", "p_intran"],
+            "bounds" => [[1, 10],
+                         [0.1, 0.99],
+                         [0.01, 0.5],
+                         [0.0, 0.1],
+                         [0.0, 0.3]])
+"""
+function boundsdict_toparamsdf(boundsdict;samplesize = 5_000)
+    @pyimport SALib.sample.saltelli as saltelli
+    problem_array = saltelli.sample(boundsdict,samplesize)
+    foodf = DF.DataFrame()
+    for (index,value) in enumerate(boundsdict["names"])
+        setproperty!(foodf,Symbol(value),problem_array[:, index])
+    end
+    return(foodf)
+end
+
+
+
+"""
     sweep_sample(param_values; time = 250_000, agent_type = "mutating o")
 
 this fn pressuposes an array of param_values where each column is a param and each row is a parametization;
@@ -15,17 +42,17 @@ problem  = Dict("num_vars" => 5,
                           [0.0, 0.1],
                           [0.0, 0.3]])
 
-Then SAlib.sample.saltelli(problem, 5000) returns an 60_000x5 Array{Float64,2}. Those are the param_values that we use as input for this function; i should refactor this to use labelled arrays.
+Then SAlib.sample.saltelli(problem, 5000) returns an 60_000x5 Array{Float64,2}. Those are the param_values that we use as input for this function; i should refactor this to use dataframes.
 """
-function sweep_sample(param_values; size_nw = 500, time = 250_000, agent_type = Agent_o)
+function sweep_sample(paramsdf; size_nw = 500, time = 250_000, agent_type = Agent_o)
     Y = []
-Meter.@showprogress 1 "Computing..." for i in 1:size(param_values)[1]
-    paramfromsaltelli = PoodlParam(size_nw =  round(Int,param_values[i,1]),
-                                    n_issues = round(Int,param_values[i,2]),
-                                    p = param_values[i,3],
-                                    σ = param_values[i,4],
-                                    ρ = param_values[i,5],
-                                    propintransigents = param_values[i,6],
+Meter.@showprogress 1 "Computing..." for i in 1:size(paramsdf)[1]
+    paramfromsaltelli = PoodlParam(size_nw = size_nw,
+                                    n_issues = round(Int,paramsdf[i, :n_issues]),
+                                    p = paramsdf[i, :p],
+                                    σ = paramsdf[i,:σ],
+                                    ρ = paramsdf[i, :ρ],
+                                    propintransigents = paramsdf[i, :p_intran],
                                     time = time,
                                     agent_type = agent_type)
         out  =  simple_run(paramfromsaltelli) |> pullidealpoints |> outputfromsim
@@ -33,6 +60,7 @@ Meter.@showprogress 1 "Computing..." for i in 1:size(param_values)[1]
     end
     return(Y)
 end
+
 
 """
     function getsample_initcond(param_values; time = 250_000, agent_type = "mutating o")
