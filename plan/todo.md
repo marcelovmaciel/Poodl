@@ -1,5 +1,8 @@
 # Things to do
 
- *  ___Right now i gotta fix the constructors (for the belief, agent, and population)__
- * This will simplify some fns and lead to more idiomatic and type stable code
- * For an example of how to write constructors look at : https://github.com/JuliaGraphs/LightGraphs.jl/blob/c01aeda9f51c1f71aa24114302807437443f376c/src/SimpleGraphs/simpledigraph.jl#L3-L7 and https://docs.julialang.org/en/v1/manual/constructors/
+- Right now i gotta fix 03-analysisHelpers; rewrite some of the sim-analysis
+  scripts and then test the plots; while running the tests i should add the
+  modification andre asked for; i'll probably finish this modification before
+  the simulations finishs running, so i gotta start to write the paper with
+  andre too... after adding this code i must also create another repository for
+  the physics paper code.
