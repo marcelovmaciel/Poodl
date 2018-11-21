@@ -1,0 +1,93 @@
+\documentclass{article}
+%\documentclass[twocolumn,showpacs,showkeys,preprintnumbers,amsmath,amssymb]{revtex4}
+\usepackage[american]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+
+\begin{document}
+
+
+\title{Some title}
+
+%\vspace{1cm}
+
+\author{Marcelo Maciel \and Andr\'e C. R. Martins\\
+	%}
+	%\email{amartins@usp.br}
+	%\affiliation{%
+	NISC - EACH, Universidade de S\~ao Paulo\\
+	Av. Arlindo B\'etio, 1000, S\~ao Paulo, 03828-080, Brazil}
+
+%\author{Andr\'e C. R. Martins\\
+	%}
+ %\email{amartins@usp.br}
+ %\affiliation{%
+%NISC - EACH, Universidade de S\~ao Paulo\\
+%Av. Arlindo B\'etio, 1000, S\~ao Paulo, 03828-080, Brazil}
+ 
+
+\date{}
+
+
+\maketitle
+%\vspace{0.3cm}
+
+%\center{\Large\bf Segundo autor}
+%\center{\large\bf Afiliação}
+
+
+\begin{abstract}
+	
+	
+	%\keywords{}
+	%\pacs{}
+\end{abstract}
+
+
+\section{Introduction}
+
+Major opinions, including political ones, tend to be formed from how each person feels about a number of issues. For example, locating someone in a left versus right or liberal versus conservative axis requires inspecting the opinions of that person in not only one but a number of different issues.  % Incluir aqui a parte sobre teoria política, um parágrafo é suficiente, a princípio.
+
+In this paper, we will propose a opinion dynamics model \cite{castellanoetal07,galam12a,galametal82,galammoscovici91,sznajd00,deffuantetal00,martins08a} to explore the consequences of the existence of issues that can be interpreted as opinions over a one-dimensional axis. While it would make sense to consider different issues as having components in more than one single dimension \cite{vicenteetal08b}, looking at the problem as one-dimensional can be justified in several ways. We can certainly see this as a first approximation along the most relevant dimension. In this case, we are simply investigating the projection of higher-dimensional problems along a direction where variation seems especially important. And, from the point of view of applications, it is usual to find discussions to be simplified over a main disagreement. 
+
+That choice of using a one-dimensional representation for opinions means we must make use of continuous opinion models, such as the Bounded Confidence (BC) models \cite{deffuantetal00,hegselmannkrause02}. While discrete models \cite{galametal82,galammoscovici91,sznajd00} can be very useful at describing choices, they are not easiest way to represent strength of opinion. Discrete models also do not naturally provide a scale where we can compare opinions and decide which one is more to the right or more liberal.
+
+On the other hand, continuous models are not particularly well suited for problems involving discrete decisions. As we will not deal with those kinds of problems here, they are a natural choice. Indeed, continuous opinions models have been proposed for several different problems on how opinions spread on a society \cite{deffuantetal02a,weisbuchetal05}, from questions about the spread of extremism \cite{amblarddeffuant04,gargiulomazzoni08a,franksetal08a,alizadeh14a,Albi2016,Mai2017} to other issues such as how different networks \cite{Kurmyshev2011,Acemoglu2011,Das2014,Hu2017} or the uncertainty  of each agent \cite{deffuant06} might change how agents influence each other.
+
+Here, we will use a continuous opinion model created by Bayesian-like reasoning \cite{martins08c}, inspired by the Continuous Opinions and Discrete Actions (CODA) model \cite{martins08a,martins12b}. The model was shown previously \cite{martins08c} to provide the same qualitative results as BC models. While a little less simple, the Bayesian basis make for a more clear interpretation of the meaning of the variables as we extend the model and need to interpret the new results.
+
+
+% % % Explicar aqui em termos bem gerais o modelo
+
+We will also study a variation of our model where the function of trust $p^*$ will not be influenced by the distance between the opinions of the agent and the neighbor on the specific issue they are debating. Instead,  $p^*$ will be determined by the distance between the neighbor opinion and the average opinion of the agent. The idea here is to make the behavior of our agents closer to what experiments show about human reasoning. We have observed that our reasoning about political problems can be better described as ideologically motivated \cite{jostetal03a,taberlodge06a,Claassen2015a}. Indeed, our opinions tend to come in blocks even when the issues are logically independent \cite{jervis76a}. Our reasoning abilities seem to exist more to defend our main point of views \cite{mercier11a,merciersperber11a} and our cultural identity\cite{kahanetal11} than to find the best answer. In that context, evaluating other by how they differ from us as a whole, instead of in each issue, is a model variation worth exploring.
+ 
+
+
+
+
+
+
+\section{The Model}
+
+.
+
+
+\section{Conclusions}
+
+
+
+
+
+
+\section{Acknowledgement}
+The author would like to thank Funda\c{c}\~ao de Amparo \`a Pesquisa do Estado de S\~ao Paulo (FAPESP), for the support to this work, under grant %2008/00383-9.
+
+\bibliographystyle{unsrt}
+\bibliography{poodl-refs}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
