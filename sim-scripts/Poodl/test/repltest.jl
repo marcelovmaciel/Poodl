@@ -110,6 +110,9 @@ b1,b2 = pdl.pick_issuebelief(pop1[1], pop1[2], 1)
 eltype(pdl.createpop(pdl.Agent_o, 0.1, 1, 5))
 
 #-- test together ↓
+
+
+#Do some sanity checking here for the calculate_pstar alternative implementation
 parasect  = pdl.PoodlParam()
 
 @doc pdl.create_initialcond
@@ -126,9 +129,33 @@ parasect.graphcreator
 foopop = pdl.create_initialcond(parasect.agent_type,
                        parasect.σ,
                        parasect.n_issues,
-                       parasect.size_nw,
+                       parasect.size_nw * 5,
                        parasect.graphcreator,
-                       parasect.propintransigents)
+                                parasect.propintransigents)
+
+foopop[1] |> x -> fieldnames(typeof(x))
+
+foopop[1] |> x-> getfield(x, :idealpoint)
+
+foopop[1].idealpoint
+
+
+pdl.calculate_pstar(foopop[1],foopop[5],1, 0.7)
+
+foopop[1].idealpoint
+
+foopop[2].idealpoint
+
+p = 0.7
+i_belief,j_belief = pdl.pick_issuebelief(foopop[1], foopop[2], 1)
+
+num = p * (1 / (sqrt(2 * π ) * i_belief.σ ) )* exp(-((foopop[1].idealpoint - foopop[2].idealpoint)^2 / (2*i_belief.σ^2)))
+
+denom= num + (1 - p)
+alternative_pstar  = num / denom |> 
+
+
+
 @doc pdl.pullidealpoints
 
 @code_warntype pdl.pullidealpoints(foopop)

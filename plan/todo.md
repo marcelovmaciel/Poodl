@@ -6,3 +6,11 @@
   the simulations finishs running, so i gotta start to write the paper with
   andre too... after adding this code i must also create another repository for
   the physics paper code.
+  
+ - test calculate_pstar; write about the model !!!!! 
+ 
+ - then gotta implement functions that use this new pstar
+ 
+ - then run the tests
+ 
+ 

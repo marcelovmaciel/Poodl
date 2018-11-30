@@ -264,16 +264,30 @@ end
 
 """
     calculate_pstar(i_belief::Belief, j_belief::Belief, p::AbstractFloat)
-
+        main p_star
+    calculate_pstar(i::AbstractAgent, j::AbstractAgent,
+                    whichissue::Int, p::AbstractFloat)
+    alternative p_star
 helper for posterior opinion and uncertainty
 """
 function calculate_pstar(i_belief::Belief, j_belief::Belief, p::AbstractFloat)
-    numerator = p * (1 / (sqrt(2 * π ) * i_belief.σ ) )*
+    num = p * (1 / (sqrt(2 * π ) * i_belief.σ ) )*
     exp(-((i_belief.o - j_belief.o)^2 / (2*i_belief.σ^2)))
-    denominator = numerator + (1 - p)
-    pₚ  = numerator / denominator
-    return(pₚ)
+    denom = num + (1 - p)
+    main_pstar  = num / denom
+    return(main_pstar)
 end
+
+function calculate_pstar(i::AbstractAgent, j::AbstractAgent,
+                  whichissue::Int, p::AbstractFloat)
+    i_belief,j_belief = pick_issuebelief(i, j, whichissue)
+    num = p * (1 / (sqrt(2 * π ) * i_belief.σ ) )*
+    exp(-((i.idealpoint - j.idealpoint)^2 / (2*i_belief.σ^2)))
+    denom = num + (1 - p)
+    alternative_pstar  = num / denom
+    return(alternative_pstar)
+end
+
 
 """
     calc_posterior_o(i_belief::Belief, j_belief::Belief, p::AbstractFloat)
