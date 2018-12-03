@@ -157,10 +157,10 @@ x_i
 \frac{1}{n}
 \sum_{k=1}^{n}
 o_{k}
-\)
+\).
 }
 
-\textcolor{blue!60}{  
+\textcolor{blue!60}{
 The initial \(o_i\)s for each issue are sampled from Beta\((\alpha, \beta)\)
 distributions where each agent is associated with its own pair
 \( (
@@ -171,15 +171,76 @@ distributions where each agent is associated with its own pair
 )
 \)
 .
-The reason for this is that if we sample the \(o\)s from an uniform distribution
+The reason for this is that if we sample the \(o\)s from an Uniform distribution
 as we increase the number of issues (\(n\)) the closer to the center of the
 dimension the agents' ideological position (\(x\)) would be.
 \todo[color=yellow!40]{maybe refactor this sentence?} Using a Beta distribution
 prevents this, lets the initial \(o\)s of each agent to be correlated, since
 they're drawn from the agent's own Beta, and lets us have an initial population
 of agents with ideological positions distributed along the dimension, instead of
-clustered around the center. }
+clustered around the center.
+}
 
+\textcolor{blue!60}{
+  For its part, \(\sigma\) is a global variable, that is, a
+  parameter of the model. A certain proportion of the agents will have an unique
+  \(\sigma_{i,k} = 1e-20\), so that we can control for the impact of
+  \textit{intransigent} agents on the model dynamics \cite{deffuant2002can}. How
+  many agents are intransigent is also a parameter (coded as
+  \(
+  0.0
+  \leq
+  \textit{p$\_$intran}
+  \leq
+  0.1
+  \)
+  ), and such \(\sigma\) is established at the initial
+  condition by sampling the issue index from the \(I_i\)'s length.}
+
+\textcolor{blue!60}{ An iteration of the simulation is the application of two
+  procedures: the opinion update through social influence and a random opinion
+  update (noise). In the social influence procedure we draw a single agent \(i\)
+  from the population. We then draw another agent \(j\) from the population. We
+  then draw one of the issues \(k \in (1 , \ldots, n)\) so that we have the
+  corresponding pairs (\(o_{i,k}, o_{j,k}\)) and (\(\sigma_{i,k},
+  \sigma_{j,k}\)). The agent \(i\) then updates its opinion (\(o_{i,k}\))
+  following the equation
+  \[
+    o_{i,k}(t+1) =
+    p^{*}
+    \frac{o_{i,k}(t) + o_{j,k}(t) }{2}
+    +
+    (1 - p^{*})
+    o_{i,k}(t).
+  \]
+  Wherein 
+  \[
+   p^{*}
+    =
+  \frac{
+      p \frac{1}{\sqrt{2 \pi} \sigma_i}
+      e^{- (\frac{ ( o_i (t) - o_j (t))^2}{2 \sigma_i^2})}
+    }{
+      p
+      \frac{1}{\sqrt{2 \pi} \sigma_i}
+    e^{- (\frac{ ( o_i (t) - o_j (t))^2}{2 \sigma_i^2})}
+    +
+    (1 - p)
+  }.
+\] In which \(p\) is a global parameter used to model the likelihood of the
+other agent's (\(j\)) opinion being true \cite{martins12b}. Furthermore, we have
+the noise, in which we draw another agent \(i\) whose opinion \( o_{i,k}(t+1)\)
+is equal to \(o_{i,k}(t) + r\) where \(r\) is taken from a Normal distribution
+of mean 0 and standard deviation \(\rho\). \(\rho\) is then a global parameter
+of the simulation. From a theoretical point of view the noise is justified as a
+way of accounting for the effect of factors not related to social influence that
+make the agents change their opinion about issues \cite{flache2017}. A further
+methodological justification is that small perturbations in the local behavior
+of agents may lead to drastic changes in systemic properties
+\cite{macy2015signal}. If an agent \(i\) is intransigent in an issue \(k\) it
+won't randomly change its \(o_{i,k}\) opinion if its chosen by the noise
+algorithm.
+}
 
 \section{Conclusions}
 
