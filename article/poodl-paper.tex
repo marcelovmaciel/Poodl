@@ -3,6 +3,10 @@
 \usepackage[american]{babel}
 \usepackage[latin1]{inputenc}
 \usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[colorinlistoftodos]{todonotes}
+
+
 
 \begin{document}
 
@@ -46,20 +50,80 @@
 
 \section{Introduction}
 
-Major opinions, including political ones, tend to be formed from how each person feels about a number of issues. For example, locating someone in a left versus right or liberal versus conservative axis requires inspecting the opinions of that person in not only one but a number of different issues.  % Incluir aqui a parte sobre teoria política, um parágrafo é suficiente, a princípio.
+ % Incluir aqui a parte sobre teoria política, um parágrafo é suficiente, a princípio.
 
-In this paper, we will propose a opinion dynamics model \cite{castellanoetal07,galam12a,galametal82,galammoscovici91,sznajd00,deffuantetal00,martins08a} to explore the consequences of the existence of issues that can be interpreted as opinions over a one-dimensional axis. While it would make sense to consider different issues as having components in more than one single dimension \cite{vicenteetal08b}, looking at the problem as one-dimensional can be justified in several ways. We can certainly see this as a first approximation along the most relevant dimension. In this case, we are simply investigating the projection of higher-dimensional problems along a direction where variation seems especially important. And, from the point of view of applications, it is usual to find discussions to be simplified over a main disagreement. 
+In this paper, we will propose a opinion dynamics model
+\cite{castellanoetal07,galam12a,galametal82,galammoscovici91,sznajd00,deffuantetal00,martins08a}
+to explore the consequences of the existence of issues that can be interpreted
+as opinions over a one-dimensional axis. \textcolor{blue}{It's usual to think
+  about policy alternatives and agents' preferences spatially (geometrically),
+  that is, through a mapping from similarity to proximity
+  \cite{downs1957economic, laver2014measuring}. The model then captures the
+  daily notion of parties or policies being more ``to the left'' or ``right''
+  than others, that is, if they're similar then they're closer
+  \cite{van2005political, miller2015spatial}.} Major opinions, including
+political ones, tend to be formed from how each person feels about a number of
+issues. Locating someone in a left versus right or liberal versus conservative
+axis, \textcolor{blue}{ therefore}, requires inspecting the opinions of that
+person in not only one but a number of different issues that constitute the
+ideological positioning \cite{benoit2006party}.
 
-That choice of using a one-dimensional representation for opinions means we must make use of continuous opinion models, such as the Bounded Confidence (BC) models \cite{deffuantetal00,hegselmannkrause02}. While discrete models \cite{galametal82,galammoscovici91,sznajd00} can be very useful at describing choices, they are not easiest way to represent strength of opinion. Discrete models also do not naturally provide a scale where we can compare opinions and decide which one is more to the right or more liberal.
+While it would make sense to consider different issues as having components in
+more than one single dimension \cite{vicenteetal08b}, looking at the problem as
+one-dimensional can be justified in several ways. We can certainly see this as a
+first approximation along the most relevant dimension. In this case, we are
+simply investigating the projection of higher-dimensional problems along a
+direction where variation seems especially important. And, from the point of
+view of applications, it is usual to find discussions to be simplified over a
+main disagreement. \textcolor{blue}{ Even though there are many variants of this
+  modeling strategy, for our work what matters is that this naturally leads to
+  the use of continuous opinion models} such as the Bounded Confidence (BC)
+models \cite{deffuantetal00,hegselmannkrause02}. While discrete models
+\cite{galametal82,galammoscovici91,sznajd00} can be very useful at describing
+choices, they are not easiest way to represent strength of opinion. Discrete
+models also do not naturally provide a scale where we can compare opinions and
+decide which one is more to the right or more liberal.
 
-On the other hand, continuous models are not particularly well suited for problems involving discrete decisions. As we will not deal with those kinds of problems here, they are a natural choice. Indeed, continuous opinions models have been proposed for several different problems on how opinions spread on a society \cite{deffuantetal02a,weisbuchetal05}, from questions about the spread of extremism \cite{amblarddeffuant04,gargiulomazzoni08a,franksetal08a,alizadeh14a,Albi2016,Mai2017} to other issues such as how different networks \cite{Kurmyshev2011,Acemoglu2011,Das2014,Hu2017} or the uncertainty  of each agent \cite{deffuant06} might change how agents influence each other.
+On the other hand, continuous models are not particularly well suited for
+problems involving discrete decisions. \textcolor{red}{As we will not deal with
+  those kinds of problems here, they are a natural choice.} \textcolor{blue}{
+  (\(\leftarrow\) i dont understand this sentence; prof, could u explain?? )}
+Indeed, continuous opinions models have been proposed for several different
+problems on how opinions spread on a society
+\cite{deffuantetal02a,weisbuchetal05}, from questions about the spread of
+extremism
+\cite{amblarddeffuant04,gargiulomazzoni08a,franksetal08a,alizadeh14a,Albi2016,Mai2017}
+to other issues such as how different networks
+\cite{Kurmyshev2011,Acemoglu2011,Das2014,Hu2017} or the uncertainty of each
+agent \cite{deffuant06} might change how agents influence each other.
 
-Here, we will use a continuous opinion model created by Bayesian-like reasoning \cite{martins08c}, inspired by the Continuous Opinions and Discrete Actions (CODA) model \cite{martins08a,martins12b}. The model was shown previously \cite{martins08c} to provide the same qualitative results as BC models. While a little less simple, the Bayesian basis make for a more clear interpretation of the meaning of the variables as we extend the model and need to interpret the new results.
+Here, we will use a continuous opinion model created by Bayesian-like reasoning
+\cite{martins08c}, inspired by the Continuous Opinions and Discrete Actions
+(CODA) model \cite{martins08a,martins12b}. The model was shown previously
+\cite{martins08c} to provide the same qualitative results as BC models. While a
+little less simple, the Bayesian basis make for a more clear interpretation of
+the meaning of the variables, as we extend the model and need to interpret the
+new results, \textcolor{blue}{and is consistent with a boundedly rational
+  variant interpretation of the spatial model of political decision making
+  \cite{humphreys2010spatial,ostrom1998behavioral}.}
 
 
 % % % Explicar aqui em termos bem gerais o modelo
 
-We will also study a variation of our model where the function of trust $p^*$ will not be influenced by the distance between the opinions of the agent and the neighbor on the specific issue they are debating. Instead,  $p^*$ will be determined by the distance between the neighbor opinion and the average opinion of the agent. The idea here is to make the behavior of our agents closer to what experiments show about human reasoning. We have observed that our reasoning about political problems can be better described as ideologically motivated \cite{jostetal03a,taberlodge06a,Claassen2015a}. Indeed, our opinions tend to come in blocks even when the issues are logically independent \cite{jervis76a}. Our reasoning abilities seem to exist more to defend our main point of views \cite{mercier11a,merciersperber11a} and our cultural identity\cite{kahanetal11} than to find the best answer. In that context, evaluating other by how they differ from us as a whole, instead of in each issue, is a model variation worth exploring.
+We will also study a variation of our model where the function of trust $p^*$
+will not be influenced by the distance between the opinions of the agent and the
+neighbor on the specific issue they are debating. Instead, $p^*$ will be
+determined by the distance between the neighbor opinion and the average opinion
+of the agent. The idea here is to make the behavior of our agents closer to what
+experiments show about human reasoning. We have observed that our reasoning
+about political problems can be better described as ideologically motivated
+\cite{jostetal03a,taberlodge06a,Claassen2015a}. Indeed, our opinions tend to
+come in blocks even when the issues are logically independent \cite{jervis76a}.
+Our reasoning abilities seem to exist more to defend our main point of views
+\cite{mercier11a,merciersperber11a} and our cultural identity \cite{kahanetal11}
+than to find the best answer. In that context, evaluating other by how they
+differ from us as a whole, instead of in each issue, is a model variation worth
+exploring.
  
 
 
@@ -69,7 +133,52 @@ We will also study a variation of our model where the function of trust $p^*$ wi
 
 \section{The Model}
 
+\textcolor{blue!60}{
+The model is an agent-based social simulation \cite{de2014agent}. At the initial
+condition of the simulation we have a population of \(N\) agents which have an
+ideological profile
+\(I_i
+=
+(
+(o_{i, 1}, \sigma),
+\ldots,
+(o_{i, n}, \sigma)
+)
+\)
+, where \( 1 \leq n \leq 10 \) is the number of issues, \( 0.0 < o < 1.0 \) is
+the opinion about the issue and \( 0.01 \leq \sigma \leq 0.5\) is a global
+variable which can be interpreted as the uncertainty about the issue
+\cite{martins12b}. Another attribute is the agent's ideological position at the
+dimension of interest, or ideal point \cite{armstrong2014analyzing}, which we
+treat as the arithmetic mean of its opinions in each issue
+\(
+x_i
+=
+\frac{1}{n}
+\sum_{k=1}^{n}
+o_{k}
+\)
+}
+
+\textcolor{blue!60}{  
+The initial \(o_i\)s for each issue are sampled from Beta\((\alpha, \beta)\)
+distributions where each agent is associated with its own pair
+\( (
+\alpha
+\in [1.1, 100],
+\beta
+\in [1.1, 100]
+)
+\)
 .
+The reason for this is that if we sample the \(o\)s from an uniform distribution
+as we increase the number of issues (\(n\)) the closer to the center of the
+dimension the agents' ideological position (\(x\)) would be.
+\todo[color=yellow!40]{maybe refactor this sentence?} Using a Beta distribution
+prevents this, lets the initial \(o\)s of each agent to be correlated, since
+they're drawn from the agent's own Beta, and lets us have an initial population
+of agents with ideological positions distributed along the dimension, instead of
+clustered around the center. }
 
 
 \section{Conclusions}
@@ -83,7 +192,7 @@ We will also study a variation of our model where the function of trust $p^*$ wi
 The author would like to thank Funda\c{c}\~ao de Amparo \`a Pesquisa do Estado de S\~ao Paulo (FAPESP), for the support to this work, under grant %2008/00383-9.
 
 \bibliographystyle{unsrt}
-\bibliography{poodl-refs}
+\bibliography{biblio}
 
 \end{document}
 
