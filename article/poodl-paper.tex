@@ -134,7 +134,7 @@ exploring.
 \section{The Model}
 
 \textcolor{blue!60}{
-The model is an agent-based social simulation \cite{de2014agent}. At the initial
+  The model is an agent-based social simulation \cite{de2014agent}. At the initial
 condition of the simulation we have a population of \(N\) agents which have an
 ideological profile
 \(I_i
@@ -200,10 +200,10 @@ clustered around the center.
 \textcolor{blue!60}{ An iteration of the simulation is the application of two
   procedures: the opinion update through social influence and a random opinion
   update (noise). In the social influence procedure we draw a single agent \(i\)
-  from the population. We then draw another agent \(j\) from the population. We
-  then draw one of the issues \(k \in (1 , \ldots, n)\) so that we have the
-  corresponding pairs (\(o_{i,k}, o_{j,k}\)) and (\(\sigma_{i,k},
-  \sigma_{j,k}\)). The agent \(i\) then updates its opinion (\(o_{i,k}\))
+  from the population. We then draw another agent \(j\) from the population.
+  Afterwards, we draw one of the issues \(k \in (1 , \ldots, n)\) so that we
+  have the corresponding pairs (\(o_{i,k}, o_{j,k}\)) and (\(\sigma_{i,k},
+  \sigma_{j,k}\)). Finally, the agent \(i\) updates its opinion (\(o_{i,k}\))
   following the equation
   \[
     o_{i,k}(t+1) =
@@ -213,6 +213,9 @@ clustered around the center.
     (1 - p^{*})
     o_{i,k}(t).
   \]
+}
+
+\textcolor{blue!60}{
   Wherein 
   \[
    p^{*}
@@ -227,20 +230,48 @@ clustered around the center.
     +
     (1 - p)
   }.
-\] In which \(p\) is a global parameter used to model the likelihood of the
-other agent's (\(j\)) opinion being true \cite{martins12b}. Furthermore, we have
-the noise, in which we draw another agent \(i\) whose opinion \( o_{i,k}(t+1)\)
-is equal to \(o_{i,k}(t) + r\) where \(r\) is taken from a Normal distribution
-of mean 0 and standard deviation \(\rho\). \(\rho\) is then a global parameter
-of the simulation. From a theoretical point of view the noise is justified as a
-way of accounting for the effect of factors not related to social influence that
-make the agents change their opinion about issues \cite{flache2017}. A further
+\]
+}
+
+\textcolor{blue!60}{
+In which \(p\) is a global parameter used to model the likelihood of the other
+agent's (\(j\)) opinion being true \cite{martins12b}. Furthermore, there is the
+noise: we draw another agent \(i\) whose opinion \( o_{i,k}(t+1)\) is equal to
+\(o_{i,k}(t) + r\) where \(r\) is taken from a Normal distribution of mean 0 and
+standard deviation \(\rho\). \(\rho\) is then a global parameter of the
+simulation. From a theoretical point of view the noise is justified as a way of
+accounting for the effect of factors not related to social influence that make
+the agents change their opinion about issues \cite{flache2017}. A further
 methodological justification is that small perturbations in the local behavior
 of agents may lead to drastic changes in systemic properties
 \cite{macy2015signal}. If an agent \(i\) is intransigent in an issue \(k\) it
 won't randomly change its \(o_{i,k}\) opinion if its chosen by the noise
-algorithm.
+algorithm. Moreover, if  \(o_{i,k}(t) + r > 1\) then \( o_{i,k}(t+1) = 1\).
+Likewise, if  \(o_{i,k}(t) + r < 0 \) then \( o_{i,k}(t+1) = 0\).
 }
+
+\textcolor{blue!60}{As mentioned, we also test an alternative \(p^{*}\) where
+  agents update their opinion according to the distance between  their mean
+  opinion \(x_i,x_j\) such that
+\[
+   p^{*}
+    =
+  \frac{
+      p \frac{1}{\sqrt{2 \pi} \sigma_i}
+      e^{- (\frac{ ( x_i (t) - x_j (t))^2}{2 \sigma_i^2})}
+    }{
+      p
+      \frac{1}{\sqrt{2 \pi} \sigma_i}
+    e^{- (\frac{ ( x_i (t) - x_j (t))^2}{2 \sigma_i^2})}
+    +
+    (1 - p)
+  }.
+  \]
+}
+
+\todo[inline,color = yellow!30]{Ver com andre essa questão do \(p^*\)
+  alternativo se é \( ( x_i (t) - x_j (t))^2 \) ou \( ( x_i(t) - o_{j,k}
+  (t))^2\)}
 
 \section{Conclusions}
 
