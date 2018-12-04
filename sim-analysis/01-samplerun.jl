@@ -1,11 +1,18 @@
 using Pkg
 
 Pkg.activate("../sim-scripts/Poodl")
-
-
 using Revise
 import Poodl
 const  pdl  = Poodl
+
+
+struct ParamSweep_inout{T1 <: Dict, T2<: Array}
+    description::String
+    indict::T1
+    paramcombdf::pdl.DF.DataFrame
+    outputArray::T2
+end
+
 
 
 pdl.mkdirs("data")
@@ -25,12 +32,21 @@ paramvalues5k_5params = pdl.boundsdict_toparamsdf(problem)
 #pdl.@save  "data/sample5k5params.jld2" paramvalues5k_5params
 
 
-Ysaltelli5params = pdl.sweep_sample(paramvalues5k_5params,
-                                time = 10)
+@time Ysaltelli5params = pdl.sweep_sample(paramvalues5k_5params,
+                                time = 1000);
 
 
 # @code_warntype pdl.sweep_sample(paramvalues5k_5params, time = 10)
                   
 # pdl.@save "data/saltelli5k5params.jld2" Ysaltelli5params
+
+ParamSweep5params = ParamSweep_inout("Five parameters and sample of 5k",
+                                     problem, paramvalues5k_5params, Ysaltelli5params)
+
+
+ParamSweep5params |> typeof |> fieldnames
+
+
+
 
 println("done")
