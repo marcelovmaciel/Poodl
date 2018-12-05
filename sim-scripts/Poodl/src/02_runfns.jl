@@ -52,6 +52,8 @@ function outputfromsim(endpoints::Array)
     return(stdpoints,num_points)
 end
 
+
+
 """
     function createstatearray(pop,time)
 
@@ -102,7 +104,7 @@ end
 
 this executes the main procedure of the model: one pair of agents interact and another updates randomly (noise).
 """
-function agents_update!(population,p, σ, ρ)
+function agents_update!(population,p, ρ)
     updateibelief!(rand(population),population,p)
     ρ_update!(rand(population), ρ)
     nothing
@@ -114,9 +116,9 @@ end
 this fn runs the main procedure iteratively while updating the df;
 
 """
-function runsim!(pop,df::DF.DataFrame,p,σ,ρ,time)
+function runsim!(pop,df::DF.DataFrame,p,ρ,time)
    for step in 1:time
-        agents_update!(pop,p, σ, ρ)
+        agents_update!(pop,p,  ρ)
         update_df!(pop,df,step)
     end 
 end
@@ -127,9 +129,9 @@ end
 runs the main procedure iteratively then returns the final population
 
 """
-function runsim!(pop,p,σ,ρ,time)
+function runsim!(pop,p,ρ,time)
     for step in 1:time
-        agents_update!(pop, p, σ, ρ)
+        agents_update!(pop, p, ρ)
     end
 end
 
@@ -153,7 +155,7 @@ that is, I only save the end state
 function simple_run(pa::PoodlParam)
     Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = pa
     pop = create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
-    runsim!(pop,p,σ,ρ,time)
+    runsim!(pop,p,ρ,time)
     return(pop)
 end
 
@@ -169,7 +171,7 @@ function simstatesvec(pa::PoodlParam)
     statearray = createstatearray(pop, pa.time)
 
     for step in 1:time
-        agents_update!(pop,p, σ, ρ)
+        agents_update!(pop,p, ρ)
         statearray[step+1] =  pop |> pullidealpoints
        end
     return(statearray)

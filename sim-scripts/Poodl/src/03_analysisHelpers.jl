@@ -45,22 +45,23 @@ problem  = Dict("num_vars" => 5,
 Then SAlib.sample.saltelli(problem, 5000) returns an 60_000x5 Array{Float64,2}. Those are the param_values that we use as input for this function; i should refactor this to use dataframes.
 """
 function sweep_sample(paramsdf; size_nw = 500, time = 250_000, agent_type = Agent_o)
-    Y = []
-Meter.@showprogress 1 "Computing..." for i in 1:size(paramsdf)[1]
-    paramfromsaltelli = PoodlParam(size_nw = size_nw,
-                                    n_issues = round(Int,paramsdf[i, :n_issues]),
-                                    p = paramsdf[i, :p],
-                                    σ = paramsdf[i,:σ],
-                                    ρ = paramsdf[i, :ρ],
-                                    propintransigents = paramsdf[i, :p_intran],
-                                    time = time,
-                                    agent_type = agent_type)
+    Y = Array{Tuple{Float64,Int64}}(undef, size(paramsdf[1]))
+    for i in 1:size(paramsdf)[1]
+        paramfromsaltelli = PoodlParam(size_nw = size_nw,
+                                       n_issues = round(Int,paramsdf[i, :n_issues]),
+                                       p = paramsdf[i, :p],
+                                       σ = paramsdf[i,:σ],
+                                       ρ = paramsdf[i, :ρ],
+                                       propintransigents = paramsdf[i, :p_intran],
+                                       time = time,
+                                       agent_type = agent_type)
         out  =  simple_run(paramfromsaltelli) |> pullidealpoints |> outputfromsim
-        push!(Y,out)
+        Y[i] = out
     end
     return(Y)
 end
 
+# Meter.@showprogress 1 "Computing..."
 
 """
     function getsample_initcond(param_values; time = 250_000, agent_type = "mutating o")
@@ -100,8 +101,6 @@ function extractys(Ypairs)
     end
     return(Ystd,Ynips)
 end
-
-
 
 
 function dist_initstds(param,repetition)
