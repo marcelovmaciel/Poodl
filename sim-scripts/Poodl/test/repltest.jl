@@ -1,5 +1,5 @@
 using Pkg
-Pkg.activate(pwd())
+Pkg.activate("../")
 
 
 using Revise
@@ -46,7 +46,7 @@ ag2 = pdl.create_agent(pdl.Agent_oσ, 1, 1, 0.1, (α = 1.1, β = 1.2))
 @code_warntype pdl.createpop(pdl.Agent_o, 0.1, 1, 2)
 
 pop1 = pdl.createpop(pdl.Agent_o, 0.1, 5, 25)
-
+pdl.add_neighbors!(pop1, pdl.LG.CompleteGraph)
 
 typeof(pop1)
 
@@ -99,13 +99,22 @@ belieftuple = pdl.pick_issuebelief(pop1[1],  pdl.getjtointeract(pop1[1],pop1))
 
 b1,b2 = pdl.pick_issuebelief(pop1[1], pop1[2], 1)
 
-@code_warntype pdl.calculate_pstar(b1, b1, 0.9)
+@code_warntype
 
-@code_warntype pdl.updateibelief!(pop1[1], pop1, 0.9)
+@time pdl.calculate_pstar(b1, b1, 0.9)
 
 
 
-@code_warntype pdl.ρ_update!(pop1[1], 0.01)
+
+pop1 = pdl.createpop(pdl.Agent_o, 0.1, 5, 25)
+@time pdl.add_neighbors!(pop1, pdl.LG.CompleteGraph)
+
+@time pdl.updateibelief!(pop1[1], pop1, 0.9)
+
+
+
+@time  pdl.ρ_update!(pop1[1], 0.01)
+
 
 eltype(pdl.createpop(pdl.Agent_o, 0.1, 1, 5))
 
@@ -214,3 +223,46 @@ pdl.simstatesvec(parasect)
 pdl.get_simpleinitcond(parasect)
 
 
+
+
+#Testing memory allocations
+
+pop1 = pdl.createpop(pdl.Agent_o, 0.1, 5, 25)
+@time pdl.add_neighbors!(pop1, pdl.LG.CompleteGraph)
+
+@time pdl.updateibelief!(pop1[1], pop1, 0.9)
+
+@time  pdl.ρ_update!(pop1[1], 0.01)
+
+@time pdl.agents_update!(pop1, 0.9, 0.01)
+
+
+parasect  = pdl.PoodlParam()
+
+
+
+foopop = pdl.create_initialcond(parasect.agent_type,
+                       parasect.σ,
+                       parasect.n_issues,
+                       parasect.size_nw * 5,
+                       parasect.graphcreator,
+                                parasect.propintransigents)
+
+@time pdl.runsim!(foopop,parasect.p, parasect.ρ, parasect.time)
+
+# ↑↑↑↑↑↑↑↑ first run of this code leads to 422k allocations, the second to 14!!!
+
+@time pdl.simple_run(parasect)
+
+@time pdl.simple_run(parasect) |> pdl.pullidealpoints |> pdl.outputfromsim
+
+@code_warntype pdl.simple_run(parasect) 
+
+
+typeof(parasect)
+
+parasect
+
+pdl.Agent_o()
+
+outsim = pdl.simple_run(parasect)

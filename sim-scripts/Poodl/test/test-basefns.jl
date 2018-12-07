@@ -26,11 +26,10 @@ end
     @test length(pdl.createbetaparams(5)) == 5
     @test_throws DomainError pdl.createbetaparams(0)
     @test_throws DomainError pdl.Belief(2, 1 , (α = 1.1, β = 1.2))
-    @test_throws MethodError pdl.create_agent(2, 1, 1, 0.1, (α = 1.1, β = 1.2))
+    #test_throws MethodError pdl.create_agent(2, 1, 1, 0.1, (α = 1.1, β = 1.2))
     @test_throws ArgumentError pdl.getpropertylist([1,2,3], :o)
     @test typeof([pdl.Belief(0.1, 1, (α = 0.5, β = 0.6)) for issue in 1:5 ]  |> pdl.calculatemeanopinion) == Float64
     @inferred pdl.createpop(pdl.Agent_o, 0.1, 1, 5)
-    @test eltype(pdl.createpop(pdl.Agent_o, 0.1, 1, 5)) == pdl.Agent_o
     @test_throws MethodError pdl.createpop(1, 0.1, 1, 5)
     @test_throws ArgumentError pdl.pick_intranids(pop1, 0.6, position = "extremes")
     @test_throws ArgumentError pdl.pick_intranids(pop1, 0.2, position = "foo")

@@ -61,7 +61,44 @@ function sweep_sample(paramsdf; size_nw = 500, time = 250_000, agent_type = Agen
     return(Y)
 end
 
-# Meter.@showprogress 1 "Computing..."
+
+function poodlparamsvec(paramsdf; size_nw = 500, time = 250_000, agent_type = Agent_o)
+    Y = Array{PoodlParam{Float64}}(undef, size(paramsdf[1]))
+    for i in 1:size(paramsdf)[1]
+        paramfromsaltelli = PoodlParam(size_nw = size_nw,
+                                       n_issues = round(Int,paramsdf[i, :n_issues]),
+                                       p = paramsdf[i, :p],
+                                       σ = paramsdf[i,:σ],
+                                       ρ = paramsdf[i, :ρ],
+                                       propintransigents = paramsdf[i, :p_intran],
+                                       time = time,
+                                       agent_type = agent_type)
+        Y[i] = paramfromsaltelli
+    end
+    return(Y)
+end
+
+altsweep(paramsvec) = map(x -> (simple_run(x) |> pullidealpoints |> outputfromsim), paramsvec)
+
+
+function altsweep2(paramsvec;agent_type = Agent_o)
+    Y = Array{Array{typeof(agent_type())}}(undef, size(paramsvec)[1])
+    Meter.@showprogress 1 "Computing..."    for (index,value) in enumerate(paramsvec)
+        Y[index] = (value |> simple_run )
+    end
+    return(Y)
+end
+
+function paramvec_toinitialconds(paramsvec;agent_type = Agent_o)
+    Y = Array{Array{typeof(agent_type())}}(undef, size(paramsvec)[1])
+
+    Meter.@showprogress 1 "Computing..."    for (index,value) in enumerate(paramsvec)
+        Y[index] = (value |> create_initialcond )
+    end
+    return(Y)
+end
+
+
 
 """
     function getsample_initcond(param_values; time = 250_000, agent_type = "mutating o")

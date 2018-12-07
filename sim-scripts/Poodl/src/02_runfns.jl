@@ -32,6 +32,13 @@ function create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator,
     return(pop)
 end
 
+function create_initialcond(pa::PoodlParam)
+    Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = pa
+    create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
+end
+
+
+
 "self-describing... it takes a population and returns an array of ideal points"
 function pullidealpoints(pop)
     idealpoints = Float64[]

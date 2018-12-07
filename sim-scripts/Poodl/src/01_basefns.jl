@@ -68,6 +68,8 @@ function Agent_oσ(n_issues::Tint, id::Tint, σ::Treal,
     return(Agent_oσ(id,ideology, idealpoint,[0], [0], paramtuple))
 end
 
+
+
 "Agent_o(n_issues::Tint, id::Tint, σ::Treal,
            paramtuple::TNT) where {Tint <: Integer, Treal <: Real, TNT <: NamedTuple}"
 function Agent_o(n_issues::Tint, id::Tint, σ::Treal,
@@ -78,6 +80,8 @@ function Agent_o(n_issues::Tint, id::Tint, σ::Treal,
 end
 
 
+Agent_o() = Agent_o(1,1,0.1,(α = 1.1, β = 1.1))
+Agent_oσ() = Agent_oσ(1,1,0.1,(α = 1.1, β = 1.1))
 
 
 """
@@ -123,13 +127,13 @@ Creates a  vector of agents of type Agent_o
 function createpop(agent_type,
             σ::Real,  n_issues::Integer, size::Integer)
     betaparams = createbetaparams(size)
-    fooAgent =  agent_type(n_issues, 1,σ, betaparams[1])
-    population = Array{typeof(fooAgent)}(undef, size)
+    population = Array{typeof(agent_type())}(undef, size)
     for i in 1:size
         population[i] = agent_type(n_issues, i,σ, betaparams[i])
     end
     return(population)
 end
+
 
 """
     function pick_intranids(pop,propintransigents::AbstractFloat; position = "random")::Vector{Int}
