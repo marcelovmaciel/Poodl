@@ -19,7 +19,7 @@ function boundsdict_toparamsdf(boundsdict;samplesize = 5_000)
     problem_array = saltelli.sample(boundsdict,samplesize)
     foodf = DF.DataFrame()
     for (index,value) in enumerate(boundsdict["names"])
-        setproperty!(foodf,Symbol(value),problem_array[:, index])
+        setproperty!(foodf,Symbol(value), problem_array[:, index])
     end
     return(foodf)
 end
@@ -46,8 +46,8 @@ Then SAlib.sample.saltelli(problem, 5000) returns an 60_000x5 Array{Float64,2}. 
 """
 function sweep_sample(paramsdf; size_nw = 500, time = 250_000, agent_type = Agent_o)
     Y = Array{Tuple{Float64,Int64}}(undef, size(paramsdf[1]))
-    for i in 1:size(paramsdf)[1]
-        paramfromsaltelli = PoodlParam(size_nw = size_nw,
+    Meter.@showprogress 1 "Running the sims..."       for i in 1:size(paramsdf)[1]
+        paramfromsaltelli = PoodlParam(size_nw = round(Int, paramsdf[i, :size_nw]),
                                        n_issues = round(Int,paramsdf[i, :n_issues]),
                                        p = paramsdf[i, :p],
                                        σ = paramsdf[i,:σ],
@@ -62,10 +62,10 @@ function sweep_sample(paramsdf; size_nw = 500, time = 250_000, agent_type = Agen
 end
 
 
-function poodlparamsvec(paramsdf; size_nw = 500, time = 250_000, agent_type = Agent_o)
+function poodlparamsvec(paramsdf, time = 250_000, agent_type = Agent_o)
     Y = Array{PoodlParam{Float64}}(undef, size(paramsdf[1]))
-    for i in 1:size(paramsdf)[1]
-        paramfromsaltelli = PoodlParam(size_nw = size_nw,
+      Meter.@showprogress 1 "Computing the params..."     for i in 1:size(paramsdf)[1]
+        paramfromsaltelli = PoodlParam(size_nw =round(Int, paramsdf[i, :size_nw]),
                                        n_issues = round(Int,paramsdf[i, :n_issues]),
                                        p = paramsdf[i, :p],
                                        σ = paramsdf[i,:σ],
@@ -78,21 +78,10 @@ function poodlparamsvec(paramsdf; size_nw = 500, time = 250_000, agent_type = Ag
     return(Y)
 end
 
-altsweep(paramsvec) = map(x -> (simple_run(x) |> pullidealpoints |> outputfromsim), paramsvec)
-
-
-function altsweep2(paramsvec;agent_type = Agent_o)
-    Y = Array{Array{typeof(agent_type())}}(undef, size(paramsvec)[1])
-    Meter.@showprogress 1 "Computing..."    for (index,value) in enumerate(paramsvec)
-        Y[index] = (value |> simple_run )
-    end
-    return(Y)
-end
-
 function paramvec_toinitialconds(paramsvec;agent_type = Agent_o)
     Y = Array{Array{typeof(agent_type())}}(undef, size(paramsvec)[1])
 
-    Meter.@showprogress 1 "Computing..."    for (index,value) in enumerate(paramsvec)
+    Meter.@showprogress 1 "Computing initialconds..."    for (index,value) in enumerate(paramsvec)
         Y[index] = (value |> create_initialcond )
     end
     return(Y)
@@ -178,4 +167,20 @@ end
 
 function mkdirs(filename)
     !(filename in readdir(pwd())) ? mkdir(filename) : println("dir $(filename) exists... no need to create one ")
+end
+
+
+
+"""
+    ParamSweep_inout{T1 <: Dict, T2<: Array}
+    description::String
+    indict::T1
+    paramcombdf::DF.DataFrame
+    outputArray::T2
+"""
+struct ParamSweep_inout{T1 <: Dict, T2<: Array}
+    description::String
+    indict::T1
+    paramcombdf::DF.DataFrame
+    outputArray::T2
 end

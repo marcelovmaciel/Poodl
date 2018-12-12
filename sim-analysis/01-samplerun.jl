@@ -10,13 +10,6 @@ import Poodl
 const  pdl  = Poodl
 
 
-struct ParamSweep_inout{T1 <: Dict, T2<: Array}
-    description::String
-    indict::T1
-    paramcombdf::pdl.DF.DataFrame
-    outputArray::T2
-end
-
 
 pdl.mkdirs("data")
 
@@ -50,7 +43,7 @@ Ysaltelli6params = pdl.sweep_sample(paramvalues5k_6params,
                   
 # pdl.@save "data/saltelli5k5params.jld2" Ysaltelli5params
  
-ParamSweep6params = ParamSweep_inout("Six parameters and sample of 5k", problem,
+ParamSweep6params = pdl.ParamSweep_inout("Six parameters and sample of 5k", problem,
                                      paramvalues5k_6params, Ysaltelli6params)
 
 @save "data/ParamSweep6params.jld2" ParamSweep6params
