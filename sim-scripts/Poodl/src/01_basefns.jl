@@ -266,31 +266,25 @@ function pick_issuebelief(i::AbstractAgent, j::AbstractAgent, whichissue::Int)
     return(i_belief, j_belief)::Tuple{Belief{Float64, Int64},Belief{Float64,Int64}}
 end
 
-"""
-    calculate_pstar(i_belief::Belief, j_belief::Belief, p::AbstractFloat)
-        main p_star
-    calculate_pstar(i::AbstractAgent, j::AbstractAgent,
-                    whichissue::Int, p::AbstractFloat)
-    alternative p_star
-helper for posterior opinion and uncertainty
-"""
-function calculate_pstar(i_belief::Belief, j_belief::Belief, p::AbstractFloat)
-    num = p * (1 / (sqrt(2 * π ) * i_belief.σ ) )*
-    exp(-((i_belief.o - j_belief.o)^2 / (2*i_belief.σ^2)))
-    denom = num + (1 - p)
-    main_pstar  = num / denom
-    return(main_pstar)
-end
+changing_term★(i,j,i_belief,j_belief) = (-((i_belief.o - j_belief.o)^2 / (2*i_belief.σ^2)))
+changing_term★★(i,j,i_belief,j_belief) = (-((i.idealpoint - j.idealpoint)^2 / (2*i_belief.σ^2)))
+changing_term★★★(i,j,i_belief,j_belief) = (-((i.idealpoint - j_belief.o)^2 / (2*i_belief.σ^2)))
+
 
 function calculate_pstar(i::AbstractAgent, j::AbstractAgent,
-                  whichissue::Int, p::AbstractFloat)
+               whichissue::Int, p::AbstractFloat, termcalculator)
     i_belief,j_belief = pick_issuebelief(i, j, whichissue)
-    num = p * (1 / (sqrt(2 * π ) * i_belief.σ ) )*
-    exp(-((i.idealpoint - j.idealpoint)^2 / (2*i_belief.σ^2)))
+    cterm =  termcalculator(i,j,i_belief,j_belief) 
+    num = p * (1 / (sqrt(2 * π ) * i_belief.σ ) ) * exp(cterm)
     denom = num + (1 - p)
-    alternative_pstar  = num / denom
-    return(alternative_pstar)
+    pstar  = num / denom
+    return(pstar)
 end
+
+calculatep★(i, j, whichissue, p) = calculate_pstar(i, j, whichissue, p, changing_term★)
+calculatep★★(i, j, whichissue, p) = calculate_pstar(i, j, whichissue, p, changing_term★★)
+calculatep★★★(i, j, whichissue, p) = calculate_pstar(i, j, whichissue, p, changing_term★★★)
+
 
 
 """
