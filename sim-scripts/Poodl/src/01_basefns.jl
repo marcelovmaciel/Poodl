@@ -212,7 +212,7 @@ end
 
 Creates a graph; helper for add_neighbors!
 """
-function creategraphfrompop(population, graphcreator)
+function creategraphfrompop(population, graphcreator::Function)
     graphsize = length(population)
     nw = graphcreator(graphsize)
 end
@@ -222,7 +222,7 @@ end
 
 adds the neighbors from nw to pop;
 """
-function add_neighbors!(population, graphcreator)
+function add_neighbors!(population, graphcreator::Function)
     neighsids = creategraphfrompop(population,
                                    graphcreator).fadjlist
     for (key, value) in enumerate(neighsids)
@@ -230,16 +230,6 @@ function add_neighbors!(population, graphcreator)
     end
     nothing
 end
-
-#function add_neighbors!(population::Array{Agent_o, 1}, graphcreator)
- #   neighsids = creategraphfrompop(population,
-  #                                 graphcreator).fadjlist
-   # for (key, value) in enumerate(neighsids)
-    #    population[key].neighbors = value
-    #end
-    #nothing
-#end
-
 
 #= Interaction functions
 =#
@@ -270,9 +260,8 @@ changing_term★(i,j,i_belief,j_belief) = (-((i_belief.o - j_belief.o)^2 / (2*i_
 changing_term★★(i,j,i_belief,j_belief) = (-((i.idealpoint - j.idealpoint)^2 / (2*i_belief.σ^2)))
 changing_term★★★(i,j,i_belief,j_belief) = (-((i.idealpoint - j_belief.o)^2 / (2*i_belief.σ^2)))
 
-
 function calculate_pstar(i::AbstractAgent, j::AbstractAgent,
-               whichissue::Int, p::AbstractFloat, termcalculator)
+               whichissue::Int, p::AbstractFloat, termcalculator::Function)
     i_belief,j_belief = pick_issuebelief(i, j, whichissue)
     cterm =  termcalculator(i,j,i_belief,j_belief) 
     num = p * (1 / (sqrt(2 * π ) * i_belief.σ ) ) * exp(cterm)
@@ -293,23 +282,20 @@ calculatep★★★(i, j, whichissue, p) = calculate_pstar(i, j, whichissue, p, 
 Helper for update_step
 Input = beliefs in an issue and confidence paramater; Output = i new opinion
 """
-function calc_posterior_o(i_belief::Belief, j_belief::Belief, p::AbstractFloat)
-    pₚ = calculate_pstar(i_belief, j_belief, p)
-    posterior_opinion = pₚ * ((i_belief.o + j_belief.o) / 2) +
-        (1 - pₚ) * i_belief.o
-    return(posterior_opinion)
-end
-
+calc_posterior_o(i_belief::Belief, j_belief::Belief, p★::AbstractFloat) = (p★ *
+                                                         ((i_belief.o + j_belief.o) / 2) +
+                                                         (1 - p★) * i_belief.o )
 """
     calc_pos_uncertainty(i_belief::Belief, j_belief::Belief, p::AbstractFloat)
 helper for update_step
 """
-function calc_pos_uncertainty(i_belief::Belief, j_belief::Belief, p::AbstractFloat)
-    pₚ = calculate_pstar(i_belief, j_belief, p)
-    posterior_uncertainty = sqrt(i_belief.σ^2 * ( 1 - pₚ/2) + pₚ * (1 - pₚ) *
-                                 ((i_belief.o - j_belief.o)/2)^2)
-    return(posterior_uncertainty)
-end
+calc_pos_uncertainty(i_belief::Belief, j_belief::Belief,
+                     p★::AbstractFloat) = (sqrt(i_belief.σ^2 *
+                                                ( 1 - pₚ/2) +
+                                                pₚ *
+                                                (1 - pₚ) *
+                                                ((i_belief.o - j_belief.o)/2)^2))
+
 
 """
     update_o!(i::AbstractAgent, which_issue::Integer, posterior_o::AbstractFloat)
@@ -338,33 +324,34 @@ function update_oσ!(i::AbstractAgent,issue_belief::Integer,
     nothing
 end
 
-
 """
     updateibelief!(i::Agent_o, population, p::AbstractFloat )
 
 Main update fn; has two methods depending on the agent type
 
 """
-function updateibelief!(i::Agent_o, population, p::AbstractFloat )
+function updateibelief!(i::Agent_o, population,
+                 p::AbstractFloat, ★calculator::Function)
     whichissue= rand(1:length(i.ideo))
     j = getjtointeract(i,population)
     ibelief,jbelief = pick_issuebelief(i,j,whichissue)
-    pos_o = calc_posterior_o(ibelief,jbelief, p)
+    p★ = ★calculator(i, j, whichissue, p)
+    pos_o = calc_posterior_o(ibelief,jbelief, p★)
     update_o!(i,whichissue,pos_o)
     nothing
 end
 
-
-function updateibelief!(i::Agent_oσ, population,p::AbstractFloat )
+function updateibelief!(i::Agent_oσ, population,
+                 p::AbstractFloat, ★calculator::Function)
     whichissue= rand(1:length(i.ideo))
-    j = getjtointeract(i, population)
-   ibelief,jbelief = pick_issuebelief(i,j)
-    pos_o = calc_posterior_o(ibelief,jbelief, p)
-    pos_σ = calc_pos_uncertainty(ibelief, jbelief, p)
+    j = getjtointeract(i,population)
+    ibelief,jbelief = pick_issuebelief(i,j,whichissue)
+    p★ = ★calculator(i, j, whichissue, p)
+    pos_o = calc_posterior_o(ibelief,jbelief, p★)
+    pos_σ = calc_pos_uncertainty(ibelief, jbelief, p★)
     update_oσ!(i, whichissue,pos_o, pos_σ)
     nothing
 end
-
 
 """
     ρ_update!(i::AbstractAgent,  σ::AbstractFloat, ρ::AbstractFloat)

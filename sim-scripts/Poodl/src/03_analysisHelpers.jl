@@ -26,6 +26,7 @@ end
 
 
 
+
 """
     sweep_sample(param_values; time = 250_000, agent_type = "mutating o")
 
@@ -44,7 +45,7 @@ problem  = Dict("num_vars" => 5,
 
 Then SAlib.sample.saltelli(problem, 5000) returns an 60_000x5 Array{Float64,2}. Those are the param_values that we use as input for this function; i should refactor this to use dataframes.
 """
-function sweep_sample(paramsdf; size_nw = 500, time = 250_000, agent_type = Agent_o)
+function sweep_sample(paramsdf; size_nw = 500, time = 250_000, agent_type = Agent_o, p★calculator = calculatep★)
     Y = Array{Tuple{Float64,Int64}}(undef, size(paramsdf[1]))
     Meter.@showprogress 1 "Running the sims..."       for i in 1:size(paramsdf)[1]
         paramfromsaltelli = PoodlParam(size_nw = round(Int, paramsdf[i, :size_nw]),
@@ -54,7 +55,8 @@ function sweep_sample(paramsdf; size_nw = 500, time = 250_000, agent_type = Agen
                                        ρ = paramsdf[i, :ρ],
                                        propintransigents = paramsdf[i, :p_intran],
                                        time = time,
-                                       agent_type = agent_type)
+                                       agent_type = agent_type,
+                                       p★calculator = p★calculator)
         out  =  simple_run(paramfromsaltelli) |> pullidealpoints |> outputfromsim
         Y[i] = out
     end
@@ -62,7 +64,7 @@ function sweep_sample(paramsdf; size_nw = 500, time = 250_000, agent_type = Agen
 end
 
 
-function poodlparamsvec(paramsdf, time = 250_000, agent_type = Agent_o)
+function poodlparamsvec(paramsdf; time = 250_000, agent_type = Agent_o, p★calculator = calculatep★)
     Y = Array{PoodlParam{Float64}}(undef, size(paramsdf[1]))
       Meter.@showprogress 1 "Computing the params..."     for i in 1:size(paramsdf)[1]
         paramfromsaltelli = PoodlParam(size_nw =round(Int, paramsdf[i, :size_nw]),
@@ -72,11 +74,14 @@ function poodlparamsvec(paramsdf, time = 250_000, agent_type = Agent_o)
                                        ρ = paramsdf[i, :ρ],
                                        propintransigents = paramsdf[i, :p_intran],
                                        time = time,
-                                       agent_type = agent_type)
+                                       agent_type = agent_type,
+                                       p★calculator = p★calculator)
         Y[i] = paramfromsaltelli
     end
     return(Y)
 end
+
+
 
 function paramvec_toinitialconds(paramsvec;agent_type = Agent_o)
     Y = Array{Array{typeof(agent_type())}}(undef, size(paramsvec)[1])
@@ -128,6 +133,17 @@ function extractys(Ypairs)
     return(Ystd,Ynips)
 end
 
+"""
+    function sobolanalysis(problem, result)
+
+Run sobol.analyze on the code; only to make the analysis all julian
+"""
+function sobolanalysis(problem, result)
+    @pyimport SALib.analyze.sobol as sobol
+    return(sobol.analyze(problem, result))
+end
+
+
 
 function dist_initstds(param,repetition)
     stdsout = []
@@ -178,9 +194,10 @@ end
     paramcombdf::DF.DataFrame
     outputArray::T2
 """
-struct ParamSweep_inout{T1 <: Dict, T2<: Array}
+struct ParamSweep_inout{T1 <: Dict, T2<: Array, T3<:Array}
     description::String
     indict::T1
     paramcombdf::DF.DataFrame
     outputArray::T2
+    initcondmeasure::T3
 end

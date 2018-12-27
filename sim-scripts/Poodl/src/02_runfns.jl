@@ -9,11 +9,11 @@ Param.@with_kw struct PoodlParam{R<:Real}
     time::Int = 2
     ρ::R = 0.01
     agent_type = Agent_o
-    graphcreator = LG.CompleteGraph
+    graphcreator::Function = LG.CompleteGraph
     propintransigents::R = 0.1
     intranpositions::String = "random"
+    p★calculator::Function = calculatep★
 end
-
 
 
 ## Information Storing Fns
@@ -33,7 +33,7 @@ function create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator,
 end
 
 function create_initialcond(pa::PoodlParam)
-    Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = pa
+    Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions, p★calculator =pa
     create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
 end
 
@@ -111,8 +111,8 @@ end
 
 this executes the main procedure of the model: one pair of agents interact and another updates randomly (noise).
 """
-function agents_update!(population,p, ρ)
-    updateibelief!(rand(population),population,p)
+function agents_update!(population, p, ρ, p★calculator )
+    updateibelief!(rand(population),population,p, p★calculator)
     ρ_update!(rand(population), ρ)
     nothing
 end
@@ -123,9 +123,9 @@ end
 this fn runs the main procedure iteratively while updating the df;
 
 """
-function runsim!(pop,df::DF.DataFrame,p,ρ,time)
+function runsim!(pop,df::DF.DataFrame,p,ρ,time, p★calculator)
    for step in 1:time
-        agents_update!(pop,p,  ρ)
+        agents_update!(pop,p,  ρ, p★calculator)
         update_df!(pop,df,step)
     end 
 end
@@ -136,21 +136,20 @@ end
 runs the main procedure iteratively then returns the final population
 
 """
-function runsim!(pop,p,ρ,time)
+function runsim!(pop,p,ρ,time, p★calculator)
     for step in 1:time
-        agents_update!(pop, p, ρ)
+        agents_update!(pop, p, ρ, p★calculator)
     end
 end
 
 
 
-
 "repetition of the sim for some parameters;"
 function one_run(pa::PoodlParam)
-    Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = pa
+    Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions, p★calculator =pa
     pop = create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
     df = create_initdf(pop)
-    runsim!(pop,df,p,σ,ρ,time)
+    runsim!(pop,df,p,σ,ρ,time, p★calculator)
     return(df)
 end
     
@@ -160,9 +159,9 @@ this speeds up a lot the sim, but i can't keep track of the system state evoluti
 that is, I only save the end state
 """
 function simple_run(pa::PoodlParam)
-    Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = pa
+    Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions, p★calculator =pa
     pop = create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
-    runsim!(pop,p,ρ,time)
+    runsim!(pop,p,ρ,time, p★calculator)
     return(pop)
 end
 
@@ -173,12 +172,12 @@ runs the simulation and keeps each iteration configuration (ideal points)
 
 """
 function simstatesvec(pa::PoodlParam)
-    Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = pa
+    Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions, p★calculator =pa
     pop = create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
     statearray = createstatearray(pop, pa.time)
 
     for step in 1:time
-        agents_update!(pop,p, ρ)
+        agents_update!(pop,p, ρ, p★calculator)
         statearray[step+1] =  pop |> pullidealpoints
        end
     return(statearray)
@@ -205,7 +204,7 @@ end
 
 function get_simpleinitcond(param)
     Y = Tuple{Float64,Int64}[]
-    Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = param
+    Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions, p★calculator = param
     pop = create_initialcond(agent_type, σ, n_issues,
                              size_nw,graphcreator, propintransigents,
                              intranpositions = intranpositions)
@@ -216,6 +215,13 @@ function get_simpleinitcond(param)
 end
 
 
+function initcondstds(paramvect)
+    Y = Vector{Float64}(undef, length(paramvect))
+    Meter.@showprogress 1 "Computing  initcond stds ..." for (index,value) in enumerate(paramvect)
+        Y[index] = get_simpleinitcond(value)
+    end
+    return(Y)
+end
 
 
 
