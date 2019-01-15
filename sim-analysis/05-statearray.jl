@@ -1,80 +1,49 @@
-include("../simulation_scripts/DyDeo2/src/DyDeo2.jl")
-import DyDeo2
-const dd = DyDeo2
+using Pkg
+Pkg.activate("../sim-scripts/Poodl")
+
+using Revise
+import Poodl
+const  pdl  = Poodl
+
+
 using Plots
 using StatsBase
-inspectdr(legend = false)
-
+gr(legend = false)
+Plots.scalefontsizes(1.3)
 
 
-# pre-plots
 
-#finalplot = plot(figs[1], figs[2])
-
-fig = plot(show = false, xlabel = "iterações",
-           ylabel = "valores dos pontos ideais",
-           title = "n = 7 ; sigma = 0.14")
 
 #testar σ 0.02 0.04 0.06  e 0.1
 
-pa = dd.DyDeoParam(n_issues = 7, σ = 0.14,
-                   size_nw = 500,
-                   time = 500_000,
-                   p = 0.9,
-                   ρ = 0.05,
-                   propintransigents = 0.5,
-                   intranpositions = "random")
+pa = pdl.PoodlParam(n_issues = 1,
+                    σ = 0.14,
+                    size_nw = 500,
+                    time = 500_000,
+                    p = 0.9,
+                    ρ = 0.05,
+                    propintransigents = 0.0,
+                    intranpositions = "random")
 
-pa_to_states = dd.statesmatrix(pa)
+fig = plot(show = false, xlabel = "iterations",
+           ylabel = "mean opinion values",
+           title = "n = $(pa.n_issues) ; sigma = $(pa.σ)",
+           dpi = 200)
 
-#  pa_to_states[end,  :] |>  x -> round.(x,5) |> dd.outputfromsim
+pa_to_states = pdl.statesmatrix(pa)
+ 
 
 
-dd.@showprogress 1 "Plotting " for i in 1:pa.size_nw
+pdl.Meter.@showprogress 1 "Plotting " for i in 1:pa.size_nw
     plot!(fig, pa_to_states[:,i])
 end
 
-png("image/n7-rho005andintran")
+
+if pa.propintransigents > 0.0
+    png("img/n$(pa.n_issues)-rho$(pa.ρ)-$(pa.intranpositions)$(pa.propintransigents)intrans")
+else
+    png("img/n$(pa.n_issues)-rho$(pa.ρ)-$(pa.propintransigents)intrans")
+end
+
 println("done")
 
-#runs arrays
-# parametrizations_to_states = map(dd.statesmatrix,parametrizations)
-
-
-
-#=
-for i in zip(parametrizations,figs,parametrizations_to_states)
-dd.@showprogress 1 "Plotting " for j in 1:i[1].size_nw
-    plot!(i[2],i[3][:,j])
-    end
-end
-
-=#
-
-#=
-a[1,:] |> std
-
-a[pa.time,:]  |> std
-
-round.(a[pa.time,:], 6) |> countmap
-
-round.(a[1,:], 6) |> countmap
-
-a[pa.time,:] |> countmap
-=#
-
-
-#plots->pnn
-
-#=
-
-dd.@showprogress 1 "Plotting " for i in 1:pa.size_nw
-    plot!(fig,a[:,i])
-end
-
-
-#display(fig)
-#closeall()
-
-
-=#
