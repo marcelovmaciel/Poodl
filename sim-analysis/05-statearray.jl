@@ -15,7 +15,7 @@ Plots.scalefontsizes(1.3)
 
 using Base: product
 using Lazy: lazymap, @lazy
-using Base.Iterators: take
+
 
 #=
 
@@ -51,42 +51,57 @@ function poodlparamsgen()
 end
 
 
-emptyplots(paramslist) = lazymap(x -> plot(show = false, xlabel = "iterations",
-                                   ylabel = "mean opinion values",
-                                   title = "n = $(x.n_issues) ; sigma = $(x.σ)",
-                                   dpi = 200), paramslist)
+#emptyplots(paramslist) = lazymap(x -> plot(show = false, xlabel = "iterations",
+ #                                  ylabel = "mean opinion values",
+  #                                 title = "n = $(x.n_issues) ; sigma = $(x.σ)",
+   #                                dpi = 200), paramslist)
 
 
 params = poodlparamsgen()
 
-lesplots = emptyplots(params)
+collect(params) |> typeof
+
+
 pdl.statesmatrix(pdl.PoodlParam())
 
-function runandsaveplot(pa, fig)
+
+function runandsaveplot(pa)
     simresult = pdl.statesmatrix(pa)
+    fig = plot(show = false, xlabel = "iterations",
+                                   ylabel = "mean opinion values",
+                                   title = "n = $(pa.n_issues) ; sigma = $(pa.σ)",
+                                   dpi = 200)
+
+
     pdl.Meter.@showprogress 1 "Plotting " for i in 1:pa.size_nw
         plot!(fig, simresult[:,i])
     end
 
-if pa.propintransigents > 0.0
-        png("img/$(pa.p★calculator)n$(pa.n_issues)-rho$(pa.ρ)-$(pa.intranpositions)$(pa.propintransigents)intrans")
+    if pa.propintransigents == 0
+        png("img/$(pa.p★calculator)n$(pa.n_issues)-rho$(pa.ρ)-sigma$(pa.σ)-$(pa.propintransigents)intrans")
+        
     else
-        png("img/$(pa.p★calculator)n$(pa.n_issues)-rho$(pa.ρ)-$(pa.propintransigents)intrans")
+        png("img/$(pa.p★calculator)n$(pa.n_issues)-rho$(pa.ρ)-sigma$(pa.σ)-$(pa.intranpositions)$(pa.propintransigents)intrans")
+  
     end
+    fig = 0
+    simresult = 0      
 end
 
-foo = zip(params, lesplots) |> collect 
+
+#foo = zip(params, lesplots) |> collect 
 
 
-function sweepandplot(paramplot)
-    for (index,value) in enumerate(paramplot |> collect)
-        runandsave(value...)
+function sweepandplot(params)
+    for (index,value) in enumerate(params)
+        runandsaveplot(value)
         println("plot $(index) saved")
     end
 end
 
 
-sweepandplot(zip(params,lesplots))
+
+sweepandplot(params)
 
 
 
