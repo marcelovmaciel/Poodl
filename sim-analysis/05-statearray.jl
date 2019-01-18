@@ -7,15 +7,14 @@ const  pdl  = Poodl
 
 
 using Plots
-#using StatsBase
 gr(legend = false)
 Plots.scalefontsizes(1.3)
-
-
 
 using Base: product
 using Lazy: lazymap, @lazy
 
+
+
 
 #=
 
@@ -26,6 +25,7 @@ testar n_issues 1,5,10
 testar p★, p★★, p★★★
 
 =#
+
 
 # Array{Float}, Array{Int}, Array{Function} -> Array{pdl.Param}
 function poodlparamsgen()
@@ -51,20 +51,6 @@ function poodlparamsgen()
 end
 
 
-#emptyplots(paramslist) = lazymap(x -> plot(show = false, xlabel = "iterations",
- #                                  ylabel = "mean opinion values",
-  #                                 title = "n = $(x.n_issues) ; sigma = $(x.σ)",
-   #                                dpi = 200), paramslist)
-
-
-params = poodlparamsgen()
-
-collect(params) |> typeof
-
-
-pdl.statesmatrix(pdl.PoodlParam())
-
-
 function runandsaveplot(pa)
     simresult = pdl.statesmatrix(pa)
     fig = plot(show = false, xlabel = "iterations",
@@ -78,19 +64,15 @@ function runandsaveplot(pa)
     end
 
     if pa.propintransigents == 0
-        png("img/$(pa.p★calculator)n$(pa.n_issues)-rho$(pa.ρ)-sigma$(pa.σ)-$(pa.propintransigents)intrans")
+        png("img/statearray-stuff/$(pa.p★calculator)n$(pa.n_issues)-rho$(pa.ρ)-sigma$(pa.σ)-$(pa.propintransigents)intrans")
         
     else
-        png("img/$(pa.p★calculator)n$(pa.n_issues)-rho$(pa.ρ)-sigma$(pa.σ)-$(pa.intranpositions)$(pa.propintransigents)intrans")
+        png("img/statearray-stuff/$(pa.p★calculator)n$(pa.n_issues)-rho$(pa.ρ)-sigma$(pa.σ)-$(pa.intranpositions)$(pa.propintransigents)intrans")
   
     end
     fig = 0
     simresult = 0      
 end
-
-
-#foo = zip(params, lesplots) |> collect 
-
 
 function sweepandplot(params)
     for (index,value) in enumerate(params)
@@ -99,6 +81,11 @@ function sweepandplot(params)
     end
 end
 
+
+params = poodlparamsgen()
+
+
+pdl.statesmatrix(pdl.PoodlParam())
 
 
 sweepandplot(params)
