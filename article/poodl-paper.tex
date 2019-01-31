@@ -343,11 +343,11 @@ general tendency impinged by the update rules:
     \end{figure}
 
     \todo[inline,color = yellow!20]{the direction will be written} The plots
-    show that after it's bigger than 0.1 \(\sigma\) has the same impact on the
-    system. Therefore we restrict our following analysis to the \((0.0, 0.1 ] \)
-    range. The same can be inferred from \(n> 5\). And the effect of \(\rho\) is
-    the expected: the bigger the noise more dispersed is the final state of the
-    system.
+    show that \(\sigma\) has the same impact on the system whenever its bigger
+    than approximately 0.1 Therefore we restrict our following analysis to the
+    \((0.0, 0.1 ] \) range. The same can be inferred from \(n> 5\). And the
+    effect of \(\rho\) is the expected: the bigger the noise more dispersed is
+    the final state of the system.
 
     After a general investigation we turn to the analysis of specific
     parametizations. For that let's start by fixing the following parameters as
@@ -399,6 +399,59 @@ general tendency impinged by the update rules:
       \end{subfigure}
       \label{fig:tseries2}
     \end{figure}
+
+    The reason for that is : we're measuring the mean opinion values (\(x_i\))
+    and \(\rho\) changes a single \(o_i\) at each iteration which means that a
+    higher \(n\) implies a lesser impact of \(\rho\) on the mean opinion of the
+    agent, since she will have \(n-1\) other opinions stabilizing her mean
+    opinion at a point in the opinion spectrum. As \(\sigma\) is the parameter
+    that dominates the model update rule it interacts with \(n\), which enforces
+    \(\sigma\) effect whenever we test higher \(n\)s. This effect holds even
+    when we raise \(\rho\) together with \(n\). Let's use the same
+    parameterization as the last plot but with a new \(\rho\) such that \(\rho_2
+    = \sqrt{n} * \rho_1 = \sqrt{10} * 0.05\). The interaction between \(n\) and
+    \(\sigma\) still happens, with bigger \(n\) stabilizing the noise effect and
+    contributing to the centralizing effect of \(\sigma\), even though a bigger
+    \(\rho\) leads to a bigger spectrum ``walking''. (\textcolor{red}{refactor
+      this paragraph, specially this last sentence}).
+
+    \begin{figure}[H]
+      \centering
+      \caption{fuba}
+      \includegraphics[width=0.9\textwidth]{img/compare-ps/Poodlcalculatep***n5-rho01118033988749895-sigma01-00intrans.png}
+      \label{fig:tseries3}
+    \end{figure}
+
+
+    Heretofore we've tested parameterizations with noise, but what happens if we
+    lower it to a close to zero value, such as 1e-5? The first difference is
+    that the population mean opinion values converge to certain values. In
+    parameter combinations in which \(\sigma = 0.1\) the tendency is convergence
+    to values close to 0.5. An interesting distinction between the cases in this
+    parameterization is that \(p^{**}\) and \(p^{***}\) always converge to 0.5,
+    independently of the number of issues. Alternatively, in the \(p^{*}\) case
+    this happens when \(n=1\), but when we have \(n=5\) or \(10\) there are
+    other values of convergence, more as we increase \(n\), even though the
+    centralizing tendency remains
+    \begin{figure}[H]
+      \centering
+      \caption{foofoobarbar}
+      \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep*n5-rho10e-5-sigma01-00intrans.png}
+        % \caption{\textcolor{red}{'ill fix thix}}
+      \end{subfigure}
+      \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep*n10-rho10e-5-sigma01-00intrans.png}
+        % \caption{\(n\_issues = 1, \sigma = 0.02\) }
+      \end{subfigure}
+      \begin{subfigure}[b]{0.5\textwidth}
+        \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep***n5-rho1e-5-sigma01-00intrans.png}
+        % \caption{\(n\_issues = 7, \sigma = 0.1\)}
+      \end{subfigure}
+  \label{fig:tseries4}
+    \end{figure}
+
+    
 
     
   \section{Conclusions}
