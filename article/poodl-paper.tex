@@ -449,7 +449,7 @@ general tendency impinged by the update rules:
     \end{figure}
     In the parameterization in which \(\sigma\) is of intermediate value (for
     our range), such as \(0.02\) or \(0.04\), we observe another difference
-    between cfases: \(p^{*}\) has more convergence values than \(p^{**}\) and
+    between cases: \(p^{*}\) has more convergence values than \(p^{**}\) and
     \(p^{***}\). Figure \ref{fig:tseries5} illustrates this system behavior:
 
     \begin{figure}[H]
@@ -466,10 +466,12 @@ general tendency impinged by the update rules:
         500, p\_intran = 0.0 \)}      
   \label{fig:tseries5}
     \end{figure}
-     
-    \todo[inline, color=yellow!20]{Gotta explain the reason for that; and then
-      talk about the role of nissues again, slow down the convergence time. }
 
+    The reason for that lies in the \(\Delta\) of each case: in the \(p^{**}\)
+    and \(p^{***}\) cases the update rules make use of mean opinion values which
+    facilitates the opinion convergence. The \(p^{*}\) update rule works with
+    single issue opinions which opens the possibility that there is little
+    influence between agents given their ideological distance at the issue.
     
     Another impact of the number of issues, as shown in Figure
     \ref{fig:tseries6}, is that a higher \(n\) leads to a longer time for the
@@ -495,10 +497,13 @@ general tendency impinged by the update rules:
         % \caption{\(n\_issues = 1, \sigma = 0.02\) }
       \end{subfigure}
       \caption{Time series for the parameterization: \(\rho = 1e-5, N = 500,
-        p\_intran = 0.0 \.}
+        p\_intran = 0.0 \).}
   \label{fig:tseries6}
     \end{figure}
 
+
+    \todo[inline, color=yellow!30]{Should I talk about intransigents with
+      \(\sigma = 0.01\) ???}
   \section{Conclusions}
 
 
