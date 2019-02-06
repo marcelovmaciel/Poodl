@@ -58,17 +58,16 @@
 In this paper, we will propose a opinion dynamics model
 \cite{castellanoetal07,galam12a,galametal82,galammoscovici91,sznajd00,deffuantetal00,martins08a}
 to explore the consequences of the existence of issues that can be interpreted
-as opinions over an one-dimensional axis. It's usual to think
-  about policy alternatives and agents' preferences spatially (geometrically),
-  that is, through a mapping from similarity to proximity
-  \cite{downs1957economic, laver2014measuring}. The model then captures the
-  daily notion of parties or policies being more ``to the left'' or ``right''
-  than others, that is, if they're similar then they're closer
-  \cite{van2005political, miller2015spatial}. Major opinions, including
-political ones, tend to be formed from how each person feels about a number of
-issues. Locating someone in a left versus right or liberal versus conservative
-axis, \textcolor{blue}{ therefore}, requires inspecting the opinions of that
-person in not only one but a number of different issues that constitute the
+as opinions over an one-dimensional axis. It's usual to think about policy
+alternatives and agents' preferences spatially (geometrically), that is, through
+a mapping from similarity to proximity \cite{downs1957economic,
+  laver2014measuring}. The model then captures the daily notion of parties or
+policies being more ``to the left'' or ``right'' than others, that is, if
+they're similar then they're closer \cite{van2005political, miller2015spatial}.
+Major opinions, including political ones, tend to be formed from how each person
+feels about a number of issues. Locating someone in a left versus right or
+liberal versus conservative axis, therefore, requires inspecting the opinions of
+that person in not only one but a number of different issues that constitute the
 ideological positioning \cite{benoit2006party}.
 
 While it would make sense to consider different issues as having components in
@@ -156,24 +155,15 @@ o_{k}
 
 
 The initial \(o_i\)s for each issue are sampled from Beta\((\alpha, \beta)\)
-distributions where each agent is associated with its own pair
-\( (
-\alpha
-\in [1.1, 100],
-\beta
-\in [1.1, 100]
-)
-\)
-.
-The reason for this is that if we sample the \(o\)s from an Uniform distribution
-as we increase the number of issues (\(n\)) the closer to the center of the
-dimension the agents' ideological position (\(x\)) would be.
-\todo[color=yellow!40]{maybe refactor this sentence?} Using a Beta distribution
-prevents this, lets the initial \(o\)s of each agent to be correlated, since
-they're drawn from the agent's own Beta, and lets us have an initial population
-of agents with ideological positions distributed along the dimension, instead of
-clustered around the center.
-
+distributions where each agent is associated with its own pair \( ( \alpha \in
+[1.1, 100], \beta \in [1.1, 100] ) \) . The reason for this is that if we sample
+the \(o\)s from an Uniform distribution as we increase the number of issues
+(\(n\)) the closer to the center of the dimension the agents' ideological
+position (\(x\)) would be. Using a Beta distribution prevents this, lets the
+initial \(o\)s of each agent to be correlated, since they're drawn from the
+agent's own Beta, and lets us have an initial population of agents with
+positions distributed along the ideological spectrum, instead of clustered
+around the center.
 
 For its part, \(\sigma\) is a global variable, that is, a parameter of the
 model. A certain proportion of the agents will have an unique \(\sigma_{i,k} =
@@ -238,7 +228,7 @@ the noise algorithm. Moreover, if \(o_{i,k}(t) + r > 1\) then \( o_{i,k}(t+1) =
 
   \section{Model Results}
 
-  \todo[inline,color=yellow!2]{i'm gonna create the structure and then polish}
+  
   To have a general understanding about the model behavior we first established
   the bounds of the parameters:
 
@@ -271,7 +261,7 @@ general tendency impinged by the update rules:
 
 \begin{figure}[H]
   \centering
-  \caption{foo}
+  
     \begin{subfigure}[b]{0.49\textwidth}
       \includegraphics[width=\textwidth]{img/initstd.png}
 %      \caption{\( n\_issues = 1,  \sigma = 0.1\) }
@@ -289,7 +279,8 @@ general tendency impinged by the update rules:
        \includegraphics[width=\textwidth]{img/Ystd***.png}
    %    \caption{\(n\_issues = 7, \sigma = 0.02\)}
      \end{subfigure}
-      \label{fig:hists}
+     \label{fig:hists}
+     \caption{System initial condition x final state}
     \end{figure}
 
     The general tendency of the model is one of biased assimilation
@@ -300,7 +291,7 @@ general tendency impinged by the update rules:
 
     \begin{figure}[H]
   \centering
-  \caption{bar}
+  
     \begin{subfigure}[b]{0.45\textwidth}
       \includegraphics[width=\textwidth]{img/sobolpstar1.png}
 %      \caption{\( n\_issues = 1,  \sigma = 0.1\) }
@@ -313,6 +304,7 @@ general tendency impinged by the update rules:
        \includegraphics[width=\textwidth]{img/sobolpstar3.png}
   %     \caption{\(n\_issues = 7, \sigma = 0.1\)}
      \end{subfigure}
+     \caption{Sobol Indexes for the three cases (\(p^{*}, p^{**}, p^{***}\))}
       \label{fig:sobolstuff}
     \end{figure}
 
@@ -326,10 +318,9 @@ general tendency impinged by the update rules:
 
         \begin{figure}[H]
   \centering
-  \caption{foobar}
+  
     \begin{subfigure}[b]{0.45\textwidth}
-      \includegraphics[width=\textwidth]{img/regressionYstd*n_issues.png}
-      \caption{\textcolor{red}{'ill fix thix}}
+      \includegraphics[width=\textwidth]{img/regressionYstd*n.png}
     \end{subfigure}
     \begin{subfigure}[b]{0.45\textwidth}
       \includegraphics[width=\textwidth]{img/regressionYstd*rho.png}
@@ -339,15 +330,19 @@ general tendency impinged by the update rules:
        \includegraphics[width=\textwidth]{img/regressionYstd*sigma.png}
   %     \caption{\(n\_issues = 7, \sigma = 0.1\)}
      \end{subfigure}
+     \caption{Scatterplots for the parameters with highest impact}
       \label{fig:scatters}
     \end{figure}
 
-    \todo[inline,color = yellow!20]{the direction will be written} The plots
-    show that \(\sigma\) has the same impact on the system whenever its bigger
-    than approximately 0.1 Therefore we restrict our following analysis to the
-    \((0.0, 0.1 ] \) range. The same can be inferred from \(n> 5\). And the
-    effect of \(\rho\) is the expected: the bigger the noise more dispersed is
-    the final state of the system.
+    The negative impact of \(\sigma\) in the population' opinion dispersion is
+    to be expected given the update rule: a higher \(\sigma\) means that agents
+    are easier to influence and as they're connected to all the others the more
+    uncertain they the more centralized the agents' mean opinions after they
+    interact with their neighbors. The plots also show that \(\sigma\) has the
+    same impact on the system whenever its bigger than approximately
+    0.1.Therefore we restrict our following analysis to the \((0.0, 0.1 ] \)
+    range. The effect of \(\rho\) is also expected: the bigger the noise more
+    dispersed is the final state of the system.
 
     After a general investigation we turn to the analysis of specific
     parametizations. For that let's start by fixing the following parameters as
@@ -363,7 +358,6 @@ general tendency impinged by the update rules:
 
         \begin{figure}[H]
   \centering
-  \caption{foobarbar}
     \begin{subfigure}[b]{0.45\textwidth}
       \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep***n1-rho005-sigma002-00intrans.png}
       %\caption{\textcolor{red}{'ill fix thix}}
@@ -376,6 +370,8 @@ general tendency impinged by the update rules:
        \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep***n1-rho005-sigma01-00intrans.png}
   %     \caption{\(n\_issues = 7, \sigma = 0.1\)}
      \end{subfigure}
+     \caption{Time series for the parameterization: \(\rho = 0.05, N = 500,
+       p\_intran = 0.0, n  = 1 \)}
       \label{fig:tseries1}
     \end{figure}
 
@@ -384,7 +380,6 @@ general tendency impinged by the update rules:
 
     \begin{figure}[H]
       \centering
-      \caption{foofoobarbar}
       \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep***n5-rho005-sigma002-00intrans.png}
         % \caption{\textcolor{red}{'ill fix thix}}
@@ -398,6 +393,8 @@ general tendency impinged by the update rules:
         % \caption{\(n\_issues = 7, \sigma = 0.1\)}
       \end{subfigure}
       \label{fig:tseries2}
+      \caption{Time series for the parameterization: \(\rho = 0.05, N = 500,
+       p\_intran = 0.0\)}
     \end{figure}
 
     The reason for that is : we're measuring the mean opinion values (\(x_i\))
@@ -412,19 +409,18 @@ general tendency impinged by the update rules:
     = \sqrt{n} * \rho_1 = \sqrt{10} * 0.05\). The interaction between \(n\) and
     \(\sigma\) still happens, with bigger \(n\) stabilizing the noise effect and
     contributing to the centralizing effect of \(\sigma\), even though a bigger
-    \(\rho\) leads to a bigger spectrum ``walking''. (\textcolor{red}{refactor
-      this paragraph}).
+    \(\rho\) leads to more noise around the mean. 
 
     \begin{figure}[H]
       \centering
-      \caption{fuba}
       \includegraphics[width=0.9\textwidth]{img/compare-ps/Poodlcalculatep***n5-rho01118033988749895-sigma01-00intrans.png}
+      \caption{Time series for the parameterization: \(\rho \approx 0.12, N =
+        500, p\_intran = 0.0 \)}
       \label{fig:tseries3}
     \end{figure}
 
-
     Heretofore we've tested parameterizations with noise, but what happens if we
-    lower it to a close to zero value, such as 1e-5? The first difference is
+    lower \(\rho\) to a value close to zero, such as 1e-5? The first difference is
     that the population mean opinion values converge to certain values. In
     parameter combinations in which \(\sigma = 0.1\) the tendency is convergence
     to values close to 0.5. An interesting distinction between the cases in this
@@ -432,10 +428,9 @@ general tendency impinged by the update rules:
     independently of the number of issues. Alternatively, in the \(p^{*}\) case
     this happens when \(n=1\), but when we have \(n=5\) or \(10\) there are
     other values of convergence, more as we increase \(n\), even though the
-    centralizing tendency remains
+    centralizing tendency remains.
     \begin{figure}[H]
       \centering
-      \caption{foofoobarbar}
       \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep*n5-rho10e-5-sigma01-00intrans.png}
         % \caption{\textcolor{red}{'ill fix thix}}
@@ -448,17 +443,17 @@ general tendency impinged by the update rules:
         \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep***n5-rho1e-5-sigma01-00intrans.png}
         % \caption{\(n\_issues = 7, \sigma = 0.1\)}
       \end{subfigure}
-  \label{fig:tseries4}
+      \caption{Time series for the parameterization: \(\rho = 1e-5, N =
+        500, p\_intran = 0.0 \)}
+      \label{fig:tseries4}
     \end{figure}
     In the parameterization in which \(\sigma\) is of intermediate value (for
     our range), such as \(0.02\) or \(0.04\), we observe another difference
-    between cases: \(p^{*}\) has \textcolor{red}{more(?)} convergence values
-    than \(p^{**}\) and \(p^{***}\). Figure \ref{fig:tseries5}
-    \textcolor{red}{demonstrates (synonym?)} this system behavior:
+    between cfases: \(p^{*}\) has more convergence values than \(p^{**}\) and
+    \(p^{***}\). Figure \ref{fig:tseries5} illustrates this system behavior:
 
     \begin{figure}[H]
       \centering
-      \caption{anguanonimo}
       \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep*n5-rho10e-5-sigma002-00intrans.png}
         % \caption{\textcolor{red}{'ill fix thix}}
@@ -467,7 +462,8 @@ general tendency impinged by the update rules:
         \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep***n5-rho10e-5-sigma002-00intrans.png}
         % \caption{\(n\_issues = 1, \sigma = 0.02\) }
       \end{subfigure}
-      
+      \caption{Time series for the parameterization: \(\rho = 1e-5, N =
+        500, p\_intran = 0.0 \)}      
   \label{fig:tseries5}
     \end{figure}
      
@@ -485,7 +481,7 @@ general tendency impinged by the update rules:
     
     \begin{figure}[H]
       \centering
-      \caption{anguanonimo}
+      
       \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep***n1-rho10e-5-sigma006-00intrans.png}
         % \caption{\textcolor{red}{'ill fix thix}}
@@ -498,6 +494,8 @@ general tendency impinged by the update rules:
         \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep***n10-rho10e-5-sigma006-00intrans.png}
         % \caption{\(n\_issues = 1, \sigma = 0.02\) }
       \end{subfigure}
+      \caption{Time series for the parameterization: \(\rho = 1e-5, N = 500,
+        p\_intran = 0.0 \.}
   \label{fig:tseries6}
     \end{figure}
 
