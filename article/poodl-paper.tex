@@ -40,7 +40,7 @@
 %\vspace{0.3cm}
 
 %\center{\Large\bf Segundo autor}
-%\center{\large\bf Afiliação}
+%\center{\large\bf Afiliaï¿½ï¿½o}
 
 
 \begin{abstract}
@@ -53,38 +53,37 @@
 
 \section{Introduction}
 
- % Incluir aqui a parte sobre teoria política, um parágrafo é suficiente, a princípio.
+ % Incluir aqui a parte sobre teoria polï¿½tica, um parï¿½grafo ï¿½ suficiente, a princï¿½pio.
 
-In this paper, we will propose a opinion dynamics model
+Here, we will present an opinion dynamics model
 \cite{castellanoetal07,galam12a,galametal82,galammoscovici91,sznajd00,deffuantetal00,martins08a}
-to explore the consequences of the existence of issues that can be interpreted
-as opinions over an one-dimensional axis. It's usual to think about policy
-alternatives and agents' preferences spatially (geometrically), that is, through
-a mapping from similarity to proximity \cite{downs1957economic,
-  laver2014measuring}. The model then captures the daily notion of parties or
-policies being more ``to the left'' or ``right'' than others, that is, if
+where the opinions exist over an one-dimensional axis and each agent has a best
+estimate on more than one issue over that axis. Describing opinions over a
+spatial landscape is an usual way to describe policy alternatives and agents'
+preferences. The geometrical properties of the space are usually defined by
+mapping from similarity and proximity of the political agents
+\cite{downs1957economic, laver2014measuring}. Such a description can capture the
+common notion of parties or policies being more ``to the left'' or ``right''. If
 they're similar then they're closer \cite{van2005political, miller2015spatial}.
-Major opinions, including political ones, tend to be formed from how each person
-feels about a number of issues. Locating someone in a left versus right or
-liberal versus conservative axis, therefore, requires inspecting the opinions of
-that person in not only one but a number of different issues that constitute the
-ideological positioning \cite{benoit2006party}.
+Major opinions, including political ones, tend to be formed not from only one
+issue but from how each person feels about a number of them. Locating someone in
+a left versus right or liberal versus conservative axis, therefore, requires
+inspecting the opinions of that person in not only one but several issues that constitute the agent ideological positioning \cite{benoit2006party}.
 
-While it would make sense to consider different issues as having components in
-more than one single dimension \cite{vicenteetal08b}, looking at the problem as
-one-dimensional can be justified in several ways. We can certainly see this as a
-first approximation along the most relevant dimension. In this case, we are
-simply investigating the projection of higher-dimensional problems along a
-direction where variation seems especially important. And, from the point of
-view of applications, it is usual to find discussions to be simplified over a
-main disagreement.  Even though there are many variants of this
-  modeling strategy, for our work what matters is that this naturally leads to
-  the use of continuous opinion models such as the Bounded Confidence (BC)
-models \cite{deffuantetal00,hegselmannkrause02}. While discrete models
+For many problems, it makes sense to consider different issues as having components in
+more than one single dimension \cite{vicenteetal08b}. However, it is often the case that describing the problem as
+one-dimensional can be justified. We can certainly see this as a
+first approximation along the most relevant dimension. In that case, the one dimensional case is
+just a projection along a direction where variation seems especially important of higher-dimensional problems. From an application point of view, it is usual to find discussions to be simplified over only one main disagreement.  
+
+One traditional way to model this type of scenario is to use continuous opinions
+over a fixed interval, as it is done in the Bounded Confidence (BC) models
+\cite{deffuantetal00,hegselmannkrause02}. While discrete models
 \cite{galametal82,galammoscovici91,sznajd00} can be very useful at describing
-choices, they are not easiest way to represent strength of opinion. Discrete
-models also do not naturally provide a scale where we can compare opinions and
-decide which one is more to the right or more liberal.
+choices, they are not easiest way to represent strength of opinion unless a
+continuous variable is associated to the choice \cite{martins08a}. Discrete
+models also tend to lack a scale where we can compare opinions and decide which
+one is more conservative or more liberal.
 
 On the other hand, continuous models are not particularly well suited for
 problems involving discrete decisions. As we will not deal with those kinds of
@@ -99,38 +98,43 @@ agent \cite{deffuant06} might change how agents influence each other.
 
 Here, we will use a continuous opinion model created by Bayesian-like reasoning
 \cite{martins08c}, inspired by the Continuous Opinions and Discrete Actions
-(CODA) model \cite{martins08a,martins12b}. The model was shown previously
+(CODA) model \cite{martins08a,martins12b}. That model was shown previously
 \cite{martins08c} to provide the same qualitative results as BC models. While a
-little less simple, the Bayesian basis make for a more clear interpretation of
-the meaning of the variables, as we extend the model and need to interpret the
-new results, and is consistent with a boundedly rational
-  variant interpretation of the spatial model of political decision making
-  \cite{humphreys2010spatial,ostrom1998behavioral}.
+little less simple, the Bayesian basis makes for a clearer interpretation of the
+meaning of the variables. That makes extending the model and interpreting new
+results simple. That approach is also consistent with a bounded rationality
+variant interpretation of the spatial model of political decision making
+\cite{humphreys2010spatial,ostrom1998behavioral}.
 
-We will also study variations of our model where the function of trust $p^*$
-will not be influenced by the distance between the opinions of the agent and the
-neighbor on the specific issue they are debating. Instead, we will test two
-other cases: in the first alternative, \(p^*\) will be determined by the
-distance between the neighbor and the agent average opinions (the \(p^{**}\)
-case); in the second alternative, \(p^*\) is derived from the opinion of the
-neighbor and the average opinion of the agent ( the \(p^{***}\) case). The idea
-here is to make the behavior of our agents closer to what experiments show about
-human reasoning. We have observed that our reasoning about political problems
-can be better described as ideologically motivated
-\cite{jostetal03a,taberlodge06a,Claassen2015a}. Indeed, our opinions tend to
-come in blocks even when the issues are logically independent \cite{jervis76a}.
-Our reasoning abilities seem to exist more to defend our main point of views
-\cite{mercier11a,merciersperber11a} and our cultural identity \cite{kahanetal11}
-than to find the best answer. In that context, evaluating other by how they
-differ from us as a whole, instead of in each issue, is a model variation worth
-exploring.
+Variations of how each agent estimate how trustworthy other agents are will also
+be introduced. Here, we use a function of trust $p^*$ that plays a role similar
+to the threshold value in BC models. While $p^*$ is not a simple discontinuous
+cut-off, it is a function of the distance between the opinions of the agent and
+the neighbor. If only one issue is debated, that distance is uniquely defined.
+However, if we have multiple issues represented on the same one-dimensional
+line, it is not clear which distance we should use. That happens because we have
+the opinion of agent $i$ on a specific issue $o_i$ and we can compare it to
+$o_j$ to estimate how much $i$ trusts $j$. However, as there are several issues
+we could also use the mean opinion of $i$ over all its issues and the same goes
+for $j$. Therefore, we will study two additional cases: in the first
+alternative, we will change \(p^*\) to \(p^{**}\), determined by the distance
+between the neighbor and the agent average opinions. In the second alternative,
+we will use a \(p^{***}\) calculated from the opinion of the neighbor and the
+average opinion of the agent. The idea here is to make the behavior of our
+agents closer to what experiments show about human reasoning. We have observed
+that our reasoning about political problems can be better described as
+ideologically motivated \cite{jostetal03a,taberlodge06a,Claassen2015a}. Indeed,
+our opinions tend to come in blocks even when the issues are logically
+independent \cite{jervis76a}. Our reasoning abilities seem to exist more to
+defend our main point of views \cite{mercier11a,merciersperber11a} and our
+cultural identity \cite{kahanetal11} than to find the best answer. In that
+context, evaluating others by how they differ from us as a whole, instead of in
+each issue, is a model variation worth exploring.
  
 \section{The Model}
 
 
-  The model is an agent-based social simulation \cite{de2014agent}. At the initial
-condition of the simulation we have a population of \(N\) agents which have an
-ideological profile
+Here, the population will consist of  \(N\) agents fully connected (an agent $i$ can interact with any other agent $j$). Each agent $i$ will have an opinion $0\leq o_{i,k} \geq 1$, where $k=1, \ldots, n$ is a specific issue. We assume each agent opinion about issue $k$ can represented as a value $o_{i,k}$ at the range of possible values for $o$s. Agents also have an uncertainty $\sigma$ associated to their average estimate $o$. The uncertainty $\sigma$ could be different for each agent and also updated during the interactions \cite{martins08c}. For the sake of simplicity, however, we will assume the uncertainty $\sigma_i =\sigma$ is identical for (almost) all agents and it does not change. The set of opinions for each agent on all possible issues will define its ideological profile
 \(I_i
 =
 (
@@ -140,11 +144,8 @@ ideological profile
 )
 \)
 , where \(n\) is the number of issues, \(o\) is
-the opinion about the issue and \(\sigma\) is a global
-variable which can be interpreted as the uncertainty about the issue
-\cite{martins12b}. Another attribute is the agent's ideological position at the
-dimension of interest, or ideal point \cite{armstrong2014analyzing}, which we
-treat as the arithmetic mean of its opinions in each issue
+the opinion about the issue and \(\sigma\) is the global  uncertainty~\cite{martins12b}. The arithmetic mean  $x_i$  of agent $i$ opinions in each issue will be called here the ideal point for each agent, that is, it defines the agent ideological position at the
+dimension of interest \cite{armstrong2014analyzing}. Obviously
 \(
 x_i
 =
@@ -153,34 +154,35 @@ x_i
 o_{k}
 \).
 
+In order to have agents with initial ideal points well distributed over the
+possible range, the initial valued for each \(o_{i, k}\) was randomly drawn
+using a Beta \(Be(\alpha, \beta)\) with random parameters $\alpha_i$ and
+$\beta_i$. Those parameters were randomly drawn for each agent $i$ from a
+uniform distribution over the ranges \( ( \alpha \in [1.1, 100], \beta \in [1.1,
+100] ) \) . \todo[inline,color=yellow!40]{I ASSUMED THE DRAW WAS UNIFORM,
+  CONFIRM!!!! \textcolor{red}{they're not}} As a \(Be(\alpha, \beta)\) has an
+expected value of $\frac{\alpha}{\alpha+\beta}$, that allows agents to start
+each simulation with quite diverse value of ideal points. That also means the
+initial \(o_{i, k}\)s of each agent $i$ will tend to be correlated.
 
-The initial \(o_i\)s for each issue are sampled from Beta\((\alpha, \beta)\)
-distributions where each agent is associated with its own pair \( ( \alpha \in
-[1.1, 100], \beta \in [1.1, 100] ) \) . The reason for this is that if we sample
-the \(o\)s from an Uniform distribution as we increase the number of issues
-(\(n\)) the closer to the center of the dimension the agents' ideological
-position (\(x\)) would be. Using a Beta distribution prevents this, lets the
-initial \(o\)s of each agent to be correlated, since they're drawn from the
-agent's own Beta, and lets us have an initial population of agents with
-positions distributed along the ideological spectrum, instead of clustered
-around the center.
+For its part, \(\sigma\) is a parameter of the model, not the agents. However, a
+proportion \textit{p$\_$intran} of the agents will have an unique \(\sigma_{i,k}
+= 1e-20\). This is done so that we can control for the impact of inflexible
+agents on the model dynamics \cite{galam05b,deffuant2002can,martinsgalam13a}.
 
-For its part, \(\sigma\) is a global variable, that is, a parameter of the
-model. A certain proportion of the agents will have an unique \(\sigma_{i,k} =
-1e-20\), so that we can control for the impact of \textit{intransigent} agents
-on the model dynamics \cite{deffuant2002can}. How many agents are intransigent
-is also a parameter (coded as \textit{p$\_$intran} ), and such \(\sigma\) is
-established at the initial condition by sampling the issue index from the
-\(I_i\)'s length.
 
-An iteration of the simulation is the application of two
-  procedures: the opinion update through social influence and a random opinion
-  update (noise). In the social influence procedure we draw a single agent \(i\)
-  from the population. We then draw another agent \(j\) from the population.
-  Afterwards, we draw one of the issues \(k \in (1 , \ldots, n)\) so that we
-  have the corresponding pairs (\(o_{i,k}, o_{j,k}\)) and (\(\sigma_{i,k},
-  \sigma_{j,k}\)). Finally, the agent \(i\) updates its opinion (\(o_{i,k}\))
-  following the equation
+How many agents are intransigent is also a parameter (coded as
+\textit{p$\_$intran} ), and such \(\sigma\) is established at the initial
+condition by sampling the issue index from the \(I_i\)'s length.
+
+Each iteration of the simulation is the application of two procedures: the
+opinion update through social influence and a random opinion update (noise). In
+the social influence procedure we draw two agents, \(i\) and \(j\), from the
+population, where \(i\) will observe \(j\) opinion about a specific issue \(k
+\in (1 , \ldots, n)\). The issue $k$ is randomly drawn over its possible its
+possible $n$ values. That way, we have the corresponding pairs (\(o_{i,k},
+o_{j,k}\)) and (\(\sigma_{i,k}, \sigma_{j,k}\)). Finally, the agent \(i\)
+updates its opinion (\(o_{i,k}\)) following the equation
   \[
     o_{i,k}(t+1) =
     p^{*}
@@ -206,6 +208,15 @@ An iteration of the simulation is the application of two
   }.
 \]
 
+
+\todo[inline]{ Intransigents are intransigents over all issues or only one? This
+  is not clear in the text and the nomenclature $\sigma_{i,k}$ suggests it is
+  issue dependent. That must be explained. The update equations appear from
+  nowhere. They must be justified, no need to redo the calculations of the first
+  article. But we must say they come from a Bayesian update where each agent
+  assumes a Normal prior and a mixture likelihood. There is an initial chance p,
+  updated to p* the agent j has information and a chance 1-p it knows nothing
+  and its opinion is just a random non-informative draw. Include this! }
 
 The \(\Delta_{ij} \) term is equal to \( o_{i,k} (t) - o_{j,k} (t)\). As
 mentioned, we also test cases in which it's equal to \( x_i(t) - x_j(t) \) ( the
