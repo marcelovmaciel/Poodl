@@ -157,23 +157,28 @@ o_{k}
 In order to have agents with initial ideal points well distributed over the
 possible range, the initial valued for each \(o_{i, k}\) was randomly drawn
 using a Beta \(Be(\alpha, \beta)\) with random parameters $\alpha_i$ and
-$\beta_i$. Those parameters were randomly drawn for each agent $i$ from a
-uniform distribution over the ranges \( ( \alpha \in [1.1, 100], \beta \in [1.1,
-100] ) \) . \todo[inline,color=yellow!40]{I ASSUMED THE DRAW WAS UNIFORM,
-  CONFIRM!!!! \textcolor{red}{they're not}} As a \(Be(\alpha, \beta)\) has an
-expected value of $\frac{\alpha}{\alpha+\beta}$, that allows agents to start
-each simulation with quite diverse value of ideal points. That also means the
-initial \(o_{i, k}\)s of each agent $i$ will tend to be correlated.
+$\beta_i$. Those parameters were drawn for each agent $i$ from the ranges \( (
+\alpha \in [1.1, 100], \beta \in [1.1, 100] ) \) by dividing those ranges by
+\(N\) equally spaced values and then assigning them to each agent after mixing
+the values. That is, if we have 10 agents one element of the following list of
+possible pairs [(1.1, 56.0444), (23.0778, 34.0667), (45.0556, 100.0), (78.0222,
+67.0333), (89.0111, 23.0778), (67.0333, 12.0889), (100.0, 78.0222), (56.0444,
+1.1), (34.0667, 89.0111), (12.0889, 45.0556)] is assigned to each agent \(i\).
+As a \(Be(\alpha, \beta)\) has an expected value of
+$\frac{\alpha}{\alpha+\beta}$, that allows agents to start each simulation with
+quite diverse value of ideal points. That also means the initial \(o_{i, k}\)s
+of each agent $i$ will tend to be correlated.
 
 For its part, \(\sigma\) is a parameter of the model, not the agents. However, a
 proportion \textit{p$\_$intran} of the agents will have an unique \(\sigma_{i,k}
 = 1e-20\). This is done so that we can control for the impact of inflexible
 agents on the model dynamics \cite{galam05b,deffuant2002can,martinsgalam13a}.
 
-
 How many agents are intransigent is also a parameter (coded as
 \textit{p$\_$intran} ), and such \(\sigma\) is established at the initial
-condition by sampling the issue index from the \(I_i\)'s length.
+condition by sampling the issue index from the \(I_i\)'s length. This means that
+we've opted for an implementation in which agents are intransigents in a
+\textit{single} issue.
 
 Each iteration of the simulation is the application of two procedures: the
 opinion update through social influence and a random opinion update (noise). In
@@ -182,7 +187,15 @@ population, where \(i\) will observe \(j\) opinion about a specific issue \(k
 \in (1 , \ldots, n)\). The issue $k$ is randomly drawn over its possible its
 possible $n$ values. That way, we have the corresponding pairs (\(o_{i,k},
 o_{j,k}\)) and (\(\sigma_{i,k}, \sigma_{j,k}\)). Finally, the agent \(i\)
-updates its opinion (\(o_{i,k}\)) following the equation
+updates its opinion (\(o_{i,k}\)) following a Bayesian rule: each agent has a
+Normal prior \(f_i(\theta) = \frac{1}{\sqrt{2 \pi} \sigma_i} e^{- \frac{(\theta
+    - o_i )^2}{2 \sigma_i}} \); for the likelihood there is an initial chance
+\(p\), updated to \(p^*\) that the agent \(j\) has information and a chance
+\(1-p\) it knows nothing and its opinion is just a random non-informative draw
+which leads to \( f(o_j|\theta) = p N(\theta,\sigma_j^2) + (1-p)U(0,1) \); from
+the expected value of the multiplication of the prior with the mixture
+likelihood we derive the update rule \cite{martins12b}:
+
   \[
     o_{i,k}(t+1) =
     p^{*}
@@ -209,14 +222,14 @@ updates its opinion (\(o_{i,k}\)) following the equation
 \]
 
 
-\todo[inline]{ Intransigents are intransigents over all issues or only one? This
-  is not clear in the text and the nomenclature $\sigma_{i,k}$ suggests it is
-  issue dependent. That must be explained. The update equations appear from
-  nowhere. They must be justified, no need to redo the calculations of the first
-  article. But we must say they come from a Bayesian update where each agent
-  assumes a Normal prior and a mixture likelihood. There is an initial chance p,
-  updated to p* the agent j has information and a chance 1-p it knows nothing
-  and its opinion is just a random non-informative draw. Include this! }
+%%%%%\todo[inline]{ Intransigents are intransigents over all issues or only one? This
+%  is not clear in the text and the nomenclature $\sigma_{i,k}$ suggests it is
+ % issue dependent. That must be explained. The update equations appear from
+ % nowhere. They must be justified, no need to redo the calculations of the first
+ % article. But we must say they come from a Bayesian update where each agent
+ % assumes a Normal prior and a mixture likelihood. There is an initial chance p,
+ % updated to p* the agent j has information and a chance 1-p it knows nothing
+ % and its opinion is just a random non-informative draw. Include this! }
 
 The \(\Delta_{ij} \) term is equal to \( o_{i,k} (t) - o_{j,k} (t)\). As
 mentioned, we also test cases in which it's equal to \( x_i(t) - x_j(t) \) ( the
