@@ -154,59 +154,58 @@ x_i
 o_{k}
 \).
 
+
 In order to have agents with initial ideal points well distributed over the
 possible range, the initial valued for each \(o_{i, k}\) was randomly drawn
 using a Beta \(Be(\alpha, \beta)\) with random parameters $\alpha_i$ and
 $\beta_i$. Those parameters were drawn for each agent $i$ from the ranges \( (
 \alpha \in [1.1, 100], \beta \in [1.1, 100] ) \) by dividing those ranges by
 \(N\) equally spaced values and then assigning them to each agent after mixing
-the values. That is, if we have 10 agents one element of the following list of
-possible pairs [(1.1, 56.0444), (23.0778, 34.0667), (45.0556, 100.0), (78.0222,
-67.0333), (89.0111, 23.0778), (67.0333, 12.0889), (100.0, 78.0222), (56.0444,
-1.1), (34.0667, 89.0111), (12.0889, 45.0556)] is assigned to each agent \(i\).
-As a \(Be(\alpha, \beta)\) has an expected value of
-$\frac{\alpha}{\alpha+\beta}$, that allows agents to start each simulation with
-quite diverse value of ideal points. That also means the initial \(o_{i, k}\)s
-of each agent $i$ will tend to be correlated.
+the values as in a Latin hypercube sampling~\cite{mckay2000comparison}. That is done to
+allow agents with a diverse value of initial ideal points and, at the same time,
+to keep the initial \(o_{i, k}\)s of each agent $i$ correlated.
 
-For its part, \(\sigma\) is a parameter of the model, not the agents. However, a
-proportion \textit{p$\_$intran} of the agents will have an unique \(\sigma_{i,k}
-= 1e-20\). This is done so that we can control for the impact of inflexible
-agents on the model dynamics \cite{galam05b,deffuant2002can,martinsgalam13a}.
+While we could have \(\sigma\) as a measurement of each agent uncertainty and have it evolve with time, here we will keep it as a fixed parameter of the model. However, a
+proportion \textit{p$\_$intran} of agents will be stubborn about one single issue $k$, so that \(\sigma_{i,k}
+= 1e-20\). That behavior is kept constant as the simulation unfolds, that is $\sigma_{i,k}$ is also not updated by the model. A proportion of agents who are stubborn is introduced here so we can check if inflexible \cite{galam05b,deffuant2002can,martinsgalam13a} have a significant impact on the outcomes of the model.
 
-How many agents are intransigent is also a parameter (coded as
-\textit{p$\_$intran} ), and such \(\sigma\) is established at the initial
-condition by sampling the issue index from the \(I_i\)'s length. This means that
-we've opted for an implementation in which agents are intransigents in a
-\textit{single} issue.
 
-Each iteration of the simulation is the application of two procedures: the
-opinion update through social influence and a random opinion update (noise). In
+%For its part, \(\sigma\) is a parameter of the model, not the agents. However, a
+%proportion \textit{p$\_$intran} of the agents will have an unique \(\sigma_{i,k}
+%= 1e-20\). This is done so that we can control for the impact of inflexible
+%agents on the model dynamics \cite{galam05b,deffuant2002can,martinsgalam13a}.
+
+%How many agents are intransigent is also a parameter (coded as
+%\textit{p$\_$intran} ), and such \(\sigma\) is established at the initial
+%condition by sampling the issue index from the \(I_i\)'s length. This means that
+%we've opted for an implementation in which agents are intransigents in a
+%\textit{single} issue.
+
+In each iteration of the simulation, two procedures are applied: the
+opinion update through social influence, and a random opinion update (noise). In
 the social influence procedure we draw two agents, \(i\) and \(j\), from the
-population, where \(i\) will observe \(j\) opinion about a specific issue \(k
-\in (1 , \ldots, n)\). The issue $k$ is randomly drawn over its possible its
-possible $n$ values. That way, we have the corresponding pairs (\(o_{i,k},
-o_{j,k}\)) and (\(\sigma_{i,k}, \sigma_{j,k}\)). Finally, the agent \(i\)
-updates its opinion (\(o_{i,k}\)) following a Bayesian rule: each agent has a
+population, where \(i\) will observe \(j\) opinion about a randomly drawn issue \(k
+\in (1 , \ldots, n)\). %That way, we have the corresponding pairs (\(o_{i,k},
+%o_{j,k}\)) and (\(\sigma_{i,k}, \sigma_{j,k}\)). 
+Agent \(i\)
+updates its opinion (\(o_{i,k}\)) following an approximate Bayesian rule. That rule is obtained by assuming each agent has a
 Normal prior \(f_i(\theta) = \frac{1}{\sqrt{2 \pi} \sigma_i} e^{- \frac{(\theta
-    - o_i )^2}{2 \sigma_i}} \); for the likelihood there is an initial chance
+- o_i )^2}{2 \sigma_i}} \) compatible with its parameters $(o_{i}$ and $sigma_{i}$, where the index related to the issue $k$ was omitted for the sake of simplifying the equation.  The agents also assume a mixture likelihood where there is an initial chance
 \(p\), updated to \(p^*\) that the agent \(j\) has information and a chance
-\(1-p\) it knows nothing and its opinion is just a random non-informative draw
-which leads to \( f(o_j|\theta) = p N(\theta,\sigma_j^2) + (1-p)U(0,1) \); from
-the expected value of the multiplication of the prior with the mixture
-likelihood we derive the update rule \cite{martins12b}:
+\(1-p\) it knows nothing and its opinion is just a random non-informative draw. That is, the likelhood is given by
+ \( f(o_j|\theta) = p N(\theta,\sigma_j^2) + (1-p)U(0,1) \). While a full Bayesian treatment would produce a posterior distribution that is a mixture of two normals, here we will assume each agent only updates its expected value and it does not carry the full posterior information to the next iteration. That leads to the following update rule for the expected value $o_{i,k}$ \cite{martins12b}:
 
-  \[
+
+  \begin{equation}\label{eq:oupdate}
     o_{i,k}(t+1) =
     p^{*}
     \frac{o_{i,k}(t) + o_{j,k}(t) }{2}
     +
     (1 - p^{*})
-    o_{i,k}(t).
-  \]
-
-  Wherein 
-  \[
+    o_{i,k}(t),
+  \end{equation}
+where  $p^{*}$ is given by
+  \begin{equation}\label{eq:pstar}
    p^{*}
     =
   \frac{
@@ -219,51 +218,29 @@ likelihood we derive the update rule \cite{martins12b}:
     +
     (1 - p)
   }.
-\]
+  \end{equation}
+Here \(\Delta_{ij} = o_{i,k} (t) - o_{j,k} (t)\) is the distance between the opinions on the $k$ issue. $\Delta_{ij}$ plays a
+similar role to the threshold parameter in the Bounded Confidence models by making distant opinions less influential. As $\Delta_{ij}$ increases, it is easy to see that Equation\ref{eq:pstar} causes  $p^{*}$ to tend to zero. And, as that happens, the weights in average update Equation~\ref{eq:oupdate} change so that the previous value $ o_{i,k}(t)$ remains almost unchanged.
 
+The threshold role of $\Delta_{ij}$ suggests we might change its definition to check how it might better reflect the actual behavior of humans. In particular, people tend to trust better those who have a similar ideology. That means trust might not depend on the specific issue alone, but on the average over all issues. While that is not the model we obtain from applying Bayes rule, such a change makes sense
+as an attempt to have a better model. In order to check that possibility we will also implement two other cases by changing the way $\Delta_{ij}$ is calculated. In the first variation, $p^*$ will be substituted by \(p^{**}\), where \(p^{**}\) means 
+ \(\Delta_{ij} = x_i(t) - x_j(t) \), that is, agent $i$ will observe the average ideological position of $j$ in order to estimate its trust. That assumed $i$ has more information than only the value $o_{j,k}(t)$. To check what happens when indeed only $o_{j,k}(t)$, we will introduce a second variant case where $i$ compares $o_{j,k}(t)$ to its own average. That is,  \(\Delta_{ij} = x_{i}(t) - o_{j,k}(t)\) and we represent that case by \(p^{***}\)).
 
-%%%%%\todo[inline]{ Intransigents are intransigents over all issues or only one? This
-%  is not clear in the text and the nomenclature $\sigma_{i,k}$ suggests it is
- % issue dependent. That must be explained. The update equations appear from
- % nowhere. They must be justified, no need to redo the calculations of the first
- % article. But we must say they come from a Bayesian update where each agent
- % assumes a Normal prior and a mixture likelihood. There is an initial chance p,
- % updated to p* the agent j has information and a chance 1-p it knows nothing
- % and its opinion is just a random non-informative draw. Include this! }
-
-The \(\Delta_{ij} \) term is equal to \( o_{i,k} (t) - o_{j,k} (t)\). As
-mentioned, we also test cases in which it's equal to \( x_i(t) - x_j(t) \) ( the
-\(p^{**}\) case ) and to \(x_{i}(t) - o_{j,k}(t)\) ( the \(p^{***}\)). \(p\),
-for its part, is a global parameter used to model the likelihood of the other
-agent's (\(j\)) opinion being true \cite{martins12b}.
-
-Furthermore, there is the noise: we draw another agent \(i\) whose opinion \(
-o_{i,k}(t+1)\) is equal to \(o_{i,k}(t) + r\) where \(r\) is taken from a Normal
-distribution of mean 0 and standard deviation \(\rho\). \(\rho\) is then a
-global parameter of the simulation. From a theoretical point of view the noise
-is justified as a way of accounting for the effect of factors not related to
-social influence that make the agents change their opinion about issues
-\cite{flache2017}. A further methodological justification is that small
-perturbations in the local behavior of agents may lead to drastic changes in
-systemic properties \cite{macy2015signal}. If an agent \(i\) is intransigent in
-an issue \(k\) it won't randomly change its \(o_{i,k}\) opinion if its chosen by
+In order to better understand the model dynamics we also introduce noise as the second procedure. At each iteration, 
+another agent \(i\) is randomly chosen and its opinion changed due to random noise. That is, $i$ opinion becomes \(
+o_{i,k}(t+1) = o_{i,k}(t) + r \) where \(r\) is drawn from a Normal
+distribution with mean 0 and standard deviation \(\rho\). If agent \(i\) is intransigent in
+issue \(k\) it won't its \(o_{i,k}\) opinion when chosen by
 the noise algorithm. Moreover, if \(o_{i,k}(t) + r > 1\) then \( o_{i,k}(t+1) =
-1\). Likewise, if \(o_{i,k}(t) + r < 0 \) then \( o_{i,k}(t+1) = 0\).
+1\). Likewise, if \(o_{i,k}(t) + r < 0 \) then \( o_{i,k}(t+1) = 0\). Noise
+is introduced here as a way of accounting for the effect of factors not related to the modeled
+social influence \cite{flache2017} and it is interesting to verify if small noises can lead to drastic changes in
+systemic properties \cite{macy2015signal}.
 
   \section{Model Results}
 
-  
-  To have a general understanding about the model behavior we first established
-  the bounds of the parameters:
+  To better understand the model behavior, we run simulations using as range for the parameters the values:  
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage[table,xcdraw]{xcolor}
-% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage[table,xcdraw]{xcolor}
-% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
   \begin{table}[H]
     \centering
 \begin{tabular}{@{}|l|l|l|l|l|l|@{}}
@@ -275,47 +252,60 @@ $[0.01, 0.5]$ & $[1, 10]$  & $[0.1, 0.99]$ & $[0.0, 0.1]$ & $[500, 5000]$ & $(0.
 \caption{Parameters' Bounds}
 \end{table}
 
-To sweep the parameter space we sample 70.000 parameterizations taken from
+
+The parameter space was explored by sampling the parameter space 70,000 times using
 quasi-random low-discrepancy sequences \cite{saltelli2008global}, that generate
-evenly spaced points. After running the simulation for 1.000.000 iterations we
-take the  standard deviation of the population mean opinions (\(Ystd\)) as
-a system final state measure. Histograms of the initial condition viz-a-viz
-the three cases (\(p^{*}, p^{**}, p^{***}\)) final state lets us understand the
-general tendency impinged by the update rules:
+evenly spaced points. An important question in any opinion dynamics model is if agents can reach consensus.
+That can be observed by measured the standard deviation of the population mean opinions (\(Ystd\)) for the
+a system final state. Figure \ref{fig:std} shows histograms for the values of (\(Ystd\)) for initial 
+conditions and also for the sets of simulations corresponding to the (\(p^{*}, p^{**}, p^{***}\))  cases.
+
 
 \begin{figure}[H]
   \centering
   
     \begin{subfigure}[b]{0.49\textwidth}
       \includegraphics[width=\textwidth]{img/initstd.png}
-%      \caption{\( n\_issues = 1,  \sigma = 0.1\) }
+\caption{Initial Conditions.}
     \end{subfigure}
     \begin{subfigure}[b]{0.49\textwidth}
       \includegraphics[width=\textwidth]{img/Ystd*.png}
- %      \caption{\(n\_issues = 1, \sigma = 0.02\) }
+ \caption{\(p^*\) Case.}
      \end{subfigure}
 
      \begin{subfigure}[b]{0.49\textwidth}
        \includegraphics[width=\textwidth]{img/Ystd**.png}
-  %     \caption{\(n\_issues = 7, \sigma = 0.1\)}
+  \caption{\(p^{**}\) Case.}
      \end{subfigure}
      \begin{subfigure}[b]{0.49\textwidth}
        \includegraphics[width=\textwidth]{img/Ystd***.png}
-   %    \caption{\(n\_issues = 7, \sigma = 0.02\)}
+       \caption{\(p^{***}\) Case.}
      \end{subfigure}
-     \label{fig:hists}
-     \caption{System initial condition x final state}
+     \caption{Standard deviations of the population mean opinions (\(Ystd\)) for
+       initial conditions and final conditions after 1,000,000 iterations.} 
+     \label{fig:std}
     \end{figure}
 
-    The general tendency of the model is one of biased assimilation
-    \cite{flache2017}. The histograms, however, don't show which parameter is
-    the most important to explain this trend. With that in mind we perform a
-    Sobol sensitivity analysis \cite{saltelli2000sensitivity} which generate the
-    following indexes:
+    The histograms show that, in most cases, (\(Ystd\)) is significantly smaller
+    than the initial random situation. The peak at small values of (\(Ystd\))
+    seem to suggest a tendency to consensus in many cases. However, consensus is
+    not always achieved, as we can see for the solid number of cases where
+    (\(Ystd\)) stays close to the initial values. Although rare, we can also
+    observe a few cases where (\(Ystd\)) becomes larger. That can be explained
+    by cases where bi-partisanship becomes stronger, with agents tending to both
+    extreme positions. That suggest that, in general, the model can be described
+    as one with similarity biased influence \cite{flache2017}.
+   
+    The histograms, however, don't show which values of the parameters cause
+    those changes. They also say nothing about which parameters are relevant and
+    which ones have little influence on the final outcome. With that in mind we
+    perform a Sobol sensitivity analysis
+    \cite{saltelli2000sensitivity}. %%%%%%% EXPLAIN what is the index. Make it short, but you must say what is calculated (a simple equation might do it) and what it means (larger index values mean more influence)
+    which generate the following indexes:
 
+     
     \begin{figure}[H]
   \centering
-  
     \begin{subfigure}[b]{0.45\textwidth}
       \includegraphics[width=\textwidth]{img/sobolpstar1.png}
 %      \caption{\( n\_issues = 1,  \sigma = 0.1\) }
@@ -329,16 +319,24 @@ general tendency impinged by the update rules:
   %     \caption{\(n\_issues = 7, \sigma = 0.1\)}
      \end{subfigure}
      \caption{Sobol Indexes for the three cases (\(p^{*}, p^{**}, p^{***}\))}
-      \label{fig:sobolstuff}
+     \label{fig:sobol} 
     \end{figure}
 
-    The sensitivity analysis shows that the most important parameters are :
-    \(\sigma, n, \rho\), and that the three cases have the same qualitative
-    behavior. \(\sigma\) being the parameter that explains the most the variance
-    of the system measure is consistent with \citep{martins12b}, while the
-    relevance of the number of issues and the noise is a new result. The
+    The sensitivity analysis in Figure\ref{fig:sobol} shows that \(\sigma, n \),
+    and \(\rho\) have the most influence on the final values of (\(Ystd\)). $p$
+    seems to still have some smaller influence and both $N$ and $p_{intran}$
+    seem to make no difference. It is also interesting to notice that the same
+    behavior appears in the three. \(\sigma\) being the parameter that explains
+    most of the variance was expected and it is consistent with
+    \citep{martins12b}. It is interesting to see that two of the new parameters,
+    the number of issues $n$ and the noise \(\rho\), also play an important role
+    in explaining the total variance.
+     
+    The
     sensitivity analysis, however, does not show the direction of the impact,
-    which we investigate through scatter plots:
+    which we investigate through scatter plots shown in Figure \ref{fig:scatters}. Each value of (\(Ystd\)) in those graphics correspond
+    to the outcome of one implementation of the model for the value of the parameter at the $x$-axis.
+
 
         \begin{figure}[H]
   \centering
@@ -354,30 +352,35 @@ general tendency impinged by the update rules:
        \includegraphics[width=\textwidth]{img/regressionYstd*sigma.png}
   %     \caption{\(n\_issues = 7, \sigma = 0.1\)}
      \end{subfigure}
-     \caption{Scatterplots for the parameters with highest impact}
+     \caption{Scatterplots for the parameters with highest impact. Each dot corresponds to the result obtained in a single run.}
       \label{fig:scatters}
     \end{figure}
 
+
+
     The negative impact of \(\sigma\) in the population' opinion dispersion is
     to be expected given the update rule: a higher \(\sigma\) means that agents
-    are easier to influence and as they're connected to all the others the more
-    uncertain they the more centralized the agents' mean opinions after they
-    interact with their neighbors. The plots also show that \(\sigma\) has the
-    same impact on the system whenever its bigger than approximately
-    0.1.Therefore we restrict our following analysis to the \((0.0, 0.1 ] \)
-    range. The effect of \(\rho\) is also expected: the bigger the noise more
-    dispersed is the final state of the system.
+    are easier to influence. As they are connected to all the other agents, the more
+    uncertain they are, the more centralized the agents' mean opinions will tend to become. 
+    The plots also show that the exact value of \(\sigma\) seems to matter little above approximately
+    0.1. Therefore we restrict our following analysis to the \((0.0, 0.1 ] \)
+    range. The effect of \(\rho\) is also expected: the bigger the noise, the more
+    dispersed the final state of the system is. The number of issues $n$ seems to have little
+    influence unless it is $n=1$. When there is only one issue, we see results where the opinions
+    clearly move away to stronger polarizations, with (\(Ystd\)) around 0.3. Those cases are no
+    longer observed as we have at least two issues.
 
+    
     After a general investigation we turn to the analysis of specific
     parametizations. For that let's start by fixing the following parameters as
     constants: \(\rho = 0.05 \) ; \(N = 500\) ; \(p\_intran = 0.0\), run the
     simulation for 500.000 iterations, and test combinations of $\sigma = (0.02,
-    0.04, 0.1)$ and $ n = (1,5)$. As show by \ref{fig:tseries1}, \(\sigma\) has
-    the effect of leading the dynamics of the simulation to the center as it
-    increases: the bigger the \(\sigma\) the closest to the mean the population
-    is . However,when the number of issues also increases that tendency is not
-    clear, since the noise disperses them, even though \(\sigma\) has a bigger
-    impact:
+    0.04, 0.1)$ and $ n = (1,5)$. As shown by Figure \ref{fig:tseries1},
+    \(\sigma\) has the effect of leading the dynamics of the simulation to the
+    center as it increases: the bigger the \(\sigma\) the closest to the mean
+    the population is . However,when the number of issues also increases that
+    tendency is not clear, since the noise disperses them, even though
+    \(\sigma\) has a bigger impact:
 
 
         \begin{figure}[H]
