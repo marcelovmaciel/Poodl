@@ -190,7 +190,7 @@ population, where \(i\) will observe \(j\) opinion about a randomly drawn issue 
 Agent \(i\)
 updates its opinion (\(o_{i,k}\)) following an approximate Bayesian rule. That rule is obtained by assuming each agent has a
 Normal prior \(f_i(\theta) = \frac{1}{\sqrt{2 \pi} \sigma_i} e^{- \frac{(\theta
-- o_i )^2}{2 \sigma_i}} \) compatible with its parameters $(o_{i}$ and $sigma_{i}$, where the index related to the issue $k$ was omitted for the sake of simplifying the equation.  The agents also assume a mixture likelihood where there is an initial chance
+- o_i )^2}{2 \sigma_i}} \) compatible with its parameters $o_{i}$ and $\sigma_{i}$, where the index related to the issue $k$ was omitted for the sake of simplifying the equation.  The agents also assume a mixture likelihood where there is an initial chance
 \(p\), updated to \(p^*\) that the agent \(j\) has information and a chance
 \(1-p\) it knows nothing and its opinion is just a random non-informative draw. That is, the likelhood is given by
  \( f(o_j|\theta) = p N(\theta,\sigma_j^2) + (1-p)U(0,1) \). While a full Bayesian treatment would produce a posterior distribution that is a mixture of two normals, here we will assume each agent only updates its expected value and it does not carry the full posterior information to the next iteration. That leads to the following update rule for the expected value $o_{i,k}$ \cite{martins12b}:
@@ -224,7 +224,10 @@ similar role to the threshold parameter in the Bounded Confidence models by maki
 
 The threshold role of $\Delta_{ij}$ suggests we might change its definition to check how it might better reflect the actual behavior of humans. In particular, people tend to trust better those who have a similar ideology. That means trust might not depend on the specific issue alone, but on the average over all issues. While that is not the model we obtain from applying Bayes rule, such a change makes sense
 as an attempt to have a better model. In order to check that possibility we will also implement two other cases by changing the way $\Delta_{ij}$ is calculated. In the first variation, $p^*$ will be substituted by \(p^{**}\), where \(p^{**}\) means 
- \(\Delta_{ij} = x_i(t) - x_j(t) \), that is, agent $i$ will observe the average ideological position of $j$ in order to estimate its trust. That assumed $i$ has more information than only the value $o_{j,k}(t)$. To check what happens when indeed only $o_{j,k}(t)$, we will introduce a second variant case where $i$ compares $o_{j,k}(t)$ to its own average. That is,  \(\Delta_{ij} = x_{i}(t) - o_{j,k}(t)\) and we represent that case by \(p^{***}\)).
+ \(\Delta_{ij} = x_i(t) - x_j(t) \), that is, agent $i$ will observe the average
+ ideological position of $j$ in order to estimate its trust. That assumed $i$
+ has more information than only the value $o_{j,k}(t)$. To check what happens
+ when indeed only $o_{j,k}(t)$ \textcolor{red}{indeed what??}, we will introduce a second variant case where $i$ compares $o_{j,k}(t)$ to its own average. That is,  \(\Delta_{ij} = x_{i}(t) - o_{j,k}(t)\) and we represent that case by \(p^{***}\).
 
 In order to better understand the model dynamics we also introduce noise as the second procedure. At each iteration, 
 another agent \(i\) is randomly chosen and its opinion changed due to random noise. That is, $i$ opinion becomes \(
@@ -299,9 +302,20 @@ conditions and also for the sets of simulations corresponding to the (\(p^{*}, p
     The histograms, however, don't show which values of the parameters cause
     those changes. They also say nothing about which parameters are relevant and
     which ones have little influence on the final outcome. With that in mind we
-    perform a Sobol sensitivity analysis
-    \cite{saltelli2000sensitivity}. %%%%%%% EXPLAIN what is the index. Make it short, but you must say what is calculated (a simple equation might do it) and what it means (larger index values mean more influence)
-    which generate the following indexes:
+    perform a Sobol sensitivity analysis \cite{saltelli2000sensitivity}. The
+    Sobol indexes decompose the impact of parameters on the variance of the
+    output. The higher the value of index the bigger the impact of the parameter
+    on the output. First order Sobol indexes include linear and non-linear
+    contributions of the parameters, while total Sobol indexes also include all
+    the interaction effects between parameters
+    \cite{ten2016sensitivity}. Suppose we have a model with three parameters.
+    Then the total effect  \(S_{T1}\) of the first parameter \(X_1\) is given by
+    the equation \(S_{T1} = S_1 + S_{12} + S_{13} + S_{123}\) where \(S_i =
+    \frac{V[E(Y|X_i)]}{V(Y)}\); \(S_{12}\) is the impact at the variance of the
+    output \(Y\) of the interaction of \(X_{1}\) and \(X_{2}\); that is, their
+    combined effect minus their first order effects:  \(S_{ij}\) =
+    \(\frac{V[E(Y|X_i,X_,)] - V[E(Y|X_i)] - V[E(Y|X_j)]}{V(Y)} \) \cite{saltelli2008global}.
+    We then find the following indexes:
 
      
     \begin{figure}[H]
@@ -375,12 +389,13 @@ conditions and also for the sets of simulations corresponding to the (\(p^{*}, p
     parametizations. For that let's start by fixing the following parameters as
     constants: \(\rho = 0.05 \) ; \(N = 500\) ; \(p\_intran = 0.0\), run the
     simulation for 500.000 iterations, and test combinations of $\sigma = (0.02,
-    0.04, 0.1)$ and $ n = (1,5)$. As shown by Figure \ref{fig:tseries1},
-    \(\sigma\) has the effect of leading the dynamics of the simulation to the
-    center as it increases: the bigger the \(\sigma\) the closest to the mean
-    the population is . However,when the number of issues also increases that
-    tendency is not clear, since the noise disperses them, even though
-    \(\sigma\) has a bigger impact:
+    0.04, 0.1)$ and $ n = (1,5)$. The following time series exhibit the typical
+    behavior of the system for the parameterizations. As shown by Figure
+    \ref{fig:tseries1}, \(\sigma\) has the effect of leading the dynamics of the
+    simulation to the center as it increases: the bigger the \(\sigma\) the
+    closest to the mean the population is . However,when the number of issues
+    also increases that tendency is not clear, since the noise disperses them,
+    even though \(\sigma\) has a bigger impact:
 
 
         \begin{figure}[H]
