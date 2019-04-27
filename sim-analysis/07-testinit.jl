@@ -24,9 +24,15 @@ pa1 = pdl.PoodlParam(n_issues = 5,
 pop = pdl.create_initialcond(pa1)
 
 
+pdl.get_os(pop[1])
+
 pop[1].ideo |> eltype |> fieldnames
 
-@code_warntype pdl.pullostds(pop)
+pdl.getpropertylist(pop[1], :ideo)
+
+@code_warntype  pdl.pulloiks(pop)
+
+pdl.pulloiks(pop)
 
 
 stdsn1 = pdl.dist_initstds(pa1, 500)

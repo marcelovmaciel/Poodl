@@ -15,7 +15,6 @@ Param.@with_kw struct PoodlParam{R<:Real}
     p★calculator::Function = calculatep★
 end
 
-
 ## Information Storing Fns
 #I'm going to initialize a dataframe and update it at each time step.
 """
@@ -37,7 +36,10 @@ function create_initialcond(pa::PoodlParam)
     create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
 end
 
-pulloiks(pop) = map((i -> i.ideo |> ideo -> map(el -> el.o,ideo )), pop)::Array{Array{Float64,1}}
+get_os(i) = i.ideo |> ideo -> map(el -> el.o,ideo )
+
+pulloiks(pop) = map(get_os, pop)::Array{Array{Float64,1}}
+
 pullostds(pop)= map(Stats.std, pulloiks(pop))::Array{Float64,1} 
 
 
@@ -61,19 +63,17 @@ function outputfromsim(endpoints::Array)
     return(stdpoints,num_points)
 end
 
-
 """
     function createstatearray(pop,time)
 
 Creates an array with the agents' ideal points; it's an alternative to saving everything in a df
 
 """
-function createstatearray(pop,time)
+function createstatearray(pop,time; pullfn = pullidealpoint)
     statearray = Array{Array{Float64}}(undef,time+1)'
-    statearray[1] = pullidealpoints(pop)
+    statearray[1] = pullfn(pop)
     return(statearray)
 end
-
 
 
 """
@@ -144,7 +144,6 @@ function runsim!(pop,p,ρ,time, p★calculator)
 end
 
 
-
 "repetition of the sim for some parameters;"
 function one_run(pa::PoodlParam)
     Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions, p★calculator =pa
@@ -154,6 +153,7 @@ function one_run(pa::PoodlParam)
     return(df)
 end
     
+
 
 """this runs the simulation without using any df;
 this speeds up a lot the sim, but i can't keep track of the system state evolution;
