@@ -37,6 +37,8 @@ function create_initialcond(pa::PoodlParam)
     create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
 end
 
+pulloiks(pop) = map((i -> i.ideo |> ideo -> map(el -> el.o,ideo )), pop)::Array{Array{Float64,1}}
+pullostds(pop)= map(Stats.std, pulloiks(pop))::Array{Float64,1} 
 
 
 "self-describing... it takes a population and returns an array of ideal points"
@@ -58,7 +60,6 @@ function outputfromsim(endpoints::Array)
     num_points = endpoints |> StatsBase.countmap |> length
     return(stdpoints,num_points)
 end
-
 
 
 """
@@ -182,7 +183,6 @@ function simstatesvec(pa::PoodlParam)
        end
     return(statearray)
 end
-
 
 """
     statesmatrix(statearray, time, size_nw)
