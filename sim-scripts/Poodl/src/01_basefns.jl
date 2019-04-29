@@ -96,7 +96,6 @@ function createbetaparams(popsize::Integer)
     betaparams = zip(αs,βs) |> x -> [(α = i[1], β = i[2]) for i in x]
 end
 
-
 #=
 this functions generalizes what i was previously doing with create_idealpoint.
 That is, with createidealpoint i apply some measure to a list of attributes from the items of another list.
@@ -184,7 +183,7 @@ function turninto_intransigents!(pop,propintransigents::AbstractFloat; position 
                              replace = false)
         pop[i].certainissues = whichissues
         for issue in whichissues
-            pop[i].ideo[issue].σ = 1e-20
+            pop[i].ideo[issue].σ = 0.011
         end
     end
     nothing
@@ -200,7 +199,7 @@ function turninto_intransigents(pop,propintransigents::AbstractFloat; position =
                              replace = false)
         likepop[i].certainissues = whichissues
         for issue in whichissues
-            likepop[i].ideo[issue].σ = 1e-20
+            likepop[i].ideo[issue].σ = 0.011
         end
     end
     return(likepop)
@@ -273,8 +272,6 @@ end
 calculatep★(i, j, whichissue, p) = calculate_pstar(i, j, whichissue, p, changing_term★)
 calculatep★★(i, j, whichissue, p) = calculate_pstar(i, j, whichissue, p, changing_term★★)
 calculatep★★★(i, j, whichissue, p) = calculate_pstar(i, j, whichissue, p, changing_term★★★)
-
-
 
 """
     calc_posterior_o(i_belief::Belief, j_belief::Belief, p::AbstractFloat)
@@ -361,7 +358,7 @@ fn for noise updating; note it returns a randomly taken o(t+1) = o(t) + r,  but 
 function ρ_update!(i::AbstractAgent, ρ::AbstractFloat)
     whichissue = rand(1:length(i.ideo))
     r =  rand(Dist.Normal(0,ρ))
-    if (i.ideo[whichissue].σ != 1e-20)
+    if (i.ideo[whichissue].σ != 0.011)
         if i.ideo[whichissue].o + r > 1.0
             i.ideo[whichissue].o = 1.0
         elseif i.ideo[whichissue].o + r < 0.0

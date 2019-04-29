@@ -45,7 +45,7 @@ problem  = Dict("num_vars" => 5,
 
 Then SAlib.sample.saltelli(problem, 5000) returns an 60_000x5 Array{Float64,2}. Those are the param_values that we use as input for this function; i should refactor this to use dataframes.
 """
-function sweep_sample(paramsdf; size_nw = 500, time = 250_000, agent_type = Agent_o, p★calculator = calculatep★)
+function sweep_sample(paramsdf; size_nw = 500, time = 250_000, agent_type = Agent_o, p★calculator = calculatep★, pullfn = pullidealpoints)
     Y = Array{Tuple{Float64,Int64}}(undef, size(paramsdf[1]))
     Meter.@showprogress 1 "Running the sims..."       for i in 1:size(paramsdf)[1]
         paramfromsaltelli = PoodlParam(size_nw = round(Int, paramsdf[i, :size_nw]),
@@ -57,7 +57,7 @@ function sweep_sample(paramsdf; size_nw = 500, time = 250_000, agent_type = Agen
                                        time = time,
                                        agent_type = agent_type,
                                        p★calculator = p★calculator)
-        out  =  simple_run(paramfromsaltelli) |> pullidealpoints |> outputfromsim
+        out  =  simple_run(paramfromsaltelli) |> pullfn  |> outputfromsim
         Y[i] = out
     end
     return(Y)
@@ -99,7 +99,9 @@ end
 returns Initstd and Initnips (outputfromsim from initialcond)
 
 """
-function getsample_initcond(param_values; time = 250_000, agent_type = "mutating o")
+function getsample_initcond(param_values; time = 250_000,
+                     agent_type = "mutating o",
+                     pullfn = pullidealpoints)
 
     param_values[:,1] = round.(Int,param_values[:,1])
     param_values[:,2] = round.(Int,param_values[:,2])
@@ -116,7 +118,7 @@ function getsample_initcond(param_values; time = 250_000, agent_type = "mutating
                                        agent_type = agent_type)
         Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions = paramfromsaltelli
         pop = create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
-        out = pop |> pullidealpoints |> outputfromsim
+        out = pop |> pullfns |> outputfromsim
         push!(Y,out)
     end
     return(Y)
