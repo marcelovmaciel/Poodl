@@ -21,23 +21,23 @@ problem = Dict("num_vars" => 6,
 paramvalues5k_6params = pdl.boundsdict_toparamsdf(problem) 
 
 
-poodlvect★ = pdl.poodlparamsvec(paramvalues5k_6params,
-                               time = 1_000_000,
-                               p★calculator = pdl.calculatep★);
+#poodlvect★ = pdl.poodlparamsvec(paramvalues5k_6params,
+#                               time = 1_000_000,
+#                               p★calculator = pdl.calculatep★);
 
-initcondmeasure = pdl.initcondstds(poodlvect★)
+#initcondmeasure = pdl.initcondstds(poodlvect★)
 
-poodlvect★ = nothing
+#poodlvect★ = nothing
 
 Ysaltelli6params = pdl.sweep_sample(paramvalues5k_6params,
                                     time = 1_000_000,
-                                    p★calculator = pdl.calculatep★);
+                                    p★calculator = pdl.calculatep★, pullfn = pdl.pullostds);
 
 ParamSweep6params★ = pdl.ParamSweep_inout("Six parameters and sample of 5k, p★",
                                      problem, paramvalues5k_6params,
                                      Ysaltelli6params, initcondmeasure)
 
-@save "data/ParamSweep6params-star1.jld2" ParamSweep6params★
+@save "data/ParamSweep6params-star1-measurestd.jld2" ParamSweep6params★
 
 println("done")
 

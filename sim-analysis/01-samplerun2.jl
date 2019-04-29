@@ -22,13 +22,13 @@ paramvalues5k_6params = pdl.boundsdict_toparamsdf(problem)
 
 Ysaltelli6params = pdl.sweep_sample(paramvalues5k_6params,
                                     time = 1_000_000,
-                                    p★calculator = pdl.calculatep★★);
+                                    p★calculator = pdl.calculatep★★, pullfn = pdl.pullostds);
 
 ParamSweep6params★★ = pdl.ParamSweep_inout("Six parameters and sample of 5k, p★★",
                                      problem, paramvalues5k_6params,
                                      Ysaltelli6params, Array{Float64,1}(undef,0))
 
-@save "data/ParamSweep6params-star2.jld2" ParamSweep6params★★
+@save "data/ParamSweep6params-star2-measurestd.jld2" ParamSweep6params★★
 
 println("done")
 
