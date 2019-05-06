@@ -12,7 +12,7 @@ problem = Dict("num_vars" => 6,
             "names" => [ "size_nw",
                          "n_issues", "p", "σ", "ρ", "p_intran"],
             "bounds" => [[500, 5000],
-                         [1, 10],
+                         [2, 10],
                          [0.1, 0.99],
                          [0.01, 0.5],
                          [0.0, 0.1],
@@ -20,14 +20,13 @@ problem = Dict("num_vars" => 6,
 
 paramvalues5k_6params = pdl.boundsdict_toparamsdf(problem) 
 
+poodlvect★ = pdl.poodlparamsvec(paramvalues5k_6params,
+                               time = 1_000_000,
+                               p★calculator = pdl.calculatep★);
 
-#poodlvect★ = pdl.poodlparamsvec(paramvalues5k_6params,
-#                               time = 1_000_000,
-#                               p★calculator = pdl.calculatep★);
+initcondmeasure = pdl.initcondstds(poodlvect★, pullfn = pdl.pullostds)
 
-#initcondmeasure = pdl.initcondstds(poodlvect★)
-
-#poodlvect★ = nothing
+poodlvect★ = nothing
 
 Ysaltelli6params = pdl.sweep_sample(paramvalues5k_6params,
                                     time = 1_000_000,
