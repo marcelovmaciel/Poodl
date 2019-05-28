@@ -8,27 +8,21 @@ const  pdl  = Poodl
 
 pdl.mkdirs("data")
 
-problem = Dict("num_vars" => 6,
-            "names" => [ "size_nw",
-                         "n_issues", "p", "σ", "ρ", "p_intran"],
-            "bounds" => [[500, 5000],
-                         [2, 10],
-                         [0.1, 0.99],
-                         [0.01, 0.5],
-                         [0.0, 0.1],
-                         [0.0, 0.3]])
+problem = Dict("num_vars" => 5, "names" => [ "n_issues", "p", "σ", "ρ",
+            "p_intran"], "bounds" => [[2, 10], [0.1, 0.99], [0.01,
+            0.5], [0.0, 0.1], [0.0, 0.3]])
 
 paramvalues5k_6params = pdl.boundsdict_toparamsdf(problem) 
 
-Ysaltelli6params = pdl.sweep_sample(paramvalues5k_6params,
+Ysaltelli6params = pdl.sweep_sample2(paramvalues5k_6params,
                                     time = 1_000_000,
-                                    p★calculator = pdl.calculatep★★, pullfn = pdl.pullostds);
+                                    p★calculator = pdl.calculatep★★);
 
 ParamSweep6params★★ = pdl.ParamSweep_inout("Six parameters and sample of 5k, p★★",
                                      problem, paramvalues5k_6params,
                                      Ysaltelli6params, Array{Float64,1}(undef,0))
 
-@save "data/ParamSweep6params-star2-measurestd.jld2" ParamSweep6params★★
+@save "data/ParamSweep6params-star2-array.jld2" ParamSweep6params★★
 
 println("done")
 

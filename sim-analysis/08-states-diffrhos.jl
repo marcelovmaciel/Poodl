@@ -55,7 +55,6 @@ function poodlparamsgen(σs, n_issues, pstars, initialrho, pintran)
                                            p★calculator = x[1].p★calculator,
                                            ρ = x[2]), z)
 
-
     lazymap(y-> pdl.PoodlParam(n_issues = y.n_issues,
                           σ = y.σ,
                           size_nw = 500,
