@@ -61,7 +61,7 @@ where the opinions exist over an one-dimensional axis and each agent has a best
 estimate on more than one issue over that axis. Describing opinions over a
 spatial landscape is an usual way to describe policy alternatives and agents'
 preferences. The geometrical properties of the space are usually defined by
-mapping from similarity and proximity of the political agents
+mapping from similarity to proximity of the political agents
 \cite{downs1957economic, laver2014measuring}. Such a description can capture the
 common notion of parties or policies being more ``to the left'' or ``right''. If
 they're similar then they're closer \cite{van2005political, miller2015spatial}.
@@ -227,7 +227,8 @@ as an attempt to have a better model. In order to check that possibility we will
  \(\Delta_{ij} = x_i(t) - x_j(t) \), that is, agent $i$ will observe the average
  ideological position of $j$ in order to estimate its trust. That assumed $i$
  has more information than only the value $o_{j,k}(t)$. To check what happens
- when indeed only $o_{j,k}(t)$ \textcolor{red}{indeed what??}, we will introduce a second variant case where $i$ compares $o_{j,k}(t)$ to its own average. That is,  \(\Delta_{ij} = x_{i}(t) - o_{j,k}(t)\) and we represent that case by \(p^{***}\).
+ when indeed only $o_{j,k}(t)$ \textcolor{red}{indeed what??}\todo[color =
+ yellow!20]{take a look at this sentence}, we will introduce a second variant case where $i$ compares $o_{j,k}(t)$ to its own average. That is,  \(\Delta_{ij} = x_{i}(t) - o_{j,k}(t)\) and we represent that case by \(p^{***}\).
 
 In order to better understand the model dynamics we also introduce noise as the second procedure. At each iteration, 
 another agent \(i\) is randomly chosen and its opinion changed due to random noise. That is, $i$ opinion becomes \(
@@ -307,15 +308,15 @@ conditions and also for the sets of simulations corresponding to the (\(p^{*}, p
     output. The higher the value of index the bigger the impact of the parameter
     on the output. First order Sobol indexes include linear and non-linear
     contributions of the parameters, while total Sobol indexes also include all
-    the interaction effects between parameters
-    \cite{ten2016sensitivity}. Suppose we have a model with three parameters.
-    Then the total effect  \(S_{T1}\) of the first parameter \(X_1\) is given by
-    the equation \(S_{T1} = S_1 + S_{12} + S_{13} + S_{123}\) where \(S_i =
-    \frac{V[E(Y|X_i)]}{V(Y)}\); \(S_{12}\) is the impact at the variance of the
-    output \(Y\) of the interaction of \(X_{1}\) and \(X_{2}\); that is, their
-    combined effect minus their first order effects:  \(S_{ij}\) =
-    \(\frac{V[E(Y|X_i,X_,)] - V[E(Y|X_i)] - V[E(Y|X_j)]}{V(Y)} \) \cite{saltelli2008global}.
-    We then find the following indexes:
+    the interaction effects between parameters \cite{ten2016sensitivity}. If
+    there are only three parameters, the total effect \(S_{T1}\) of the first
+    parameter \(X_1\) is given by the equation \(S_{T1} = S_1 + S_{12} + S_{13}
+    + S_{123}\) where \(S_i = \frac{V[E(Y|X_i)]}{V(Y)}\); \(S_{12}\) is the
+    impact at the variance of the output \(Y\) of the interaction of \(X_{1}\)
+    and \(X_{2}\); that is, their combined effect minus their first order
+    effects: \(S_{ij}\) = \(\frac{V[E(Y|X_i,X_,)] - V[E(Y|X_i)] -
+      V[E(Y|X_j)]}{V(Y)} \) \cite{saltelli2008global}. For our simulations, we
+    obtain the estimates:
 
      
     \begin{figure}[H]
@@ -373,29 +374,33 @@ conditions and also for the sets of simulations corresponding to the (\(p^{*}, p
 
 
     The negative impact of \(\sigma\) in the population' opinion dispersion is
-    to be expected given the update rule: a higher \(\sigma\) means that agents
-    are easier to influence. As they are connected to all the other agents, the more
-    uncertain they are, the more centralized the agents' mean opinions will tend to become. 
-    The plots also show that the exact value of \(\sigma\) seems to matter little above approximately
-    0.1. Therefore we restrict our following analysis to the \((0.0, 0.1 ] \)
-    range. The effect of \(\rho\) is also expected: the bigger the noise, the more
-    dispersed the final state of the system is. The number of issues $n$ seems to have little
-    influence unless it is $n=1$. When there is only one issue, we see results where the opinions
-    clearly move away to stronger polarizations, with (\(Ystd\)) around 0.3. Those cases are no
+    expected: a higher \(\sigma\) means agents are easier to influence. As they
+    are connected to all the other agents, the more uncertain they are, the more
+    centralized the agents' mean opinions will tend to become. The plots also
+    show that the exact value of \(\sigma\) seems to matter little above
+    approximately 0.1. Therefore we restrict our following analysis to the
+    \((0.0, 0.1 ] \) range. The effect of \(\rho\) is also expected: the bigger
+    the noise, the more dispersed the final state of the system is. The number
+    of issues $n$ seems to have little influence unless it is $n=1$. When there
+    is only one issue, we see results where the opinions clearly move away to
+    stronger polarizations, with (\(Ystd\)) around 0.3. Those cases are no
     longer observed as we have at least two issues.
 
-    
-    After a general investigation we turn to the analysis of specific
-    parametizations. For that let's start by fixing the following parameters as
-    constants: \(\rho = 0.05 \) ; \(N = 500\) ; \(p\_intran = 0.0\), run the
-    simulation for 500.000 iterations, and test combinations of $\sigma = (0.02,
-    0.04, 0.1)$ and $ n = (1,5)$. The following time series exhibit the typical
-    behavior of the system for the parameterizations. As shown by Figure
-    \ref{fig:tseries1}, \(\sigma\) has the effect of leading the dynamics of the
-    simulation to the center as it increases: the bigger the \(\sigma\) the
-    closest to the mean the population is . However,when the number of issues
-    also increases that tendency is not clear, since the noise disperses them,
-    even though \(\sigma\) has a bigger impact:
+
+    To better understand how parameters influence the results, we can look at
+    typical behaviors for specific parameter values. We ran cases where we kept
+    \(\rho = 0.05 \) ; \(N = 500\) ; \(p\_intran = 0.0\) fixed, for 500.000
+    iterations, and test combinations of $\sigma = (0.02, 0.04, 0.1)$ and $ n =
+    (1,5)$. The time series at Figure \ref{fig:tseries1} show the time evolution
+    of the opinions of all $500$ agents. The graphics exhibit the typical
+    behavior of the system for the case where agent $i$ estimates how $j$ is
+    trustworthy by comparing $j$ opinion to its own average $(o_{i,k}$, that is
+    the $p{***}$ case. Only results for $p{***}$ are show here because the time
+    series for $p^*$ and $p{**}$ are visually almost identical to the ones in
+    the figuress. We see that larger values \(\sigma\) lead the opinions towards
+    the center: the bigger the \(\sigma\) is, the more agents will tend to move
+    closer to the mean.
+
 
 
         \begin{figure}[H]
@@ -417,28 +422,59 @@ conditions and also for the sets of simulations corresponding to the (\(p^{*}, p
       \label{fig:tseries1}
     \end{figure}
 
-    On the other hand, when we also increase the number of issues the
-    centralizing effect of \(\sigma \) becomes stronger:
 
+
+    
+
+
+
+    Figure \ref{fig:tseries2} shows similar time evolution series for $n=5$
+    issues. Here, even for small values of $\sigma$ we observe the opinions tend
+    to avoid the more extreme values. That seems to be an artifact of initial
+    random draws. While it is easy to draw the most extreme values with only one
+    draw, for $n=5$, as we are close to the end of the range, no values outside
+    that range are possible. So, the most extreme values require that, at the
+    start, agents should have all their five issues drawn as extreme. As that is
+    rare, those few that do start there tend to be attracted to still extreme
+    positions, but a little less so. However, there also seems to be an actual
+    tendency towards more central opinions. That can be oberved as $\sigma$
+    increases and the tendency to consensus around a central position becomes
+    even stronger than in the $n=1$ case.
+
+
+    
     \begin{figure}[H]
       \centering
-      \begin{subfigure}[b]{0.45\textwidth}
+      \begin{subfigure}[b]{0.3\textwidth}
         \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep***n5-rho005-sigma002-00intrans.png}
         % \caption{\textcolor{red}{'ill fix thix}}
       \end{subfigure}
-      \begin{subfigure}[b]{0.45\textwidth}
+      \begin{subfigure}[b]{0.3\textwidth}
         \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep***n5-rho005-sigma004-00intrans.png}
         % \caption{\(n\_issues = 1, \sigma = 0.02\) }
       \end{subfigure}
-      \begin{subfigure}[b]{0.5\textwidth}
+      \begin{subfigure}[b]{0.3\textwidth}
         \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep***n5-rho005-sigma01-00intrans.png}
         % \caption{\(n\_issues = 7, \sigma = 0.1\)}
       \end{subfigure}
-      \label{fig:tseries2}
-      \caption{Time series for the parameterization: \(\rho = 0.05, N = 500,
-       p\_intran = 0.0\)}
-    \end{figure}
 
+           \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{img/compare-ps/Poodcalculatep***n5-rho005-sigma002-00intransrandom-std.png}
+        % \caption{\textcolor{red}{'ill fix thix}}
+      \end{subfigure}
+      \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep***n5-rho005-sigma004-00intransrandom-std.png}
+        % \caption{\(n\_issues = 1, \sigma = 0.02\) }
+      \end{subfigure}
+      \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{img/compare-ps/Poodlcalculatep***n5-rho005-sigma01-00intransrandom-std.png}
+        % \caption{\(n\_issues = 7, \sigma = 0.1\)}
+      \end{subfigure}
+      \caption{Time series for the parameterization: \(\rho = 0.05, N = 500,
+        p\_intran = 0.0\)}
+            \label{fig:tseries2}
+          \end{figure}
+          
     The reason for that is : we're measuring the mean opinion values (\(x_i\))
     and \(\rho\) changes a single \(o_i\) at each iteration which means that a
     higher \(n\) implies a lesser impact of \(\rho\) on the mean opinion of the

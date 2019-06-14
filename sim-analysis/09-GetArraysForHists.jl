@@ -18,61 +18,101 @@ ParamSweep6params★ |> typeof |> fieldnames
 
 # Plot the data
 
-using Plots
-pyplot(legend = false)
+#using StatsPlots
+
+
 import Base.Iterators
 const it = Base.Iterators
+using StatsBase,Distributions, KernelDensity
+import  PyPlot
+const plt = PyPlot
 
-function plotoutarray(params)
 
-    p1,p2 = (histogram((collect ∘ it.flatten ∘ map)(x-> x[1],params[1].outputArray),
-                       bins = :scott, nbins = 100, normed = false, yformatter = :plain,
-                       title = "Final state: Agent's mean opinion for P*",
-                        ylabel = "Frequency", xlabel = "Mean opinion value for each agent"),
-             histogram((collect ∘ it.flatten ∘ map)(x-> x[2],params[1].outputArray) ,
-                       bins = :scott, nbins = 100, normed = false, yformatter = :plain,
-                       title = "Final state: Agent's opinion std for P*",
-                       ylabel = "Frequency", xlabel = "Std of opinions for each agent"))
+simoutmeans,simoutstd = map(fn ->
+                            ([ParamSweep6params★ ParamSweep6params★★ ParamSweep6params★★★ ]
+                             .|> (foo -> (collect ∘ it.flatten ∘ map)(fn, foo.outputArray))), [first,last])
 
-    p3, p4 = (histogram((collect ∘ it.flatten ∘ map)(x-> x[1],params[2].outputArray),
-                        bins = :scott, nbins = 100, normed = false, yformatter = :plain,
-                        title = "Final state: Agent's mean opinion for P**",
-                         ylabel = "Frequency", xlabel = "Mean opinion value for each agent"),
-              histogram((collect ∘ it.flatten ∘ map)(x-> x[2],params[2].outputArray),
-                        bins = :scott, nbins = 100, normed = false, yformatter = :plain,
-                        title = "Final state: Agent's opinion std for P**",
-                        ylabel = "Frequency", xlabel = "Std of opinions for each agent"))
+foo1 = map(foo -> fit(Histogram, foo, nbins=30), simoutmeans)
+foo2 = map(foo -> fit(Histogram, foo, nbins=30), simoutstd)
+#foo2 = map( (x -> x.density) ∘ kde, simoutmeans)
 
-    p5,p6 = (histogram((collect ∘ it.flatten ∘ map)(x-> x[1],params[3].outputArray),
-                       bins = :scott, nbins = 100, normed = false, yformatter = :plain,
-                       title = "Final state: Agent's mean opinion for P***",
-                        ylabel = "Frequency", xlabel = "Mean opinion value for each agent"),
-             histogram((collect ∘ it.flatten ∘ map)(x-> x[2], params[3].outputArray),
-                       bins = :scott, nbins = 100,normed = false, yformatter = :plain,
-                       title = "Final state: Agent's opinion std for P***",
-                       ylabel = "Frequency", xlabel = "Std of opinions for each agent"))
 
-    l2 = @layout [a b ; c d; e f ]
-    plot(p1,p2,p3,
-         p4,p5,p6,
-         layout = l2)
-end
+#plot(foo2[1][range(1, step = 25, stop = foo2[1] |> length)], seriestype = [:scatter,  :path])
 
-plotoutarray([ParamSweep6params★,
-              ParamSweep6params★★,
-              ParamSweep6params★★★])
+fig = plt.figure(dpi = 200)
+ax = plt.axes()
+#ax.ticklabel_format(style = "plain", axis = "y")
+ax.scatter( ((foo2[1].edges |> collect)[1] |> collect)[1:end-1],foo2[1].weights, label = "P*", marker = "*")
+ax.plot(((foo2[1].edges |> collect)[1] |> collect)[1:end-1],foo2[1].weights)
+ax.scatter( ((foo2[2].edges |> collect)[1] |> collect)[1:end-1],foo2[2].weights, marker = "^",  label = "P**")
+ax.plot(((foo2[2].edges |> collect)[1] |> collect)[1:end-1],foo2[2].weights)
+ax.scatter( ((foo2[3].edges |> collect)[1] |> collect)[1:end-1],foo2[3].weights, marker = "o",  label = "P***")
+ax.plot(((foo2[3].edges |> collect)[1] |> collect)[1:end-1],foo2[3].weights)
+ax.legend()
+ax.set_ylabel("Frequency")
+ax.set_xlabel("Agent's std opinion")
+ax.set_title("End state")
+
+
+fig = plt.figure(dpi = 200)
+ax = plt.axes()
+#ax.ticklabel_format(style = "plain", axis = "y")
+ax.scatter( ((foo1[1].edges |> collect)[1] |> collect)[1:end-1],foo1[1].weights, label = "P*", marker = "*")
+ax.plot(((foo1[1].edges |> collect)[1] |> collect)[1:end-1],foo1[1].weights)
+ax.scatter( ((foo1[2].edges |> collect)[1] |> collect)[1:end-1],foo1[2].weights, marker = "^",  label = "P**")
+ax.plot(((foo1[2].edges |> collect)[1] |> collect)[1:end-1],foo1[2].weights)
+ax.scatter( ((foo1[3].edges |> collect)[1] |> collect)[1:end-1],foo1[3].weights, marker = "o",  label = "P***")
+ax.plot(((foo1[3].edges |> collect)[1] |> collect)[1:end-1],foo1[3].weights)
+ax.legend()
+ax.set_ylabel("Frequency")
+ax.set_xlabel("Agent's mean opinion")
+ax.set_title("End state")
+
+
+#down here i use Plots
+
+p1 = histogram([simoutmeans...],
+               label = [ "P*", "P**", "P***"],
+               title = "End state",
+               titlefontsize = 12,
+               xlabel =  "Agents' mean opinion",
+               ylabel = "Frequency",
+               yformatter = :plain,
+               nbins = 500, fill = true,
+               alpha = 0.4)
+
+
+p2 = histogram([simoutstd...],
+               label = [ "P*", "P**", "P***"],
+               title = "End state",
+               xlabel =  "Agents' opinion std",
+               ylabel = "Frequency",
+               titlefontsize = 12,
+               yformatter = :plain,
+               nbins = 500, fill = true,
+               alpha = 0.4)
+
+
+pfinal = plot(p1,p2,dpi = 200, layout = @layout [a b])
+
+savefig(pfinal, "img/array-hist-end.png")
+
 
 function plotinitcond(param)
     p1,p2 = (histogram((collect ∘ it.flatten ∘ map)(x-> x[1], param.initcondmeasure),
-                       bins = :scott, nbins = 100, normed = false, yformatter = :plain,
-                       title = "Initial condition: Agent's mean opinion",
-                       ylabel = "Frequency", xlabel = "Mean opinion value for each agent"),
+                       bins = :scott, nbins = 100, normed = false, yformatter = :plain, fill = true,
+                       title = "Initial condition", titlefontsize = 10,
+                       ylabel = "Frequency", xlabel =  "Agents' mean opinion",
+                       legend = false),
              histogram((collect ∘ it.flatten ∘ map)(x-> x[2],param.initcondmeasure) ,
-                       bins = :scott, nbins = 100, normed = false, yformatter = :plain,
-                       title = "Initial condition: Agent's opinion std",
-                       ylabel = "Frequency", xlabel = "Std of opinions for each agent"))
+                       bins = :scott, nbins = 100, normed = false, yformatter = :plain, fill = true,
+                       title = "Initial condition",titlefontsize = 10,
+                       ylabel = "Frequency", xlabel =  "Agents' opinion std",
+                       legend = false))
     l = @layout [a b]
-    plot(p1,p2, layout = l, dpi = 200)
+    pstart = plot(p1,p2, layout = l, dpi = 200)
+    savefig(pstart, "img/array-hist-init.png")
 end
+
 
 plotinitcond(ParamSweep6params★)
