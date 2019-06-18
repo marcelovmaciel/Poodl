@@ -257,15 +257,19 @@ $[0.01, 0.5]$ & $[1, 10]$  & $[0.1, 0.99]$ & $[0.0, 0.1]$ & $[500, 5000]$ & $(0.
 \end{table}
 
 
-The parameter space was explored by sampling the parameter space 70,000 times using
-quasi-random low-discrepancy sequences \cite{saltelli2008global}, that generate
-evenly spaced points. An important question in any opinion dynamics model is if agents can reach consensus.
-That can be observed by measured the standard deviation of the population mean opinions (\(Ystd\)) for the
-a system final state. Figure \ref{fig:std} shows histograms for the values of (\(Ystd\)) for initial 
-conditions and also for the sets of simulations corresponding to the (\(p^{*}, p^{**}, p^{***}\))  cases.
+The parameter space was explored by two sweeps of its parameters: one sampling
+of 70,000 times using quasi-random low-discrepancy sequences
+\cite{saltelli2008global}, that generate evenly spaced points, and another of
+60,000 times keeping \(N=500\) so that we can compare different runs. An
+important question in any opinion dynamics model is if agents can reach
+consensus. That can be observed by comparing the initial mean (\( \frac{1}{n}
+\sum_{k=1}^{n} o_{k} \)) and standard deviation (\( \sqrt{ \frac{1}{n}
+  \sum_{k=1}^{n} (o_{k} - x_i)^2 } \)) of each agent's opinions. Figure
+\ref{fig:std} shows histograms for these variables at the initial condition and
+also for the sets of simulation's end states corresponding to the (\(p^{*},
+p^{**}, p^{***}\)) cases.
 
-\todo[inline]{Going to change the description above and below this figure since
-  its changed.}
+
 \begin{figure}[H]
   \centering
   \captionsetup{justification=centering,margin=2cm}
@@ -288,16 +292,21 @@ conditions and also for the sets of simulations corresponding to the (\(p^{*}, p
      \label{fig:std}
     \end{figure}
 
-    The histograms show that, in most cases, (\(Ystd\)) is significantly smaller
-    than the initial random situation. The peak at small values of (\(Ystd\))
-    seem to suggest a tendency to consensus in many cases. However, consensus is
-    not always achieved, as we can see for the solid number of cases where
-    (\(Ystd\)) stays close to the initial values. Although rare, we can also
-    observe a few cases where (\(Ystd\)) becomes larger. That can be explained
+    The histograms show that, in general, we have a greater central tendency
+    than the initial random situation. The peak at the value 0.5 is now ( Figure
+    \ref{fig:std} (b)) \(\approx 10^7\) while at the initial condition ((
+    Figure \ref{fig:std} (a)) was  \(\approx 5 * 10^5\) while the histograms
+    become more centered. This seems to suggest a tendency to consensus in many
+    cases. However, consensus is not always achieved, as shown by the tails of
+    Figure \ref{fig:std} (b) and since there is also a change at the standard
+    deviation distributions ( Figure \ref{fig:std} (c)). That can be explained
     by cases where bi-partisanship becomes stronger, with agents tending to both
     extreme positions. That suggest that, in general, the model can be described
     as one with similarity biased influence \cite{flache2017}.
-   
+
+    \todo[inline]{Ver se consigo descrever os histogramas melhor, agora não ta
+      saindo.}
+    
     The histograms, however, don't show which values of the parameters cause
     those changes. They also say nothing about which parameters are relevant and
     which ones have little influence on the final outcome. With that in mind we
