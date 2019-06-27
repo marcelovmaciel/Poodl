@@ -262,66 +262,75 @@ of 70,000 times using quasi-random low-discrepancy sequences
 \cite{saltelli2008global}, that generate evenly spaced points, and another of
 60,000 times keeping \(N=500\) so that we can compare different runs. An
 important question in any opinion dynamics model is if agents can reach
-consensus. That can be observed by comparing the initial mean (\( \frac{1}{n}
-\sum_{k=1}^{n} o_{k} \)) and standard deviation (\( \sqrt{ \frac{1}{n}
-  \sum_{k=1}^{n} (o_{k} - x_i)^2 } \)) of each agent's opinions. Figure
-\ref{fig:std} shows histograms for these variables at the initial condition and
-also for the sets of simulation's end states corresponding to the (\(p^{*},
-p^{**}, p^{***}\)) cases.
+consensus. That can be observed by comparing the initial mean and standard
+deviation of each agent's opinions. Figure \ref{fig:std} shows histograms for
+these variables at the initial condition and also for the sets of simulation's
+end states corresponding to the (\(p^{*}, p^{**}, p^{***}\)) cases.
 
 
 \begin{figure}[H]
-  \centering
-  \captionsetup{justification=centering,margin=2cm}
-    
+  \centering \captionsetup{justification=centering,margin=2cm}
     
   \begin{subfigure}[h]{0.85\textwidth}
-    
-       \includegraphics[width=\textwidth]{img/mean_hist.png}
-       \caption{Initial x Final state: \\ agents' mean opinions.}
-     \end{subfigure}
-     \begin{subfigure}[b]{0.85\textwidth}
-       
-       \includegraphics[width=\textwidth]{img/std_hist.png}
-       \caption{Initial x Final state: \\ standard deviations of opinions}
-     \end{subfigure}
-     \caption{Difference for initial and final conditions for 60.000 parameterizations. \(N = 500\)
-     for comparability.} 
-     \label{fig:std}
-    \end{figure}
+    \includegraphics[width=\textwidth]{img/mean_hist.png}
+    \caption{Initial x Final state: \\ agents' mean opinions}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.85\textwidth}
+    \includegraphics[width=\textwidth]{img/std_hist2.png}
+    \caption{Initial x Final state: \\ standard deviations of opinions}
+  \end{subfigure}
+  \caption{Difference for initial and final conditions for 60.000
+    parameterizations. \(N = 500\) for comparability.}
+  \label{fig:std}
+\end{figure}
+   
+The histograms show that, in general, there is a a greater central tendency at
+the final conditions than the initial random situation. This seems to suggest a
+tendency to consensus in many cases. However, consensus is not always achieved,
+as shown by the tails of Figure \ref{fig:std} (a). That can be explained by
+cases where bi-partisanship becomes stronger, with agents tending to both
+extreme positions. This indicates that, in general, the model can be described
+as one with similarity biased influence \cite{flache2017}. The Figure also shows
+that this tendency to consensus is weaker at the \(P^*\) case as compared to the
+other cases.
 
-    The histograms show that, in general, we have a greater central tendency
-    than the initial random situation. The peak at the value 0.5 is now ( Figure
-    \ref{fig:std} (b)) \(\approx 10^7\) while at the initial condition ((
-    Figure \ref{fig:std} (a)) was  \(\approx 5 * 10^5\) while the histograms
-    become more centered. This seems to suggest a tendency to consensus in many
-    cases. However, consensus is not always achieved, as shown by the tails of
-    Figure \ref{fig:std} (b) and since there is also a change at the standard
-    deviation distributions ( Figure \ref{fig:std} (c)). That can be explained
-    by cases where bi-partisanship becomes stronger, with agents tending to both
-    extreme positions. That suggest that, in general, the model can be described
-    as one with similarity biased influence \cite{flache2017}.
+\todo[inline, color = yellow!30]{Look the equations to see how i can explain
+  that}
 
-    \todo[inline]{Ver se consigo descrever os histogramas melhor, agora não ta
-      saindo.}
-    
-    The histograms, however, don't show which values of the parameters cause
-    those changes. They also say nothing about which parameters are relevant and
-    which ones have little influence on the final outcome. With that in mind we
-    perform a Sobol sensitivity analysis \cite{saltelli2000sensitivity}. The
-    Sobol indexes decompose the impact of parameters on the variance of the
-    output. The higher the value of index the bigger the impact of the parameter
-    on the output. First order Sobol indexes include linear and non-linear
-    contributions of the parameters, while total Sobol indexes also include all
-    the interaction effects between parameters \cite{ten2016sensitivity}. If
-    there are only three parameters, the total effect \(S_{T1}\) of the first
-    parameter \(X_1\) is given by the equation \(S_{T1} = S_1 + S_{12} + S_{13}
-    + S_{123}\) where \(S_i = \frac{V[E(Y|X_i)]}{V(Y)}\); \(S_{12}\) is the
-    impact at the variance of the output \(Y\) of the interaction of \(X_{1}\)
-    and \(X_{2}\); that is, their combined effect minus their first order
-    effects: \(S_{ij}\) = \(\frac{V[E(Y|X_i,X_,)] - V[E(Y|X_i)] -
-      V[E(Y|X_j)]}{V(Y)} \) \cite{saltelli2008global}. For our simulations, we
-    obtain the estimates:
+While in the final state we have a tendency of convergence of mean opinions to
+0.5 the Figure \ref{fig:std} (b) also shows that in all cases (\(p^{*}, p^{**},
+p^{***}\)) this happens concomitantly with an slight increase in the standard
+deviation of the opinions vis-à-vis the initial condition. This is related to
+the fact that an agent \(i\)'s opinions are concentrated at some interval at the
+initial state, and so the standard deviation is lower. However, once they
+interact with other agents one opinion of \(i\) at a time is pulled towards the
+opinions of other agents. This leads to single opinions being pushed away from
+the initial region determined by the Beta Distribution of each agent. This
+increases the standard deviation of the agents opinions, while making their mean
+opinions closer to the mean.
+
+\todo[inline, color = yellow!10]{Isso é uma explicação plausível, talvez o
+  senhor discorde ou possa melhorar a explicação. Vou tentar fazer graficos de
+  evolução das opinioes individuais para sacar a intuição disso.}
+
+The histograms, however, don't show which values of the parameters cause those
+changes. They also say nothing about which parameters are relevant and which
+ones have little influence on the final outcome. With that in mind we perform a
+Sobol sensitivity analysis \cite{saltelli2000sensitivity} using the population
+standard deviation of agent's mean opinion and opinion standard deviation as
+measures of the system. The Sobol indexes decompose the impact of parameters on
+the variance of the output. The higher the value of index the bigger the impact
+of the parameter on the output. First order Sobol indexes include linear and
+non-linear contributions of the parameters, while total Sobol indexes also
+include all the interaction effects between parameters
+\cite{ten2016sensitivity}. If there are only three parameters, the total effect
+\(S_{T1}\) of the first parameter \(X_1\) is given by the equation \(S_{T1} =
+S_1 + S_{12} + S_{13} + S_{123}\) where \(S_i = \frac{V[E(Y|X_i)]}{V(Y)}\);
+\(S_{12}\) is the impact at the variance of the output \(Y\) of the interaction
+of \(X_{1}\) and \(X_{2}\); that is, their combined effect minus their first
+order effects: \(S_{ij}\) = \(\frac{V[E(Y|X_i,X_,)] - V[E(Y|X_i)] -
+  V[E(Y|X_j)]}{V(Y)} \) \cite{saltelli2008global}. For our simulations, we
+obtain the estimates:
 
      
     \begin{figure}[H]
@@ -355,19 +364,35 @@ p^{**}, p^{***}\)) cases.
     \end{figure}
 
     The sensitivity analysis in Figure\ref{fig:sobol} shows that \(\sigma, n \),
-    and \(\rho\) have the most influence on the final values of (\(Ystd\)). $p$
-    seems to still have some smaller influence and both $N$ and $p_{intran}$
-    seem to make no difference. It is also interesting to notice that the same
-    behavior appears in the three. \(\sigma\) being the parameter that explains
-    most of the variance was expected and it is consistent with
-    \citep{martins12b}. It is interesting to see that two of the new parameters,
-    the number of issues $n$ and the noise \(\rho\), also play an important role
-    in explaining the total variance.
+    and \(\rho\) have the most influence on the final values of the system
+    measure, the standard deviation of agents' mean opinions. $p$ seems to still
+    have some smaller influence and both $N$ and $p_{intran}$ seem to make no
+    difference. It is also interesting to notice that the same behavior appears
+    in the three. \(\sigma\) being the parameter that explains most of the
+    variance was expected and it is consistent with \citep{martins12b}. It is
+    interesting to see that two of the new parameters, the number of issues $n$
+    and the noise \(\rho\), also play an important role in explaining the total
+    variance of the system measure. When we look at the standard deviation of
+    the agent's opinions, however, we see that these parameters impact take
+    prominence. As in Figure \ref{fig:std} the \(p^*\) differ from the other
+    cases since the number of issues \(n\) is the parameter which explains the
+    most the variance in the system measure and \(\sigma\) still is one of the
+    most relevant parameters while in the other cases the role of \(\sigma\) is
+    highly diminished and \(\rho\) is by far the one with the highest impact.
+
+    \todo[inline, color = yellow!30]{Tem mais informação a ser extraida desses
+      graficos, só não sei explicar.}
+    
      
-    The
-    sensitivity analysis, however, does not show the direction of the impact,
-    which we investigate through scatter plots shown in Figure \ref{fig:scatters}. Each value of (\(Ystd\)) in those graphics correspond
-    to the outcome of one implementation of the model for the value of the parameter at the $x$-axis.
+    The sensitivity analysis, however, does not show the direction of the
+    impact, which we investigate through scatter plots shown in Figure
+    \ref{fig:scatters}. Each value of the system measure, in this
+    Figure\footnote{The scatter plots in the case the system measure is equal to
+      the standard deviation of the agents' opinion standard deviation are
+      almost the same as the ones in Figure \ref{fig:scatters}.} the standard
+    deviation of the agents' mean opinions (labeled \(Ystd\) in the plots), in
+    those graphics correspond to the outcome of one implementation of the model
+    for the value of the parameter at the $x$-axis.
 
 
         \begin{figure}[H]
@@ -411,7 +436,7 @@ p^{**}, p^{***}\)) cases.
     (1,5)$. The time series at Figure \ref{fig:tseries1} show the time evolution
     of the opinions of all $500$ agents. The graphics exhibit the typical
     behavior of the system for the case where agent $i$ estimates how $j$ is
-    trustworthy by comparing $j$ opinion to its own average $(o_{i,k}$, that is
+    trustworthy by comparing $j$ opinion to its own average $o_{i,k}$, that is
     the $p{***}$ case. Only results for $p{***}$ are show here because the time
     series for $p^*$ and $p{**}$ are visually almost identical to the ones in
     the figuress. We see that larger values \(\sigma\) lead the opinions towards
@@ -422,14 +447,14 @@ p^{**}, p^{***}\)) cases.
 
         \begin{figure}[H]
   \centering
-    \begin{subfigure}[b]{0.33\textwidth}
-      \includegraphics[width=\textwidth]{img/series/tseries1/Poodlcalculatep***n1-rho005-sigma01-00intransrandom.png}
-      %\caption{\textcolor{red}{'ill fix thix}}
-    \end{subfigure}
        \begin{subfigure}[b]{0.33\textwidth}
       \includegraphics[width=\textwidth]{img/series/tseries1/Poodlcalculatep***n1-rho005-sigma002-00intransrandom.png}
  %      \caption{\(n\_issues = 1, \sigma = 0.02\) }
      \end{subfigure}
+    \begin{subfigure}[b]{0.33\textwidth}
+      \includegraphics[width=\textwidth]{img/series/tseries1/Poodlcalculatep***n1-rho005-sigma01-00intransrandom.png}
+      %\caption{\textcolor{red}{'ill fix thix}}
+    \end{subfigure}
     \begin{subfigure}[b]{0.33\textwidth}
       \includegraphics[width=\textwidth]{img/series/tseries1/Poodlcalculatep***n2-rho005-sigma01-00intransrandom.png}
  %      \caption{\(n\_issues = 1, \sigma = 0.02\) }

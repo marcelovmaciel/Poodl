@@ -26,47 +26,100 @@ const it = Base.Iterators
 using StatsBase,Distributions, KernelDensity
 import  PyPlot
 const plt = PyPlot
+using PyCall
+
+
+locator= pyimport("mpl_toolkits.axes_grid1.inset_locator")
 
 
 simoutmeans,simoutstd = map(fn ->
                             ([ParamSweep6params★ ParamSweep6params★★ ParamSweep6params★★★ ]
                              .|> (foo -> (collect ∘ it.flatten ∘ map)(fn, foo.outputArray))), [first,last])
 
-foo1 = map(foo -> fit(Histogram, foo, nbins=30), simoutmeans)
-foo2 = map(foo -> fit(Histogram, foo, nbins=30), simoutstd)
+endmean_hist = map(foo -> fit(Histogram, foo, nbins=30), simoutmeans)
+endstd_hist = map(foo -> fit(Histogram, foo, nbins=30), simoutstd)
 #foo2 = map( (x -> x.density) ∘ kde, simoutmeans)
 
 
-#plot(foo2[1][range(1, step = 25, stop = foo2[1] |> length)], seriestype = [:scatter,  :path])
+initmean, initstd  = ((collect ∘ it.flatten ∘ map)(x-> x[1], ParamSweep6params★.initcondmeasure),
+                      (collect ∘ it.flatten ∘ map)(x-> x[2], ParamSweep6params★.initcondmeasure))
 
-fig = plt.figure(dpi = 200)
+initmean_hist, initstd_hist = (fit(Histogram, initmean, nbins=30),
+                               fit(Histogram, initstd, nbins=30))
+    
+
+
+diffinter_init_std = filter( x-> x < 0.085, initstd)
+diffinters_end_std = map(foo -> filter( x-> x < 0.085, foo), simoutstd)
+inter_init_hist = fit(Histogram, diffinter_init_std, nbins = 30 ) 
+inter_end_hist = map(foo -> fit(Histogram, foo, nbins=30), diffinters_end_std)
+
+
+
+fig = plt.figure(dpi = 200, figsize = (12,12))
 ax = plt.axes()
-#ax.ticklabel_format(style = "plain", axis = "y")
-ax.scatter( ((foo2[1].edges |> collect)[1] |> collect)[1:end-1],foo2[1].weights, label = "P*", marker = "*")
-ax.plot(((foo2[1].edges |> collect)[1] |> collect)[1:end-1],foo2[1].weights)
-ax.scatter( ((foo2[2].edges |> collect)[1] |> collect)[1:end-1],foo2[2].weights, marker = "^",  label = "P**")
-ax.plot(((foo2[2].edges |> collect)[1] |> collect)[1:end-1],foo2[2].weights)
-ax.scatter( ((foo2[3].edges |> collect)[1] |> collect)[1:end-1],foo2[3].weights, marker = "o",  label = "P***")
-ax.plot(((foo2[3].edges |> collect)[1] |> collect)[1:end-1],foo2[3].weights)
+axins = locator.inset_axes(ax, width="50%", height="75%",
+                   bbox_to_anchor=(.28, .3, .9, 0.8),
+                   bbox_transform=ax.transAxes, loc=3)
+
+axins.scatter(((inter_init_hist.edges |> collect)[1] |> collect)[1:end-1], inter_init_hist.weights)
+axins.plot(((inter_init_hist.edges |> collect)[1] |> collect)[1:end-1], inter_init_hist.weights)
+
+axins.tick_params(labelleft= false, left = false)
+
+#foo = axins.spines["left"].set_visible(false)
+
+
+#axins.ticklabel_format(style = "plain", axinsis = "y")
+axins.scatter( ((inter_end_hist[1].edges |> collect)[1] |> collect)[1:end-1],inter_end_hist[1].weights, marker = "*")
+axins.plot(((inter_end_hist[1].edges |> collect)[1] |> collect)[1:end-1],inter_end_hist[1].weights)
+axins.scatter( ((inter_end_hist[2].edges |> collect)[1] |> collect)[1:end-1],inter_end_hist[2].weights, marker = "^")
+axins.plot(((inter_end_hist[2].edges |> collect)[1] |> collect)[1:end-1],inter_end_hist[2].weights)
+axins.scatter( ((inter_end_hist[3].edges |> collect)[1] |> collect)[1:end-1],inter_end_hist[3].weights, marker = "o")
+axins.plot(((inter_end_hist[3].edges |> collect)[1] |> collect)[1:end-1],inter_end_hist[3].weights)
+
+ax.scatter(((initstd_hist.edges |> collect)[1] |> collect)[1:end-1], initstd_hist.weights, label = "Initial condition")
+ax.plot(((initstd_hist.edges |> collect)[1] |> collect)[1:end-1], initstd_hist.weights)
+
+ax.scatter( ((endstd_hist[1].edges |> collect)[1] |> collect)[1:end-1],endstd_hist[1].weights, label = "P*'s final state", marker = "*")
+ax.plot(((endstd_hist[1].edges |> collect)[1] |> collect)[1:end-1],endstd_hist[1].weights)
+
+ax.scatter( ((endstd_hist[2].edges |> collect)[1] |> collect)[1:end-1],endstd_hist[2].weights, marker = "^",  label = "P**'s final state")
+ax.plot(((endstd_hist[2].edges |> collect)[1] |> collect)[1:end-1],endstd_hist[2].weights)
+
+ax.scatter( ((endstd_hist[3].edges |> collect)[1] |> collect)[1:end-1],endstd_hist[3].weights, marker = "o",  label = "P***'s final state")
+ax.plot(((endstd_hist[3].edges |> collect)[1] |> collect)[1:end-1],endstd_hist[3].weights)
+
 ax.legend()
 ax.set_ylabel("Frequency")
 ax.set_xlabel("Agent's std opinion")
-ax.set_title("End state")
+ax.set_title(" Initial vs final condition - Opinion Standard Deviation")
 
 
-fig = plt.figure(dpi = 200)
+
+fig = plt.figure(dpi = 200, figsize = (12,12))
 ax = plt.axes()
+
+
+
+ax.scatter(((initmean_hist.edges |> collect)[1] |> collect)[1:end-1], initmean_hist.weights, label = "Initial condition")
+ax.plot(((initmean_hist.edges |> collect)[1] |> collect)[1:end-1], initmean_hist.weights)
+
 #ax.ticklabel_format(style = "plain", axis = "y")
-ax.scatter( ((foo1[1].edges |> collect)[1] |> collect)[1:end-1],foo1[1].weights, label = "P*", marker = "*")
-ax.plot(((foo1[1].edges |> collect)[1] |> collect)[1:end-1],foo1[1].weights)
-ax.scatter( ((foo1[2].edges |> collect)[1] |> collect)[1:end-1],foo1[2].weights, marker = "^",  label = "P**")
-ax.plot(((foo1[2].edges |> collect)[1] |> collect)[1:end-1],foo1[2].weights)
-ax.scatter( ((foo1[3].edges |> collect)[1] |> collect)[1:end-1],foo1[3].weights, marker = "o",  label = "P***")
-ax.plot(((foo1[3].edges |> collect)[1] |> collect)[1:end-1],foo1[3].weights)
+ax.scatter( ((endmean_hist[1].edges |> collect)[1] |> collect)[1:end-1],endmean_hist[1].weights, label = "P*'s final state", marker = "*")
+ax.plot(((endmean_hist[1].edges |> collect)[1] |> collect)[1:end-1],endmean_hist[1].weights)
+ax.scatter( ((endmean_hist[2].edges |> collect)[1] |> collect)[1:end-1],endmean_hist[2].weights, marker = "^",  label = "P**'s final state")
+ax.plot(((endmean_hist[2].edges |> collect)[1] |> collect)[1:end-1],endmean_hist[2].weights)
+ax.scatter( ((endmean_hist[3].edges |> collect)[1] |> collect)[1:end-1],endmean_hist[3].weights, marker = "o",  label = "P***'s final state")
+ax.plot(((endmean_hist[3].edges |> collect)[1] |> collect)[1:end-1],endmean_hist[3].weights)
 ax.legend()
 ax.set_ylabel("Frequency")
 ax.set_xlabel("Agent's mean opinion")
-ax.set_title("End state")
+ax.set_title(" Initial vs final condition - Mean Opinion")
+
+
+
+
 
 
 #down here i use Plots
