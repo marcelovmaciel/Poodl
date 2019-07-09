@@ -64,6 +64,43 @@ function sweep_sample(paramsdf; size_nw = 500, time = 250_000, agent_type = Agen
 end
 
 
+function sweep_sample2(paramsdf; size_nw = 500, time = 250_000, agent_type = Agent_o, p★calculator = calculatep★, pullfn = (pullidealpoints, pullostds))
+    Y = Vector{Tuple{Vector{Float64}, Vector{Float64}}}(undef, size(paramsdf[1]))
+    Meter.@showprogress 1 "Running the sims..."       for i in 1:size(paramsdf)[1]
+        paramfromsaltelli = PoodlParam(size_nw = size_nw,
+                                       n_issues = round(Int,paramsdf[i, :n_issues]),
+                                       p = paramsdf[i, :p],
+                                       σ = paramsdf[i,:σ],
+                                       ρ = paramsdf[i, :ρ],
+                                       propintransigents = paramsdf[i, :p_intran],
+                                       time = time,
+                                       agent_type = agent_type,
+                                       p★calculator = p★calculator)
+        out  =  map(f -> f( simple_run(paramfromsaltelli)), pullfn)
+        Y[i] = out
+    end
+    return(Y)
+end
+
+
+function sweep_sample3(paramsdf; size_nw = 500, time = 250_000, agent_type = Agent_o, p★calculator = calculatep★, pullfn = pulloiks)
+    Y = Array{Array{Array{Float64,1},1},1}(undef, size(paramsdf[1]))
+    Meter.@showprogress 1 "Running the sims..."       for i in 1:size(paramsdf)[1]
+        paramfromsaltelli = PoodlParam(size_nw = size_nw,
+                                       n_issues = round(Int,paramsdf[i, :n_issues]),
+                                       p = paramsdf[i, :p],
+                                       σ = paramsdf[i,:σ],
+                                       ρ = paramsdf[i, :ρ],
+                                       propintransigents = paramsdf[i, :p_intran],
+                                       time = time,
+                                       agent_type = agent_type,
+                                       p★calculator = p★calculator)
+        out  =   simple_run(paramfromsaltelli) |> pullfn
+        Y[i] = out
+    end
+    return(Y)
+end
+
 function poodlparamsvec(paramsdf; time = 250_000, agent_type = Agent_o, p★calculator = calculatep★)
     Y = Array{PoodlParam{Float64}}(undef, size(paramsdf[1]))
       Meter.@showprogress 1 "Computing the params..."     for i in 1:size(paramsdf)[1]
@@ -81,6 +118,22 @@ function poodlparamsvec(paramsdf; time = 250_000, agent_type = Agent_o, p★calc
     return(Y)
 end
 
+function poodlparamsvec2(paramsdf; size_nw = 500, time = 250_000, agent_type = Agent_o, p★calculator = calculatep★)
+    Y = Array{PoodlParam{Float64}}(undef, size(paramsdf[1]))
+      Meter.@showprogress 1 "Computing the params..."     for i in 1:size(paramsdf)[1]
+        paramfromsaltelli = PoodlParam(size_nw = size_nw,
+                                       n_issues = round(Int,paramsdf[i, :n_issues]),
+                                       p = paramsdf[i, :p],
+                                       σ = paramsdf[i,:σ],
+                                       ρ = paramsdf[i, :ρ],
+                                       propintransigents = paramsdf[i, :p_intran],
+                                       time = time,
+                                       agent_type = agent_type,
+                                       p★calculator = p★calculator)
+        Y[i] = paramfromsaltelli
+    end
+    return(Y)
+end
 
 
 function paramvec_toinitialconds(paramsvec;agent_type = Agent_o)
@@ -155,8 +208,6 @@ Meter.@showprogress 1 "Extracting stds" for run in 1:repetition
     end
     return(stdsout)
 end
-
-
 
 """
 function multiruns(sigmanissues::Tuple; repetitions = 50)

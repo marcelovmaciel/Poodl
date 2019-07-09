@@ -36,23 +36,22 @@ simoutmeans,simoutstd = map(fn ->
                             ([ParamSweep6params★ ParamSweep6params★★ ParamSweep6params★★★ ]
                              .|> (foo -> (collect ∘ it.flatten ∘ map)(fn, foo.outputArray))), [first,last])
 
-endmean_hist = map(foo -> fit(Histogram, foo, nbins=30), simoutmeans)
-endstd_hist = map(foo -> fit(Histogram, foo, nbins=30), simoutstd)
+endmean_hist = map(foo -> fit(Histogram, foo, nbins=120), simoutmeans)
+endstd_hist = map(foo -> fit(Histogram, foo, nbins=60), simoutstd)
 #foo2 = map( (x -> x.density) ∘ kde, simoutmeans)
 
 
 initmean, initstd  = ((collect ∘ it.flatten ∘ map)(x-> x[1], ParamSweep6params★.initcondmeasure),
                       (collect ∘ it.flatten ∘ map)(x-> x[2], ParamSweep6params★.initcondmeasure))
 
-initmean_hist, initstd_hist = (fit(Histogram, initmean, nbins=30),
-                               fit(Histogram, initstd, nbins=30))
+initmean_hist, initstd_hist = (fit(Histogram, initmean, nbins=120),
+                               fit(Histogram, initstd, nbins=60))
     
 
-
-diffinter_init_std = filter( x-> x < 0.085, initstd)
-diffinters_end_std = map(foo -> filter( x-> x < 0.085, foo), simoutstd)
-inter_init_hist = fit(Histogram, diffinter_init_std, nbins = 30 ) 
-inter_end_hist = map(foo -> fit(Histogram, foo, nbins=30), diffinters_end_std)
+diffinter_init_std = filter( x-> x < 0.125, initstd)
+diffinters_end_std = map(foo -> filter( x-> x < 0.125, foo), simoutstd)
+inter_init_hist = fit(Histogram, diffinter_init_std, nbins = 60 ) 
+inter_end_hist = map(foo -> fit(Histogram, foo, nbins=60), diffinters_end_std)
 
 
 
@@ -96,29 +95,30 @@ ax.set_xlabel("Agent's std opinion")
 ax.set_title(" Initial vs final condition - Opinion Standard Deviation")
 
 
-
 fig = plt.figure(dpi = 200, figsize = (12,12))
 ax = plt.axes()
 
 
 
-ax.scatter(((initmean_hist.edges |> collect)[1] |> collect)[1:end-1], initmean_hist.weights, label = "Initial condition")
-ax.plot(((initmean_hist.edges |> collect)[1] |> collect)[1:end-1], initmean_hist.weights)
+ax.scatter(((initmean_hist.edges |> collect)[1] |> collect)[1:end-1], initmean_hist.weights, label = "Initial condition", s=10)
+ax.plot(((initmean_hist.edges |> collect)[1] |> collect)[1:end-1],
+        initmean_hist.weights, linewidth = 1)
 
 #ax.ticklabel_format(style = "plain", axis = "y")
-ax.scatter( ((endmean_hist[1].edges |> collect)[1] |> collect)[1:end-1],endmean_hist[1].weights, label = "P*'s final state", marker = "*")
+ax.scatter( ((endmean_hist[1].edges |> collect)[1] |> collect)[1:end-1],
+            endmean_hist[1].weights, label = "P*'s final state", marker = "*", s=10)
 ax.plot(((endmean_hist[1].edges |> collect)[1] |> collect)[1:end-1],endmean_hist[1].weights)
-ax.scatter( ((endmean_hist[2].edges |> collect)[1] |> collect)[1:end-1],endmean_hist[2].weights, marker = "^",  label = "P**'s final state")
+ax.scatter( ((endmean_hist[2].edges |> collect)[1] |> collect)[1:end-1],endmean_hist[2].weights,
+            marker = "^",  label = "P**'s final state", s=10)
 ax.plot(((endmean_hist[2].edges |> collect)[1] |> collect)[1:end-1],endmean_hist[2].weights)
-ax.scatter( ((endmean_hist[3].edges |> collect)[1] |> collect)[1:end-1],endmean_hist[3].weights, marker = "o",  label = "P***'s final state")
+ax.scatter( ((endmean_hist[3].edges |> collect)[1] |> collect)[1:end-1],endmean_hist[3].weights,
+            marker = "o",  label = "P***'s final state", s=10)
 ax.plot(((endmean_hist[3].edges |> collect)[1] |> collect)[1:end-1],endmean_hist[3].weights)
+plt.axhline(y=0, linestyle = "dashed", color = "black")
 ax.legend()
 ax.set_ylabel("Frequency")
 ax.set_xlabel("Agent's mean opinion")
 ax.set_title(" Initial vs final condition - Mean Opinion")
-
-
-
 
 
 

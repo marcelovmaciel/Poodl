@@ -64,12 +64,12 @@ function outputfromsim(endpoints::Array)
 end
 
 """
-    function createstatearray(pop,time)
+    function createstatearray(pop,time; pullfn = pullidealpoints)
 
 Creates an array with the agents' ideal points; it's an alternative to saving everything in a df
 
 """
-function createstatearray(pop,time; pullfn = pullidealpoint)
+function createstatearray(pop,time; pullfn = pullidealpoints)
     statearray = Array{Array{Float64}}(undef,time+1)'
     statearray[1] = pullfn(pop)
     return(statearray)
@@ -143,7 +143,6 @@ function runsim!(pop,p,ρ,time, p★calculator)
     end
 end
 
-
 "repetition of the sim for some parameters;"
 function one_run(pa::PoodlParam)
     Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions, p★calculator =pa
@@ -175,7 +174,7 @@ runs the simulation and keeps each iteration configuration (ideal points)
 function simstatesvec(pa::PoodlParam; pullfn = pullidealpoints)
     Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions, p★calculator =pa
     pop = create_initialcond(agent_type, σ, n_issues, size_nw,graphcreator, propintransigents, intranpositions = intranpositions)
-    statearray = createstatearray(pop, pa.time)
+    statearray = createstatearray(pop, pa.time, pullfn = pullfn)
 
     for step in 1:time
         agents_update!(pop,p, ρ, p★calculator)
@@ -184,14 +183,18 @@ function simstatesvec(pa::PoodlParam; pullfn = pullidealpoints)
     return(statearray)
 end
 
+
+
 """
     statesmatrix(statearray, time, size_nw)
 fn to turn the system configurations (its state) into a matrix. I need to plot the agents' time series.
 Takes a lot of time (10 min for 1.000.000 iterations and 1000 agents)
 """
-function statesmatrix(pa; time = pa.time, size_nw = pa.size_nw)
+function statesmatrix(pa; time = pa.time,
+               size_nw = pa.size_nw,
+               pullfn = pullidealpoints )
     a = Array{Float64}(undef, time+1,size_nw)
-    statesvec = simstatesvec(pa)
+    statesvec = simstatesvec(pa, pullfn = pullfn)
 
    Meter.@showprogress 1 "Computing..." for (step,popstate) in enumerate(statesvec)
         for (agent_indx,agentstate) in enumerate(popstate)
@@ -218,10 +221,49 @@ end
 function initcondstds(paramvect; pullfn = pullidealpoints)
     Y = Vector{Float64}(undef, length(paramvect))
     Meter.@showprogress 1 "Computing  initcond stds ..." for (index,value) in enumerate(paramvect)
-        Y[index] = get_simpleinitcond(value, pullfn)
+        Y[index] = get_simpleinitcond(value, pullfn =  pullfn)
     end
     return(Y)
 end
 
 
+function get_initcond(param; pullfn = (pullidealpoints, pullostds))
+    Y = Tuple{Float64,Int64}[]
+    Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions, p★calculator = param
+    pop = create_initialcond(agent_type, σ, n_issues,
+                             size_nw,graphcreator, propintransigents,
+                             intranpositions = intranpositions)
+    out = map(f -> f(pop), pullfn)
+    return(out)
+end
+
+
+function initconds(paramvect; pullfn = (pullidealpoints, pullostds))
+    Y = Vector{Tuple{Vector{Float64}, Vector{Float64}}}(undef, length(paramvect))
+    Meter.@showprogress 1 "Computing  initcond stds ..." for (index,value) in enumerate(paramvect)
+        Y[index] = get_initcond(value, pullfn =  pullfn)
+    end
+    return(Y)
+end
+
+
+function initopinions(paramvect; pullfn = pulloiks)
+
+    Y = Array{Array{Array{Float64,1},1},1}(undef, length(paramvect))
+
+    function get_initopinions(param; pullfn  = pulloiks)
+    
+        Param.@unpack n_issues, size_nw, p, σ, time, ρ, agent_type,graphcreator, propintransigents, intranpositions, p★calculator = param
+        pop = create_initialcond(agent_type, σ, n_issues,
+                             size_nw,graphcreator, propintransigents,
+                             intranpositions = intranpositions)
+        out = pop |> pullfn
+        return(out)
+    end
+    
+    Meter.@showprogress 1 "Computing  init opinions ..." for (index,value) in enumerate(paramvect)
+        Y[index] = get_initopinions(value, pullfn =  pullfn)
+    end
+   return(Y)
+end
 

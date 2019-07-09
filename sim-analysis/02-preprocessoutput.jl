@@ -15,9 +15,9 @@ discretize(x) = round(Int,x)
 
 # Data structures from the simulation 
 
-@load "data/ParamSweep6params-star1.jld2" ParamSweep6params★
-@load "data/ParamSweep6params-star2.jld2" ParamSweep6params★★
-@load "data/ParamSweep6params-star3.jld2" ParamSweep6params★★★
+@load "data/ParamSweep6params-star1-measurestd.jld2" ParamSweep6params★
+@load "data/ParamSweep6params-star2-measurestd.jld2" ParamSweep6params★★
+@load "data/ParamSweep6params-star3-measurestd.jld2" ParamSweep6params★★★
 
 simslist = [ ParamSweep6params★,
              ParamSweep6params★★,
@@ -35,6 +35,9 @@ totaldf =  pdl.DF.DataFrame( N = map(discretize, sixparams[:size_nw]),
                              ρ = sixparams[:ρ],
                              p_intran = sixparams[:p_intran])
 
+
+
+
 Ystd5000★,Ynips5000★ = pdl.extractys(simslist[1].outputArray)
 Ystd5000★★,Ynips5000★★ = pdl.extractys(simslist[2].outputArray)
 Ystd5000★★★,Ynips5000★★★ = pdl.extractys(simslist[3].outputArray)
@@ -44,7 +47,9 @@ totaldf[:Ystd★★] = Ystd5000★★
 totaldf[:Ystd★★★] = Ystd5000★★★
 totaldf[:Initstd ] = simslist[1].initcondmeasure
 
-CSV.write("data/5kparamsresults.csv",totaldf)
+
+
+CSV.write("data/5kparamsresults-measurestd.csv",totaldf)
 
 
 #  Create df for sobol bar plot - 6params version
@@ -56,12 +61,12 @@ function sobolS1STcoefs(indict, output)
                  |> x -> pdl.DF.hcat(x, DataFrame(Si_std)))
 end
 
-CSV.write("data/saltelli5000std-star1.csv",
+CSV.write("data/saltelli5000std-star1-measurestd.csv",
           sobolS1STcoefs(simslist[1].indict, Ystd5000★))
 
-CSV.write("data/saltelli5000std-star2.csv",
+CSV.write("data/saltelli5000std-star2-measurestd.csv",
           sobolS1STcoefs(simslist[1].indict, Ystd5000★★))
 
-CSV.write("data/saltelli5000std-star3.csv",
+CSV.write("data/saltelli5000std-star3-measurestd.csv",
           sobolS1STcoefs(simslist[1].indict, Ystd5000★★★))
 
