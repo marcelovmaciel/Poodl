@@ -331,40 +331,33 @@ understand. It just shows that, while opinions on different issues might be
 spreading more, including towards more extreme values, the mean of every issue
 opinion of the agents show a clear central tendency. That the mean would have a
 central tendency should not be seen as a surprise. But that does not necessarily
-correspond to what happens to the agents opinions on specific issues $o_{ik}$.
+correspond to what happens to the agents  opinions on specific issues $o_{ik}$.
 
     \begin{figure}[H]
   \centering
-    \begin{subfigure}[b]{\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
       \includegraphics[width=\textwidth]{img/oiks/oiks_n2.png}
 %      \caption{\( n\_issues = 1,  \sigma = 0.1\) }
     \end{subfigure}
-         \begin{subfigure}[b]{\textwidth}
+         \begin{subfigure}[b]{0.49\textwidth}
       \includegraphics[width=\textwidth]{img/oiks/oiks_smallsigma002_n2.png}
 %      \caption{\( n\_issues = 1,  \sigma = 0.1\) }
     \end{subfigure}
-    	\caption{Histogram for the final distribution of values of $o_{ik}$. Initial distribution is also shown for comparison.}
-\end{figure}
-\begin{figure}[H]
-  \ContinuedFloat
+    
   
-    \begin{subfigure}[b]{\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
       \includegraphics[width=\textwidth]{img/oiks/oiks_n6.png}
  %      \caption{\(n\_issues = 1, \sigma = 0.02\) }
     \end{subfigure}
-    \begin{subfigure}[b]{\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
       \includegraphics[width=\textwidth]{img/oiks/oiks_smallsigma002_n6.png}
  %      \caption{\(n\_issues = 1, \sigma = 0.02\) }
     \end{subfigure}
-    	\caption{Histogram for the final distribution of values of $o_{ik}$. Initial distribution is also shown for comparison.}
-  \end{figure}
-  \begin{figure}[H]
-    \ContinuedFloat
-     \begin{subfigure}[b]{\textwidth}
+     \begin{subfigure}[b]{0.49\textwidth}
        \includegraphics[width=\textwidth]{img/oiks/oiks_n10.png}
   %     \caption{\(n\_issues = 7, \sigma = 0.1\)}
      \end{subfigure}
-     \begin{subfigure}[b]{\textwidth}
+     \begin{subfigure}[b]{0.49\textwidth}
        \includegraphics[width=\textwidth]{img/oiks/oiks_smallsigma002_n10.png}
   %     \caption{\(n\_issues = 7, \sigma = 0.1\)}
      \end{subfigure}
@@ -372,7 +365,23 @@ correspond to what happens to the agents opinions on specific issues $o_{ik}$.
 	\label{fig:oik}
 \end{figure}
 
-The behavior of the opinions about specific issues $o_{ik}$ values when we have small values of $\sigma$ can be observed in the Figure~\ref{fig:oik}. The graphics show separate cases for different number $n$ of issues and distinct small values of $\sigma$. The stronger central tendency. While the most important peak is still around 0.5, the distribution of values is now much more spread. That reflects the fact that, as $\sigma$ decreases, consensus becomes much harder and a fraction of the agents find agreement at other values. Indeed, in every graphic, for the $p^*$ scenario, central opinions become less common than in initial conditions, while more extreme values become predominant, showing a clear tendency away from consensus. The same is not true for the more centralizing versions, $p^{**}$ and $p^{***}$, that seems to show a more varied behavior. For $\sigma \leq 0.5$, both cases show some tendency to consensus. As  for $\sigma \leq 0.2$, we see very small changes in the initial distribution, when $n=6$ or $n=10$, and a clear drive to disagreement when $n=2$. In all scenarios, however, it is clear that the tendency to disagreement is weaker when update is done following the $p^{**}$ and $p^{***}$  rules than what we observe for $p^*$.
+The behavior of the opinions about specific issues $o_{ik}$ values when we have
+small values of $\sigma$ can be observed in the Figure~\ref{fig:oik}. The
+graphics show separate cases for different number $n$ of issues and distinct
+small values of $\sigma$. The stronger central tendency. While the most
+important peak is still around 0.5, the distribution of values is now much more
+spread. That reflects the fact that, as $\sigma$ decreases, consensus becomes
+much harder and a fraction of the agents find agreement at other values. Indeed,
+in every graphic, for the $p^*$ scenario, central opinions become less common
+than in initial conditions, while more extreme values become predominant,
+showing a clear tendency away from consensus. The same is not true for the more
+centralizing versions, $p^{**}$ and $p^{***}$, that seems to show a more varied
+behavior. For $\sigma \leq 0.5$, both cases show some tendency to consensus. As
+for $\sigma \leq 0.2$, we see very small changes in the initial distribution,
+when $n=6$ or $n=10$, and a clear drive to disagreement when $n=2$. In all
+scenarios, however, it is clear that the tendency to disagreement is weaker when
+update is done following the $p^{**}$ and $p^{***}$ rules than what we observe
+for $p^*$.
 
 
 
@@ -525,23 +534,22 @@ obtain the estimates:
     \begin{subfigure}[b]{0.48\textwidth}
       \includegraphics[width=\textwidth]{img/series/tseries1/Poodlcalculatep***n1-rho005-sigma01-00intransrandom.png}
       %\caption{\textcolor{red}{'ill fix thix}}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.48\textwidth}
-      \includegraphics[width=\textwidth]{img/series/tseries1/Poodlcalculatep***n2-rho005-sigma01-00intransrandom.png}
- %      \caption{\(n\_issues = 1, \sigma = 0.02\) }
-    \end{subfigure}
-     \begin{subfigure}[b]{0.48\textwidth}
-       \includegraphics[width=\textwidth]{img/series/tseries1/Poodlcalculatep***n2-rho005-sigma01-00intransrandom-std.png}
-     \end{subfigure}
-     
+    \end{subfigure}     
               \begin{subfigure}[b]{0.48\textwidth}
       \includegraphics[width=\textwidth]{img/series/tseries1/Poodlcalculatep***n2-rho005-sigma002-00intransrandom.png}
  %      \caption{\(n\_issues = 1, \sigma = 0.02\) }
      \end{subfigure}
     \begin{subfigure}[b]{0.48\textwidth}
-      \includegraphics[width=\textwidth]{img/series/tseries1/Poodlcalculatep***n2-rho005-sigma002-00intransrandom-std.png}
-%     \caption{\(n\_issues = 7, \sigma = 0.1\)}
-     \end{subfigure}
+      \includegraphics[width=\textwidth]{img/series/tseries1/Poodlcalculatep***n2-rho005-sigma01-00intransrandom.png}
+ %      \caption{\(n\_issues = 1, \sigma = 0.02\) }
+    \end{subfigure}
+     % \begin{subfigure}[b]{0.48\textwidth}
+     %   \includegraphics[width=\textwidth]{img/series/tseries1/Poodlcalculatep***n2-rho005-sigma01-00intransrandom-std.png}
+     % \end{subfigure}
+%     \begin{subfigure}[b]{0.48\textwidth}
+%       \includegraphics[width=\textwidth]{img/series/tseries1/Poodlcalculatep***n2-rho005-sigma002-00intransrandom-std.png}
+% %     \caption{\(n\_issues = 7, \sigma = 0.1\)}
+%      \end{subfigure}
      \caption{Time series for the parameterization: \(\rho = 0.05, N = 500,
        p\_intran = 0.0, n  = 1 \) or  $2$}
       \label{fig:tseries1}
@@ -691,18 +699,18 @@ obtain the estimates:
         \includegraphics[width=\textwidth]{img/series/tseries5/Poodlcalculatep*n5-rho10e-5-sigma002-00intransrandom.png}
         % \caption{\textcolor{red}{'ill fix thix}}
       \end{subfigure}
-      % \begin{subfigure}[b]{0.48\textwidth}
-      %   \includegraphics[width=\textwidth]{img/series/tseries5/Poodlcalculatep*n5-rho10e-5-sigma002-00intransrandom-std.png}
-      %   % \caption{\textcolor{red}{'ill fix thix}}
-      %   \end{subfigure}
+      \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{img/series/tseries5/Poodlcalculatep*n5-rho10e-5-sigma002-00intransrandom-std.png}
+        % \caption{\textcolor{red}{'ill fix thix}}
+        \end{subfigure}
       \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{img/series/tseries5/Poodlcalculatep***n5-rho10e-5-sigma002-00intransrandom.png}
         % \caption{\(n\_issues = 1, \sigma = 0.02\) }
       \end{subfigure}
-      % \begin{subfigure}[b]{0.48\textwidth}
-      %   \includegraphics[width=\textwidth]{img/series/tseries5/Poodlcalculatep***n5-rho10e-5-sigma002-00intransrandom-std.png}
-      %   % \caption{\(n\_issues = 1, \sigma = 0.02\) }
-      % \end{subfigure}
+      \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{img/series/tseries5/Poodlcalculatep***n5-rho10e-5-sigma002-00intransrandom-std.png}
+        % \caption{\(n\_issues = 1, \sigma = 0.02\) }
+      \end{subfigure}
       \caption{Time series for the parameterization: \(\rho = 1e-5, N =
         500, p\_intran = 0.0 \)}      
   \label{fig:tseries5}

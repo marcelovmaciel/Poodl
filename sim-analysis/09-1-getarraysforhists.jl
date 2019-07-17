@@ -30,6 +30,7 @@ problem = Dict("num_vars" => 5,
                          [0.0, 0.1],
                          [0.0, 0.3]])
 
+
 paramvalues5k_6params = pdl.boundsdict_toparamsdf(problem) ;
 
 poodlvect★ = pdl.poodlparamsvec2(paramvalues5k_6params,
@@ -40,10 +41,12 @@ poodlvect★ = pdl.poodlparamsvec2(paramvalues5k_6params,
 
 initopinions = pdl.initopinions(poodlvect★);
 
+
+σbound = 0.02
 lessthan01indx = []
 
 for (index,value) in enumerate(poodlvect★)
-    if value.σ <= 0.1
+    if value.σ <= σbound
         push!(lessthan01indx, index)
     end
 end
@@ -51,7 +54,7 @@ end
 
 #Preparation of the data
 
-
+lessthan01indx
 #ParamSweep6params★ |> typeof |> fieldnames
 
 #ParamSweep6params★.initcondmeasure[1]
@@ -140,14 +143,14 @@ n10hists =  map(((foo ->fit(Histogram, foo, nbins = 120)) ∘  collect  ∘ it.f
               [n10★, n10★★, n10★★★, n10init])
 
 
-n2hists_smallσ = map(((foo ->fit(Histogram, foo, nbins = 120)) ∘  collect  ∘ it.flatten ∘ it.flatten),
+n2hists_smallσ = map(((foo ->fit(Histogram, foo, nbins = 60)) ∘  collect  ∘ it.flatten ∘ it.flatten),
               [n2★_smallσ, n2★★_smallσ, n2★★★_smallσ, n2init_smallσ]);
 
 
-n6hists_smallσ =  map(((foo ->fit(Histogram, foo, nbins = 120)) ∘  collect  ∘ it.flatten ∘ it.flatten),
+n6hists_smallσ =  map(((foo ->fit(Histogram, foo, nbins = 60)) ∘  collect  ∘ it.flatten ∘ it.flatten),
               [n6★_smallσ, n6★★_smallσ, n6★★★_smallσ, n6init_smallσ]);
 
-n10hists_smallσ =  map(((foo ->fit(Histogram, foo, nbins = 120)) ∘  collect  ∘ it.flatten ∘ it.flatten),
+n10hists_smallσ =  map(((foo ->fit(Histogram, foo, nbins = 60)) ∘  collect  ∘ it.flatten ∘ it.flatten),
               [n10★_smallσ, n10★★_smallσ, n10★★★_smallσ, n10init_smallσ])
 
 
@@ -173,10 +176,15 @@ ax.plot(((n2hists[2].edges |> collect)[1] |> collect)[1:end-1],n2hists[2].weight
 ax.scatter( ((n2hists[3].edges |> collect)[1] |> collect)[1:end-1],n2hists[3].weights, marker = "o",  label = "P***'s final state")
 ax.plot(((n2hists[3].edges |> collect)[1] |> collect)[1:end-1],n2hists[3].weights)
 
-ax.legend()
-ax.set_ylabel("Frequency")
-ax.set_xlabel("Agents' opinions")
-ax.set_title(" Initial x Final condition; n = 2")
+
+ax.set_xlabel(" ")
+
+ax.legend(fontsize = 16)
+ax.set_ylabel("Frequency", fontsize = 14, color = "gray", fontweight = "bold")
+ax.set_xlabel("Agents' opinions",  fontsize = 14, color = "gray", fontweight = "bold")
+ax.set_title(" Initial x Final condition; n = 2",  fontsize = 18, 
+                 color = "gray", fontweight= "bold")
+plt.savefig("oiks_n2.png", dpi = 200)
 
 
 
@@ -198,11 +206,11 @@ ax.plot(((n6hists[2].edges |> collect)[1] |> collect)[1:end-1],n6hists[2].weight
 ax.scatter( ((n6hists[3].edges |> collect)[1] |> collect)[1:end-1],n6hists[3].weights, marker = "o",  label = "P***'s final state")
 ax.plot(((n6hists[3].edges |> collect)[1] |> collect)[1:end-1],n6hists[3].weights)
 
-ax.legend()
-ax.set_ylabel("Frequency")
-ax.set_xlabel("Agents' opinions")
-ax.set_title("Initial x Final condition; n = 6")
-
+ax.legend(fontsize = 16)
+ax.set_ylabel("Frequency",  fontsize = 14, color = "gray", fontweight = "bold")
+ax.set_xlabel("Agents' opinions",  fontsize = 14, color = "gray", fontweight = "bold")
+ax.set_title("Initial x Final condition; n = 6",  fontsize = 18, color = "gray", fontweight = "bold")
+plt.savefig("oiks_n6.png", dpi = 200)
 
 
 
@@ -223,11 +231,11 @@ ax.plot(((n10hists[2].edges |> collect)[1] |> collect)[1:end-1],n10hists[2].weig
 ax.scatter( ((n10hists[3].edges |> collect)[1] |> collect)[1:end-1],n10hists[3].weights, marker = "o",  label = "P***'s final state")
 ax.plot(((n10hists[3].edges |> collect)[1] |> collect)[1:end-1],n10hists[3].weights)
 
-ax.legend()
-ax.set_ylabel("Frequency")
-ax.set_xlabel("Agents' opinions")
-ax.set_title("Initial x Final condition; n = 10")
-
+ax.legend(fontsize = 16)
+ax.set_ylabel("Frequency",  fontsize = 14, color = "gray", fontweight = "bold")
+ax.set_xlabel("Agents' opinions",  fontsize = 14, color = "gray", fontweight = "bold")
+ax.set_title("Initial x Final condition; n = 10" ,  fontsize = 18, color = "gray", fontweight = "bold")
+plt.savefig("oiks_n10.png", dpi = 200)
 
 
 
@@ -253,10 +261,11 @@ ax.plot(((n2hists_smallσ[2].edges |> collect)[1] |> collect)[1:end-1],n2hists_s
 ax.scatter( ((n2hists_smallσ[3].edges |> collect)[1] |> collect)[1:end-1],n2hists_smallσ[3].weights, marker = "o",  label = "P***'s final state")
 ax.plot(((n2hists_smallσ[3].edges |> collect)[1] |> collect)[1:end-1],n2hists_smallσ[3].weights)
 
-ax.legend()
-ax.set_ylabel("Frequency")
-ax.set_xlabel("Agents' opinions")
-ax.set_title(L" Initial x Final condition; n = 2; $\sigma \leq 0.1$")
+ax.legend(fontsize = 16)
+ax.set_ylabel("Frequency", fontsize = 14, color = "gray", fontweight = "bold")
+ax.set_xlabel("Agents' opinions",  fontsize = 14, color = "gray", fontweight = "bold")
+ax.set_title(L" Initial x Final condition; n = 2; $\sigma \leq$" * "$(σbound)",  fontsize = 18, color = "gray", fontweight = "bold")
+plt.savefig("oiks_smallsigma002_n2.png", dpi = 200)
 
 
 
@@ -278,10 +287,11 @@ ax.plot(((n6hists_smallσ[2].edges |> collect)[1] |> collect)[1:end-1],n6hists_s
 ax.scatter( ((n6hists_smallσ[3].edges |> collect)[1] |> collect)[1:end-1],n6hists_smallσ[3].weights, marker = "o",  label = "P***'s final state")
 ax.plot(((n6hists_smallσ[3].edges |> collect)[1] |> collect)[1:end-1],n6hists_smallσ[3].weights)
 
-ax.legend()
-ax.set_ylabel("Frequency")
-ax.set_xlabel("Agents' opinions")
-ax.set_title(L"Initial x Final condition; n = 6; $\sigma \leq 0.1$")
+ax.legend(fontsize = 16)
+ax.set_ylabel("Frequency",  fontsize = 14, color = "gray", fontweight = "bold")
+ax.set_xlabel("Agents' opinions", fontsize = 14, color = "gray", fontweight = "bold")
+ax.set_title(L"Initial x Final condition; n = 6; $\sigma \leq$" * "$(σbound)", fontsize = 18, color = "gray", fontweight = "bold")
+plt.savefig("oiks_smallsigma002_n6.png", dpi = 200)
 
 
 
@@ -302,11 +312,11 @@ ax.plot(((n10hists_smallσ[2].edges |> collect)[1] |> collect)[1:end-1],n10hists
 ax.scatter( ((n10hists_smallσ[3].edges |> collect)[1] |> collect)[1:end-1],n10hists_smallσ[3].weights, marker = "o",  label = "P***'s final state")
 ax.plot(((n10hists_smallσ[3].edges |> collect)[1] |> collect)[1:end-1],n10hists_smallσ[3].weights)
 
-ax.legend()
-ax.set_ylabel("Frequency")
-ax.set_xlabel("Agents' opinions")
-ax.set_title(L"Initial x Final condition; n = 10; $\sigma \leq 0.1$")
-
+ax.legend(fontsize = 16)
+ax.set_ylabel("Frequency",   fontsize = 14, color = "gray", fontweight = "bold")
+ax.set_xlabel("Agents' opinions",   fontsize = 14, color = "gray", fontweight = "bold")
+ax.set_title(L"Initial x Final condition; n = 10; $\sigma \leq$" * "$(σbound)",   fontsize = 18, color = "gray", fontweight = "bold")
+plt.savefig("oiks_smallsigma002_n10.png", dpi = 200)
 
 
 #=
