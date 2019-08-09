@@ -90,10 +90,10 @@ ax.scatter( ((endstd_hist[3].edges |> collect)[1] |> collect)[1:end-1],endstd_hi
 ax.plot(((endstd_hist[3].edges |> collect)[1] |> collect)[1:end-1],endstd_hist[3].weights)
 
 ax.legend()
-ax.set_ylabel("Frequency")
-ax.set_xlabel("Agent's std opinion")
-ax.set_title(" Initial vs final condition - Opinion Standard Deviation")
-
+ax.set_ylabel("Frequency",  fontsize = 18, color = "black", fontweight = "bold")
+ax.set_xlabel("Agent's std opinion",  fontsize = 18, color = "black", fontweight = "bold")
+ax.set_title(" Initial vs final condition - Opinion Standard Deviation",  fontsize = 18, color = "black", fontweight = "bold")
+plt.savefig("std_hist2.png", dpi = 200)
 
 fig = plt.figure(dpi = 200, figsize = (12,12))
 ax = plt.axes()
@@ -115,11 +115,11 @@ ax.scatter( ((endmean_hist[3].edges |> collect)[1] |> collect)[1:end-1],endmean_
             marker = "o",  label = "P***'s final state", s=10)
 ax.plot(((endmean_hist[3].edges |> collect)[1] |> collect)[1:end-1],endmean_hist[3].weights)
 plt.axhline(y=0, linestyle = "dashed", color = "black")
-ax.legend()
-ax.set_ylabel("Frequency")
-ax.set_xlabel("Agent's mean opinion")
-ax.set_title(" Initial vs final condition - Mean Opinion")
-
+ax.legend(fontsize = 18)
+ax.set_ylabel("Frequency",  fontsize = 18, color = "black", fontweight = "bold")
+ax.set_xlabel("Agent's mean opinion", fontsize = 18, color = "black", fontweight = "bold")
+ax.set_title(" Initial vs final condition - Mean Opinion",  fontsize = 18, color = "black", fontweight = "bold")
+plt.savefig("mean_hist.png", dpi = 200)
 
 
 #down here i use Plots

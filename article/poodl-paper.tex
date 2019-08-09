@@ -14,8 +14,7 @@
 \begin{document}
 
 
-\title{Continuous Opinion Dynamics with Multiple Issues: an approximate Bayesian
-  approach}
+\title{Ideologically Motivated Biases in a Multiple Issues Opinion Model}
 
 %\vspace{1cm}
 
@@ -45,7 +44,8 @@
 
 
 \begin{abstract}
-	
+	It has been observed people tend to have opinions that are far more internally consistent than it would be reasonable to expect. Here, we study how that observation might emerge from changing how agents trust the opinions of their peers in a model for opinion dynamics with multiple issues. A previous Bayesian inspired opinion model for continuous opinions is extended to include multiple issues. In the original model, agents tended to trust less opinions that were too different from their own. We investigate the properties of the extended model in its natural form. And we also introduce the possibility the trust of the agent might depend not only on the specific issue but on the average opinions over the many issues. By adopting such a ideological point of view, we observe an important decrease in the spread of individual opinions.
+
 	
 	%\keywords{}
 	%\pacs{}
@@ -259,7 +259,6 @@ $[0.01, 0.5]$ & $[1, 10]$  & $[0.1, 0.99]$ & $[0.0, 0.1]$ & $[500, 5000]$ & $(0.
 \end{tabular}
 \caption{Parameters' Bounds}
 \end{table}
-
 
 The parameter space was explored by two sweeps of its parameters: one sampling
 of 70,000 times using quasi-random low-discrepancy sequences on all parameters
@@ -759,47 +758,23 @@ obtain the estimates:
   \label{fig:tseries6}
     \end{figure}
 
-  \section{Conclusions}
+    \section{Conclusions}
 
-    It was shown that even though we have extended the model of
-    \cite{martins08c} to account for agents with opinions about many issues,
-    noise, intransigents and testing different ``trust functions'' (\(p^*,
-    p^{**}, p^{***}\)) it still can be characterized as model with similarity
-    biased influence \cite{flache2017}. That is, the population has as tendency
-    to move toward central values with more stable opinions since the dynamics
-    tend to make the standard deviation of opinions lower. This is a general
-    trend, as there are many parameterizations in which the opposite happens or
-    the agents remain stable. We have shown that this systemic property depends
-    on which of the trust functions is applied.
+    Here, we have extended a previous model for continuous opinions
+    \cite{martins08c} to include the case where agents have opinions on $n$ issues. We explored
+    the impact of the main parameters on the final results. The \(\sigma\) parameter, that defines how much
+    each agent trusts other with distant opinions and plays the same role threshold values play in Bounded Confidence models, was observed to be a major influence in the outcome of the simulations. The number of issues $n$ as well as the amount of noise $\rho$ were also shown by our sensitivity analysis to have important effects on the outcomes, while the initial general amount of trust $p$ as well as the number of agents $N$ seemed to matter little.
+    
+    As the model is based on an update rule where opinions always move towards agreement (even if by a negligible amount), the tendency to central opinions is expected. That is especially true for the average values $x_i$. Since they are an average of several opinions, a strong tendency to central values is expected from simple statistical considerations. In order to see evidence of cases where the final opinions show a splitting between several final values, we do have to look at the individual opinions on each issue, $o_{ik}$. It is interesting to see that, at least for the regular trust function $p^*$, the final distributions for  $o_{ik}$ show that specific opinions might become quite spread over the range of possible values. 
+    
+    Testing different forms of trust functions also provided interesting results. A Bayesian analysis of the problem suggests the rational choice would be just comparing the opinions of the agents on the specific issue. That is, how much each agent $i$ trusts an agent $j$ should be a function of the distance between their opinions on the subject $k$ they are debating, that is, $o_{ik}-o_{jk}$. However, as humans do show a lot of ideologically motivated reasoning  \cite{mercier11a,merciersperber11a,kahanetal11}, it makes sense to change how trust is calculated to a situation that is more compatible with experiments. Two possibilities were considered here.  In the first one,   (\(  p^{**}\), the  trust was dependent on the distance between the agent average estimates over all issues, that is, the trust function was a function of $x_{i}-x_{j}$. The second possibility, \( p^{***}\)), considered that agent $i$ was observing $j$ opinion only on issue $k$ and, therefore, could only compare that value to its own average, that is the trust function was a function of $o_{ik}-x_{j}$.
+   
+	Compared to the non-ideological case, both ideological trust functions showed a tendency that each agent would have it own opinions show less diversity over the set of issues. This could be easily observed by the larger proportion of smaller values of $s_i$. That effect was particularly stronger for  \( p^{***}\)). As the issues were always treated as independent, that tendency does correspond to observing some irrational consistency~\cite{jervis76a}. The tendency to consistency was not perfect, though, as large values of $s_i$ were also observed as much more common than those in the initial distributions. That suggests that, while the mechanism of ideological trust might play an important role in the existence of the irrational consistency effect, it probably can not account for the whole of it. Other effects, such as confirmation biases, are also probably important to describe the whole effect.
 
-    The sensitivity analysis demonstrates that the mean opinion of the agents is
-    mostly dependent on \(\sigma\), but also on \(n\) and \(\rho\). The standard
-    deviation of the agents' opinions is more related to \(\rho\) and \(n\),
-    though this also hinges upon the trust function. For \(p^*\) in particular,
-    \(\sigma\) remains relevant to explain the deviation of the agents'
-    opinions. The scatterplots indicate the direction of the impact of these
-    parameters.
-
-    The tendency to central values is confirmed by analysis of specific
-    parameterizations, though this is contingent on the value of \(\sigma\) and
-    again of the case. The \(p^*\) again differs from other cases as it
-    converges to more values when \(\sigma = 0.02\) or \(0.04\) than \(p^{**},
-    p^{***}\).
-
-    We show that modeling continuous opinion dynamics within an approximate
-    Bayesian approach \cite{martins08a, martins08c} gives us theoretical
-    leverage to test different counterfactuals. There is, however, much more to
-    be done. The role of intransigents is one area which demands further
-    investigation. The model was implemented with fully connected agents.
-    Testing the resilience of results to changes in network topology is a
-    relevant extension. Another exploration is to adapt the framework to group,
-    instead of peer-to-peer, interactions. Finally, to put the assumptions and
-    predictions of the model under empirical scrutiny is a task which would
-    contribute to the frontiers of the social influence modeling
-    \cite{flache2017}.
-
+ 
 \section{Acknowledgement}
-The author would like to thank Funda\c{c}\~ao de Amparo \`a Pesquisa do Estado de S\~ao Paulo (FAPESP), for the support to this work, under grant %2008/00383-9.
+The author would like to thank Funda\c{c}\~ao de Amparo \`a Pesquisa do Estado de S\~ao Paulo (FAPESP), for the support to this work, under grant 2014/00551-0.
+
 
 \bibliographystyle{unsrt}
 \bibliography{biblio}
