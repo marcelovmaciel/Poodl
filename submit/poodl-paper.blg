@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Arch Linux)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: poodl-paper.aux
+The style file: unsrt.bst
+Database file #1: biblio.bib
+Warning--entry type for "Albi2016" isn't style-file defined
+--line 166 of file biblio.bib
+Warning--there's a number but no series in Mai2017
+You've used 48 entries,
+            1791 wiz_defined-function locations,
+            734 strings with 11195 characters,
+and the built_in function-call counts, 10602 in all, are:
+= -- 920
+> -- 480
+< -- 6
++ -- 179
+- -- 131
+* -- 740
+:= -- 1732
+add.period$ -- 149
+call.type$ -- 48
+change.case$ -- 42
+chr.to.int$ -- 0
+cite$ -- 49
+duplicate$ -- 469
+empty$ -- 1051
+format.name$ -- 131
+if$ -- 2365
+int.to.chr$ -- 0
+int.to.str$ -- 48
+missing$ -- 53
+newline$ -- 246
+num.names$ -- 52
+pop$ -- 99
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 190
+stack$ -- 0
+substring$ -- 650
+swap$ -- 79
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 101
+width$ -- 50
+write$ -- 534
+(There were 2 warnings)
