@@ -71,7 +71,7 @@ Reviewer #3: Although this paper contains interesting thoughts and
 considerations, I am not sure whether it meets the standards of the journal in
 terms of contribution to the field. Let me elaborate:
 
--       The idea to make an opinion updating mechanism dependent on the distance
+The idea to make an opinion updating mechanism dependent on the distance
 between the two individuals on multiple issues (i.e., not only the issue on
 which opinion is updated) is natural and intuitively appealing. However, the way
 in which this process is operationalized, is rather simplistic: either the
@@ -88,7 +88,7 @@ to represent that distances - between individuals - in their opinions regarding
 'similar' issues, into their model. As it is now, the model presents a rather
 crude extension of previous work.
 
--       Second, I found the paper lacking in empirical grounding. In terms of
+Second, I found the paper lacking in empirical grounding. In terms of
 the micro-underpinnings of the model, I was expecting to see much more
 references to empirical work justifying the notion that opinion-distance is a
 relevant factor in opinion updating processes; and the notion that
@@ -110,3 +110,9 @@ how things play out in real life).
 Together, these issues make me doubt whether the paper deserves to be published
 in Physica A; I could imagine it becoming a much stronger contribution, if they
 were addressed in a substantially revised version.
+
+
+
+
+# Reviwer 3
+Its basically about salience and micro macro empirical grounding.

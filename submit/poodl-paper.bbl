@@ -1,284 +1,2264 @@
-\begin{thebibliography}{10}
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
 
-\bibitem{castellanoetal07}
-C.~Castellano, S.~Fortunato, and V.~Loreto.
-\newblock Statistical physics of social dynamics.
-\newblock {\em Reviews of Modern Physics}, 81:591--646, 2009.
 
-\bibitem{galam12a}
-Serge Galam.
-\newblock {\em Sociophysics: A Physicist's Modeling of Psycho-political
-  Phenomena}.
-\newblock Springer, 2012.
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{Acemoglu2011}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d849e6f8de178bfb18aa67341c9f8d38}{%
+           family={Acemoglu},
+           familyi={A\bibinitperiod},
+           given={Daron},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f265f26cb985781081b85b9fe4401795}{%
+           family={Ozdaglar},
+           familyi={O\bibinitperiod},
+           given={Asuman},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{700ef074296affc1de3338490d9141d2}
+      \strng{fullhash}{700ef074296affc1de3338490d9141d2}
+      \strng{bibnamehash}{700ef074296affc1de3338490d9141d2}
+      \strng{authorbibnamehash}{700ef074296affc1de3338490d9141d2}
+      \strng{authornamehash}{700ef074296affc1de3338490d9141d2}
+      \strng{authorfullhash}{700ef074296affc1de3338490d9141d2}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Dynamic Games and Applications}
+      \field{month}{3}
+      \field{number}{1}
+      \field{title}{Opinion Dynamics and Learning in Social Networks}
+      \field{volume}{1}
+      \field{year}{2011}
+      \field{pages}{3\bibrangedash 49}
+      \range{pages}{47}
+      \verb{doi}
+      \verb 10.1007/s13235-010-0004-1
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s13235-010-0004-1
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s13235-010-0004-1
+      \endverb
+    \endentry
+    \entry{aisbett2001general}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d67474cb07ce824a022aa3259230f65b}{%
+           family={Aisbett},
+           familyi={A\bibinitperiod},
+           given={Janet},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e4793a1df87da4dc1cdc31916547d5fd}{%
+           family={Gibbon},
+           familyi={G\bibinitperiod},
+           given={Greg},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{4c0461ddf8fa34878dcce3d185aaac29}
+      \strng{fullhash}{4c0461ddf8fa34878dcce3d185aaac29}
+      \strng{bibnamehash}{4c0461ddf8fa34878dcce3d185aaac29}
+      \strng{authorbibnamehash}{4c0461ddf8fa34878dcce3d185aaac29}
+      \strng{authornamehash}{4c0461ddf8fa34878dcce3d185aaac29}
+      \strng{authorfullhash}{4c0461ddf8fa34878dcce3d185aaac29}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Artificial Intelligence}
+      \field{number}{1-2}
+      \field{title}{A general formulation of conceptual spaces as a meso level representation}
+      \field{volume}{133}
+      \field{year}{2001}
+      \field{pages}{189\bibrangedash 232}
+      \range{pages}{44}
+    \endentry
+    \entry{Albi2016}{online}{}
+      \name{author}{3}{}{%
+        {{hash=b130735c282f5e1dba0bd39f5960e02a}{%
+           family={Albi},
+           familyi={A\bibinitperiod},
+           given={Giacomo},
+           giveni={G\bibinitperiod}}}%
+        {{hash=87fb1073dd3a6fbae60bbc72b204e180}{%
+           family={Pareschi},
+           familyi={P\bibinitperiod},
+           given={Lorenzo},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f821f5d136ee96890a19c94cdbd6e3d7}{%
+           family={Zanella},
+           familyi={Z\bibinitperiod},
+           given={Mattia},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{0d5c293b49028f9d166a037bcdc648d3}
+      \strng{fullhash}{0d5c293b49028f9d166a037bcdc648d3}
+      \strng{bibnamehash}{0d5c293b49028f9d166a037bcdc648d3}
+      \strng{authorbibnamehash}{0d5c293b49028f9d166a037bcdc648d3}
+      \strng{authornamehash}{0d5c293b49028f9d166a037bcdc648d3}
+      \strng{authorfullhash}{0d5c293b49028f9d166a037bcdc648d3}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{arXiv:1604.00421}
+      \field{title}{Opinion dynamics over complex networks: kinetic modeling and numerical methods}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1604.00421
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1604.00421
+      \endverb
+    \endentry
+    \entry{alizadeh14a}{article}{}
+      \name{author}{4}{}{%
+        {{hash=56ea0634b107a7ddd6896367aef2ada5}{%
+           family={Alizadeh},
+           familyi={A\bibinitperiod},
+           given={Meysam},
+           giveni={M\bibinitperiod}}}%
+        {{hash=44fd9e33af412b9d1735c25b5a63b626}{%
+           family={Coman},
+           familyi={C\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8738a105b120999db84493f32e57378d}{%
+           family={Lewis},
+           familyi={L\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7c21e45f72483189a9a452862c8378bc}{%
+           family={Cioffi-Revilla},
+           familyi={C\bibinithyphendelim R\bibinitperiod},
+           given={Claudio},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{66a198c3c8667234793958b1dd35c0b5}
+      \strng{fullhash}{07fa2ea3f5e6e1c7ae400f04f18d9154}
+      \strng{bibnamehash}{66a198c3c8667234793958b1dd35c0b5}
+      \strng{authorbibnamehash}{66a198c3c8667234793958b1dd35c0b5}
+      \strng{authornamehash}{66a198c3c8667234793958b1dd35c0b5}
+      \strng{authorfullhash}{07fa2ea3f5e6e1c7ae400f04f18d9154}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{JASSS-The Journal Of Artificial Societies And Social Simulation}
+      \field{number}{4}
+      \field{title}{Integroup Conflict Escalations LLead to More Extremism}
+      \field{volume}{14}
+      \field{year}{2014}
+      \field{pages}{4}
+      \range{pages}{1}
+    \endentry
+    \entry{amblarddeffuant04}{article}{}
+      \name{author}{2}{}{%
+        {{hash=731e2d7e8f220bcf64d66d128b083984}{%
+           family={Amblard},
+           familyi={A\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=ed94dabca861b9359e944ce22906621e}{%
+           family={Deffuant},
+           familyi={D\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{dcd3b5511f60ad69c1a68e43a87267e2}
+      \strng{fullhash}{dcd3b5511f60ad69c1a68e43a87267e2}
+      \strng{bibnamehash}{dcd3b5511f60ad69c1a68e43a87267e2}
+      \strng{authorbibnamehash}{dcd3b5511f60ad69c1a68e43a87267e2}
+      \strng{authornamehash}{dcd3b5511f60ad69c1a68e43a87267e2}
+      \strng{authorfullhash}{dcd3b5511f60ad69c1a68e43a87267e2}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physica A}
+      \field{title}{The role of network topology on extremism propagation with the relative agreement opinion dynamics}
+      \field{volume}{343}
+      \field{year}{2004}
+      \field{pages}{725\bibrangedash 738}
+      \range{pages}{14}
+    \endentry
+    \entry{armstrong2014analyzing}{book}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{6}{}{%
+        {{hash=84ca936d48c4175ccaeede388eb6f744}{%
+           family={Armstrong},
+           familyi={A\bibinitperiod},
+           given={David\bibnamedelima A},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=dd7645e3441eca9a8ffc6c4e5cdbf089}{%
+           family={Bakker},
+           familyi={B\bibinitperiod},
+           given={Ryan},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7c1b6e11a4d509ebb68dcca24dbed359}{%
+           family={Carroll},
+           familyi={C\bibinitperiod},
+           given={Royce},
+           giveni={R\bibinitperiod}}}%
+        {{hash=df155dab33b418421e7b882725e09739}{%
+           family={Hare},
+           familyi={H\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod}}}%
+        {{hash=bb225fb203d69a35eb2feb869c01a292}{%
+           family={Poole},
+           familyi={P\bibinitperiod},
+           given={Keith\bibnamedelima T},
+           giveni={K\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=1451269397523626c1c93c961319e8a8}{%
+           family={Rosenthal},
+           familyi={R\bibinitperiod},
+           given={Howard},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{64e83d0977856814c6b8c57d007c8769}
+      \strng{fullhash}{f35bead510913243139a8e4829c4a2b9}
+      \strng{bibnamehash}{64e83d0977856814c6b8c57d007c8769}
+      \strng{authorbibnamehash}{64e83d0977856814c6b8c57d007c8769}
+      \strng{authornamehash}{64e83d0977856814c6b8c57d007c8769}
+      \strng{authorfullhash}{f35bead510913243139a8e4829c4a2b9}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Analyzing spatial models of choice and judgment with R}
+      \field{year}{2014}
+    \endentry
+    \entry{attneave1950dimensions}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e72f6a383b6c080e9eb6b356e1448cf7}{%
+           family={Attneave},
+           familyi={A\bibinitperiod},
+           given={Fred},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {JSTOR}%
+      }
+      \strng{namehash}{e72f6a383b6c080e9eb6b356e1448cf7}
+      \strng{fullhash}{e72f6a383b6c080e9eb6b356e1448cf7}
+      \strng{bibnamehash}{e72f6a383b6c080e9eb6b356e1448cf7}
+      \strng{authorbibnamehash}{e72f6a383b6c080e9eb6b356e1448cf7}
+      \strng{authornamehash}{e72f6a383b6c080e9eb6b356e1448cf7}
+      \strng{authorfullhash}{e72f6a383b6c080e9eb6b356e1448cf7}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The American journal of psychology}
+      \field{number}{4}
+      \field{title}{Dimensions of similarity}
+      \field{volume}{63}
+      \field{year}{1950}
+      \field{pages}{516\bibrangedash 556}
+      \range{pages}{41}
+    \endentry
+    \entry{baker2017rational}{article}{}
+      \name{author}{4}{}{%
+        {{hash=de3e74deaaca6d4ba07e1e6d0e7b7244}{%
+           family={Baker},
+           familyi={B\bibinitperiod},
+           given={Chris\bibnamedelima L},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=4a3fcf471def93d28d7799c4fe0a7286}{%
+           family={Jara-Ettinger},
+           familyi={J\bibinithyphendelim E\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6fea16fbc3912bb352504facda6a3007}{%
+           family={Saxe},
+           familyi={S\bibinitperiod},
+           given={Rebecca},
+           giveni={R\bibinitperiod}}}%
+        {{hash=5c7ff02e1f8b4c4aa7bfddece14f23d2}{%
+           family={Tenenbaum},
+           familyi={T\bibinitperiod},
+           given={Joshua\bibnamedelima B},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{52d0737fea2a8ee736bb1026462f161a}
+      \strng{fullhash}{7814e4a4ad428a8df892e14234bf981e}
+      \strng{bibnamehash}{52d0737fea2a8ee736bb1026462f161a}
+      \strng{authorbibnamehash}{52d0737fea2a8ee736bb1026462f161a}
+      \strng{authornamehash}{52d0737fea2a8ee736bb1026462f161a}
+      \strng{authorfullhash}{7814e4a4ad428a8df892e14234bf981e}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature Human Behaviour}
+      \field{number}{4}
+      \field{title}{Rational quantitative attribution of beliefs, desires and percepts in human mentalizing}
+      \field{volume}{1}
+      \field{year}{2017}
+      \field{pages}{0064}
+      \range{pages}{1}
+    \endentry
+    \entry{basu2019bridging}{article}{}
+      \name{author}{1}{}{%
+        {{hash=bfcf431c1e2fcf61317691e9100b9779}{%
+           family={Basu},
+           familyi={B\bibinitperiod},
+           given={Chitralekha},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{bfcf431c1e2fcf61317691e9100b9779}
+      \strng{fullhash}{bfcf431c1e2fcf61317691e9100b9779}
+      \strng{bibnamehash}{bfcf431c1e2fcf61317691e9100b9779}
+      \strng{authorbibnamehash}{bfcf431c1e2fcf61317691e9100b9779}
+      \strng{authornamehash}{bfcf431c1e2fcf61317691e9100b9779}
+      \strng{authorfullhash}{bfcf431c1e2fcf61317691e9100b9779}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Political Science Research and Methods}
+      \field{title}{Bridging Spatial and Saliency Theory: Party Size and Issue Selection in Campaigns}
+      \field{year}{2019}
+      \field{pages}{1\bibrangedash 15}
+      \range{pages}{15}
+    \endentry
+    \entry{benoit2006party}{book}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{2}{}{%
+        {{hash=3c1ca3e512356959e202dae95044d122}{%
+           family={Benoit},
+           familyi={B\bibinitperiod},
+           given={Kenneth},
+           giveni={K\bibinitperiod}}}%
+        {{hash=33dc8938fb77f6866c7a6ebb9669695b}{%
+           family={Laver},
+           familyi={L\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{b0b259ee115acf8e3870d143b19b056b}
+      \strng{fullhash}{b0b259ee115acf8e3870d143b19b056b}
+      \strng{bibnamehash}{b0b259ee115acf8e3870d143b19b056b}
+      \strng{authorbibnamehash}{b0b259ee115acf8e3870d143b19b056b}
+      \strng{authornamehash}{b0b259ee115acf8e3870d143b19b056b}
+      \strng{authorfullhash}{b0b259ee115acf8e3870d143b19b056b}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Party policy in modern democracies}
+      \field{year}{2006}
+    \endentry
+    \entry{castellanoetal07}{article}{}
+      \name{author}{3}{}{%
+        {{hash=5b400a8992c63e19ad1b4ec77b659f0d}{%
+           family={Castellano},
+           familyi={C\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=1ed82652a051c9132c3b10553eef1426}{%
+           family={Fortunato},
+           familyi={F\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d4ee14cbc9eeabe17b1e9b6ca7d1f31c}{%
+           family={Loreto},
+           familyi={L\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{ebac25412cd563fe814657f483a948a1}
+      \strng{fullhash}{ebac25412cd563fe814657f483a948a1}
+      \strng{bibnamehash}{ebac25412cd563fe814657f483a948a1}
+      \strng{authorbibnamehash}{ebac25412cd563fe814657f483a948a1}
+      \strng{authornamehash}{ebac25412cd563fe814657f483a948a1}
+      \strng{authorfullhash}{ebac25412cd563fe814657f483a948a1}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Reviews of Modern Physics}
+      \field{title}{Statistical Physics of social dynamics}
+      \field{volume}{81}
+      \field{year}{2009}
+      \field{pages}{591\bibrangedash 646}
+      \range{pages}{56}
+    \endentry
+    \entry{Claassen2015a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d27c31a8e524b5adc61db0cadf316ab6}{%
+           family={Claassen},
+           familyi={C\bibinitperiod},
+           given={Ryan\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=554cdb919e44781c393908ff8e93a419}{%
+           family={Ensley},
+           familyi={E\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{fdd14d5ed8872f880c4316a10ebdb843}
+      \strng{fullhash}{fdd14d5ed8872f880c4316a10ebdb843}
+      \strng{bibnamehash}{fdd14d5ed8872f880c4316a10ebdb843}
+      \strng{authorbibnamehash}{fdd14d5ed8872f880c4316a10ebdb843}
+      \strng{authornamehash}{fdd14d5ed8872f880c4316a10ebdb843}
+      \strng{authorfullhash}{fdd14d5ed8872f880c4316a10ebdb843}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Political Behavior}
+      \field{title}{Motivated Reasoning and Yard-Sign-Stealing Partisans: Mine is a Likable Rogue, Yours is a Degenerate Criminal}
+      \field{year}{2015}
+      \field{pages}{1\bibrangedash 19}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1007/s11109-015-9313-9
+      \endverb
+    \endentry
+    \entry{Das2014}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=e264e93f828e1017e490aaa14546b304}{%
+           family={Das},
+           familyi={D\bibinitperiod},
+           given={Abhimanyu},
+           giveni={A\bibinitperiod}}}%
+        {{hash=cb403f3ac4c10349aac733f727f8c0df}{%
+           family={Gollapudi},
+           familyi={G\bibinitperiod},
+           given={Sreenivas},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7121c06f984ed9c47804fbe342b9f14e}{%
+           family={Munagala},
+           familyi={M\bibinitperiod},
+           given={Kamesh},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, New York, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{dd2c1b6bb6cb5e5024d9c0c6f751c19c}
+      \strng{fullhash}{dd2c1b6bb6cb5e5024d9c0c6f751c19c}
+      \strng{bibnamehash}{dd2c1b6bb6cb5e5024d9c0c6f751c19c}
+      \strng{authorbibnamehash}{dd2c1b6bb6cb5e5024d9c0c6f751c19c}
+      \strng{authornamehash}{dd2c1b6bb6cb5e5024d9c0c6f751c19c}
+      \strng{authorfullhash}{dd2c1b6bb6cb5e5024d9c0c6f751c19c}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 7th ACM International Conference on Web Search and Data Mining}
+      \field{isbn}{978-1-4503-2351-2}
+      \field{series}{WSDM '14}
+      \field{title}{Modeling Opinion Dynamics in Social Networks}
+      \field{year}{2014}
+      \field{pages}{403\bibrangedash 412}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/2556195.2559896
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.acm.org/10.1145/2556195.2559896
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/2556195.2559896
+      \endverb
+      \keyw{biased assimilation,opinion formation,social networks}
+    \endentry
+    \entry{de2005computational}{book}{}
+      \name{author}{2}{}{%
+        {{hash=b829cbb1c936b8ad67fc41edfed736dd}{%
+           family={De\bibnamedelima Marchi},
+           familyi={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ab556f9876496402ff6ca7c18d6bc291}{%
+           family={De\bibnamedelima Marchi},
+           familyi={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Serge},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{0ebb472b8272bdffd56853ca1626fc4d}
+      \strng{fullhash}{0ebb472b8272bdffd56853ca1626fc4d}
+      \strng{bibnamehash}{0ebb472b8272bdffd56853ca1626fc4d}
+      \strng{authorbibnamehash}{0ebb472b8272bdffd56853ca1626fc4d}
+      \strng{authornamehash}{0ebb472b8272bdffd56853ca1626fc4d}
+      \strng{authorfullhash}{0ebb472b8272bdffd56853ca1626fc4d}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Computational and mathematical modeling in the social sciences}
+      \field{year}{2005}
+    \endentry
+    \entry{deffuant06}{article}{}
+      \name{author}{1}{}{%
+        {{hash=ed94dabca861b9359e944ce22906621e}{%
+           family={Deffuant},
+           familyi={D\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{ed94dabca861b9359e944ce22906621e}
+      \strng{fullhash}{ed94dabca861b9359e944ce22906621e}
+      \strng{bibnamehash}{ed94dabca861b9359e944ce22906621e}
+      \strng{authorbibnamehash}{ed94dabca861b9359e944ce22906621e}
+      \strng{authornamehash}{ed94dabca861b9359e944ce22906621e}
+      \strng{authorfullhash}{ed94dabca861b9359e944ce22906621e}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{JASSS-The Journal Of Artificial Societies And Social Simulation}
+      \field{number}{3}
+      \field{title}{Comparing Extremism Propagation Patterns in Continuous Opinion Models}
+      \field{volume}{9}
+      \field{year}{2006}
+      \field{pages}{8}
+      \range{pages}{1}
+    \endentry
+    \entry{deffuantetal02a}{article}{}
+      \name{author}{3}{}{%
+        {{hash=ed94dabca861b9359e944ce22906621e}{%
+           family={Deffuant},
+           familyi={D\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=731e2d7e8f220bcf64d66d128b083984}{%
+           family={Amblard},
+           familyi={A\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=130ef5dcd651db85c7ce3d962741bb47}{%
+           family={Weisbuch},
+           familyi={W\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod},
+           suffix={G.and\bibnamedelima Faure},
+           suffixi={G\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{f700f9118ec1329606ec6002dbab8bc4}
+      \strng{fullhash}{f700f9118ec1329606ec6002dbab8bc4}
+      \strng{bibnamehash}{f700f9118ec1329606ec6002dbab8bc4}
+      \strng{authorbibnamehash}{f700f9118ec1329606ec6002dbab8bc4}
+      \strng{authornamehash}{f700f9118ec1329606ec6002dbab8bc4}
+      \strng{authorfullhash}{f700f9118ec1329606ec6002dbab8bc4}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{JASSS-The Journal Of Artificial Societies And Social Simulation}
+      \field{number}{4}
+      \field{title}{How can extremism prevail? A study based on the relative agreement interaction model}
+      \field{volume}{5}
+      \field{year}{2002}
+      \field{pages}{1}
+      \range{pages}{1}
+    \endentry
+    \entry{deffuantetal00}{article}{}
+      \name{author}{4}{}{%
+        {{hash=ed94dabca861b9359e944ce22906621e}{%
+           family={Deffuant},
+           familyi={D\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=92babd79d9d4b907ab58fe99afa2c659}{%
+           family={Neau},
+           familyi={N\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=731e2d7e8f220bcf64d66d128b083984}{%
+           family={Amblard},
+           familyi={A\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=2652e2ae50be519b9aab8b944e208b43}{%
+           family={Weisbuch},
+           familyi={W\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{6eb2212f08e20aa173596f503cf139a0}
+      \strng{fullhash}{54b71a75ee3d477e947b0d7a7601f56d}
+      \strng{bibnamehash}{6eb2212f08e20aa173596f503cf139a0}
+      \strng{authorbibnamehash}{6eb2212f08e20aa173596f503cf139a0}
+      \strng{authornamehash}{6eb2212f08e20aa173596f503cf139a0}
+      \strng{authorfullhash}{54b71a75ee3d477e947b0d7a7601f56d}
+      \field{extraname}{1}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Adv. Compl. Sys.}
+      \field{title}{Mixing beliefs among interacting agents}
+      \field{volume}{3}
+      \field{year}{2000}
+      \field{pages}{87\bibrangedash 98}
+      \range{pages}{12}
+    \endentry
+    \entry{deffuant2002can}{article}{}
+      \name{author}{4}{}{%
+        {{hash=d2fab89b3beda9cbddabaa3c50947ee6}{%
+           family={Deffuant},
+           familyi={D\bibinitperiod},
+           given={Guillaume},
+           giveni={G\bibinitperiod}}}%
+        {{hash=fb024af9dd7b9935d6343422f0aa408d}{%
+           family={Amblard},
+           familyi={A\bibinitperiod},
+           given={Fr{é}d{é}ric},
+           giveni={F\bibinitperiod}}}%
+        {{hash=839243c19c04a035b4e142f6b62545bc}{%
+           family={Weisbuch},
+           familyi={W\bibinitperiod},
+           given={G{é}rard},
+           giveni={G\bibinitperiod}}}%
+        {{hash=62d5df8dcba523172a49cb344ac90693}{%
+           family={Faure},
+           familyi={F\bibinitperiod},
+           given={Thierry},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{17be161d7f29fbeeb6cf7f71a1b4895a}
+      \strng{fullhash}{6c00960c4cd5d115f0bea3892b22e423}
+      \strng{bibnamehash}{17be161d7f29fbeeb6cf7f71a1b4895a}
+      \strng{authorbibnamehash}{17be161d7f29fbeeb6cf7f71a1b4895a}
+      \strng{authornamehash}{17be161d7f29fbeeb6cf7f71a1b4895a}
+      \strng{authorfullhash}{6c00960c4cd5d115f0bea3892b22e423}
+      \field{extraname}{2}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of artificial societies and social simulation}
+      \field{number}{4}
+      \field{title}{How can extremism prevail? A study based on the relative agreement interaction model}
+      \field{volume}{5}
+      \field{year}{2002}
+    \endentry
+    \entry{ding2010evolutionary}{article}{}
+      \name{author}{4}{}{%
+        {{hash=c6e384bd0a84dff0f2d4956181f32191}{%
+           family={Ding},
+           familyi={D\bibinitperiod},
+           given={Fei},
+           giveni={F\bibinitperiod}}}%
+        {{hash=e8425d142317172c04a78968a7c61852}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yun},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=acbf100aa0789032334173a971b9c872}{%
+           family={Shen},
+           familyi={S\bibinitperiod},
+           given={Bo},
+           giveni={B\bibinitperiod}}}%
+        {{hash=12642251015d8179a150704cd0ad772f}{%
+           family={Si},
+           familyi={S\bibinitperiod},
+           given={Xia-Meng},
+           giveni={X\bibinithyphendelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{5912d64d16ab881b524cb00ea8714c4d}
+      \strng{fullhash}{fa2b46c09ecf369868a45ac109e00891}
+      \strng{bibnamehash}{5912d64d16ab881b524cb00ea8714c4d}
+      \strng{authorbibnamehash}{5912d64d16ab881b524cb00ea8714c4d}
+      \strng{authornamehash}{5912d64d16ab881b524cb00ea8714c4d}
+      \strng{authorfullhash}{fa2b46c09ecf369868a45ac109e00891}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physica A: Statistical Mechanics and its Applications}
+      \field{number}{8}
+      \field{title}{An evolutionary game theory model of binary opinion formation}
+      \field{volume}{389}
+      \field{year}{2010}
+      \field{pages}{1745\bibrangedash 1752}
+      \range{pages}{8}
+    \endentry
+    \entry{downs1957economic}{article}{}
+      \name{author}{1}{}{%
+        {{hash=edbc744b7095af3d7da169d97b58101d}{%
+           family={Downs},
+           familyi={D\bibinitperiod},
+           given={Anthony},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The University of Chicago Press}%
+      }
+      \strng{namehash}{edbc744b7095af3d7da169d97b58101d}
+      \strng{fullhash}{edbc744b7095af3d7da169d97b58101d}
+      \strng{bibnamehash}{edbc744b7095af3d7da169d97b58101d}
+      \strng{authorbibnamehash}{edbc744b7095af3d7da169d97b58101d}
+      \strng{authornamehash}{edbc744b7095af3d7da169d97b58101d}
+      \strng{authorfullhash}{edbc744b7095af3d7da169d97b58101d}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Political Economy}
+      \field{number}{2}
+      \field{title}{An economic theory of political action in a democracy}
+      \field{volume}{65}
+      \field{year}{1957}
+      \field{pages}{135\bibrangedash 150}
+      \range{pages}{16}
+    \endentry
+    \entry{flache2017}{article}{}
+      \name{author}{7}{}{%
+        {{hash=20b231e6594fb90b80cc3127eac084d7}{%
+           family={Flache},
+           familyi={F\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4e839d42ee28366c7e7dcdd07ec2363a}{%
+           family={Mäs},
+           familyi={M\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=cbc7446d89ad308e6cd9b2fb131598de}{%
+           family={Feliciani},
+           familyi={F\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=319aa06ad07206d3fa903247163f94c7}{%
+           family={Chattoe-Brown},
+           familyi={C\bibinithyphendelim B\bibinitperiod},
+           given={Edmund},
+           giveni={E\bibinitperiod}}}%
+        {{hash=d2fab89b3beda9cbddabaa3c50947ee6}{%
+           family={Deffuant},
+           familyi={D\bibinitperiod},
+           given={Guillaume},
+           giveni={G\bibinitperiod}}}%
+        {{hash=4256af01eb9e81b09e2ea9f55d63248c}{%
+           family={Huet},
+           familyi={H\bibinitperiod},
+           given={Sylvie},
+           giveni={S\bibinitperiod}}}%
+        {{hash=955098f9f3588518a8295a64a8a7c613}{%
+           family={Lorenz},
+           familyi={L\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{25c3f04d2f220ad539b79a5ff0d81e14}
+      \strng{fullhash}{53df936ab9ae3335d903b5e31c9b885c}
+      \strng{bibnamehash}{25c3f04d2f220ad539b79a5ff0d81e14}
+      \strng{authorbibnamehash}{25c3f04d2f220ad539b79a5ff0d81e14}
+      \strng{authornamehash}{25c3f04d2f220ad539b79a5ff0d81e14}
+      \strng{authorfullhash}{53df936ab9ae3335d903b5e31c9b885c}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In 1997, Robert Axelrod wondered in a highly influential paper "If people tend to become more alike in their beliefs, attitudes, and behavior when they interact, why do not all such differences eventually disappear?" Axelrod&rsquo;s question highlighted an ongoing quest for formal theoretical answers joined by researchers from a wide range of disciplines. Numerous models have been developed to understand why and under what conditions diversity in beliefs, attitudes and behavior can co-exist with the fact that very often in interactions, social influence reduces differences between people. Reviewing three prominent approaches, we discuss the theoretical ingredients that researchers added to classic models of social influence as well as their implications. Then, we propose two main frontiers for future research. First, there is urgent need for more theoretical work comparing, relating and integrating alternative models. Second, the field suffers from a strong imbalance between a proliferation of theoretical studies and a dearth of empirical work. More empirical work is needed testing and underpinning micro-level assumptions about social influence as well as macro-level predictions. In conclusion, we discuss major roadblocks that need to be overcome to achieve progress on each frontier. We also propose that a new generation of empirically-based computational social influence models can make unique contributions for understanding key societal challenges, like the possible effects of social media on societal polarization.}
+      \field{issn}{1460-7425}
+      \field{journaltitle}{Journal of Artificial Societies and Social Simulation}
+      \field{number}{4}
+      \field{title}{Models of Social Influence: Towards the Next Frontiers}
+      \field{volume}{20}
+      \field{year}{2017}
+      \field{pages}{2}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.18564/jasss.3521
+      \endverb
+      \verb{urlraw}
+      \verb http://jasss.soc.surrey.ac.uk/20/4/2.html
+      \endverb
+      \verb{url}
+      \verb http://jasss.soc.surrey.ac.uk/20/4/2.html
+      \endverb
+      \keyw{Social Influence,Opinion Dynamics,Polarization,Calibration and Validation,Micro-Macro Link}
+    \endentry
+    \entry{franksetal08a}{article}{}
+      \name{author}{4}{}{%
+        {{hash=f87a91b099e0bf9f15783e3764d763f9}{%
+           family={Franks},
+           familyi={F\bibinitperiod},
+           given={Daniel\bibnamedelima W.},
+           giveni={D\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=5867927340c57ce59ffdd34d39d98433}{%
+           family={Noble},
+           familyi={N\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1ebce09bb677a1dcf03e7a36fbb6406c}{%
+           family={Kaufmann},
+           familyi={K\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=f20ddbe0b8abe2cdfecb0cbcbf43669e}{%
+           family={Stagl},
+           familyi={S\bibinitperiod},
+           given={Sigrid},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{74a5d4c344c472c6809c9ad41c38ccd7}
+      \strng{fullhash}{c92b765fa0008cfd5114bea401dfd137}
+      \strng{bibnamehash}{74a5d4c344c472c6809c9ad41c38ccd7}
+      \strng{authorbibnamehash}{74a5d4c344c472c6809c9ad41c38ccd7}
+      \strng{authornamehash}{74a5d4c344c472c6809c9ad41c38ccd7}
+      \strng{authorfullhash}{c92b765fa0008cfd5114bea401dfd137}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Adaptive Behavior}
+      \field{number}{4}
+      \field{title}{Extremism Propagation in Social Networks with Hubs}
+      \field{volume}{16}
+      \field{year}{2008}
+      \field{pages}{264\bibrangedash 274}
+      \range{pages}{11}
+    \endentry
+    \entry{galam05b}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c37e68c783f0fbe6c1003a384e3b0862}{%
+           family={Galam},
+           familyi={G\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{c37e68c783f0fbe6c1003a384e3b0862}
+      \strng{fullhash}{c37e68c783f0fbe6c1003a384e3b0862}
+      \strng{bibnamehash}{c37e68c783f0fbe6c1003a384e3b0862}
+      \strng{authorbibnamehash}{c37e68c783f0fbe6c1003a384e3b0862}
+      \strng{authornamehash}{c37e68c783f0fbe6c1003a384e3b0862}
+      \strng{authorfullhash}{c37e68c783f0fbe6c1003a384e3b0862}
+      \field{extraname}{1}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Europhysics Letters}
+      \field{number}{6}
+      \field{title}{Local dynamics vs. social mechanisms: A unifying frame}
+      \field{volume}{70}
+      \field{year}{2005}
+      \field{pages}{705\bibrangedash 711}
+      \range{pages}{7}
+    \endentry
+    \entry{galametal82}{article}{}
+      \name{author}{3}{}{%
+        {{hash=c37e68c783f0fbe6c1003a384e3b0862}{%
+           family={Galam},
+           familyi={G\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f2ef443451713ed138f7734c4f3653d8}{%
+           family={Gefen},
+           familyi={G\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=6ff8efc1fd65a2f4e3dfb2bdfbf22b89}{%
+           family={Shapir},
+           familyi={S\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef8d81bb4fb59610b1a45d719fc2a980}
+      \strng{fullhash}{ef8d81bb4fb59610b1a45d719fc2a980}
+      \strng{bibnamehash}{ef8d81bb4fb59610b1a45d719fc2a980}
+      \strng{authorbibnamehash}{ef8d81bb4fb59610b1a45d719fc2a980}
+      \strng{authornamehash}{ef8d81bb4fb59610b1a45d719fc2a980}
+      \strng{authorfullhash}{ef8d81bb4fb59610b1a45d719fc2a980}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{J. Math. Sociol.}
+      \field{title}{Sociophysics: A new approach of sociological collective behavior: Mean-behavior description of a strike}
+      \field{volume}{9}
+      \field{year}{1982}
+      \field{pages}{1\bibrangedash 13}
+      \range{pages}{13}
+    \endentry
+    \entry{galammoscovici91}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c37e68c783f0fbe6c1003a384e3b0862}{%
+           family={Galam},
+           familyi={G\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=fd1a53a47d75ec597ffef8da11497544}{%
+           family={Moscovici},
+           familyi={M\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{104a5039498d9140409b5b4b6a180acf}
+      \strng{fullhash}{104a5039498d9140409b5b4b6a180acf}
+      \strng{bibnamehash}{104a5039498d9140409b5b4b6a180acf}
+      \strng{authorbibnamehash}{104a5039498d9140409b5b4b6a180acf}
+      \strng{authornamehash}{104a5039498d9140409b5b4b6a180acf}
+      \strng{authorfullhash}{104a5039498d9140409b5b4b6a180acf}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Eur. J. Soc. Psychol.}
+      \field{title}{Towards a theory of collective phenomena: Consensus and attitude changes in groups}
+      \field{volume}{21}
+      \field{year}{1991}
+      \field{pages}{49\bibrangedash 74}
+      \range{pages}{26}
+    \endentry
+    \entry{galam12a}{book}{}
+      \name{author}{1}{}{%
+        {{hash=b6d5402f7cc1258f68506e34d25c7dff}{%
+           family={Galam},
+           familyi={G\bibinitperiod},
+           given={Serge},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{b6d5402f7cc1258f68506e34d25c7dff}
+      \strng{fullhash}{b6d5402f7cc1258f68506e34d25c7dff}
+      \strng{bibnamehash}{b6d5402f7cc1258f68506e34d25c7dff}
+      \strng{authorbibnamehash}{b6d5402f7cc1258f68506e34d25c7dff}
+      \strng{authornamehash}{b6d5402f7cc1258f68506e34d25c7dff}
+      \strng{authorfullhash}{b6d5402f7cc1258f68506e34d25c7dff}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sociophysics: A Physicist's Modeling of Psycho-political Phenomena}
+      \field{year}{2012}
+    \endentry
+    \entry{gardenfors2004conceptual}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c8cc928b40d7bf9625543b0a41e0593b}{%
+           family={Gardenfors},
+           familyi={G\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Imprint Academic}%
+      }
+      \strng{namehash}{c8cc928b40d7bf9625543b0a41e0593b}
+      \strng{fullhash}{c8cc928b40d7bf9625543b0a41e0593b}
+      \strng{bibnamehash}{c8cc928b40d7bf9625543b0a41e0593b}
+      \strng{authorbibnamehash}{c8cc928b40d7bf9625543b0a41e0593b}
+      \strng{authornamehash}{c8cc928b40d7bf9625543b0a41e0593b}
+      \strng{authorfullhash}{c8cc928b40d7bf9625543b0a41e0593b}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mind and Matter}
+      \field{number}{2}
+      \field{title}{Conceptual spaces as a framework for knowledge representation}
+      \field{volume}{2}
+      \field{year}{2004}
+      \field{pages}{9\bibrangedash 27}
+      \range{pages}{19}
+    \endentry
+    \entry{gargiulomazzoni08a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=5dd0f034633fd8f43edacb21db0d2fb2}{%
+           family={Gargiulo},
+           familyi={G\bibinitperiod},
+           given={Floriana},
+           giveni={F\bibinitperiod}}}%
+        {{hash=59aedd2a09f61140df4278e92d0e0cfe}{%
+           family={Mazzoni},
+           familyi={M\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{0555e44d7e7b9dfa7fbe3e83c35c31e1}
+      \strng{fullhash}{0555e44d7e7b9dfa7fbe3e83c35c31e1}
+      \strng{bibnamehash}{0555e44d7e7b9dfa7fbe3e83c35c31e1}
+      \strng{authorbibnamehash}{0555e44d7e7b9dfa7fbe3e83c35c31e1}
+      \strng{authornamehash}{0555e44d7e7b9dfa7fbe3e83c35c31e1}
+      \strng{authorfullhash}{0555e44d7e7b9dfa7fbe3e83c35c31e1}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{JASSS-The Journal Of Artificial Societies And Social Simulation}
+      \field{number}{4}
+      \field{title}{Can Extremism Guarantee Pluralism?}
+      \field{volume}{11}
+      \field{year}{2008}
+      \field{pages}{9}
+      \range{pages}{1}
+    \endentry
+    \entry{gintis2016individuality}{book}{}
+      \name{author}{1}{}{%
+        {{hash=28a789271210b1599883428ca9ba7997}{%
+           family={Gintis},
+           familyi={G\bibinitperiod},
+           given={Herbert},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{28a789271210b1599883428ca9ba7997}
+      \strng{fullhash}{28a789271210b1599883428ca9ba7997}
+      \strng{bibnamehash}{28a789271210b1599883428ca9ba7997}
+      \strng{authorbibnamehash}{28a789271210b1599883428ca9ba7997}
+      \strng{authornamehash}{28a789271210b1599883428ca9ba7997}
+      \strng{authorfullhash}{28a789271210b1599883428ca9ba7997}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Individuality and entanglement: the moral and material bases of social life}
+      \field{year}{2016}
+    \endentry
+    \entry{hegselmannkrause02}{article}{}
+      \name{author}{2}{}{%
+        {{hash=c578c7e926211459fb3b0c458a19ea42}{%
+           family={Hegselmann},
+           familyi={H\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=758010d61cb3dc316ab9e07e8d7abde0}{%
+           family={Krause},
+           familyi={K\bibinitperiod},
+           given={U.},
+           giveni={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{61bbaee7d225dd083feb2a94f90f9d22}
+      \strng{fullhash}{61bbaee7d225dd083feb2a94f90f9d22}
+      \strng{bibnamehash}{61bbaee7d225dd083feb2a94f90f9d22}
+      \strng{authorbibnamehash}{61bbaee7d225dd083feb2a94f90f9d22}
+      \strng{authornamehash}{61bbaee7d225dd083feb2a94f90f9d22}
+      \strng{authorfullhash}{61bbaee7d225dd083feb2a94f90f9d22}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Artificial Societies and Social Simulations}
+      \field{number}{3}
+      \field{title}{Opinion Dynamics and Bounded Confidence Models, Analysis and Simulation}
+      \field{volume}{5}
+      \field{year}{2002}
+      \field{pages}{3}
+      \range{pages}{1}
+    \endentry
+    \entry{hinich1997analytical}{book}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{2}{}{%
+        {{hash=c412a135b300dd1fd5ce6ca08474c94c}{%
+           family={Hinich},
+           familyi={H\bibinitperiod},
+           given={Melvin\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=1278f60d7e02d08e54d0c420c60da69a}{%
+           family={Munger},
+           familyi={M\bibinitperiod},
+           given={Michael\bibnamedelima C},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{462c1124d96c4b27e09669e2d5995b73}
+      \strng{fullhash}{462c1124d96c4b27e09669e2d5995b73}
+      \strng{bibnamehash}{462c1124d96c4b27e09669e2d5995b73}
+      \strng{authorbibnamehash}{462c1124d96c4b27e09669e2d5995b73}
+      \strng{authornamehash}{462c1124d96c4b27e09669e2d5995b73}
+      \strng{authorfullhash}{462c1124d96c4b27e09669e2d5995b73}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Analytical politics}
+      \field{year}{1997}
+    \endentry
+    \entry{Hu2017}{article}{}
+      \name{author}{1}{}{%
+        {{hash=b05cd4b008856bfd3d2b1b5e12d9263e}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Haibo},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The Royal Society}%
+      }
+      \strng{namehash}{b05cd4b008856bfd3d2b1b5e12d9263e}
+      \strng{fullhash}{b05cd4b008856bfd3d2b1b5e12d9263e}
+      \strng{bibnamehash}{b05cd4b008856bfd3d2b1b5e12d9263e}
+      \strng{authorbibnamehash}{b05cd4b008856bfd3d2b1b5e12d9263e}
+      \strng{authornamehash}{b05cd4b008856bfd3d2b1b5e12d9263e}
+      \strng{authorfullhash}{b05cd4b008856bfd3d2b1b5e12d9263e}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Opinion competition is a common phenomenon in real life, such as with opinions on controversial issues or political candidates; however, modelling this competition remains largely unexplored. To bridge this gap, we propose a model of competing opinion diffusion on social networks taking into account degree-dependent fitness or persuasiveness. We study the combined influence of social networks, individual fitnesses and attributes, as well as mass media on people{\textquoteright{}}s opinions, and find that both social networks and mass media act as amplifiers in opinion diffusion, the amplifying effect of which can be quantitatively characterized. We analytically obtain the probability that each opinion will ultimately pervade the whole society when there are no committed people in networks, and the final proportion of each opinion at the steady state when there are committed people in networks. The results of numerical simulations show good agreement with those obtained through an analytical approach. This study provides insight into the collective influence of individual attributes, local social networks and global media on opinion diffusion, and contributes to a comprehensive understanding of competing diffusion behaviours in the real world.}
+      \field{journaltitle}{Royal Society Open Science}
+      \field{number}{11}
+      \field{title}{Competing opinion diffusion on social networks}
+      \field{volume}{4}
+      \field{year}{2017}
+      \verb{doi}
+      \verb 10.1098/rsos.171160
+      \endverb
+      \verb{eprint}
+      \verb http://rsos.royalsocietypublishing.org/content/4/11/171160.full.pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://rsos.royalsocietypublishing.org/content/4/11/171160
+      \endverb
+      \verb{url}
+      \verb http://rsos.royalsocietypublishing.org/content/4/11/171160
+      \endverb
+    \endentry
+    \entry{humphreys2010spatial}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2195bc7706ae2f96647562df2327d0cb}{%
+           family={Humphreys},
+           familyi={H\bibinitperiod},
+           given={Macartan},
+           giveni={M\bibinitperiod}}}%
+        {{hash=33dc8938fb77f6866c7a6ebb9669695b}{%
+           family={Laver},
+           familyi={L\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{ea90566f909ee7b55688b626779c21b3}
+      \strng{fullhash}{ea90566f909ee7b55688b626779c21b3}
+      \strng{bibnamehash}{ea90566f909ee7b55688b626779c21b3}
+      \strng{authorbibnamehash}{ea90566f909ee7b55688b626779c21b3}
+      \strng{authornamehash}{ea90566f909ee7b55688b626779c21b3}
+      \strng{authorfullhash}{ea90566f909ee7b55688b626779c21b3}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{British Journal of Political Science}
+      \field{number}{1}
+      \field{title}{Spatial models, cognitive metrics, and majority rule equilibria}
+      \field{volume}{40}
+      \field{year}{2010}
+      \field{pages}{11\bibrangedash 30}
+      \range{pages}{20}
+    \endentry
+    \entry{jervis76a}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9a8c3012c0d08967f5502d0be30ec3d4}{%
+           family={Jervis},
+           familyi={J\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{9a8c3012c0d08967f5502d0be30ec3d4}
+      \strng{fullhash}{9a8c3012c0d08967f5502d0be30ec3d4}
+      \strng{bibnamehash}{9a8c3012c0d08967f5502d0be30ec3d4}
+      \strng{authorbibnamehash}{9a8c3012c0d08967f5502d0be30ec3d4}
+      \strng{authornamehash}{9a8c3012c0d08967f5502d0be30ec3d4}
+      \strng{authorfullhash}{9a8c3012c0d08967f5502d0be30ec3d4}
+      \field{sortinit}{J}
+      \field{sortinithash}{fce5f8d0bd05e8d93f3dbe21c78897ca}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Perception and Misperception in International Politics}
+      \field{year}{1976}
+    \endentry
+    \entry{jostetal03a}{article}{}
+      \name{author}{4}{}{%
+        {{hash=37682f07522b2196d3d44403d5f54c6f}{%
+           family={Jost},
+           familyi={J\bibinitperiod},
+           given={John\bibnamedelima T.},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=70a3ab96d8be2c99e0f0315a45babc02}{%
+           family={Glaser},
+           familyi={G\bibinitperiod},
+           given={Jack},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f17c87a63e648667ad1a6c5f0141a2d6}{%
+           family={Kruglanski},
+           familyi={K\bibinitperiod},
+           given={Arie\bibnamedelima W.},
+           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=3db957308ff50105c0dffd1055335169}{%
+           family={Sulloway},
+           familyi={S\bibinitperiod},
+           given={Frank\bibnamedelima J.},
+           giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{5b91dbd3fc844d80285ebfca87cdac7a}
+      \strng{fullhash}{7abbb415a7b4000649ca5e6c9c883a85}
+      \strng{bibnamehash}{5b91dbd3fc844d80285ebfca87cdac7a}
+      \strng{authorbibnamehash}{5b91dbd3fc844d80285ebfca87cdac7a}
+      \strng{authornamehash}{5b91dbd3fc844d80285ebfca87cdac7a}
+      \strng{authorfullhash}{7abbb415a7b4000649ca5e6c9c883a85}
+      \field{sortinit}{J}
+      \field{sortinithash}{fce5f8d0bd05e8d93f3dbe21c78897ca}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Psychol. Bull.}
+      \field{number}{3}
+      \field{title}{Political Conservatism as Motivated Social Cognition}
+      \field{volume}{129}
+      \field{year}{2003}
+      \field{pages}{339\bibrangedash 375}
+      \range{pages}{37}
+    \endentry
+    \entry{kahanetal11}{article}{}
+      \name{author}{3}{}{%
+        {{hash=91e4b4a982f102db3d281b4d5eee7db8}{%
+           family={Kahan},
+           familyi={K\bibinitperiod},
+           given={Dan\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=1f65a0725516db2b17c1372429000571}{%
+           family={Jenkins-Smith},
+           familyi={J\bibinithyphendelim S\bibinitperiod},
+           given={Hank},
+           giveni={H\bibinitperiod}}}%
+        {{hash=d3fc2443d43a380128f8048ebf6944dd}{%
+           family={Braman},
+           familyi={B\bibinitperiod},
+           given={Donald},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{7cb231663bd0db6a12c5a76b2dedd177}
+      \strng{fullhash}{7cb231663bd0db6a12c5a76b2dedd177}
+      \strng{bibnamehash}{7cb231663bd0db6a12c5a76b2dedd177}
+      \strng{authorbibnamehash}{7cb231663bd0db6a12c5a76b2dedd177}
+      \strng{authornamehash}{7cb231663bd0db6a12c5a76b2dedd177}
+      \strng{authorfullhash}{7cb231663bd0db6a12c5a76b2dedd177}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Risk Research}
+      \field{title}{Cultural cognition of scientific consensus}
+      \field{volume}{14}
+      \field{year}{2011}
+      \field{pages}{147\bibrangedash 174}
+      \range{pages}{28}
+      \verb{file}
+      \verb :D\:\\Andre\\home\\andre\\Documents\\groupthionk\\SSRN-id1549444.pdf:PDF
+      \endverb
+    \endentry
+    \entry{kempetal10a}{article}{}
+      \name{author}{4}{}{%
+        {{hash=feb3efa9bd866ef10fba8d5c1528fad1}{%
+           family={Kemp},
+           familyi={K\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=b1496617cb6c48a07efcc39a1bbe8568}{%
+           family={Tenenbaum},
+           familyi={T\bibinitperiod},
+           given={J.\bibnamedelimi B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=45a7d725732e00842ce6968204cfadd2}{%
+           family={Niyogi},
+           familyi={N\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0f5c12d534808c0fb8f2f616a419f211}{%
+           family={Griffiths},
+           familyi={G\bibinitperiod},
+           given={T.\bibnamedelimi L.},
+           giveni={T\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{de35a75a6ea843f69f3e910fee46d4fb}
+      \strng{fullhash}{769171dce9c0ed9184d28b8745195e02}
+      \strng{bibnamehash}{de35a75a6ea843f69f3e910fee46d4fb}
+      \strng{authorbibnamehash}{de35a75a6ea843f69f3e910fee46d4fb}
+      \strng{authornamehash}{de35a75a6ea843f69f3e910fee46d4fb}
+      \strng{authorfullhash}{769171dce9c0ed9184d28b8745195e02}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cognition}
+      \field{number}{2}
+      \field{title}{A probabilistic model of theory formation}
+      \field{volume}{114}
+      \field{year}{2010}
+      \field{pages}{165\bibrangedash 196}
+      \range{pages}{32}
+    \endentry
+    \entry{Kurmyshev2011}{article}{}
+      \name{author}{3}{}{%
+        {{hash=da519c627c580c46fd4a61781861cfce}{%
+           family={Kurmyshev},
+           familyi={K\bibinitperiod},
+           given={Evguenii},
+           giveni={E\bibinitperiod}}}%
+        {{hash=9e031fd981948859e65a16dcb98000cb}{%
+           family={Juárez},
+           familyi={J\bibinitperiod},
+           given={Héctor\bibnamedelima A.},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=d9024761d5a3cb8952783cf4ea651df7}{%
+           family={González-Silva},
+           familyi={G\bibinithyphendelim S\bibinitperiod},
+           given={Ricardo\bibnamedelima A.},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{0ce29d7967c127668f197f15c07490c3}
+      \strng{fullhash}{0ce29d7967c127668f197f15c07490c3}
+      \strng{bibnamehash}{0ce29d7967c127668f197f15c07490c3}
+      \strng{authorbibnamehash}{0ce29d7967c127668f197f15c07490c3}
+      \strng{authornamehash}{0ce29d7967c127668f197f15c07490c3}
+      \strng{authorfullhash}{0ce29d7967c127668f197f15c07490c3}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0378-4371}
+      \field{journaltitle}{Physica A: Statistical Mechanics and its Applications}
+      \field{number}{16}
+      \field{title}{Dynamics of bounded confidence opinion in heterogeneous social networks: Concord against partial antagonism}
+      \field{volume}{390}
+      \field{year}{2011}
+      \field{pages}{2945\bibrangedash 2955}
+      \range{pages}{11}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.physa.2011.03.037
+      \endverb
+      \verb{urlraw}
+      \verb http://www.sciencedirect.com/science/article/pii/S0378437111002706
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/S0378437111002706
+      \endverb
+      \keyw{Social networks,Opinion dynamics models,Relative agreement,Bounded confidence,Opinion bifurcation}
+    \endentry
+    \entry{laver2014measuring}{article}{}
+      \name{author}{1}{}{%
+        {{hash=33dc8938fb77f6866c7a6ebb9669695b}{%
+           family={Laver},
+           familyi={L\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Annual Reviews}%
+      }
+      \strng{namehash}{33dc8938fb77f6866c7a6ebb9669695b}
+      \strng{fullhash}{33dc8938fb77f6866c7a6ebb9669695b}
+      \strng{bibnamehash}{33dc8938fb77f6866c7a6ebb9669695b}
+      \strng{authorbibnamehash}{33dc8938fb77f6866c7a6ebb9669695b}
+      \strng{authornamehash}{33dc8938fb77f6866c7a6ebb9669695b}
+      \strng{authorfullhash}{33dc8938fb77f6866c7a6ebb9669695b}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annual Review of Political Science}
+      \field{title}{Measuring policy positions in political space}
+      \field{volume}{17}
+      \field{year}{2014}
+      \field{pages}{207\bibrangedash 223}
+      \range{pages}{17}
+    \endentry
+    \entry{macy2015signal}{article}{}
+      \name{author}{2}{}{%
+        {{hash=25e636960955c25b4be4211e177c5e8f}{%
+           family={Macy},
+           familyi={M\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f68042a33fc1c73e8f8191f285624f64}{%
+           family={Tsvetkova},
+           familyi={T\bibinitperiod},
+           given={Milena},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SAGE Publications Sage CA: Los Angeles, CA}%
+      }
+      \strng{namehash}{f140fc17c57af5fde64340cf8f6424ab}
+      \strng{fullhash}{f140fc17c57af5fde64340cf8f6424ab}
+      \strng{bibnamehash}{f140fc17c57af5fde64340cf8f6424ab}
+      \strng{authorbibnamehash}{f140fc17c57af5fde64340cf8f6424ab}
+      \strng{authornamehash}{f140fc17c57af5fde64340cf8f6424ab}
+      \strng{authorfullhash}{f140fc17c57af5fde64340cf8f6424ab}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Sociological Methods \& Research}
+      \field{number}{2}
+      \field{title}{The signal importance of noise}
+      \field{volume}{44}
+      \field{year}{2015}
+      \field{pages}{306\bibrangedash 328}
+      \range{pages}{23}
+    \endentry
+    \entry{martins05b}{unpublished}{}
+      \name{author}{1}{}{%
+        {{hash=3beb3a74759ed5fc163ff83d8083d0f5}{%
+           family={Martins},
+           familyi={M\bibinitperiod},
+           given={André\bibnamedelimb C.\bibnamedelimi R.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{fullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{bibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authorbibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authornamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authorfullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \field{extraname}{1}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Cogprint preprint at http://cogprints.org/4377/}
+      \field{title}{Adaptive Probability Theory: Human Biases as an Adaptation}
+      \field{year}{2005}
+    \endentry
+    \entry{martins12b}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3beb3a74759ed5fc163ff83d8083d0f5}{%
+           family={Martins},
+           familyi={M\bibinitperiod},
+           given={André\bibnamedelimb C.\bibnamedelimi R.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{fullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{bibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authorbibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authornamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authorfullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \field{extraname}{2}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AIP Conf. Proc.}
+      \field{title}{Bayesian updating as basis for opinion dynamics models}
+      \field{volume}{1490}
+      \field{year}{2012}
+      \field{pages}{212\bibrangedash 221}
+      \range{pages}{10}
+    \endentry
+    \entry{martins08c}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3beb3a74759ed5fc163ff83d8083d0f5}{%
+           family={Martins},
+           familyi={M\bibinitperiod},
+           given={André\bibnamedelimb C.\bibnamedelimi R.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{fullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{bibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authorbibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authornamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authorfullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \field{extraname}{3}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Statistical Mechanics: Theory and Experiment}
+      \field{note}{arXiv:0807.4972v1}
+      \field{number}{02}
+      \field{title}{Bayesian Updating Rules in Continuous Opinion Dynamics Models}
+      \field{volume}{2009}
+      \field{year}{2009}
+      \field{pages}{P02017}
+      \range{pages}{-1}
+    \endentry
+    \entry{martins08a}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3beb3a74759ed5fc163ff83d8083d0f5}{%
+           family={Martins},
+           familyi={M\bibinitperiod},
+           given={André\bibnamedelimb C.\bibnamedelimi R.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{fullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{bibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authorbibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authornamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authorfullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \field{extraname}{4}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Int. J. of Mod. Phys. C}
+      \field{number}{4}
+      \field{title}{Continuous Opinions and Discrete Actions in Opinion Dynamics Problems}
+      \field{volume}{19}
+      \field{year}{2008}
+      \field{pages}{617\bibrangedash 624}
+      \range{pages}{8}
+    \endentry
+    \entry{martinsgalam13a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3beb3a74759ed5fc163ff83d8083d0f5}{%
+           family={Martins},
+           familyi={M\bibinitperiod},
+           given={André\bibnamedelimb C.\bibnamedelimi R.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=b6d5402f7cc1258f68506e34d25c7dff}{%
+           family={Galam},
+           familyi={G\bibinitperiod},
+           given={Serge},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{79e95350519e50fba3f1f0224a41aa5e}
+      \strng{fullhash}{79e95350519e50fba3f1f0224a41aa5e}
+      \strng{bibnamehash}{79e95350519e50fba3f1f0224a41aa5e}
+      \strng{authorbibnamehash}{79e95350519e50fba3f1f0224a41aa5e}
+      \strng{authornamehash}{79e95350519e50fba3f1f0224a41aa5e}
+      \strng{authorfullhash}{79e95350519e50fba3f1f0224a41aa5e}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Phys. Rev. E}
+      \field{note}{arXiv:1208.3290}
+      \field{title}{The building up of individual inflexibility in opinion dynamics}
+      \field{volume}{87}
+      \field{year}{2013}
+      \field{pages}{042807}
+      \range{pages}{1}
+    \endentry
+    \entry{martins2009bayesian}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3beb3a74759ed5fc163ff83d8083d0f5}{%
+           family={Martins},
+           familyi={M\bibinitperiod},
+           given={Andr{é}\bibnamedelima CR},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOP Publishing}%
+      }
+      \strng{namehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{fullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{bibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authorbibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authornamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authorfullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \field{extraname}{5}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Statistical Mechanics: Theory and Experiment}
+      \field{number}{02}
+      \field{title}{Bayesian updating rules in continuous opinion dynamics models}
+      \field{volume}{2009}
+      \field{year}{2009}
+      \field{pages}{P02017}
+      \range{pages}{-1}
+    \endentry
+    \entry{mckay2000comparison}{article}{}
+      \name{author}{3}{}{%
+        {{hash=bfbdbb6cb669e4a75ed8df9372286357}{%
+           family={McKay},
+           familyi={M\bibinitperiod},
+           given={Michael\bibnamedelima D},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=c9e42547a23dd2f803287fc33f947142}{%
+           family={Beckman},
+           familyi={B\bibinitperiod},
+           given={Richard\bibnamedelima J},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=cf3c496e7598cdb04197e518e3c416c4}{%
+           family={Conover},
+           familyi={C\bibinitperiod},
+           given={William\bibnamedelima J},
+           giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis Group}%
+      }
+      \strng{namehash}{d3ff5f8df83a09ffe5a30e24f423abaa}
+      \strng{fullhash}{d3ff5f8df83a09ffe5a30e24f423abaa}
+      \strng{bibnamehash}{d3ff5f8df83a09ffe5a30e24f423abaa}
+      \strng{authorbibnamehash}{d3ff5f8df83a09ffe5a30e24f423abaa}
+      \strng{authornamehash}{d3ff5f8df83a09ffe5a30e24f423abaa}
+      \strng{authorfullhash}{d3ff5f8df83a09ffe5a30e24f423abaa}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Technometrics}
+      \field{number}{1}
+      \field{title}{A comparison of three methods for selecting values of input variables in the analysis of output from a computer code}
+      \field{volume}{42}
+      \field{year}{2000}
+      \field{pages}{55\bibrangedash 61}
+      \range{pages}{7}
+    \endentry
+    \entry{mercier11a}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f70379da697a3b48dab3e96d2c59fddc}{%
+           family={Mercier},
+           familyi={M\bibinitperiod},
+           given={Hugo},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{f70379da697a3b48dab3e96d2c59fddc}
+      \strng{fullhash}{f70379da697a3b48dab3e96d2c59fddc}
+      \strng{bibnamehash}{f70379da697a3b48dab3e96d2c59fddc}
+      \strng{authorbibnamehash}{f70379da697a3b48dab3e96d2c59fddc}
+      \strng{authornamehash}{f70379da697a3b48dab3e96d2c59fddc}
+      \strng{authorfullhash}{f70379da697a3b48dab3e96d2c59fddc}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cognitive Development}
+      \field{number}{3}
+      \field{title}{Reasoning Serves Argumentation in Children}
+      \field{volume}{26}
+      \field{year}{2011}
+      \field{pages}{177\bibrangedash 191}
+      \range{pages}{15}
+    \endentry
+    \entry{merciersperber11a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=f70379da697a3b48dab3e96d2c59fddc}{%
+           family={Mercier},
+           familyi={M\bibinitperiod},
+           given={Hugo},
+           giveni={H\bibinitperiod}}}%
+        {{hash=668bce40d496b0ee9fba07b4b1040e79}{%
+           family={Sperber},
+           familyi={S\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{4d7845c1ba0225393dfd087c14bb5c80}
+      \strng{fullhash}{4d7845c1ba0225393dfd087c14bb5c80}
+      \strng{bibnamehash}{4d7845c1ba0225393dfd087c14bb5c80}
+      \strng{authorbibnamehash}{4d7845c1ba0225393dfd087c14bb5c80}
+      \strng{authornamehash}{4d7845c1ba0225393dfd087c14bb5c80}
+      \strng{authorfullhash}{4d7845c1ba0225393dfd087c14bb5c80}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Behavioral and Brain Sciences}
+      \field{title}{Why do humans reason? Arguments for an argumentative theory}
+      \field{volume}{34}
+      \field{year}{2011}
+      \field{pages}{57\bibrangedash 111}
+      \range{pages}{55}
+    \endentry
+    \entry{miller2015spatial}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=0a0a3fa32467a56bd7499debf2e1892a}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Nicholas\bibnamedelima R.},
+           giveni={N\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=096c99db043ce37312d4960f827cda71}{%
+           family={Heckelman},
+           familyi={H\bibinitperiod},
+           given={Jack\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=0a0a3fa32467a56bd7499debf2e1892a}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Nicholas\bibnamedelima R.},
+           giveni={N\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Edward Elagar, Cheltenham}%
+      }
+      \strng{namehash}{0a0a3fa32467a56bd7499debf2e1892a}
+      \strng{fullhash}{0a0a3fa32467a56bd7499debf2e1892a}
+      \strng{bibnamehash}{0a0a3fa32467a56bd7499debf2e1892a}
+      \strng{authorbibnamehash}{0a0a3fa32467a56bd7499debf2e1892a}
+      \strng{authornamehash}{0a0a3fa32467a56bd7499debf2e1892a}
+      \strng{authorfullhash}{0a0a3fa32467a56bd7499debf2e1892a}
+      \strng{editorbibnamehash}{7f86fae5b61399b1190c8e275a398727}
+      \strng{editornamehash}{7f86fae5b61399b1190c8e275a398727}
+      \strng{editorfullhash}{7f86fae5b61399b1190c8e275a398727}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Handbook of social choice and voting}
+      \field{title}{The spatial model of social choice and voting}
+      \field{year}{2015}
+      \field{pages}{163\bibrangedash 181}
+      \range{pages}{19}
+    \endentry
+    \entry{ostrom1998behavioral}{article}{}
+      \name{author}{1}{}{%
+        {{hash=83bfc750a74aff11efa4bbcd04d4af05}{%
+           family={Ostrom},
+           familyi={O\bibinitperiod},
+           given={Elinor},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{83bfc750a74aff11efa4bbcd04d4af05}
+      \strng{fullhash}{83bfc750a74aff11efa4bbcd04d4af05}
+      \strng{bibnamehash}{83bfc750a74aff11efa4bbcd04d4af05}
+      \strng{authorbibnamehash}{83bfc750a74aff11efa4bbcd04d4af05}
+      \strng{authornamehash}{83bfc750a74aff11efa4bbcd04d4af05}
+      \strng{authorfullhash}{83bfc750a74aff11efa4bbcd04d4af05}
+      \field{sortinit}{O}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American political science review}
+      \field{number}{1}
+      \field{title}{A behavioral approach to the rational choice theory of collective action: Presidential address, American Political Science Association, 1997}
+      \field{volume}{92}
+      \field{year}{1998}
+      \field{pages}{1\bibrangedash 22}
+      \range{pages}{22}
+    \endentry
+    \entry{roth2019algorithmic}{article}{}
+      \name{author}{1}{}{%
+        {{hash=eeda45f925ce95549dc21796efdc20ed}{%
+           family={Roth},
+           familyi={R\bibinitperiod},
+           given={Camille},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{eeda45f925ce95549dc21796efdc20ed}
+      \strng{fullhash}{eeda45f925ce95549dc21796efdc20ed}
+      \strng{bibnamehash}{eeda45f925ce95549dc21796efdc20ed}
+      \strng{authorbibnamehash}{eeda45f925ce95549dc21796efdc20ed}
+      \strng{authornamehash}{eeda45f925ce95549dc21796efdc20ed}
+      \strng{authorfullhash}{eeda45f925ce95549dc21796efdc20ed}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1907.10401}
+      \field{title}{Algorithmic distortion of informational landscapes}
+      \field{year}{2019}
+    \endentry
+    \entry{saltelli2000sensitivity}{book}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{3}{}{%
+        {{hash=40222053beb161f856f5eea1c63522f9}{%
+           family={Saltelli},
+           familyi={S\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=7db22b1446dedb830ef2f829d5321ef5}{%
+           family={Chan},
+           familyi={C\bibinitperiod},
+           given={Karen},
+           giveni={K\bibinitperiod}}}%
+        {{hash=4c8f0583c55903a36ed4bc70a4dea180}{%
+           family={Scott},
+           familyi={S\bibinitperiod},
+           given={E\bibnamedelima Marian},
+           giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley New York}%
+      }
+      \strng{namehash}{2ef12b5770b054ced8e860294b0d3ff5}
+      \strng{fullhash}{2ef12b5770b054ced8e860294b0d3ff5}
+      \strng{bibnamehash}{2ef12b5770b054ced8e860294b0d3ff5}
+      \strng{authorbibnamehash}{2ef12b5770b054ced8e860294b0d3ff5}
+      \strng{authornamehash}{2ef12b5770b054ced8e860294b0d3ff5}
+      \strng{authorfullhash}{2ef12b5770b054ced8e860294b0d3ff5}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sensitivity analysis}
+      \field{volume}{1}
+      \field{year}{2000}
+    \endentry
+    \entry{saltelli2008global}{book}{}
+      \name{author}{8}{}{%
+        {{hash=40222053beb161f856f5eea1c63522f9}{%
+           family={Saltelli},
+           familyi={S\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6ca2956f7c035175028804cc31f1791b}{%
+           family={Ratto},
+           familyi={R\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+        {{hash=305f209d4eae4ab5cd3860690548224f}{%
+           family={Andres},
+           familyi={A\bibinitperiod},
+           given={Terry},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f0ea0d2b6145cbab09a9668234d4d631}{%
+           family={Campolongo},
+           familyi={C\bibinitperiod},
+           given={Francesca},
+           giveni={F\bibinitperiod}}}%
+        {{hash=6efaf6e815c0bad27598ad35e5ef5954}{%
+           family={Cariboni},
+           familyi={C\bibinitperiod},
+           given={Jessica},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0a3e8f736f02c0e5b1527d6fad6ea85c}{%
+           family={Gatelli},
+           familyi={G\bibinitperiod},
+           given={Debora},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d8200fbc87a3aef4ebf2782705607b41}{%
+           family={Saisana},
+           familyi={S\bibinitperiod},
+           given={Michaela},
+           giveni={M\bibinitperiod}}}%
+        {{hash=31a88c2ce810172e651132ba1ae0cd6c}{%
+           family={Tarantola},
+           familyi={T\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons}%
+      }
+      \strng{namehash}{6bf91641f4c7b586ec8db024e8a3b0fe}
+      \strng{fullhash}{235875793bafff86c4905900499e7fe5}
+      \strng{bibnamehash}{6bf91641f4c7b586ec8db024e8a3b0fe}
+      \strng{authorbibnamehash}{6bf91641f4c7b586ec8db024e8a3b0fe}
+      \strng{authornamehash}{6bf91641f4c7b586ec8db024e8a3b0fe}
+      \strng{authorfullhash}{235875793bafff86c4905900499e7fe5}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Global sensitivity analysis: the primer}
+      \field{year}{2008}
+    \endentry
+    \entry{sugden2009credible}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4b16025181708b48bf371d218fe4feda}{%
+           family={Sugden},
+           familyi={S\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{4b16025181708b48bf371d218fe4feda}
+      \strng{fullhash}{4b16025181708b48bf371d218fe4feda}
+      \strng{bibnamehash}{4b16025181708b48bf371d218fe4feda}
+      \strng{authorbibnamehash}{4b16025181708b48bf371d218fe4feda}
+      \strng{authornamehash}{4b16025181708b48bf371d218fe4feda}
+      \strng{authorfullhash}{4b16025181708b48bf371d218fe4feda}
+      \field{extraname}{1}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Erkenntnis}
+      \field{number}{1}
+      \field{title}{Credible worlds, capacities and mechanisms}
+      \field{volume}{70}
+      \field{year}{2009}
+      \field{pages}{3\bibrangedash 27}
+      \range{pages}{25}
+    \endentry
+    \entry{sugden2000credible}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4b16025181708b48bf371d218fe4feda}{%
+           family={Sugden},
+           familyi={S\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{4b16025181708b48bf371d218fe4feda}
+      \strng{fullhash}{4b16025181708b48bf371d218fe4feda}
+      \strng{bibnamehash}{4b16025181708b48bf371d218fe4feda}
+      \strng{authorbibnamehash}{4b16025181708b48bf371d218fe4feda}
+      \strng{authornamehash}{4b16025181708b48bf371d218fe4feda}
+      \strng{authorfullhash}{4b16025181708b48bf371d218fe4feda}
+      \field{extraname}{2}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of economic methodology}
+      \field{number}{1}
+      \field{title}{Credible worlds: the status of theoretical models in economics}
+      \field{volume}{7}
+      \field{year}{2000}
+      \field{pages}{1\bibrangedash 31}
+      \range{pages}{31}
+    \endentry
+    \entry{sznajd00}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3a6804564eae877c0a4aa46cca83ac75}{%
+           family={Sznajd-Weron},
+           familyi={S\bibinithyphendelim W\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=7a15f3ce1bb1651399e79e17a4cb4cf2}{%
+           family={Sznajd},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{6b0e1112a5203665bac52ef60433a619}
+      \strng{fullhash}{6b0e1112a5203665bac52ef60433a619}
+      \strng{bibnamehash}{6b0e1112a5203665bac52ef60433a619}
+      \strng{authorbibnamehash}{6b0e1112a5203665bac52ef60433a619}
+      \strng{authornamehash}{6b0e1112a5203665bac52ef60433a619}
+      \strng{authorfullhash}{6b0e1112a5203665bac52ef60433a619}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Int. J. Mod. Phys. C}
+      \field{title}{Opinion evolution in a closed community}
+      \field{volume}{11}
+      \field{year}{2000}
+      \field{pages}{1157}
+      \range{pages}{1}
+    \endentry
+    \entry{taberlodge06a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3208d73f57a959eee608febb03481a57}{%
+           family={Taber},
+           familyi={T\bibinitperiod},
+           given={Charles\bibnamedelima S.},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=ef8b6d143f20a38f14986d1f4853b2c2}{%
+           family={Lodge},
+           familyi={L\bibinitperiod},
+           given={Milton},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{534cf0ce2f9db4b47683fb0923bfce06}
+      \strng{fullhash}{534cf0ce2f9db4b47683fb0923bfce06}
+      \strng{bibnamehash}{534cf0ce2f9db4b47683fb0923bfce06}
+      \strng{authorbibnamehash}{534cf0ce2f9db4b47683fb0923bfce06}
+      \strng{authornamehash}{534cf0ce2f9db4b47683fb0923bfce06}
+      \strng{authorfullhash}{534cf0ce2f9db4b47683fb0923bfce06}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Journal of Political Science}
+      \field{number}{3}
+      \field{title}{Motivated Skepticism of Political Beliefs}
+      \field{volume}{50}
+      \field{year}{2006}
+      \field{pages}{755\bibrangedash 769}
+      \range{pages}{15}
+      \verb{file}
+      \verb :D\:\\Andre\\home\\andre\\Documents\\groupthionk\\j.1540-5907.2006.00214.x.pdf:PDF
+      \endverb
+    \endentry
+    \entry{teglasetal11a}{article}{}
+      \name{author}{6}{}{%
+        {{hash=10d820c7e3b4d6a75425ec1c327ec412}{%
+           family={Téglás},
+           familyi={T\bibinitperiod},
+           given={Ernö},
+           giveni={E\bibinitperiod}}}%
+        {{hash=e549857b36a3548394a7dee6955a2af0}{%
+           family={Vul},
+           familyi={V\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod}}}%
+        {{hash=254c82e28fd881b22297c30739a552d4}{%
+           family={Girotto},
+           familyi={G\bibinitperiod},
+           given={Vittorio},
+           giveni={V\bibinitperiod}}}%
+        {{hash=87377c149c56aa3e96a88c9c0b887459}{%
+           family={Gonzalez},
+           familyi={G\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5c7ff02e1f8b4c4aa7bfddece14f23d2}{%
+           family={Tenenbaum},
+           familyi={T\bibinitperiod},
+           given={Joshua\bibnamedelima B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=40d926964460414ad4f7daef3bffc9f6}{%
+           family={Bonatti},
+           familyi={B\bibinitperiod},
+           given={Luca\bibnamedelima L.},
+           giveni={L\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{012245351d895446fe28e163b9b336ac}
+      \strng{fullhash}{67c428543722d2f61833add3b055eb1f}
+      \strng{bibnamehash}{012245351d895446fe28e163b9b336ac}
+      \strng{authorbibnamehash}{012245351d895446fe28e163b9b336ac}
+      \strng{authornamehash}{012245351d895446fe28e163b9b336ac}
+      \strng{authorfullhash}{67c428543722d2f61833add3b055eb1f}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science}
+      \field{number}{6033}
+      \field{title}{Pure Reasoning in 12-Month-Old Infants as Probabilistic Inference}
+      \field{volume}{332}
+      \field{year}{2011}
+      \field{pages}{1054\bibrangedash 1059}
+      \range{pages}{6}
+    \endentry
+    \entry{ten2016sensitivity}{article}{}
+      \name{author}{3}{}{%
+        {{hash=aa7f88f3269fe3618520ee29e6756a8a}{%
+           family={Ten\bibnamedelima Broeke},
+           familyi={T\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Guus},
+           giveni={G\bibinitperiod}}}%
+        {{hash=5181e88d5bb4a33e0fb752c27798a870}{%
+           family={Van\bibnamedelima Voorn},
+           familyi={V\bibinitperiod\bibinitdelim V\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=61c5bcb1a510e7ee0961903a5d81b047}{%
+           family={Ligtenberg},
+           familyi={L\bibinitperiod},
+           given={Arend},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{5aae07c8f0f0bbbd2f4c82a53fc70ea2}
+      \strng{fullhash}{5aae07c8f0f0bbbd2f4c82a53fc70ea2}
+      \strng{bibnamehash}{5aae07c8f0f0bbbd2f4c82a53fc70ea2}
+      \strng{authorbibnamehash}{5aae07c8f0f0bbbd2f4c82a53fc70ea2}
+      \strng{authornamehash}{5aae07c8f0f0bbbd2f4c82a53fc70ea2}
+      \strng{authorfullhash}{5aae07c8f0f0bbbd2f4c82a53fc70ea2}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Artificial Societies and Social Simulation}
+      \field{number}{1}
+      \field{title}{Which sensitivity analysis method should I use for my agent-based model?}
+      \field{volume}{19}
+      \field{year}{2016}
+      \field{pages}{5}
+      \range{pages}{1}
+    \endentry
+    \entry{tenenbaumetal07}{incollection}{}
+      \name{author}{3}{}{%
+        {{hash=b1496617cb6c48a07efcc39a1bbe8568}{%
+           family={Tenenbaum},
+           familyi={T\bibinitperiod},
+           given={J.\bibnamedelimi B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=feb3efa9bd866ef10fba8d5c1528fad1}{%
+           family={Kemp},
+           familyi={K\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=5196b0ec0a5f92c4b250d5a898b256a9}{%
+           family={Shafto},
+           familyi={S\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=6cb8675aec7848c4cd79dca72d72ba46}{%
+           family={Feeney},
+           familyi={F\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=7ce825bf76221992e44ba40def08b6d6}{%
+           family={Heit},
+           familyi={H\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press.}%
+      }
+      \strng{namehash}{7615867b4cd4ea5964b6300ad67eaaac}
+      \strng{fullhash}{7615867b4cd4ea5964b6300ad67eaaac}
+      \strng{bibnamehash}{7615867b4cd4ea5964b6300ad67eaaac}
+      \strng{authorbibnamehash}{7615867b4cd4ea5964b6300ad67eaaac}
+      \strng{authornamehash}{7615867b4cd4ea5964b6300ad67eaaac}
+      \strng{authorfullhash}{7615867b4cd4ea5964b6300ad67eaaac}
+      \strng{editorbibnamehash}{699c772d32fc5ea91fcb982753857170}
+      \strng{editornamehash}{699c772d32fc5ea91fcb982753857170}
+      \strng{editorfullhash}{699c772d32fc5ea91fcb982753857170}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Inductive reasoning}
+      \field{title}{Theory-based Bayesian models of inductive reasoning.}
+      \field{year}{2007}
+    \endentry
+    \entry{van2005political}{article}{}
+      \name{author}{2}{}{%
+        {{hash=03f01d2f62b2ea9eed99fdab44041e74}{%
+           family={Van\bibnamedelima Houweling},
+           familyi={V\bibinitperiod\bibinitdelim H\bibinitperiod},
+           given={Robert\bibnamedelima P},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=06c6e15f54f3d4e7c444b391540fcfeb}{%
+           family={Sniderman},
+           familyi={S\bibinitperiod},
+           given={Paul\bibnamedelima M},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{940109b6f4091ecf6b35aad78bf2eaef}
+      \strng{fullhash}{940109b6f4091ecf6b35aad78bf2eaef}
+      \strng{bibnamehash}{940109b6f4091ecf6b35aad78bf2eaef}
+      \strng{authorbibnamehash}{940109b6f4091ecf6b35aad78bf2eaef}
+      \strng{authornamehash}{940109b6f4091ecf6b35aad78bf2eaef}
+      \strng{authorfullhash}{940109b6f4091ecf6b35aad78bf2eaef}
+      \field{sortinit}{V}
+      \field{sortinithash}{75dd7385c90b2252c3ae853a80ca853b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Institute of Governmental Studies}
+      \field{title}{The political logic of a Downsian space}
+      \field{year}{2005}
+    \endentry
+    \entry{vicenteetal08b}{article}{}
+      \name{author}{3}{}{%
+        {{hash=dec335ae44ec5f6e14fbf7c441fe7522}{%
+           family={Vicente},
+           familyi={V\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=3beb3a74759ed5fc163ff83d8083d0f5}{%
+           family={Martins},
+           familyi={M\bibinitperiod},
+           given={André\bibnamedelimb C.\bibnamedelimi R.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=1187b010abf77e7dcec9a19c6d2c9a88}{%
+           family={Caticha},
+           familyi={C\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{9265f81e54f5c3b950110cf50897b3ac}
+      \strng{fullhash}{9265f81e54f5c3b950110cf50897b3ac}
+      \strng{bibnamehash}{9265f81e54f5c3b950110cf50897b3ac}
+      \strng{authorbibnamehash}{9265f81e54f5c3b950110cf50897b3ac}
+      \strng{authornamehash}{9265f81e54f5c3b950110cf50897b3ac}
+      \strng{authorfullhash}{9265f81e54f5c3b950110cf50897b3ac}
+      \field{sortinit}{V}
+      \field{sortinithash}{75dd7385c90b2252c3ae853a80ca853b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Statistical Mechanics: Theory and Experiment}
+      \field{note}{arXiv:0811.2099}
+      \field{title}{Opinion Dynamics of Learning Agents: Does Seeking Consensus Lead to Disagreement?}
+      \field{volume}{2009}
+      \field{year}{2009}
+      \field{pages}{P03015}
+      \range{pages}{-1}
+    \endentry
+    \entry{weisbuchetal05}{article}{}
+      \name{author}{3}{}{%
+        {{hash=2652e2ae50be519b9aab8b944e208b43}{%
+           family={Weisbuch},
+           familyi={W\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=ed94dabca861b9359e944ce22906621e}{%
+           family={Deffuant},
+           familyi={D\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=731e2d7e8f220bcf64d66d128b083984}{%
+           family={Amblard},
+           familyi={A\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{63c6e7f1179f95086b40bd1d38fd2c74}
+      \strng{fullhash}{63c6e7f1179f95086b40bd1d38fd2c74}
+      \strng{bibnamehash}{63c6e7f1179f95086b40bd1d38fd2c74}
+      \strng{authorbibnamehash}{63c6e7f1179f95086b40bd1d38fd2c74}
+      \strng{authornamehash}{63c6e7f1179f95086b40bd1d38fd2c74}
+      \strng{authorfullhash}{63c6e7f1179f95086b40bd1d38fd2c74}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Physica A}
+      \field{title}{Persuasion Dynamics}
+      \field{volume}{353}
+      \field{year}{2005}
+      \field{pages}{555\bibrangedash 575}
+      \range{pages}{21}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
 
-\bibitem{galametal82}
-S.~Galam, Y.~Gefen, and Y.~Shapir.
-\newblock Sociophysics: A new approach of sociological collective behavior:
-  Mean-behavior description of a strike.
-\newblock {\em J. Math. Sociol.}, 9:1--13, 1982.
-
-\bibitem{galammoscovici91}
-S.~Galam and S.~Moscovici.
-\newblock Towards a theory of collective phenomena: Consensus and attitude
-  changes in groups.
-\newblock {\em Eur. J. Soc. Psychol.}, 21:49--74, 1991.
-
-\bibitem{sznajd00}
-K.~Sznajd-Weron and J.~Sznajd.
-\newblock Opinion evolution in a closed community.
-\newblock {\em Int. J. Mod. Phys. C}, 11:1157, 2000.
-
-\bibitem{deffuantetal00}
-G.~Deffuant, D.~Neau, F.~Amblard, and G.~Weisbuch.
-\newblock Mixing beliefs among interacting agents.
-\newblock {\em Adv. Compl. Sys.}, 3:87--98, 2000.
-
-\bibitem{martins08a}
-Andr\'e C.~R. Martins.
-\newblock Continuous opinions and discrete actions in opinion dynamics
-  problems.
-\newblock {\em Int. J. of Mod. Phys. C}, 19(4):617--624, 2008.
-
-\bibitem{downs1957economic}
-Anthony Downs.
-\newblock An economic theory of political action in a democracy.
-\newblock {\em Journal of Political Economy}, 65(2):135--150, 1957.
-
-\bibitem{laver2014measuring}
-Michael Laver.
-\newblock Measuring policy positions in political space.
-\newblock {\em Annual Review of Political Science}, 17:207--223, 2014.
-
-\bibitem{van2005political}
-Robert~P Van~Houweling and Paul~M Sniderman.
-\newblock The political logic of a downsian space.
-\newblock {\em Institute of Governmental Studies}, 2005.
-
-\bibitem{miller2015spatial}
-Nicholas~R. Miller.
-\newblock The spatial model of social choice and voting.
-\newblock In Jack~C. Heckelman and Nicholas~R. Miller, editors, {\em Handbook
-  of social choice and voting}, pages 163--181. Edward Elagar, Cheltenham,
-  2015.
-
-\bibitem{benoit2006party}
-Kenneth Benoit, Michael Laver, et~al.
-\newblock {\em Party policy in modern democracies}.
-\newblock Routledge, 2006.
-
-\bibitem{vicenteetal08b}
-R.~Vicente, Andr\'e C.~R. Martins, and N.~Caticha.
-\newblock Opinion dynamics of learning agents: Does seeking consensus lead to
-  disagreement?
-\newblock {\em Journal of Statistical Mechanics: Theory and Experiment},
-  2009:P03015, 2009.
-\newblock arXiv:0811.2099.
-
-\bibitem{hegselmannkrause02}
-R.~Hegselmann and U.~Krause.
-\newblock Opinion dynamics and bounded confidence models, analysis and
-  simulation.
-\newblock {\em Journal of Artificial Societies and Social Simulations}, 5(3):3,
-  2002.
-
-\bibitem{deffuantetal02a}
-G.~Deffuant, F.~Amblard, and T.~Weisbuch, G.and~Faure.
-\newblock How can extremism prevail? a study based on the relative agreement
-  interaction model.
-\newblock {\em JASSS-The Journal Of Artificial Societies And Social
-  Simulation}, 5(4):1, 2002.
-
-\bibitem{weisbuchetal05}
-G.~Weisbuch, G.~Deffuant, and F.~Amblard.
-\newblock Persuasion dynamics.
-\newblock {\em Physica A}, 353:555--575, 2005.
-
-\bibitem{amblarddeffuant04}
-F.~Amblard and G.~Deffuant.
-\newblock The role of network topology on extremism propagation with the
-  relative agreement opinion dynamics.
-\newblock {\em Physica A}, 343:725--738, 2004.
-
-\bibitem{gargiulomazzoni08a}
-Floriana Gargiulo and Alberto Mazzoni.
-\newblock Can extremism guarantee pluralism?
-\newblock {\em JASSS-The Journal Of Artificial Societies And Social
-  Simulation}, 11(4):9, 2008.
-
-\bibitem{franksetal08a}
-Daniel~W. Franks, Jason Noble, Peter Kaufmann, and Sigrid Stagl.
-\newblock Extremism propagation in social networks with hubs.
-\newblock {\em Adaptive Behavior}, 16(4):264--274, 2008.
-
-\bibitem{alizadeh14a}
-Meysam Alizadeh, Ali Coman, Michael Lewis, and Claudio Cioffi-Revilla.
-\newblock Integroup conflict escalations llead to more extremism.
-\newblock {\em JASSS-The Journal Of Artificial Societies And Social
-  Simulation}, 14(4):4, 2014.
-
-\bibitem{Albi2016}
-Giacomo Albi, Lorenzo Pareschi, and Mattia Zanella.
-\newblock Opinion dynamics over complex networks: kinetic modeling and
-  numerical methods.
-\newblock arXiv:1604.00421, 2016.
-
-\bibitem{Mai2017}
-Tung Mai, Ioannis Panageas, and Vijay~V. Vazirani.
-\newblock Opinion dynamics in networks: Convergence, stability and lack of
-  explosion.
-\newblock In Ioannis Chatzigiannakis, Piotr Indyk, Fabian Kuhn, , and Anca
-  Muscholl, editors, {\em 44th International Colloquium on Automata, Languages,
-  and Programming}, number 140, pages 1--14, 2017.
-
-\bibitem{Kurmyshev2011}
-Evguenii Kurmyshev, H\'ector~A. Ju\'arez, and Ricardo~A. Gonz\'alez-Silva.
-\newblock Dynamics of bounded confidence opinion in heterogeneous social
-  networks: Concord against partial antagonism.
-\newblock {\em Physica A: Statistical Mechanics and its Applications},
-  390(16):2945 -- 2955, 2011.
-
-\bibitem{Acemoglu2011}
-Daron Acemoglu and Asuman Ozdaglar.
-\newblock Opinion dynamics and learning in social networks.
-\newblock {\em Dynamic Games and Applications}, 1(1):3--49, Mar 2011.
-
-\bibitem{Das2014}
-Abhimanyu Das, Sreenivas Gollapudi, and Kamesh Munagala.
-\newblock Modeling opinion dynamics in social networks.
-\newblock In {\em Proceedings of the 7th ACM International Conference on Web
-  Search and Data Mining}, WSDM '14, pages 403--412, New York, NY, USA, 2014.
-  ACM.
-
-\bibitem{Hu2017}
-Haibo Hu.
-\newblock Competing opinion diffusion on social networks.
-\newblock {\em Royal Society Open Science}, 4(11), 2017.
-
-\bibitem{deffuant06}
-G.~Deffuant.
-\newblock Comparing extremism propagation patterns in continuous opinion
-  models.
-\newblock {\em JASSS-The Journal Of Artificial Societies And Social
-  Simulation}, 9(3):8, 2006.
-
-\bibitem{martins08c}
-Andr\'e C.~R. Martins.
-\newblock Bayesian updating rules in continuous opinion dynamics models.
-\newblock {\em Journal of Statistical Mechanics: Theory and Experiment},
-  2009(02):P02017, 2009.
-\newblock arXiv:0807.4972v1.
-
-\bibitem{martins12b}
-Andr\'e C.~R. Martins.
-\newblock Bayesian updating as basis for opinion dynamics models.
-\newblock {\em AIP Conf. Proc.}, 1490:212--221, 2012.
-
-\bibitem{humphreys2010spatial}
-Macartan Humphreys and Michael Laver.
-\newblock Spatial models, cognitive metrics, and majority rule equilibria.
-\newblock {\em British Journal of Political Science}, 40(1):11--30, 2010.
-
-\bibitem{ostrom1998behavioral}
-Elinor Ostrom.
-\newblock A behavioral approach to the rational choice theory of collective
-  action: Presidential address, american political science association, 1997.
-\newblock {\em American political science review}, 92(1):1--22, 1998.
-
-\bibitem{jostetal03a}
-John~T. Jost, Jack Glaser, Arie~W. Kruglanski, and Frank~J. Sulloway.
-\newblock Political conservatism as motivated social cognition.
-\newblock {\em Psychol. Bull.}, 129(3):339--375, 2003.
-
-\bibitem{taberlodge06a}
-Charles~S. Taber and Milton Lodge.
-\newblock Motivated skepticism of political beliefs.
-\newblock {\em American Journal of Political Science}, 50(3):755--769, 2006.
-
-\bibitem{Claassen2015a}
-Ryan~L. Claassen and Michael~J. Ensley.
-\newblock Motivated reasoning and yard-sign-stealing partisans: Mine is a
-  likable rogue, yours is a degenerate criminal.
-\newblock {\em Political Behavior}, pages 1--19, 2015.
-
-\bibitem{jervis76a}
-Robert Jervis.
-\newblock {\em Perception and Misperception in International Politics}.
-\newblock Princeton University Press, 1976.
-
-\bibitem{mercier11a}
-Hugo Mercier.
-\newblock Reasoning serves argumentation in children.
-\newblock {\em Cognitive Development}, 26(3):177--191, 2011.
-
-\bibitem{merciersperber11a}
-Hugo Mercier and Dan Sperber.
-\newblock Why do humans reason? arguments for an argumentative theory.
-\newblock {\em Behavioral and Brain Sciences}, 34:57--111, 2011.
-
-\bibitem{kahanetal11}
-Dan~M. Kahan, Hank Jenkins-Smith, and Donald Braman.
-\newblock Cultural cognition of scientific consensus.
-\newblock {\em Journal of Risk Research}, 14:147--174, 2011.
-
-\bibitem{armstrong2014analyzing}
-David~A Armstrong, Ryan Bakker, Royce Carroll, Christopher Hare, Keith~T Poole,
-  Howard Rosenthal, et~al.
-\newblock {\em Analyzing spatial models of choice and judgment with R}.
-\newblock CRC Press, 2014.
-
-\bibitem{mckay2000comparison}
-Michael~D McKay, Richard~J Beckman, and William~J Conover.
-\newblock A comparison of three methods for selecting values of input variables
-  in the analysis of output from a computer code.
-\newblock {\em Technometrics}, 42(1):55--61, 2000.
-
-\bibitem{galam05b}
-S.~Galam.
-\newblock Local dynamics vs. social mechanisms: A unifying frame.
-\newblock {\em Europhysics Letters}, 70(6):705--711, 2005.
-
-\bibitem{deffuant2002can}
-Guillaume Deffuant, Fr{\'e}d{\'e}ric Amblard, G{\'e}rard Weisbuch, and Thierry
-  Faure.
-\newblock How can extremism prevail? a study based on the relative agreement
-  interaction model.
-\newblock {\em Journal of artificial societies and social simulation}, 5(4),
-  2002.
-
-\bibitem{martinsgalam13a}
-Andr\'e C.~R. Martins and Serge Galam.
-\newblock The building up of individual inflexibility in opinion dynamics.
-\newblock {\em Phys. Rev. E}, 87:042807, 2013.
-\newblock arXiv:1208.3290.
-
-\bibitem{flache2017}
-Andreas Flache, Michael M\"{a}s, Thomas Feliciani, Edmund Chattoe-Brown,
-  Guillaume Deffuant, Sylvie Huet, and Jan Lorenz.
-\newblock Models of social influence: Towards the next frontiers.
-\newblock {\em Journal of Artificial Societies and Social Simulation}, 20(4):2,
-  2017.
-
-\bibitem{macy2015signal}
-Michael Macy and Milena Tsvetkova.
-\newblock The signal importance of noise.
-\newblock {\em Sociological Methods \& Research}, 44(2):306--328, 2015.
-
-\bibitem{saltelli2008global}
-Andrea Saltelli, Marco Ratto, Terry Andres, Francesca Campolongo, Jessica
-  Cariboni, Debora Gatelli, Michaela Saisana, and Stefano Tarantola.
-\newblock {\em Global sensitivity analysis: the primer}.
-\newblock John Wiley \& Sons, 2008.
-
-\bibitem{saltelli2000sensitivity}
-Andrea Saltelli, Karen Chan, E~Marian Scott, et~al.
-\newblock {\em Sensitivity analysis}, volume~1.
-\newblock Wiley New York, 2000.
-
-\bibitem{ten2016sensitivity}
-Guus Ten~Broeke, George Van~Voorn, and Arend Ligtenberg.
-\newblock Which sensitivity analysis method should i use for my agent-based
-  model?
-\newblock {\em Journal of Artificial Societies and Social Simulation}, 19(1):5,
-  2016.
-
-\end{thebibliography}
