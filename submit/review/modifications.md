@@ -30,9 +30,10 @@
   much each agent trusts another agent should be a function of the distance
   between their opinions on the subject they are debating" sound a bit
   unfounded."
-      - We have modified the first paragraph of section 1 to indicate the
-   relevant literature about geometric models. It is not in the scope of the
-   article to belabor a literature that is well known and widely used.
+
+   - We have modified the first paragraph of section 1 to indicate the relevant
+   literature about geometric models. It is not in the scope of the article to
+   belabor a literature that is well known and widely used.
 
 - Reviewer 2: "It is not clear to me how simulations were done. "..one sampling
 of 70,000 times.." means 70,000 independent realizations of the dynamics?"
@@ -45,12 +46,13 @@ the model? If that is the case, then it is hard to see whether there is
 consensus or not in individual realizations. The should add a plot (or perhaps
 an inset) showing the mean opinion of each agent in an single realization. What
 are the parameter values sigma, n and p of Fig. 1?"
-        - We have modified the paragraphs that explain Fig. 1 so that its clear
-          we're investing the behavior of the model over many parameterizations.
-          We've identified and pointed out the difference between initial and
-          final state of the model both in the plot and in paragraphs explaining
-          it. Plots of individual runs are depicted throughout the paper so it
-          doesn't make sense to add another one here.
+
+   - We have modified the paragraphs that explain Fig. 1 so that its clear we're
+     investing the behavior of the model over many parameterizations. We've
+     identified and pointed out the difference between initial and final state
+     of the model both in the plot and in paragraphs explaining it. Plots of
+     individual runs are depicted throughout the paper so it doesn't make sense
+     to add another one here.
 
 - Reviewer 2: "They also mention that sigma plays the role of
 the threshold in Bounded confidence models (BCM). However, in page 4 it is
