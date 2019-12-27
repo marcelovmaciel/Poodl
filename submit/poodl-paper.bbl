@@ -819,6 +819,44 @@
       \endverb
       \keyw{Social Influence,Opinion Dynamics,Polarization,Calibration and Validation,Micro-Macro Link}
     \endentry
+    \entry{flynn2017nature}{article}{}
+      \name{author}{3}{}{%
+        {{hash=61e57080b29ab1739a3ed57a602ac21f}{%
+           family={Flynn},
+           familyi={F\bibinitperiod},
+           given={DJ},
+           giveni={D\bibinitperiod}}}%
+        {{hash=8ef5bca6f403168706ad93d11351ed60}{%
+           family={Nyhan},
+           familyi={N\bibinitperiod},
+           given={Brendan},
+           giveni={B\bibinitperiod}}}%
+        {{hash=698c775e8046e91f3e4c4717a9af1fe4}{%
+           family={Reifler},
+           familyi={R\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{137cde25a4bb4b49c22acc4f06399f41}
+      \strng{fullhash}{137cde25a4bb4b49c22acc4f06399f41}
+      \strng{bibnamehash}{137cde25a4bb4b49c22acc4f06399f41}
+      \strng{authorbibnamehash}{137cde25a4bb4b49c22acc4f06399f41}
+      \strng{authornamehash}{137cde25a4bb4b49c22acc4f06399f41}
+      \strng{authorfullhash}{137cde25a4bb4b49c22acc4f06399f41}
+      \field{sortinit}{F}
+      \field{sortinithash}{669c706c6f1fbf3b5a83d26f1d9e9e72}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Political Psychology}
+      \field{title}{The nature and origins of misperceptions: Understanding false and unsupported beliefs about politics}
+      \field{volume}{38}
+      \field{year}{2017}
+      \field{pages}{127\bibrangedash 150}
+      \range{pages}{24}
+    \endentry
     \entry{franksetal08a}{article}{}
       \name{author}{4}{}{%
         {{hash=f87a91b099e0bf9f15783e3764d763f9}{%
@@ -1196,6 +1234,40 @@
       \field{year}{2010}
       \field{pages}{11\bibrangedash 30}
       \range{pages}{20}
+    \endentry
+    \entry{jerit2012partisan}{article}{}
+      \name{author}{2}{}{%
+        {{hash=e9af2ccedf7b42e1f2cc48f251ff5c4b}{%
+           family={Jerit},
+           familyi={J\bibinitperiod},
+           given={Jennifer},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1542aea4cee73852f713d74602f4e230}{%
+           family={Barabas},
+           familyi={B\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press New York, USA}%
+      }
+      \strng{namehash}{a2f6c394dd560077ed386beeb2177f0a}
+      \strng{fullhash}{a2f6c394dd560077ed386beeb2177f0a}
+      \strng{bibnamehash}{a2f6c394dd560077ed386beeb2177f0a}
+      \strng{authorbibnamehash}{a2f6c394dd560077ed386beeb2177f0a}
+      \strng{authornamehash}{a2f6c394dd560077ed386beeb2177f0a}
+      \strng{authorfullhash}{a2f6c394dd560077ed386beeb2177f0a}
+      \field{sortinit}{J}
+      \field{sortinithash}{fce5f8d0bd05e8d93f3dbe21c78897ca}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Politics}
+      \field{number}{3}
+      \field{title}{Partisan perceptual bias and the information environment}
+      \field{volume}{74}
+      \field{year}{2012}
+      \field{pages}{672\bibrangedash 684}
+      \range{pages}{13}
     \endentry
     \entry{jervis76a}{book}{}
       \name{author}{1}{}{%
@@ -1752,6 +1824,40 @@
       \field{pages}{163\bibrangedash 181}
       \range{pages}{19}
     \endentry
+    \entry{nyhan2010corrections}{article}{}
+      \name{author}{2}{}{%
+        {{hash=8ef5bca6f403168706ad93d11351ed60}{%
+           family={Nyhan},
+           familyi={N\bibinitperiod},
+           given={Brendan},
+           giveni={B\bibinitperiod}}}%
+        {{hash=698c775e8046e91f3e4c4717a9af1fe4}{%
+           family={Reifler},
+           familyi={R\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{d21a666d934fa6f0432b913cb72d3446}
+      \strng{fullhash}{d21a666d934fa6f0432b913cb72d3446}
+      \strng{bibnamehash}{d21a666d934fa6f0432b913cb72d3446}
+      \strng{authorbibnamehash}{d21a666d934fa6f0432b913cb72d3446}
+      \strng{authornamehash}{d21a666d934fa6f0432b913cb72d3446}
+      \strng{authorfullhash}{d21a666d934fa6f0432b913cb72d3446}
+      \field{sortinit}{N}
+      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Political Behavior}
+      \field{number}{2}
+      \field{title}{When corrections fail: The persistence of political misperceptions}
+      \field{volume}{32}
+      \field{year}{2010}
+      \field{pages}{303\bibrangedash 330}
+      \range{pages}{28}
+    \endentry
     \entry{ostrom1998behavioral}{article}{}
       \name{author}{1}{}{%
         {{hash=83bfc750a74aff11efa4bbcd04d4af05}{%
@@ -1780,6 +1886,45 @@
       \field{year}{1998}
       \field{pages}{1\bibrangedash 22}
       \range{pages}{22}
+    \endentry
+    \entry{reedy2014voters}{article}{}
+      \name{author}{3}{}{%
+        {{hash=04c393816ba230c705017a9ad1f48a8c}{%
+           family={Reedy},
+           familyi={R\bibinitperiod},
+           given={Justin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0e9b7237a88231245415e705ffabfa2d}{%
+           family={Wells},
+           familyi={W\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+        {{hash=1c87ae9362275c7d535efa40e27cae7b}{%
+           family={Gastil},
+           familyi={G\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{b1b61982593f079fc529b45e908d2526}
+      \strng{fullhash}{b1b61982593f079fc529b45e908d2526}
+      \strng{bibnamehash}{b1b61982593f079fc529b45e908d2526}
+      \strng{authorbibnamehash}{b1b61982593f079fc529b45e908d2526}
+      \strng{authornamehash}{b1b61982593f079fc529b45e908d2526}
+      \strng{authorfullhash}{b1b61982593f079fc529b45e908d2526}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Social Science Quarterly}
+      \field{number}{5}
+      \field{title}{How voters become misinformed: An investigation of the emergence and consequences of false factual beliefs}
+      \field{volume}{95}
+      \field{year}{2014}
+      \field{pages}{1399\bibrangedash 1418}
+      \range{pages}{20}
     \endentry
     \entry{roth2019algorithmic}{article}{}
       \name{author}{1}{}{%
@@ -2159,6 +2304,40 @@
       \field{booktitle}{Inductive reasoning}
       \field{title}{Theory-based Bayesian models of inductive reasoning.}
       \field{year}{2007}
+    \endentry
+    \entry{tomz2008candidate}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d2f020889b3251e0b332372e6a851ae1}{%
+           family={Tomz},
+           familyi={T\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=03f01d2f62b2ea9eed99fdab44041e74}{%
+           family={Van\bibnamedelima Houweling},
+           familyi={V\bibinitperiod\bibinitdelim H\bibinitperiod},
+           given={Robert\bibnamedelima P},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{3128d5a7bfab472d6550d58512340165}
+      \strng{fullhash}{3128d5a7bfab472d6550d58512340165}
+      \strng{bibnamehash}{3128d5a7bfab472d6550d58512340165}
+      \strng{authorbibnamehash}{3128d5a7bfab472d6550d58512340165}
+      \strng{authornamehash}{3128d5a7bfab472d6550d58512340165}
+      \strng{authorfullhash}{3128d5a7bfab472d6550d58512340165}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Political Science Review}
+      \field{number}{3}
+      \field{title}{Candidate positioning and voter choice}
+      \field{volume}{102}
+      \field{year}{2008}
+      \field{pages}{303\bibrangedash 318}
+      \range{pages}{16}
     \endentry
     \entry{van2005political}{article}{}
       \name{author}{2}{}{%

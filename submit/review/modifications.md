@@ -38,7 +38,7 @@
 of 70,000 times.." means 70,000 independent realizations of the dynamics?"
     - We answered that by modifying the second paragraph of section 3. "Times"
    is equal to quasi-random "draws" following saltelli's sampling (one of the
-   paper' bibliographic references).
+   paper's bibliographic references).
 
 - Reviewer 2: " was the distribution of Fig. 1 done over many different runs of
 the model? If that is the case, then it is hard to see whether there is
@@ -56,7 +56,8 @@ are the parameter values sigma, n and p of Fig. 1?"
 the threshold in Bounded confidence models (BCM). However, in page 4 it is
 mentioned that Deltaij also plays the role of the threshold in BCM. However,
 sigma and Deltaij seem to be independent variables. They should clarify that."
-    - We have modified the first paragraph of the last section to fix that.
+    - We have modified the first paragraph of the last section to fix that. And
+      the description of Deltaij in section 2
 
 
 - Reviewer 3: "Likewise, I was expecting to see more reference to macro-level
@@ -75,3 +76,9 @@ sigma and Deltaij seem to be independent variables. They should clarify that."
      imagined. The model, however, already had many interesting results and
      adding more extensions would make the paper decentered and harder to
      interpret/understand.
+
+- Reviewer 2: "6) It is mentioned in the conclusions "...it makes sense to
+change how trust is calculated to a situation that is more compatible with
+experiments". They should cite related experiments."
+  - We have added those references at the end of this sentence in the conclusion
+    section.

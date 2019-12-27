@@ -68,24 +68,25 @@
 
  % Incluir aqui a parte sobre teoria pol�tica, um par�grafo � suficiente, a princ�pio.
 
-Here, we will present an opinion dynamics model
-\cite{castellanoetal07,galam12a,galametal82,galammoscovici91,sznajd00,deffuantetal00,martins08a}
+Here, we will present an opinion dynamics model \cite{castellanoetal07,
+  galam12a, galametal82, galammoscovici91, sznajd00, deffuantetal00, martins08a}
 where the opinions exist over an one-dimensional axis and each agent has a best
 estimate on more than one issue over that axis. Describing opinions over a
 spatial landscape is an usual way to describe policy alternatives and agents'
 preferences. The geometrical properties of the space are usually defined by
 mapping from similarity to proximity of the political agents
-\cite{downs1957economic, laver2014measuring}. Such a description can capture the
-common notion of parties or policies being more ``to the left'' or ``right''. If
-they're similar then they're closer \cite{van2005political, miller2015spatial}.
-The spatial metaphor is not restricted to politics it is common in opinion
-dynamics and actually based upon a long research tradition in cognitive science
-\cite{aisbett2001general, attneave1950dimensions,gardenfors2004conceptual}.
-Major opinions, including political ones, tend to be formed not from only one
-issue but from how each person feels about a number of them. Locating someone in
-a left versus right or liberal versus conservative axis, therefore, requires
-inspecting the opinions of that person in not only one but several issues that
-constitute the agent ideological positioning \cite{benoit2006party}.
+\cite{downs1957economic, laver2014measuring, tomz2008candidate}. Such a
+description can capture the common notion of parties or policies being more ``to
+the left'' or ``right''. If they're similar then they're closer
+\cite{van2005political, miller2015spatial}. The spatial metaphor is not
+restricted to politics it is common in opinion dynamics and actually based upon
+a long research tradition in cognitive science \cite{aisbett2001general,
+  attneave1950dimensions,gardenfors2004conceptual}. Major opinions, including
+political ones, tend to be formed not from only one issue but from how each
+person feels about a number of them. Locating someone in a left versus right or
+liberal versus conservative axis, therefore, requires inspecting the opinions of
+that person in not only one but several issues that constitute the agent
+ideological positioning \cite{benoit2006party}.
 
 For many problems, it makes sense to consider different issues as having
 components in more than one single dimension \cite{vicenteetal08b}. However, it
@@ -168,7 +169,7 @@ a prior probability distribution about the issue at stake that represents their
 knowledge. Agents communicate and the probability that the value stated by a
 neighbor $j$, what here we'll call the opinion (\(o\)), is true is the
 likelihood that $i$ uses, following an approximate Bayesian rule, to update its
-prior probability distribution such that \textbf{posterior opinion probability}
+prior probability distribution such that \textbf{posterior opinion distribution}
 $\propto$ \textbf{prior} $\times$ \textbf{likelihood}\footnote{For a more
   extensive definition and derivations see \cite{martins12b} and
   \cite{martins2009bayesian} respectively.}
@@ -285,12 +286,12 @@ where  $p^{*}$ is given by
 \end{equation}
 
 Here \(\Delta_{ij} = o_{ik} (t) - o_{jk} (t)\) is the distance between the
-opinions on the $k$ issue. $\Delta_{ij}$ plays a similar role to the threshold
-parameter in the Bounded Confidence models by making distant opinions less
-influential. As $\Delta_{ij}$ increases, it is easy to see that
-Equation\ref{eq:pstar} causes $p^{*}$ to tend to zero. And, as that happens, the
-weights in average update Equation~\ref{eq:oupdate} change so that the previous
-value $ o_{i,k}(t)$ remains almost unchanged.
+opinions on the $k$ issue. As $\Delta_{ij}$ increases, it is easy to see that
+Equation \ref{eq:pstar} causes $p^{*}$ to tend to zero. Given this relationship,
+$\Delta_{ij}$ plays a similar role to the threshold parameter in the Bounded
+Confidence models by making distant opinions less influential. And, as that
+happens, the weights in average update Equation~\ref{eq:oupdate} change so that
+the previous value $ o_{i,k}(t)$ remains almost unchanged.
 
 The threshold role of $\Delta_{ij}$ suggests we might change its definition to
 check how it might better reflect the actual behavior of humans. In particular,
@@ -352,7 +353,7 @@ deviation of the opinions of each agent $s_i^2== \frac{1}{n} \sum_{k=1}^{n}
 guaranteeing that we're filling evenly the space of parameters' possible values.
 Then we collected the mean and standard deviation of the opinions \textit{of
   each agent} for each parameterization both at the initial and final
-conditions. That Figure \ref{fig:std} gives a general view of the model behavior
+conditions. Figure \ref{fig:std} then gives a general view of the model behavior
 as we are plotting many different combinations of parameters' values.
 
 \begin{figure}[H]
@@ -870,17 +871,18 @@ combined effect minus their first order effects: \(S_{ij}\) =
     Here, we have extended a previous model for continuous opinions
     \cite{martins08c} to include the case where agents have opinions on $n$
     issues. We explored the impact of the main parameters on the final results.
-    The \(\sigma\) parameter, that defines how certainty each agent is of his
-    opinion plays the same qualitative role in the system dynamics that
-    threshold values plays in Bounded Confidence models, was observed to be a
-    major influence in the outcome of the simulations. Differently from Bounded
-    Confidence models, the global sensitivity analysis shows that in our model
-    its opinion certainty, and not trust, that is the main driver of the
-    dynamics\footnote{However, the trust functions also matter as recapitulated
-      below.} The number of issues $n$ as well as the amount of noise $\rho$
-    were also shown by our sensitivity analysis to have important effects on the
-    outcomes, while the initial general amount of trust $p$ as well as the
-    number of agents $N$ seemed to matter little.
+    The \(\sigma\) parameter, that determines how certain each agent is of his
+    opinion, was observed to be a major influence in the outcome of the
+    simulations and, therefore, plays the same qualitative role in the system
+    dynamics that threshold values plays in Bounded Confidence models.
+    Differently from Bounded Confidence models, the global sensitivity analysis
+    shows that in our model its opinion certainty, and not trust, that is the
+    main driver of the dynamics\footnote{However, the trust functions also
+      matter as recapitulated below.}. The number of issues $n$ as well as the
+    amount of noise $\rho$ were also shown by our sensitivity analysis to have
+    important effects on the outcomes, while the initial general amount of trust
+    $p$ as well as the number of agents $N$ seemed to matter quantitatively
+    little.
 
     As the model is based on an update rule where opinions always move towards
     agreement (even if by a negligible amount), the tendency to central opinions
@@ -901,19 +903,21 @@ combined effect minus their first order effects: \(S_{ij}\) =
     that is, $o_{ik}-o_{jk}$. However, as humans do show a lot of ideologically
     motivated reasoning \cite{mercier11a,merciersperber11a,kahanetal11}, it
     makes sense to change how trust is calculated to a situation that is more
-    compatible with experiments. Two possibilities were considered here. In the
-    first one, (\( p^{**}\), the trust was dependent on the distance between the
-    agent average estimates over all issues, that is, the trust function was a
-    function of $x_{i}-x_{j}$. The second possibility, \( p^{***}\)), considered
-    that agent $i$ was observing $j$ opinion only on issue $k$ and, therefore,
-    could only compare that value to its own average, that is the trust function
-    was a function of $o_{ik}-x_{j}$.
+    compatible with experiments \cite{jerit2012partisan,
+      nyhan2010corrections,reedy2014voters, flynn2017nature}. Two possibilities
+    were considered here. In the first one, \( p^{**}\), the trust was dependent
+    on the distance between the agent average estimates over all issues, that
+    is, the trust function was a function of $x_{i}-x_{j}$. The second
+    possibility, \( p^{***}\), considered that agent $i$ was observing $j$
+    opinion only on issue $k$ and, therefore, could only compare that value to
+    its own average, that is the trust function was a function of
+    $o_{ik}-x_{j}$.
 
     Compared to the non-ideological case, both ideological trust functions
     showed a tendency that each agent would have it own opinions show less
     diversity over the set of issues. This could be easily observed by the
     larger proportion of smaller values of $s_i$. That effect was particularly
-    stronger for \( p^{***}\)). As the issues were always treated as
+    stronger for \( p^{***}\). As the issues were always treated as
     independent, that tendency does correspond to observing some irrational
     consistency~\cite{jervis76a}. The tendency to consistency was not perfect,
     though, as large values of $s_i$ were also observed as much more common than
@@ -928,9 +932,9 @@ combined effect minus their first order effects: \(S_{ij}\) =
     ``credible world'' \cite{sugden2000credible, sugden2009credible} whose
     purpose is to investigate theoretically the relationship between parameters
     and system rules in an isolated artificial environment theoretically similar
-    to the real world. We see this theoretical endeavor as embedded in a more
-    general research project which intends to understand concrete opinion
-    dynamics occurring in human societies, through empirical and theoretical
+    to the real world. We see this theoretical endeavor as part of a general
+    research project which intends to understand concrete opinion dynamics
+    occurring in human societies, through empirical and theoretical
     investigations. If we determine a specific concrete opinion
     system/phenomenon the model could be calibrated and validated with data and
     compared with other models. Furthermore, there are many possible extensions

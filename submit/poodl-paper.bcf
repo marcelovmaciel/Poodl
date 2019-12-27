@@ -2004,6 +2004,7 @@
     <bcf:citekey order="1">martins08a</bcf:citekey>
     <bcf:citekey order="2">downs1957economic</bcf:citekey>
     <bcf:citekey order="2">laver2014measuring</bcf:citekey>
+    <bcf:citekey order="2">tomz2008candidate</bcf:citekey>
     <bcf:citekey order="3">van2005political</bcf:citekey>
     <bcf:citekey order="3">miller2015spatial</bcf:citekey>
     <bcf:citekey order="4">aisbett2001general</bcf:citekey>
@@ -2074,14 +2075,18 @@
     <bcf:citekey order="42">mercier11a</bcf:citekey>
     <bcf:citekey order="42">merciersperber11a</bcf:citekey>
     <bcf:citekey order="42">kahanetal11</bcf:citekey>
-    <bcf:citekey order="43">jervis76a</bcf:citekey>
-    <bcf:citekey order="44">sugden2000credible</bcf:citekey>
-    <bcf:citekey order="44">sugden2009credible</bcf:citekey>
-    <bcf:citekey order="45">hinich1997analytical</bcf:citekey>
-    <bcf:citekey order="45">basu2019bridging</bcf:citekey>
-    <bcf:citekey order="46">roth2019algorithmic</bcf:citekey>
-    <bcf:citekey order="46">ding2010evolutionary</bcf:citekey>
-    <bcf:citekey order="47">de2005computational</bcf:citekey>
+    <bcf:citekey order="43">jerit2012partisan</bcf:citekey>
+    <bcf:citekey order="43">nyhan2010corrections</bcf:citekey>
+    <bcf:citekey order="43">reedy2014voters</bcf:citekey>
+    <bcf:citekey order="43">flynn2017nature</bcf:citekey>
+    <bcf:citekey order="44">jervis76a</bcf:citekey>
+    <bcf:citekey order="45">sugden2000credible</bcf:citekey>
+    <bcf:citekey order="45">sugden2009credible</bcf:citekey>
+    <bcf:citekey order="46">hinich1997analytical</bcf:citekey>
+    <bcf:citekey order="46">basu2019bridging</bcf:citekey>
+    <bcf:citekey order="47">roth2019algorithmic</bcf:citekey>
+    <bcf:citekey order="47">ding2010evolutionary</bcf:citekey>
+    <bcf:citekey order="48">de2005computational</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
