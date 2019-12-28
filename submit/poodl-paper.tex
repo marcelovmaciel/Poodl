@@ -9,6 +9,7 @@
 \usepackage{booktabs}
 \usepackage{float}
 \usepackage{subcaption}
+\usepackage{amssymb}
 \usepackage{indentfirst}
 %\usepackage[numbers]{natbib}
 \usepackage[backend=biber]{biblatex}
@@ -42,7 +43,7 @@
 %\vspace{0.3cm}
 
 %\center{\Large\bf Segundo autor}
-%\center{\large\bf Afilia��o}
+%\center{\large\bf Afiliaï¿½ï¿½o}
 
 
 \begin{abstract}
@@ -66,7 +67,7 @@
 
 \section{Introduction}
 
- % Incluir aqui a parte sobre teoria pol�tica, um par�grafo � suficiente, a princ�pio.
+ % Incluir aqui a parte sobre teoria polï¿½tica, um parï¿½grafo ï¿½ suficiente, a princï¿½pio.
 
 Here, we will present an opinion dynamics model \cite{castellanoetal07,
   galam12a, galametal82, galammoscovici91, sznajd00, deffuantetal00, martins08a}
@@ -79,14 +80,14 @@ mapping from similarity to proximity of the political agents
 description can capture the common notion of parties or policies being more ``to
 the left'' or ``right''. If they're similar then they're closer
 \cite{van2005political, miller2015spatial}. The spatial metaphor is not
-restricted to politics it is common in opinion dynamics and actually based upon
-a long research tradition in cognitive science \cite{aisbett2001general,
-  attneave1950dimensions,gardenfors2004conceptual}. Major opinions, including
-political ones, tend to be formed not from only one issue but from how each
-person feels about a number of them. Locating someone in a left versus right or
-liberal versus conservative axis, therefore, requires inspecting the opinions of
-that person in not only one but several issues that constitute the agent
-ideological positioning \cite{benoit2006party}.
+restricted to politics it is commonly used in the literature about opinion
+dynamics and actually based upon a long research tradition in cognitive science
+\cite{aisbett2001general, attneave1950dimensions,gardenfors2004conceptual}.
+Major opinions, including political ones, tend to be formed not from only one
+issue but from how each person feels about a number of them. Locating someone in
+a left versus right or liberal versus conservative axis, therefore, requires
+inspecting the opinions of that person in not only one but several issues that
+constitute the agent ideological positioning \cite{benoit2006party}.
 
 For many problems, it makes sense to consider different issues as having
 components in more than one single dimension \cite{vicenteetal08b}. However, it
@@ -112,7 +113,7 @@ problems here, they are a natural choice. Indeed, continuous opinions models
 have been proposed for several different problems on how opinions spread on a
 society \cite{deffuantetal02a,weisbuchetal05}, from questions about the spread
 of extremism
-\cite{amblarddeffuant04,gargiulomazzoni08a,franksetal08a,alizadeh14a,Albi2016,Mai2017}
+\cite{amblarddeffuant04,gargiulomazzoni08a,franksetal08a,alizadeh14a,Albi2016}
 to other issues such as how different networks
 \cite{Kurmyshev2011,Acemoglu2011,Das2014,Hu2017} or the uncertainty of each
 agent \cite{deffuant06} might change how agents influence each other.
@@ -172,9 +173,9 @@ likelihood that $i$ uses, following an approximate Bayesian rule, to update its
 prior probability distribution such that \textbf{posterior opinion distribution}
 $\propto$ \textbf{prior} $\times$ \textbf{likelihood}\footnote{For a more
   extensive definition and derivations see \cite{martins12b} and
-  \cite{martins2009bayesian} respectively.}
+  \cite{martins2009bayesian} respectively.}.
 
-Here, the population will consist of \(N\) agents fully connected (an agent $i$
+Here, the population will consist of \(N\) fully connected agents (an agent $i$
 can interact with any other agent $j$). Each agent $i$ will have an opinion
 $0\leq o_{ik} \leq 1$, where $k=1, \ldots, n$ is a specific issue. We assume
 each agent opinion about issue $k$ can represented as a value $o_{ik}$ at the
@@ -184,27 +185,13 @@ different for each agent and also updated during the interactions
 \cite{martins08c}. For the sake of simplicity, however, we will assume the
 uncertainty $\sigma_i =\sigma$ is identical for (almost) all agents and it does
 not change. The set of opinions for each agent on all possible issues will
-define its ideological profile
-\(I_i
-=
-(
-(o_{i 1}, \sigma),
-\ldots,
-(o_{i n}, \sigma)
-)
-\)
-, where \(n\) is the number of issues, \(o\) is the opinion about the issue and
-\(\sigma\) is the global uncertainty~\cite{martins2009bayesian}. The arithmetic mean
-$x_i$ of agent $i$ opinions in each issue will be called here the ideal point
-for each agent, that is, it defines the agent ideological position at the
-dimension of interest \cite{armstrong2014analyzing}. Obviously
-\(
-x_i
-=
-\frac{1}{n}
-\sum_{k=1}^{n}
-o_{ik}
-\).
+define its ideological profile \(I_i = ( (o_{i 1}, \sigma), \ldots, (o_{i n},
+\sigma) ) \) , where \(n\) is the number of issues, \(o\) is the opinion about
+the issue and \(\sigma\) is the global uncertainty~\cite{martins2009bayesian}.
+The arithmetic mean $x_i$ of agent $i$ opinions in each issue will be called
+here the ideal point for each agent, that is, it defines the agent ideological
+position at the dimension of interest \cite{armstrong2014analyzing}. Obviously
+\( x_i = \frac{1}{n} \sum_{k=1}^{n} o_{ik} \).
 
 In order to have agents with initial ideal points well distributed over the
 possible range, the initial valued for each \(o_{ik}\) was randomly drawn
@@ -230,7 +217,7 @@ outcomes of the model.
 
 %For its part, \(\sigma\) is a parameter of the model, not the agents. However, a
 %proportion \textit{p$\_$intran} of the agents will have an unique \(\sigma_{i,k}
-%= 1e-20\). This is done so that we can control for the impact of inflexible
+%= 1e-20\). This is done so that wesuch as “how much each agent trusts another agent should be a function can control for the impact of inflexible
 %agents on the model dynamics \cite{galam05b,deffuant2002can,martinsgalam13a}.
 
 %How many agents are intransigent is also a parameter (coded as

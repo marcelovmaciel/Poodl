@@ -4,8 +4,8 @@
   - Its stated at the beginning, second paragraph, of section 2;
 
 - Reviewer 2 asked " Why do stubborn agents have sigma=1e-20?"
-  - This is an implementation detail. We modified the fourth paragraph of section
-   3 so that its clear that what we're modeling is a sigma close to 0.
+  - This is an implementation detail. We modified the fourth paragraph of
+   section 2 so that its clear that what we're modeling is a sigma close to 0.
 
 - Reviewer 2 said: "They should explain the concept of uncertainty and
   estimation. What does uncertainty mean? Why do agents have to estimate
@@ -58,8 +58,8 @@ are the parameter values sigma, n and p of Fig. 1?"
 the threshold in Bounded confidence models (BCM). However, in page 4 it is
 mentioned that Deltaij also plays the role of the threshold in BCM. However,
 sigma and Deltaij seem to be independent variables. They should clarify that."
-    - We have modified the first paragraph of the last section to fix that. And
-      the description of Deltaij in section 2
+    - We have modified the first paragraph of the last section and the
+      description of Deltaij in section 2 to fix that.
 
 
 - Reviewer 3: "Likewise, I was expecting to see more reference to macro-level
@@ -83,4 +83,4 @@ sigma and Deltaij seem to be independent variables. They should clarify that."
 change how trust is calculated to a situation that is more compatible with
 experiments". They should cite related experiments."
   - We have added those references at the end of this sentence in the conclusion
-    section.
+    section. (EU REFERENCIEI, DEVO DESCREVER ALGUM RESULTADO DESSES PAPERS???)

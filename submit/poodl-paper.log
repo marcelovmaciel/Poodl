@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.12.23)  27 DEC 2019 13:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.12.23)  28 DEC 2019 15:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -166,6 +166,17 @@ Package caption Info: float package is loaded.
 \c@subfigure=\count98
 \c@subtable=\count99
 )
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks21
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
 (/usr/share/texlive/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
@@ -446,18 +457,18 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (./poodl-paper.aux)
 \openout1 = `poodl-paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -466,12 +477,12 @@ LaTeX Font Info:    ... okay on input line 16.
 \scratchbox=\box31
 \nofMPsegments=\count292
 \nofMParguments=\count293
-\everyMPshowfont=\toks21
+\everyMPshowfont=\toks22
 \MPscratchCnt=\count294
 \MPscratchDim=\dimen129
 \MPnumerator=\count295
 \makeMPintoPDFobject=\count296
-\everyMPtoPDFconversion=\toks22
+\everyMPtoPDFconversion=\toks23
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -503,127 +514,111 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'poodl-paper.bbl' found.
 
 (./poodl-paper.bbl)
-Package biblatex Info: Reference section=0 on input line 16.
-Package biblatex Info: Reference segment=0 on input line 16.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 41.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 41.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 41.
- [1
+Package biblatex Info: Reference section=0 on input line 17.
+Package biblatex Info: Reference segment=0 on input line 17.
+LaTeX Font Info:    Try loading font information for U+msa on input line 42.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 42.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
 
-LaTeX Warning: Citation 'Mai2017' on page 2 undefined on input line 115.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 131.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 131.
-[2] [3]
-./poodl-paper.tex:223: Undefined control sequence.
-l.223 ...ssue $k$, so that \(\sigma_{ik} \approxeq
-                                                   0\) (implemented as
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[4] [5]
-<img/mean_hist.png, id=37, 693.792pt x 349.0641pt>
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5]
+<img/mean_hist.png, id=38, 693.792pt x 349.0641pt>
 File: img/mean_hist.png Graphic file (type png)
 <use img/mean_hist.png>
-Package pdftex.def Info: img/mean_hist.png  used on input line 363.
+Package pdftex.def Info: img/mean_hist.png  used on input line 350.
 (pdftex.def)             Requested size: 293.2521pt x 147.54335pt.
-<img/std_hist2.png, id=38, 693.792pt x 349.0641pt>
+<img/std_hist2.png, id=39, 693.792pt x 349.0641pt>
 File: img/std_hist2.png Graphic file (type png)
 <use img/std_hist2.png>
-Package pdftex.def Info: img/std_hist2.png  used on input line 367.
+Package pdftex.def Info: img/std_hist2.png  used on input line 354.
 (pdftex.def)             Requested size: 293.2521pt x 147.54335pt.
  [6 <./img/mean_hist.png> <./img/std_hist2.png>]
-<img/oiks/oiks_smallsigma005_n2.png, id=44, 693.792pt x 337.86224pt>
+<img/oiks/oiks_smallsigma005_n2.png, id=45, 693.792pt x 337.86224pt>
 File: img/oiks/oiks_smallsigma005_n2.png Graphic file (type png)
 <use img/oiks/oiks_smallsigma005_n2.png>
 Package pdftex.def Info: img/oiks/oiks_smallsigma005_n2.png  used on input line
- 421.
+ 408.
 (pdftex.def)             Requested size: 169.0519pt x 82.32071pt.
-<img/oiks/oiks_smallsigma002_n2.png, id=45, 693.792pt x 337.86224pt>
+<img/oiks/oiks_smallsigma002_n2.png, id=46, 693.792pt x 337.86224pt>
 File: img/oiks/oiks_smallsigma002_n2.png Graphic file (type png)
 <use img/oiks/oiks_smallsigma002_n2.png>
 Package pdftex.def Info: img/oiks/oiks_smallsigma002_n2.png  used on input line
- 425.
+ 412.
 (pdftex.def)             Requested size: 169.0519pt x 82.32071pt.
-<img/oiks/oiks_smallsigma005_n6.png, id=46, 693.792pt x 337.86224pt>
+<img/oiks/oiks_smallsigma005_n6.png, id=47, 693.792pt x 337.86224pt>
 File: img/oiks/oiks_smallsigma005_n6.png Graphic file (type png)
 <use img/oiks/oiks_smallsigma005_n6.png>
 Package pdftex.def Info: img/oiks/oiks_smallsigma005_n6.png  used on input line
- 430.
+ 417.
 (pdftex.def)             Requested size: 169.0519pt x 82.32071pt.
-<img/oiks/oiks_smallsigma002_n6.png, id=47, 693.792pt x 337.86224pt>
+<img/oiks/oiks_smallsigma002_n6.png, id=48, 693.792pt x 337.86224pt>
 File: img/oiks/oiks_smallsigma002_n6.png Graphic file (type png)
 <use img/oiks/oiks_smallsigma002_n6.png>
 Package pdftex.def Info: img/oiks/oiks_smallsigma002_n6.png  used on input line
- 434.
+ 421.
 (pdftex.def)             Requested size: 169.0519pt x 82.32071pt.
-<img/oiks/oiks_smallsigma005_n10.png, id=48, 693.792pt x 337.86224pt>
+<img/oiks/oiks_smallsigma005_n10.png, id=49, 693.792pt x 337.86224pt>
 File: img/oiks/oiks_smallsigma005_n10.png Graphic file (type png)
 <use img/oiks/oiks_smallsigma005_n10.png>
 Package pdftex.def Info: img/oiks/oiks_smallsigma005_n10.png  used on input lin
-e 438.
+e 425.
 (pdftex.def)             Requested size: 169.0519pt x 82.32071pt.
-<img/oiks/oiks_smallsigma002_n10.png, id=49, 693.792pt x 337.86224pt>
+<img/oiks/oiks_smallsigma002_n10.png, id=50, 693.792pt x 337.86224pt>
 File: img/oiks/oiks_smallsigma002_n10.png Graphic file (type png)
 <use img/oiks/oiks_smallsigma002_n10.png>
 Package pdftex.def Info: img/oiks/oiks_smallsigma002_n10.png  used on input lin
-e 442.
+e 429.
 (pdftex.def)             Requested size: 169.0519pt x 82.32071pt.
-<img/oiks/fig2_legend.png, id=50, 775.39688pt x 393.72093pt>
+<img/oiks/fig2_legend.png, id=51, 775.39688pt x 393.72093pt>
 File: img/oiks/fig2_legend.png Graphic file (type png)
 <use img/oiks/fig2_legend.png>
-Package pdftex.def Info: img/oiks/fig2_legend.png  used on input line 447.
+Package pdftex.def Info: img/oiks/fig2_legend.png  used on input line 434.
 (pdftex.def)             Requested size: 77.54422pt x 39.37439pt.
  [7] [8 <./img/oiks/oiks_smallsigma005_n2.png> <./img/oiks/oiks_smallsigma002_n
 2.png> <./img/oiks/oiks_smallsigma005_n6.png> <./img/oiks/oiks_smallsigma002_n6
 .png> <./img/oiks/oiks_smallsigma005_n10.png> <./img/oiks/oiks_smallsigma002_n1
 0.png> <./img/oiks/fig2_legend.png>]
-<img/sobolpstar1.png, id=65, 433.62pt x 289.08pt>
+<img/sobolpstar1.png, id=66, 433.62pt x 289.08pt>
 File: img/sobolpstar1.png Graphic file (type png)
 <use img/sobolpstar1.png>
-Package pdftex.def Info: img/sobolpstar1.png  used on input line 499.
+Package pdftex.def Info: img/sobolpstar1.png  used on input line 486.
 (pdftex.def)             Requested size: 165.59853pt x 110.3985pt.
-<img/sobolpstar1-measurestd.png, id=66, 433.62pt x 289.08pt>
+<img/sobolpstar1-measurestd.png, id=67, 433.62pt x 289.08pt>
 File: img/sobolpstar1-measurestd.png Graphic file (type png)
 <use img/sobolpstar1-measurestd.png>
-Package pdftex.def Info: img/sobolpstar1-measurestd.png  used on input line 503
+Package pdftex.def Info: img/sobolpstar1-measurestd.png  used on input line 490
 .
 (pdftex.def)             Requested size: 165.59853pt x 110.3985pt.
-<img/sobolpstar2.png, id=67, 433.62pt x 289.08pt>
+<img/sobolpstar2.png, id=68, 433.62pt x 289.08pt>
 File: img/sobolpstar2.png Graphic file (type png)
 <use img/sobolpstar2.png>
-Package pdftex.def Info: img/sobolpstar2.png  used on input line 507.
+Package pdftex.def Info: img/sobolpstar2.png  used on input line 494.
 (pdftex.def)             Requested size: 165.59853pt x 110.3985pt.
-<img/sobolpstar2-measurestd.png, id=68, 433.62pt x 289.08pt>
+<img/sobolpstar2-measurestd.png, id=69, 433.62pt x 289.08pt>
 File: img/sobolpstar2-measurestd.png Graphic file (type png)
 <use img/sobolpstar2-measurestd.png>
-Package pdftex.def Info: img/sobolpstar2-measurestd.png  used on input line 511
+Package pdftex.def Info: img/sobolpstar2-measurestd.png  used on input line 498
 .
 (pdftex.def)             Requested size: 165.59853pt x 110.3985pt.
-<img/sobolpstar3.png, id=69, 433.62pt x 289.08pt>
+<img/sobolpstar3.png, id=70, 433.62pt x 289.08pt>
 File: img/sobolpstar3.png Graphic file (type png)
 <use img/sobolpstar3.png>
-Package pdftex.def Info: img/sobolpstar3.png  used on input line 515.
+Package pdftex.def Info: img/sobolpstar3.png  used on input line 502.
 (pdftex.def)             Requested size: 165.59853pt x 110.3985pt.
-<img/sobolpstar3-measurestd.png, id=70, 433.62pt x 289.08pt>
+<img/sobolpstar3-measurestd.png, id=71, 433.62pt x 289.08pt>
 File: img/sobolpstar3-measurestd.png Graphic file (type png)
 <use img/sobolpstar3-measurestd.png>
-Package pdftex.def Info: img/sobolpstar3-measurestd.png  used on input line 519
+Package pdftex.def Info: img/sobolpstar3-measurestd.png  used on input line 506
 .
 (pdftex.def)             Requested size: 165.59853pt x 110.3985pt.
 
-./poodl-paper.tex:533: Undefined control sequence.
-l.533     \citep
+./poodl-paper.tex:520: Undefined control sequence.
+l.520     \citep
                 {martins12b}. It is interesting to see that two of the new p...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -634,86 +629,86 @@ and I'll forget about whatever was undefined.
 [9 <./img/sobolpstar1.png> <./img/sobolpstar1-measurestd.png> <./img/sobolpstar
 2.png> <./img/sobolpstar2-measurestd.png> <./img/sobolpstar3.png> <./img/sobolp
 star3-measurestd.png>]
-<img/regressionYstdsn.png, id=80, 433.62pt x 289.08pt>
+<img/regressionYstdsn.png, id=81, 433.62pt x 289.08pt>
 File: img/regressionYstdsn.png Graphic file (type png)
 <use img/regressionYstdsn.png>
-Package pdftex.def Info: img/regressionYstdsn.png  used on input line 572.
+Package pdftex.def Info: img/regressionYstdsn.png  used on input line 559.
 (pdftex.def)             Requested size: 165.59853pt x 110.3985pt.
-<img/regressionYstdsrho.png, id=81, 433.62pt x 289.08pt>
+<img/regressionYstdsrho.png, id=82, 433.62pt x 289.08pt>
 File: img/regressionYstdsrho.png Graphic file (type png)
 <use img/regressionYstdsrho.png>
-Package pdftex.def Info: img/regressionYstdsrho.png  used on input line 575.
+Package pdftex.def Info: img/regressionYstdsrho.png  used on input line 562.
 (pdftex.def)             Requested size: 165.59853pt x 110.3985pt.
-<img/regressionYstdssigma.png, id=82, 433.62pt x 289.08pt>
+<img/regressionYstdssigma.png, id=83, 433.62pt x 289.08pt>
 File: img/regressionYstdssigma.png Graphic file (type png)
 <use img/regressionYstdssigma.png>
-Package pdftex.def Info: img/regressionYstdssigma.png  used on input line 579.
+Package pdftex.def Info: img/regressionYstdssigma.png  used on input line 566.
 (pdftex.def)             Requested size: 172.5pt x 114.99918pt.
  [10]
 <img/series/tseries1/Poodlcalculatepsssn1-rho005-sigma002-00intransrandom.png, 
-id=86, 1204.5pt x 803.0pt>
+id=87, 1204.5pt x 803.0pt>
 File: img/series/tseries1/Poodlcalculatepsssn1-rho005-sigma002-00intransrandom.
 png Graphic file (type png)
 <use img/series/tseries1/Poodlcalculatepsssn1-rho005-sigma002-00intransrandom.p
 ng>
 Package pdftex.def Info: img/series/tseries1/Poodlcalculatepsssn1-rho005-sigma0
-02-00intransrandom.png  used on input line 621.
+02-00intransrandom.png  used on input line 608.
 (pdftex.def)             Requested size: 165.59853pt x 110.39752pt.
 <img/series/tseries1/Poodlcalculatepsssn1-rho005-sigma01-00intransrandom.png, i
-d=87, 1204.5pt x 803.0pt>
+d=88, 1204.5pt x 803.0pt>
 File: img/series/tseries1/Poodlcalculatepsssn1-rho005-sigma01-00intransrandom.p
 ng Graphic file (type png)
 <use img/series/tseries1/Poodlcalculatepsssn1-rho005-sigma01-00intransrandom.pn
 g>
 Package pdftex.def Info: img/series/tseries1/Poodlcalculatepsssn1-rho005-sigma0
-1-00intransrandom.png  used on input line 625.
+1-00intransrandom.png  used on input line 612.
 (pdftex.def)             Requested size: 165.59853pt x 110.39752pt.
 <img/series/tseries1/Poodlcalculatepsssn2-rho005-sigma002-00intransrandom.png, 
-id=88, 1204.5pt x 803.0pt>
+id=89, 1204.5pt x 803.0pt>
 File: img/series/tseries1/Poodlcalculatepsssn2-rho005-sigma002-00intransrandom.
 png Graphic file (type png)
 <use img/series/tseries1/Poodlcalculatepsssn2-rho005-sigma002-00intransrandom.p
 ng>
 Package pdftex.def Info: img/series/tseries1/Poodlcalculatepsssn2-rho005-sigma0
-02-00intransrandom.png  used on input line 629.
+02-00intransrandom.png  used on input line 616.
 (pdftex.def)             Requested size: 165.59853pt x 110.39752pt.
 <img/series/tseries1/Poodlcalculatepsssn2-rho005-sigma01-00intransrandom.png, i
-d=89, 1204.5pt x 803.0pt>
+d=90, 1204.5pt x 803.0pt>
 File: img/series/tseries1/Poodlcalculatepsssn2-rho005-sigma01-00intransrandom.p
 ng Graphic file (type png)
 <use img/series/tseries1/Poodlcalculatepsssn2-rho005-sigma01-00intransrandom.pn
 g>
 Package pdftex.def Info: img/series/tseries1/Poodlcalculatepsssn2-rho005-sigma0
-1-00intransrandom.png  used on input line 633.
+1-00intransrandom.png  used on input line 620.
 (pdftex.def)             Requested size: 165.59853pt x 110.39752pt.
  [11 <./img/regressionYstdsn.png> <./img/regressionYstdsrho.png> <./img/regress
 ionYstdssigma.png>]
 <img/series/tseries2/Poodlcalculatepsssn5-rho005-sigma002-00intransrandom.png, 
-id=96, 1204.5pt x 803.0pt>
+id=97, 1204.5pt x 803.0pt>
 File: img/series/tseries2/Poodlcalculatepsssn5-rho005-sigma002-00intransrandom.
 png Graphic file (type png)
 <use img/series/tseries2/Poodlcalculatepsssn5-rho005-sigma002-00intransrandom.p
 ng>
 Package pdftex.def Info: img/series/tseries2/Poodlcalculatepsssn5-rho005-sigma0
-02-00intransrandom.png  used on input line 671.
+02-00intransrandom.png  used on input line 658.
 (pdftex.def)             Requested size: 165.59853pt x 110.39752pt.
 <img/series/tseries2/Poodlcalculatepsssn5-rho005-sigma004-00intransrandom.png, 
-id=97, 1204.5pt x 803.0pt>
+id=98, 1204.5pt x 803.0pt>
 File: img/series/tseries2/Poodlcalculatepsssn5-rho005-sigma004-00intransrandom.
 png Graphic file (type png)
 <use img/series/tseries2/Poodlcalculatepsssn5-rho005-sigma004-00intransrandom.p
 ng>
 Package pdftex.def Info: img/series/tseries2/Poodlcalculatepsssn5-rho005-sigma0
-04-00intransrandom.png  used on input line 680.
+04-00intransrandom.png  used on input line 667.
 (pdftex.def)             Requested size: 165.59853pt x 110.39752pt.
 <img/series/tseries2/Poodlcalculatepsssn5-rho005-sigma01-00intransrandom.png, i
-d=98, 1204.5pt x 803.0pt>
+d=99, 1204.5pt x 803.0pt>
 File: img/series/tseries2/Poodlcalculatepsssn5-rho005-sigma01-00intransrandom.p
 ng Graphic file (type png)
 <use img/series/tseries2/Poodlcalculatepsssn5-rho005-sigma01-00intransrandom.pn
 g>
 Package pdftex.def Info: img/series/tseries2/Poodlcalculatepsssn5-rho005-sigma0
-1-00intransrandom.png  used on input line 688.
+1-00intransrandom.png  used on input line 675.
 (pdftex.def)             Requested size: 165.59853pt x 110.39752pt.
  [12 <./img/series/tseries1/Poodlcalculatepsssn1-rho005-sigma002-00intransrando
 m.png> <./img/series/tseries1/Poodlcalculatepsssn1-rho005-sigma01-00intransrand
@@ -721,111 +716,111 @@ om.png> <./img/series/tseries1/Poodlcalculatepsssn2-rho005-sigma002-00intransra
 ndom.png> <./img/series/tseries1/Poodlcalculatepsssn2-rho005-sigma01-00intransr
 andom.png>]
 <img/series/tseries3/Poodlcalculatepsssn5-rho01118033988749895-sigma002-00intra
-nsrandom.png, id=106, 1204.5pt x 803.0pt>
+nsrandom.png, id=107, 1204.5pt x 803.0pt>
 File: img/series/tseries3/Poodlcalculatepsssn5-rho01118033988749895-sigma002-00
 intransrandom.png Graphic file (type png)
 <use img/series/tseries3/Poodlcalculatepsssn5-rho01118033988749895-sigma002-00i
 ntransrandom.png>
 Package pdftex.def Info: img/series/tseries3/Poodlcalculatepsssn5-rho0111803398
-8749895-sigma002-00intransrandom.png  used on input line 718.
+8749895-sigma002-00intransrandom.png  used on input line 705.
 (pdftex.def)             Requested size: 149.03766pt x 99.35777pt.
 <img/series/tseries3/Poodlcalculatepsssn5-rho01118033988749895-sigma006-00intra
-nsrandom.png, id=107, 1204.5pt x 803.0pt>
+nsrandom.png, id=108, 1204.5pt x 803.0pt>
 File: img/series/tseries3/Poodlcalculatepsssn5-rho01118033988749895-sigma006-00
 intransrandom.png Graphic file (type png)
 <use img/series/tseries3/Poodlcalculatepsssn5-rho01118033988749895-sigma006-00i
 ntransrandom.png>
 Package pdftex.def Info: img/series/tseries3/Poodlcalculatepsssn5-rho0111803398
-8749895-sigma006-00intransrandom.png  used on input line 724.
+8749895-sigma006-00intransrandom.png  used on input line 711.
 (pdftex.def)             Requested size: 149.03766pt x 99.35777pt.
 <img/series/tseries3/Poodlcalculatepsssn5-rho01118033988749895-sigma01-00intran
-srandom.png, id=108, 1204.5pt x 803.0pt>
+srandom.png, id=109, 1204.5pt x 803.0pt>
 File: img/series/tseries3/Poodlcalculatepsssn5-rho01118033988749895-sigma01-00i
 ntransrandom.png Graphic file (type png)
 <use img/series/tseries3/Poodlcalculatepsssn5-rho01118033988749895-sigma01-00in
 transrandom.png>
 Package pdftex.def Info: img/series/tseries3/Poodlcalculatepsssn5-rho0111803398
-8749895-sigma01-00intransrandom.png  used on input line 730.
+8749895-sigma01-00intransrandom.png  used on input line 717.
 (pdftex.def)             Requested size: 149.03766pt x 99.35777pt.
  [13 <./img/series/tseries2/Poodlcalculatepsssn5-rho005-sigma002-00intransrando
 m.png> <./img/series/tseries2/Poodlcalculatepsssn5-rho005-sigma004-00intransran
 dom.png> <./img/series/tseries2/Poodlcalculatepsssn5-rho005-sigma01-00intransra
 ndom.png>]
 <img/series/tseries4/Poodlcalculatepsn5-rho10e-5-sigma01-00intransrandom.png, i
-d=116, 1204.5pt x 803.0pt>
+d=117, 1204.5pt x 803.0pt>
 File: img/series/tseries4/Poodlcalculatepsn5-rho10e-5-sigma01-00intransrandom.p
 ng Graphic file (type png)
 <use img/series/tseries4/Poodlcalculatepsn5-rho10e-5-sigma01-00intransrandom.pn
 g>
 Package pdftex.def Info: img/series/tseries4/Poodlcalculatepsn5-rho10e-5-sigma0
-1-00intransrandom.png  used on input line 755.
+1-00intransrandom.png  used on input line 742.
 (pdftex.def)             Requested size: 165.59853pt x 110.39752pt.
 <img/series/tseries4/Poodlcalculatepsn10-rho10e-5-sigma01-00intransrandom.png, 
-id=117, 1204.5pt x 803.0pt>
+id=118, 1204.5pt x 803.0pt>
 File: img/series/tseries4/Poodlcalculatepsn10-rho10e-5-sigma01-00intransrandom.
 png Graphic file (type png)
 <use img/series/tseries4/Poodlcalculatepsn10-rho10e-5-sigma01-00intransrandom.p
 ng>
 Package pdftex.def Info: img/series/tseries4/Poodlcalculatepsn10-rho10e-5-sigma
-01-00intransrandom.png  used on input line 763.
+01-00intransrandom.png  used on input line 750.
 (pdftex.def)             Requested size: 165.59853pt x 110.39752pt.
 <img/series/tseries4/Poodlcalculatepsssn5-rho10e-5-sigma01-00intransrandom.png,
- id=118, 1204.5pt x 803.0pt>
+ id=119, 1204.5pt x 803.0pt>
 File: img/series/tseries4/Poodlcalculatepsssn5-rho10e-5-sigma01-00intransrandom
 .png Graphic file (type png)
 <use img/series/tseries4/Poodlcalculatepsssn5-rho10e-5-sigma01-00intransrandom.
 png>
 Package pdftex.def Info: img/series/tseries4/Poodlcalculatepsssn5-rho10e-5-sigm
-a01-00intransrandom.png  used on input line 771.
+a01-00intransrandom.png  used on input line 758.
 (pdftex.def)             Requested size: 165.59853pt x 110.39752pt.
 <img/series/tseries4/Poodlcalculatepsssn10-rho10e-5-sigma01-00intransrandom.png
-, id=119, 1204.5pt x 803.0pt>
+, id=120, 1204.5pt x 803.0pt>
 File: img/series/tseries4/Poodlcalculatepsssn10-rho10e-5-sigma01-00intransrando
 m.png Graphic file (type png)
 <use img/series/tseries4/Poodlcalculatepsssn10-rho10e-5-sigma01-00intransrandom
 .png>
 Package pdftex.def Info: img/series/tseries4/Poodlcalculatepsssn10-rho10e-5-sig
-ma01-00intransrandom.png  used on input line 779.
+ma01-00intransrandom.png  used on input line 766.
 (pdftex.def)             Requested size: 165.59853pt x 110.39752pt.
  [14 <./img/series/tseries3/Poodlcalculatepsssn5-rho01118033988749895-sigma002-
 00intransrandom.png> <./img/series/tseries3/Poodlcalculatepsssn5-rho01118033988
 749895-sigma006-00intransrandom.png> <./img/series/tseries3/Poodlcalculatepsssn
 5-rho01118033988749895-sigma01-00intransrandom.png>]
 <img/series/tseries5/Poodlcalculatepsn5-rho10e-5-sigma002-00intransrandom.png, 
-id=126, 1204.5pt x 803.0pt>
+id=127, 1204.5pt x 803.0pt>
 File: img/series/tseries5/Poodlcalculatepsn5-rho10e-5-sigma002-00intransrandom.
 png Graphic file (type png)
 <use img/series/tseries5/Poodlcalculatepsn5-rho10e-5-sigma002-00intransrandom.p
 ng>
 Package pdftex.def Info: img/series/tseries5/Poodlcalculatepsn5-rho10e-5-sigma0
-02-00intransrandom.png  used on input line 804.
+02-00intransrandom.png  used on input line 791.
 (pdftex.def)             Requested size: 165.59853pt x 110.39752pt.
 <img/series/tseries5/Poodlcalculatepsn5-rho10e-5-sigma002-00intransrandom-std.p
-ng, id=127, 1204.5pt x 803.0pt>
+ng, id=128, 1204.5pt x 803.0pt>
 File: img/series/tseries5/Poodlcalculatepsn5-rho10e-5-sigma002-00intransrandom-
 std.png Graphic file (type png)
 <use img/series/tseries5/Poodlcalculatepsn5-rho10e-5-sigma002-00intransrandom-s
 td.png>
 Package pdftex.def Info: img/series/tseries5/Poodlcalculatepsn5-rho10e-5-sigma0
-02-00intransrandom-std.png  used on input line 808.
+02-00intransrandom-std.png  used on input line 795.
 (pdftex.def)             Requested size: 165.59853pt x 110.39752pt.
 <img/series/tseries5/Poodlcalculatepsssn5-rho10e-5-sigma002-00intransrandom.png
-, id=128, 1204.5pt x 803.0pt>
+, id=129, 1204.5pt x 803.0pt>
 File: img/series/tseries5/Poodlcalculatepsssn5-rho10e-5-sigma002-00intransrando
 m.png Graphic file (type png)
 <use img/series/tseries5/Poodlcalculatepsssn5-rho10e-5-sigma002-00intransrandom
 .png>
 Package pdftex.def Info: img/series/tseries5/Poodlcalculatepsssn5-rho10e-5-sigm
-a002-00intransrandom.png  used on input line 812.
+a002-00intransrandom.png  used on input line 799.
 (pdftex.def)             Requested size: 165.59853pt x 110.39752pt.
 <img/series/tseries5/Poodlcalculatepsssn5-rho10e-5-sigma002-00intransrandom-std
-.png, id=129, 1204.5pt x 803.0pt>
+.png, id=130, 1204.5pt x 803.0pt>
 File: img/series/tseries5/Poodlcalculatepsssn5-rho10e-5-sigma002-00intransrando
 m-std.png Graphic file (type png)
 <use img/series/tseries5/Poodlcalculatepsssn5-rho10e-5-sigma002-00intransrandom
 -std.png>
 Package pdftex.def Info: img/series/tseries5/Poodlcalculatepsssn5-rho10e-5-sigm
-a002-00intransrandom-std.png  used on input line 816.
+a002-00intransrandom-std.png  used on input line 803.
 (pdftex.def)             Requested size: 165.59853pt x 110.39752pt.
  [15 <./img/series/tseries4/Poodlcalculatepsn5-rho10e-5-sigma01-00intransrandom
 .png> <./img/series/tseries4/Poodlcalculatepsn10-rho10e-5-sigma01-00intransrand
@@ -833,31 +828,31 @@ om.png> <./img/series/tseries4/Poodlcalculatepsssn5-rho10e-5-sigma01-00intransr
 andom.png> <./img/series/tseries4/Poodlcalculatepsssn10-rho10e-5-sigma01-00intr
 ansrandom.png>]
 <img/series/tseries6/Poodlcalculatepsssn1-rho10e-5-sigma006-00intransrandom.png
-, id=137, 1204.5pt x 803.0pt>
+, id=138, 1204.5pt x 803.0pt>
 File: img/series/tseries6/Poodlcalculatepsssn1-rho10e-5-sigma006-00intransrando
 m.png Graphic file (type png)
 <use img/series/tseries6/Poodlcalculatepsssn1-rho10e-5-sigma006-00intransrandom
 .png>
 Package pdftex.def Info: img/series/tseries6/Poodlcalculatepsssn1-rho10e-5-sigm
-a006-00intransrandom.png  used on input line 844.
+a006-00intransrandom.png  used on input line 831.
 (pdftex.def)             Requested size: 169.0519pt x 112.70105pt.
 <img/series/tseries6/Poodlcalculatepsssn5-rho10e-5-sigma006-00intransrandom.png
-, id=138, 1204.5pt x 803.0pt>
+, id=139, 1204.5pt x 803.0pt>
 File: img/series/tseries6/Poodlcalculatepsssn5-rho10e-5-sigma006-00intransrando
 m.png Graphic file (type png)
 <use img/series/tseries6/Poodlcalculatepsssn5-rho10e-5-sigma006-00intransrandom
 .png>
 Package pdftex.def Info: img/series/tseries6/Poodlcalculatepsssn5-rho10e-5-sigm
-a006-00intransrandom.png  used on input line 849.
+a006-00intransrandom.png  used on input line 836.
 (pdftex.def)             Requested size: 169.0519pt x 112.70105pt.
 <img/series/tseries6/Poodlcalculatepsssn10-rho10e-5-sigma006-00intransrandom.pn
-g, id=139, 1204.5pt x 803.0pt>
+g, id=140, 1204.5pt x 803.0pt>
 File: img/series/tseries6/Poodlcalculatepsssn10-rho10e-5-sigma006-00intransrand
 om.png Graphic file (type png)
 <use img/series/tseries6/Poodlcalculatepsssn10-rho10e-5-sigma006-00intransrando
 m.png>
 Package pdftex.def Info: img/series/tseries6/Poodlcalculatepsssn10-rho10e-5-sig
-ma006-00intransrandom.png  used on input line 857.
+ma006-00intransrandom.png  used on input line 844.
 (pdftex.def)             Requested size: 169.0519pt x 112.70105pt.
  [16 <./img/series/tseries5/Poodlcalculatepsn5-rho10e-5-sigma002-00intransrando
 m.png> <./img/series/tseries5/Poodlcalculatepsn5-rho10e-5-sigma002-00intransran
@@ -867,54 +862,46 @@ transrandom.png> <./img/series/tseries5/Poodlcalculatepsssn5-rho10e-5-sigma002-
 e-5-sigma006-00intransrandom.png> <./img/series/tseries6/Poodlcalculatepsssn5-r
 ho10e-5-sigma006-00intransrandom.png> <./img/series/tseries6/Poodlcalculatepsss
 n10-rho10e-5-sigma006-00intransrandom.png>]
-Overfull \hbox (1.61172pt too wide) in paragraph at lines 916--929
+Overfull \hbox (1.61172pt too wide) in paragraph at lines 903--916
 []\OT1/cmr/m/n/10 Compared to the non-ideological case, both ide-o-log-i-cal tr
 ust func-tions showed
  []
 
 [18] [19]
-Overfull \hbox (0.97963pt too wide) in paragraph at lines 957--957
+Overfull \hbox (0.97963pt too wide) in paragraph at lines 944--944
 []\OT1/cmr/m/n/10 Serge Galam. \OT1/cmr/m/it/10 So-cio-physics: A Physi-cist's 
 Mod-el-ing of Psycho-political Phe-
  []
 
 [20]
-Overfull \hbox (29.83037pt too wide) in paragraph at lines 957--957
+Overfull \hbox (29.83037pt too wide) in paragraph at lines 944--944
 \OT1/cmtt/m/n/10 http : / / www . sciencedirect . com / science / article / pii
  / S0378437111002706$\OT1/cmr/m/n/10 . 
  []
 
 [21]
-Overfull \hbox (9.7786pt too wide) in paragraph at lines 957--957
+Overfull \hbox (9.7786pt too wide) in paragraph at lines 944--944
 \OT1/cmr/m/n/10 flex-i-bil-ity in opin-ion dy-nam-ics.'' In: \OT1/cmr/m/it/10 P
 hys. Rev. E \OT1/cmr/m/n/10 87 (2013). arXiv:1208.3290,
  []
 
 [22]
-Overfull \hbox (0.6712pt too wide) in paragraph at lines 957--957
+Overfull \hbox (0.6712pt too wide) in paragraph at lines 944--944
 \OT1/cmr/m/n/10 voter choice.'' In: \OT1/cmr/m/it/10 Amer-i-can Po-lit-i-cal Sc
 i-ence Re-view \OT1/cmr/m/n/10 102.3 (2008), pp. 303{
  []
 
 [23] (./poodl-paper.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                poodl-paper
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'poodl-paper.run.xml'.
 \openout1 = `poodl-paper.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10880 strings out of 492615
- 200967 string characters out of 6131389
- 620136 words of memory out of 5000000
- 14633 multiletter control sequences out of 15000+600000
- 9010 words of font info for 32 fonts, out of 8000000 for 9000
+ 11181 strings out of 492615
+ 204271 string characters out of 6131389
+ 620632 words of memory out of 5000000
+ 14913 multiletter control sequences out of 15000+600000
+ 12618 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,13n,45p,1649b,1673s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
@@ -936,11 +923,12 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist
 /type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmtt10.pfb>
-Output written on poodl-paper.pdf (23 pages, 5148726 bytes).
+ts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msbm10.pfb>
+Output written on poodl-paper.pdf (23 pages, 5150890 bytes).
 PDF statistics:
- 241 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
+ 245 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  196 words of extra memory for PDF output out of 10000 (max. 10000000)
 
