@@ -1,20 +1,18 @@
 [0] Config.pm:304> INFO - This is Biber 2.12
 [0] Config.pm:307> INFO - Logfile is 'poodl-paper.blg'
-[26] biber:315> INFO - === sex dez 27, 2019, 14:11:28
-[47] Biber.pm:371> INFO - Reading 'poodl-paper.bcf'
-[108] Biber.pm:889> INFO - Found 70 citekeys in bib section 0
-[122] Biber.pm:4093> INFO - Processing section 0
+[24] biber:315> INFO - === qui jan  2, 2020, 20:03:40
+[44] Biber.pm:371> INFO - Reading 'poodl-paper.bcf'
+[110] Biber.pm:889> INFO - Found 81 citekeys in bib section 0
+[123] Biber.pm:4093> INFO - Processing section 0
 [133] Biber.pm:4254> INFO - Looking for bibtex format file 'poodl-paper.bib' for section 0
-[199] bibtex.pm:1512> INFO - LaTeX decoding ...
-[1547] bibtex.pm:1329> INFO - Found BibTeX data source 'poodl-paper.bib'
-[1793] Utils.pm:193> WARN - Name in key 'Mai2017' is empty (probably consecutive 'and'): skipping name
-[1806] Utils.pm:193> WARN - month field 'Mar' in entry 'Acemoglu2011' is not an integer - this will probably not sort properly.
-[2034] Utils.pm:193> WARN - BibTeX subsystem: substring 4, warning: empty substring
-[2098] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[2098] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[2098] Biber.pm:3921> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[2098] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
-[2168] bbl.pm:636> INFO - Writing 'poodl-paper.bbl' with encoding 'latin1'
-[2199] Utils.pm:193> WARN - The entry 'Hu2017' has characters which cannot be encoded in 'latin1'. Recoding problematic characters into macros.
-[2225] bbl.pm:739> INFO - Output to poodl-paper.bbl
-[2225] Biber.pm:110> INFO - WARNINGS: 4
+[189] bibtex.pm:1512> INFO - LaTeX decoding ...
+[1543] bibtex.pm:1329> INFO - Found BibTeX data source 'poodl-paper.bib'
+[1820] Utils.pm:193> WARN - month field 'Mar' in entry 'Acemoglu2011' is not an integer - this will probably not sort properly.
+[2120] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2120] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2120] Biber.pm:3921> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[2120] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[2188] bbl.pm:636> INFO - Writing 'poodl-paper.bbl' with encoding 'latin1'
+[2216] Utils.pm:193> WARN - The entry 'Hu2017' has characters which cannot be encoded in 'latin1'. Recoding problematic characters into macros.
+[2238] bbl.pm:739> INFO - Output to poodl-paper.bbl
+[2238] Biber.pm:110> INFO - WARNINGS: 2

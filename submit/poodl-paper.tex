@@ -89,6 +89,11 @@ a left versus right or liberal versus conservative axis, therefore, requires
 inspecting the opinions of that person in not only one but several issues that
 constitute the agent ideological positioning \cite{benoit2006party}.
 
+Proximity of opinions as basis for how much an agent would trust others is a basic principle in Bounded Confidence models \cite{deffuantetal00,hegselmannkrause02,amblarddeffuant04,franksetal08}, besides being clear common sense. It is also a fundamental consequence of what recent experiments show about our cognition. We tend to evaluate our own knowledge with excessive overconfidence \cite{oskamp65a,tsaietal08a}. Even when people might gain or lose money, we tend to trust our own estimates far more than we should \cite{albahutchinson00a,praetoriusetal13a,chaplinshaw15a}. Not only that, when looking for information, we actively search for those who agree with us \cite{nickerson98a}. The picture that has emerged recently from decades of experiments in cognition is that our reasoning skills might have evolved primarily for the purpose of argumentation \cite{mercier11a,merciersperber11a}. That is, fitting with our group, by convincing the group or getting convinced by it might have been much more important from an evolutive point of view than being correct. When our groups are defined by the ideas they defend, as they often are, and even more so, in political problems, that means a desire to conform and trust those who already agree with us and distrust those who do not \cite{martins16a}. Especially when dealing with identity-defining ideas, our reason seems to trick us to defend our own preferences \cite{kahan10a,kahanetal12a} over looking for truth. Even in scientific studies, that kind of selective trust seems to have led us to not achieve the best conclusions \cite{Martins2016,Martins2017}. Trust becomes something we reserve mostly for those we already agree with \cite{Mercier2017}.
+
+
+
+
 For many problems, it makes sense to consider different issues as having
 components in more than one single dimension \cite{vicenteetal08b}. However, it
 is often the case that describing the problem as one-dimensional can be
@@ -113,7 +118,7 @@ problems here, they are a natural choice. Indeed, continuous opinions models
 have been proposed for several different problems on how opinions spread on a
 society \cite{deffuantetal02a,weisbuchetal05}, from questions about the spread
 of extremism
-\cite{amblarddeffuant04,gargiulomazzoni08a,franksetal08a,alizadeh14a,Albi2016}
+\cite{amblarddeffuant04,gargiulomazzoni08a,alizadeh14a,Albi2016, franksetal08}
 to other issues such as how different networks
 \cite{Kurmyshev2011,Acemoglu2011,Das2014,Hu2017} or the uncertainty of each
 agent \cite{deffuant06} might change how agents influence each other.
@@ -154,18 +159,25 @@ context, evaluating others by how they differ from us as a whole, instead of in
 each issue, is a model variation worth exploring.
 
 \section{The Model}
-The model is grounded on a Bayesian foundation for opinion dynamics as defended
-in \cite{martins12b}. The reason for such a foundation is twofold. First,
-opinion dynamics models tend to be created on an ad hoc basis without any clear
+Bayesian reasoning, from a descriptive point of view, is quite simple. It assumes an individual has an initial opinion that is updated as new data is learned. The update rules are obtained as a consequence of knowing how the data is generated. In general terms, it is basically a normative model for how opinions should change. Of course, actual people do not use data perfectly, but the structure of any bayesian analysis is already that of an opinion dynamics model.
+
+The model is, then, grounded on a Bayesian foundation for opinion dynamics
+\cite{martins12b}. The reason for such a foundation is twofold. First, opinion
+dynamics models tend to be created on an ad hoc basis without any clear
 connection between them and how each may contribute to the accumulation of
 knowledge \cite{flache2017}. The Bayesian approach provides flexible first
-principles that allow us to circumvent this problem. Second, even though it is
-well documented that people don't faithfully follow the principle of Bayesian
-rationality\footnote{For a formal definition of Bayesian rationality see
+principles that allow us to circumvent this problem. It is a framework where the
+assumptions agents make about communication and the opinions of others are used
+to generate the model. Second, even though it is well documented that people
+don't faithfully follow the principle of Bayesian rationality\footnote{For a
+  formal definition of Bayesian rationality see
   \cite[p.104]{gintis2016individuality}.}, many works also indicate that it is a
 good \textit{approximation} and that humans are imperfectly bayesian
 \cite{tenenbaumetal07,kempetal10a, teglasetal11a, martins05b,
-  gintis2016individuality, baker2017rational}. In this framework every agent has
+  gintis2016individuality, baker2017rational}. Agents here are also not
+perfectly Bayesian, as their models are incomplete.
+
+In this framework every agent has
 a prior probability distribution about the issue at stake that represents their
 knowledge. Agents communicate and the probability that the value stated by a
 neighbor $j$, what here we'll call the opinion (\(o\)), is true is the
@@ -275,12 +287,12 @@ where  $p^{*}$ is given by
 Here \(\Delta_{ij} = o_{ik} (t) - o_{jk} (t)\) is the distance between the
 opinions on the $k$ issue. As $\Delta_{ij}$ increases, it is easy to see that
 Equation \ref{eq:pstar} causes $p^{*}$ to tend to zero. Given this relationship,
-$\Delta_{ij}$ plays a similar role to the threshold parameter in the Bounded
-Confidence models by making distant opinions less influential. And, as that
+$\Delta_{ij}$ plays the obvious role of distance between the opinions, while $\sigma_i^2$ plays the role of the threshold parameter in the Bounded
+Confidence models. As $\Delta_{ij}$ increases as larger multiples of $\sigma_i^2$, that makes distant opinions less influential. As that
 happens, the weights in average update Equation~\ref{eq:oupdate} change so that
-the previous value $ o_{i,k}(t)$ remains almost unchanged.
+the previous value $ o_{i,k}(t)$ remains almost unchanged. Trust depends on the ratio $\frac{(\Delta_{ij})^2}{2 \sigma_i^2$.
 
-The threshold role of $\Delta_{ij}$ suggests we might change its definition to
+The role of $\Delta_{ij}$ on the trust between the agents suggests we might change its definition to
 check how it might better reflect the actual behavior of humans. In particular,
 people tend to trust better those who have a similar ideology. That means trust
 might not depend on the specific issue alone, but on the average over all
@@ -328,7 +340,8 @@ The parameter space was explored by two sweeps of its parameters: one sampling
 of 70,000 quasi-random low-discrepancy sequence draws on all parameters
 \cite{saltelli2008global, saltelli2000sensitivity}, that generate evenly spaced
 points, and another of 60,000 keeping \(N=500\) so that we can compare different
-realizations. An interesting question in any opinion dynamics model is if agents
+realizations. Each of those draws correspond to a complete run of the model.
+An interesting question in any opinion dynamics model is if agents
 can reach consensus, if they diverge, or something between those two states.
 That can be observed by comparing the initial mean and standard deviation of
 each agent's opinions. Figure \ref{fig:std} shows histograms for those variables

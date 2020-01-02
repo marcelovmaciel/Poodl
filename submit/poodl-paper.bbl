@@ -94,6 +94,37 @@
       \field{pages}{189\bibrangedash 232}
       \range{pages}{44}
     \endentry
+    \entry{albahutchinson00a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=73dd272b9c0d1890d49495cd9ed4dcbe}{%
+           family={Alba},
+           familyi={A\bibinitperiod},
+           given={Joseph\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=c07307053bb2bed6ca53cb601960e0f8}{%
+           family={Hutchinson},
+           familyi={H\bibinitperiod},
+           given={J.\bibnamedelimi Wesley},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{4e3243638c4183677ce262503dff07b1}
+      \strng{fullhash}{4e3243638c4183677ce262503dff07b1}
+      \strng{bibnamehash}{4e3243638c4183677ce262503dff07b1}
+      \strng{authorbibnamehash}{4e3243638c4183677ce262503dff07b1}
+      \strng{authornamehash}{4e3243638c4183677ce262503dff07b1}
+      \strng{authorfullhash}{4e3243638c4183677ce262503dff07b1}
+      \field{sortinit}{A}
+      \field{sortinithash}{d77c7cdd82ff690d4c3ef13216f92f0b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Consumer Research}
+      \field{number}{2}
+      \field{title}{Knowledge Calibration: What Consumers Know and What They Think They Know}
+      \field{volume}{27}
+      \field{year}{2000}
+      \field{pages}{123\bibrangedash 156}
+      \range{pages}{34}
+    \endentry
     \entry{Albi2016}{online}{}
       \name{author}{3}{}{%
         {{hash=b130735c282f5e1dba0bd39f5960e02a}{%
@@ -419,6 +450,35 @@
       \field{year}{2009}
       \field{pages}{591\bibrangedash 646}
       \range{pages}{56}
+    \endentry
+    \entry{chaplinshaw15a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=ea2b33302a34fa825548f13a7a7d1f1f}{%
+           family={Chaplin},
+           familyi={C\bibinitperiod},
+           given={Chloe},
+           giveni={C\bibinitperiod}}}%
+        {{hash=101e6497e997c3e5fd1d15f7c9b79766}{%
+           family={Shaw},
+           familyi={S\bibinitperiod},
+           given={Julia},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{1faf1077523cb1ea69811c63b30b34a3}
+      \strng{fullhash}{1faf1077523cb1ea69811c63b30b34a3}
+      \strng{bibnamehash}{1faf1077523cb1ea69811c63b30b34a3}
+      \strng{authorbibnamehash}{1faf1077523cb1ea69811c63b30b34a3}
+      \strng{authornamehash}{1faf1077523cb1ea69811c63b30b34a3}
+      \strng{authorfullhash}{1faf1077523cb1ea69811c63b30b34a3}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Police and Criminal Psychology}
+      \field{title}{Confidently Wrong: Police Endorsement of Psycho-Legal Misconceptions}
+      \field{year}{2015}
+      \field{pages}{1\bibrangedash 9}
+      \range{pages}{9}
     \endentry
     \entry{Claassen2015a}{article}{}
       \name{author}{2}{}{%
@@ -857,7 +917,7 @@
       \field{pages}{127\bibrangedash 150}
       \range{pages}{24}
     \endentry
-    \entry{franksetal08a}{article}{}
+    \entry{franksetal08}{article}{}
       \name{author}{4}{}{%
         {{hash=f87a91b099e0bf9f15783e3764d763f9}{%
            family={Franks},
@@ -1334,6 +1394,31 @@
       \field{pages}{339\bibrangedash 375}
       \range{pages}{37}
     \endentry
+    \entry{kahan10a}{article}{}
+      \name{author}{1}{}{%
+        {{hash=cc5568112b3feb2df0d71e825b4acf1c}{%
+           family={Kahan},
+           familyi={K\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{cc5568112b3feb2df0d71e825b4acf1c}
+      \strng{fullhash}{cc5568112b3feb2df0d71e825b4acf1c}
+      \strng{bibnamehash}{cc5568112b3feb2df0d71e825b4acf1c}
+      \strng{authorbibnamehash}{cc5568112b3feb2df0d71e825b4acf1c}
+      \strng{authornamehash}{cc5568112b3feb2df0d71e825b4acf1c}
+      \strng{authorfullhash}{cc5568112b3feb2df0d71e825b4acf1c}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{title}{Fixing the ccommunication failure}
+      \field{volume}{463}
+      \field{year}{2010}
+      \field{pages}{296\bibrangedash 297}
+      \range{pages}{2}
+    \endentry
     \entry{kahanetal11}{article}{}
       \name{author}{3}{}{%
         {{hash=91e4b4a982f102db3d281b4d5eee7db8}{%
@@ -1371,6 +1456,61 @@
       \verb{file}
       \verb :D\:\\Andre\\home\\andre\\Documents\\groupthionk\\SSRN-id1549444.pdf:PDF
       \endverb
+    \endentry
+    \entry{kahanetal12a}{article}{}
+      \name{author}{7}{}{%
+        {{hash=91e4b4a982f102db3d281b4d5eee7db8}{%
+           family={Kahan},
+           familyi={K\bibinitperiod},
+           given={Dan\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=d85a91e843826538f729359a5dad1677}{%
+           family={Peters},
+           familyi={P\bibinitperiod},
+           given={Ellen},
+           giveni={E\bibinitperiod}}}%
+        {{hash=b13f9063e1b2004f7c8f9bb07fe38198}{%
+           family={Wittlin},
+           familyi={W\bibinitperiod},
+           given={Maggie},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1f98811f35f2a5d68ea95bf9b4def931}{%
+           family={Slovic},
+           familyi={S\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=b5fef7746689f097158e8a5f8d61b75d}{%
+           family={Ouellette},
+           familyi={O\bibinitperiod},
+           given={Lisa\bibnamedelima Larrimore},
+           giveni={L\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=d3fc2443d43a380128f8048ebf6944dd}{%
+           family={Braman},
+           familyi={B\bibinitperiod},
+           given={Donald},
+           giveni={D\bibinitperiod}}}%
+        {{hash=b3aa306e5275c99a42dfb26cd1937ade}{%
+           family={Mandel},
+           familyi={M\bibinitperiod},
+           given={Gregory},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c74e3ebd051831283a01aab866a32b3}
+      \strng{fullhash}{ee0d5b70953324d7cbc40387d7715014}
+      \strng{bibnamehash}{9c74e3ebd051831283a01aab866a32b3}
+      \strng{authorbibnamehash}{9c74e3ebd051831283a01aab866a32b3}
+      \strng{authornamehash}{9c74e3ebd051831283a01aab866a32b3}
+      \strng{authorfullhash}{ee0d5b70953324d7cbc40387d7715014}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature Climate Change}
+      \field{title}{The polarizing impact of science literacy and numeracy on perceived climate change risks}
+      \field{volume}{2}
+      \field{year}{2012}
+      \field{pages}{732\bibrangedash 735}
+      \range{pages}{4}
     \endentry
     \entry{kempetal10a}{article}{}
       \name{author}{4}{}{%
@@ -1626,6 +1766,100 @@
       \field{pages}{617\bibrangedash 624}
       \range{pages}{8}
     \endentry
+    \entry{Martins2017}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3beb3a74759ed5fc163ff83d8083d0f5}{%
+           family={Martins},
+           familyi={M\bibinitperiod},
+           given={André\bibnamedelimb C.\bibnamedelimi R.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{fullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{bibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authorbibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authornamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authorfullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \field{extraname}{5}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{arXiv:1701.00213}
+      \field{title}{Don't choose theories: Normative inductive reasoning and the status of physical theories}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1701.00213
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1701.00213
+      \endverb
+    \endentry
+    \entry{Martins2016}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3beb3a74759ed5fc163ff83d8083d0f5}{%
+           family={Martins},
+           familyi={M\bibinitperiod},
+           given={André\bibnamedelimb C.\bibnamedelimi R.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{fullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{bibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authorbibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authornamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authorfullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \field{extraname}{6}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Arxiv preprint: 1611.06545}
+      \field{title}{Stop the tests: Opinion bias and statistical tests}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1611.06545
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1611.06545
+      \endverb
+    \endentry
+    \entry{martins16a}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3beb3a74759ed5fc163ff83d8083d0f5}{%
+           family={Martins},
+           familyi={M\bibinitperiod},
+           given={André\bibnamedelimb C.\bibnamedelimi R.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{fullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{bibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authorbibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authornamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \strng{authorfullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
+      \field{extraname}{7}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We believe in many different ways. One very common one is by supporting ideas we like. We label them correct and we act to dismiss doubts about them. We take sides about ideas and theories as if that was the right thing to do. And yet, from a rational point of view, this type of support and belief is not justifiable. The best we can hope when describing the real world, as far as we know today, is to have probabilistic knowledge. In practice, estimating a real probability can be too hard to achieve but that just means we have more uncertainty, not less. There are ideas we defend that define, in our minds, our own identity. And recent experiments have been showing that we stop being able to analyze competently those propositions we hold so dearly. In this paper, I gather the evidence we have about taking sides and present the obvious but unseen conclusion that these facts combined mean that we should actually never believe in anything about the real world, except in a probabilistic way. We must actually never take sides since taking sides compromise our abilities to seek for the most correct description of the world. That means we need to start reformulating the way we debate ideas, from our teaching to our political debates. Here, I will show the logical and experimental basis of this conclusion. I will also show, by presenting new models for the evolution of opinions, that our desire to have something to believe is probably behind the emergence of extremism in debates. And we will see how this problem can even have an impact in the reliability of whole scientific fields. The crisis around p-values is discussed and much better understood under the light of this paper results. Finally, I will debate possible consequences and ideas on how to deal with this problem.}
+      \field{issn}{2296-424X}
+      \field{journaltitle}{Frontiers in Physics}
+      \field{number}{7}
+      \field{title}{Thou shalt not take sides: Cognition, Logic and the need for changing how we believe}
+      \field{volume}{4}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.3389/fphy.2016.00007
+      \endverb
+      \verb{urlraw}
+      \verb http://www.frontiersin.org/interdisciplinary_physics/10.3389/fphy.2016.00007/abstract
+      \endverb
+      \verb{url}
+      \verb http://www.frontiersin.org/interdisciplinary_physics/10.3389/fphy.2016.00007/abstract
+      \endverb
+    \endentry
     \entry{martinsgalam13a}{article}{}
       \name{author}{2}{}{%
         {{hash=3beb3a74759ed5fc163ff83d8083d0f5}{%
@@ -1674,7 +1908,7 @@
       \strng{authorbibnamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
       \strng{authornamehash}{3beb3a74759ed5fc163ff83d8083d0f5}
       \strng{authorfullhash}{3beb3a74759ed5fc163ff83d8083d0f5}
-      \field{extraname}{5}
+      \field{extraname}{8}
       \field{sortinit}{M}
       \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
       \field{labelnamesource}{author}
@@ -1752,6 +1986,36 @@
       \field{pages}{177\bibrangedash 191}
       \range{pages}{15}
     \endentry
+    \entry{Mercier2017}{book}{}
+      \name{author}{2}{}{%
+        {{hash=f70379da697a3b48dab3e96d2c59fddc}{%
+           family={Mercier},
+           familyi={M\bibinitperiod},
+           given={Hugo},
+           giveni={H\bibinitperiod}}}%
+        {{hash=668bce40d496b0ee9fba07b4b1040e79}{%
+           family={Sperber},
+           familyi={S\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Harvard University Press}%
+      }
+      \strng{namehash}{4d7845c1ba0225393dfd087c14bb5c80}
+      \strng{fullhash}{4d7845c1ba0225393dfd087c14bb5c80}
+      \strng{bibnamehash}{4d7845c1ba0225393dfd087c14bb5c80}
+      \strng{authorbibnamehash}{4d7845c1ba0225393dfd087c14bb5c80}
+      \strng{authornamehash}{4d7845c1ba0225393dfd087c14bb5c80}
+      \strng{authorfullhash}{4d7845c1ba0225393dfd087c14bb5c80}
+      \field{extraname}{1}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Enigma of Reason}
+      \field{year}{2017}
+    \endentry
     \entry{merciersperber11a}{article}{}
       \name{author}{2}{}{%
         {{hash=f70379da697a3b48dab3e96d2c59fddc}{%
@@ -1771,6 +2035,7 @@
       \strng{authorbibnamehash}{4d7845c1ba0225393dfd087c14bb5c80}
       \strng{authornamehash}{4d7845c1ba0225393dfd087c14bb5c80}
       \strng{authorfullhash}{4d7845c1ba0225393dfd087c14bb5c80}
+      \field{extraname}{2}
       \field{sortinit}{M}
       \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
       \field{labelnamesource}{author}
@@ -1824,6 +2089,32 @@
       \field{pages}{163\bibrangedash 181}
       \range{pages}{19}
     \endentry
+    \entry{nickerson98a}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e51931b7efc821d8bfd20c18c04f1b49}{%
+           family={Nickerson},
+           familyi={N\bibinitperiod},
+           given={Raymond\bibnamedelima S.},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{e51931b7efc821d8bfd20c18c04f1b49}
+      \strng{fullhash}{e51931b7efc821d8bfd20c18c04f1b49}
+      \strng{bibnamehash}{e51931b7efc821d8bfd20c18c04f1b49}
+      \strng{authorbibnamehash}{e51931b7efc821d8bfd20c18c04f1b49}
+      \strng{authornamehash}{e51931b7efc821d8bfd20c18c04f1b49}
+      \strng{authorfullhash}{e51931b7efc821d8bfd20c18c04f1b49}
+      \field{sortinit}{N}
+      \field{sortinithash}{f7242c3ed3dc50029fca1be76c497c7c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Review of General Psychology}
+      \field{number}{2}
+      \field{title}{Confirmation Bias: A Ubiquitous Phenomenon in Many Guises}
+      \field{volume}{2}
+      \field{year}{1998}
+      \field{pages}{175\bibrangedash 220}
+      \range{pages}{46}
+    \endentry
     \entry{nyhan2010corrections}{article}{}
       \name{author}{2}{}{%
         {{hash=8ef5bca6f403168706ad93d11351ed60}{%
@@ -1858,6 +2149,32 @@
       \field{pages}{303\bibrangedash 330}
       \range{pages}{28}
     \endentry
+    \entry{oskamp65a}{article}{}
+      \name{author}{1}{}{%
+        {{hash=b3ae44845ab01b9b775893571b60b5d3}{%
+           family={Oskamp},
+           familyi={O\bibinitperiod},
+           given={Stuart},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{b3ae44845ab01b9b775893571b60b5d3}
+      \strng{fullhash}{b3ae44845ab01b9b775893571b60b5d3}
+      \strng{bibnamehash}{b3ae44845ab01b9b775893571b60b5d3}
+      \strng{authorbibnamehash}{b3ae44845ab01b9b775893571b60b5d3}
+      \strng{authornamehash}{b3ae44845ab01b9b775893571b60b5d3}
+      \strng{authorfullhash}{b3ae44845ab01b9b775893571b60b5d3}
+      \field{sortinit}{O}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Consulting Psychology}
+      \field{number}{3}
+      \field{title}{Overconfidence in case-study judgments}
+      \field{volume}{29}
+      \field{year}{1965}
+      \field{pages}{261\bibrangedash 265}
+      \range{pages}{5}
+    \endentry
     \entry{ostrom1998behavioral}{article}{}
       \name{author}{1}{}{%
         {{hash=83bfc750a74aff11efa4bbcd04d4af05}{%
@@ -1886,6 +2203,55 @@
       \field{year}{1998}
       \field{pages}{1\bibrangedash 22}
       \range{pages}{22}
+    \endentry
+    \entry{praetoriusetal13a}{article}{}
+      \name{author}{5}{}{%
+        {{hash=2d25e0c39b8fa20a393e98c83f0b9089}{%
+           family={Praetorius},
+           familyi={P\bibinitperiod},
+           given={Anna-Katharina},
+           giveni={A\bibinithyphendelim K\bibinitperiod}}}%
+        {{hash=e8e24dbe2c10eb13fed2f1b909349d6a}{%
+           family={Berner},
+           familyi={B\bibinitperiod},
+           given={Valï¿½rie-Danielle},
+           giveni={V\bibinithyphendelim D\bibinitperiod}}}%
+        {{hash=df971c569fcb9a00af38acd67815a90b}{%
+           family={Zeinz},
+           familyi={Z\bibinitperiod},
+           given={Horst},
+           giveni={H\bibinitperiod}}}%
+        {{hash=105f5baa2784a6af3f3bd2afbcbf2083}{%
+           family={Scheunpflug},
+           familyi={S\bibinitperiod},
+           given={Annette},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a1c301329d31febc995b37f785b579b0}{%
+           family={Dresel},
+           familyi={D\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c702393f020ed1aca56fe6f62d98bf6}
+      \strng{fullhash}{bb72ec347ba486215e056ab350a30fa0}
+      \strng{bibnamehash}{4c702393f020ed1aca56fe6f62d98bf6}
+      \strng{authorbibnamehash}{4c702393f020ed1aca56fe6f62d98bf6}
+      \strng{authornamehash}{4c702393f020ed1aca56fe6f62d98bf6}
+      \strng{authorfullhash}{bb72ec347ba486215e056ab350a30fa0}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Educational Research}
+      \field{number}{1}
+      \field{title}{Judgment Confidence and Judgment Accuracy of Teachers in Judging Self-Concepts of Students}
+      \field{volume}{106}
+      \field{year}{2013}
+      \field{pages}{64\bibrangedash 76}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1080/00220671.2012.667010
+      \endverb
     \endentry
     \entry{reedy2014voters}{article}{}
       \name{author}{3}{}{%
@@ -2338,6 +2704,44 @@
       \field{year}{2008}
       \field{pages}{303\bibrangedash 318}
       \range{pages}{16}
+    \endentry
+    \entry{tsaietal08a}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d452cb67f3fc94b8191140a9cc31659f}{%
+           family={Tsai},
+           familyi={T\bibinitperiod},
+           given={Claire\bibnamedelima I.},
+           giveni={C\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=f8f938f5e4d9253c72f5216d12f4626c}{%
+           family={Klayman},
+           familyi={K\bibinitperiod},
+           given={Joshua},
+           giveni={J\bibinitperiod}}}%
+        {{hash=63c6d078277375ae928f3821fec55287}{%
+           family={Hastie},
+           familyi={H\bibinitperiod},
+           given={Reid},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{8216a424b5274f4f421a51d44ea6d2eb}
+      \strng{fullhash}{8216a424b5274f4f421a51d44ea6d2eb}
+      \strng{bibnamehash}{8216a424b5274f4f421a51d44ea6d2eb}
+      \strng{authorbibnamehash}{8216a424b5274f4f421a51d44ea6d2eb}
+      \strng{authornamehash}{8216a424b5274f4f421a51d44ea6d2eb}
+      \strng{authorfullhash}{8216a424b5274f4f421a51d44ea6d2eb}
+      \field{sortinit}{T}
+      \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Organizational Behavior and Human Decision Processes}
+      \field{title}{Effects of amount of information on judgment accuracy and confidence}
+      \field{volume}{107}
+      \field{year}{2008}
+      \field{pages}{97ï¿½105}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1016/j.obhdp.2008.01.005
+      \endverb
     \endentry
     \entry{van2005political}{article}{}
       \name{author}{2}{}{%
