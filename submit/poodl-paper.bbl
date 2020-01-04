@@ -565,27 +565,22 @@
       \keyw{biased assimilation,opinion formation,social networks}
     \endentry
     \entry{de2005computational}{book}{}
-      \name{author}{2}{}{%
+      \name{author}{1}{}{%
         {{hash=b829cbb1c936b8ad67fc41edfed736dd}{%
            family={De\bibnamedelima Marchi},
            familyi={D\bibinitperiod\bibinitdelim M\bibinitperiod},
            given={Scott},
            giveni={S\bibinitperiod}}}%
-        {{hash=ab556f9876496402ff6ca7c18d6bc291}{%
-           family={De\bibnamedelima Marchi},
-           familyi={D\bibinitperiod\bibinitdelim M\bibinitperiod},
-           given={Serge},
-           giveni={S\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Cambridge University Press}%
       }
-      \strng{namehash}{0ebb472b8272bdffd56853ca1626fc4d}
-      \strng{fullhash}{0ebb472b8272bdffd56853ca1626fc4d}
-      \strng{bibnamehash}{0ebb472b8272bdffd56853ca1626fc4d}
-      \strng{authorbibnamehash}{0ebb472b8272bdffd56853ca1626fc4d}
-      \strng{authornamehash}{0ebb472b8272bdffd56853ca1626fc4d}
-      \strng{authorfullhash}{0ebb472b8272bdffd56853ca1626fc4d}
+      \strng{namehash}{b829cbb1c936b8ad67fc41edfed736dd}
+      \strng{fullhash}{b829cbb1c936b8ad67fc41edfed736dd}
+      \strng{bibnamehash}{b829cbb1c936b8ad67fc41edfed736dd}
+      \strng{authorbibnamehash}{b829cbb1c936b8ad67fc41edfed736dd}
+      \strng{authornamehash}{b829cbb1c936b8ad67fc41edfed736dd}
+      \strng{authorfullhash}{b829cbb1c936b8ad67fc41edfed736dd}
       \field{sortinit}{D}
       \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
       \field{labelnamesource}{author}

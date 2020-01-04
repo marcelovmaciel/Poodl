@@ -159,6 +159,7 @@ context, evaluating others by how they differ from us as a whole, instead of in
 each issue, is a model variation worth exploring.
 
 \section{The Model}
+
 Bayesian reasoning, from a descriptive point of view, is quite simple. It assumes an individual has an initial opinion that is updated as new data is learned. The update rules are obtained as a consequence of knowing how the data is generated. In general terms, it is basically a normative model for how opinions should change. Of course, actual people do not use data perfectly, but the structure of any bayesian analysis is already that of an opinion dynamics model.
 
 The model is, then, grounded on a Bayesian foundation for opinion dynamics
@@ -285,7 +286,11 @@ where  $p^{*}$ is given by
 \end{equation}
 
 Here \(\Delta_{ij} = o_{ik} (t) - o_{jk} (t)\) is the distance between the
-opinions on the $k$ issue. As $\Delta_{ij}$ increases, it is easy to see that
+opinions on the $k$ issue. From Equation \ref{eq:oupdate}, we can see $p^{*}$ plays the role of the
+probability agent $i$ assigns to $j$ being correct. While that role was initially played by $p$, as $i$ learns
+about $j$ opinion, $i$ also updates its opinion on the chances that $j$ might know something. That is why
+we need an updated value when the posteriori average is calculated.
+As $\Delta_{ij}$ increases, it is easy to see that
 Equation \ref{eq:pstar} causes $p^{*}$ to tend to zero. Given this relationship,
 $\Delta_{ij}$ plays the obvious role of distance between the opinions, while $\sigma_i^2$ plays the role of the threshold parameter in the Bounded
 Confidence models. As $\Delta_{ij}$ increases as larger multiples of $\sigma_i^2$, that makes distant opinions less influential. As that
@@ -704,7 +709,9 @@ combined effect minus their first order effects: \(S_{ij}\) =
           of \(\rho\) on the mean opinion of the agent. That could explain why,
           for a larger $n$, consensus might come easier. To test if that was
           what was actually happening, we ran the same scenarios but increasing
-          \(\rho\) with \(n\), such that \(\rho_2 = \sqrt{n} * \rho_1 \). The
+          \(\rho\) with \(n\). As the noises are independent, their combined effect would mean
+          they would have their variances $\rho^2$ added. To check that we made runs where
+          \(\rho_2 = \sqrt{n} * \rho_1 \). The
           effects of increasing \(\rho\) that way in the case of Figure
           \ref{fig:tseries2} can be seen at Figure \ref{fig:tseries3}. A
           comparison with Figure \ref{fig:tseries1} shows a larger spread around
