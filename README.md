@@ -19,10 +19,9 @@
                 : `; `; `  :  `  `,,;,''''   );;`);     ;
                 ;' :;   ; : ``'`'           (;` :( ; ,  ;
                 |, `;; ,``                  `)`; `(; `  `;
-                ;  ;;  ``:                   `).:` \;,   `. 
+                ;  ;;  ``:                   `).:` \;,   `.
              ,-'   ;`;;:;`                   ;;'`;;  `)   )
               ~~~,-`;`;,"                    ~~~~~  ,-'   ;
                  """"""                             `"""""
 
-Material for the replication of my article on political opinion dynamics.
-
+Messy code for an article on political opinion dynamics: https://www.sciencedirect.com/science/article/pii/S037843712030087X
